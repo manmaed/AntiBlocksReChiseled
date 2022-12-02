@@ -48,37 +48,37 @@ public class ABRCWoolColors {
 
     //Wool Colors BlockItems
 
-    public static final RegistryObject<Item> WOOL_WHITE_ITEM = ITEMS.register("wool/white", () -> new AnitBlockItem(WOOL_WHITE.get()));
-    public static final RegistryObject<Item> WOOL_ORANGE_ITEM = ITEMS.register("wool/orange", () -> new AnitBlockItem(WOOL_ORANGE.get()));
-    public static final RegistryObject<Item> WOOL_MAGENTA_ITEM = ITEMS.register("wool/magenta", () -> new AnitBlockItem(WOOL_MAGENTA.get()));
-    public static final RegistryObject<Item> WOOL_LIGHT_BLUE_ITEM = ITEMS.register("wool/light_blue", () -> new AnitBlockItem(WOOL_LIGHT_BLUE.get()));
-    public static final RegistryObject<Item> WOOL_YELLOW_ITEM = ITEMS.register("wool/yellow", () -> new AnitBlockItem(WOOL_YELLOW.get()));
-    public static final RegistryObject<Item> WOOL_LIME_ITEM = ITEMS.register("wool/lime", () -> new AnitBlockItem(WOOL_LIME.get()));
-    public static final RegistryObject<Item> WOOL_PINK_ITEM = ITEMS.register("wool/pink", () -> new AnitBlockItem(WOOL_PINK.get()));
-    public static final RegistryObject<Item> WOOL_GRAY_ITEM = ITEMS.register("wool/gray", () -> new AnitBlockItem(WOOL_GRAY.get()));
-    public static final RegistryObject<Item> WOOL_LIGHT_GRAY_ITEM = ITEMS.register("wool/light_gray", () -> new AnitBlockItem(WOOL_LIGHT_GRAY.get()));
-    public static final RegistryObject<Item> WOOL_CYAN_ITEM = ITEMS.register("wool/cyan", () -> new AnitBlockItem(WOOL_CYAN.get()));
-    public static final RegistryObject<Item> WOOL_PURPLE_ITEM = ITEMS.register("wool/purple", () -> new AnitBlockItem(WOOL_PURPLE.get()));
-    public static final RegistryObject<Item> WOOL_BLUE_ITEM = ITEMS.register("wool/blue", () -> new AnitBlockItem(WOOL_BLUE.get()));
-    public static final RegistryObject<Item> WOOL_BROWN_ITEM = ITEMS.register("wool/brown", () -> new AnitBlockItem(WOOL_BROWN.get()));
-    public static final RegistryObject<Item> WOOL_GREEN_ITEM = ITEMS.register("wool/green", () -> new AnitBlockItem(WOOL_GREEN.get()));
-    public static final RegistryObject<Item> WOOL_RED_ITEM = ITEMS.register("wool/red", () -> new AnitBlockItem(WOOL_RED.get()));
+    public static final RegistryObject<Item> WOOL_WHITE_ITEM = ITEMS.register("wool_white", () -> new AnitBlockItem(WOOL_WHITE.get()));
+    public static final RegistryObject<Item> WOOL_ORANGE_ITEM = ITEMS.register("wool_orange", () -> new AnitBlockItem(WOOL_ORANGE.get()));
+    public static final RegistryObject<Item> WOOL_MAGENTA_ITEM = ITEMS.register("wool_magenta", () -> new AnitBlockItem(WOOL_MAGENTA.get()));
+    public static final RegistryObject<Item> WOOL_LIGHT_BLUE_ITEM = ITEMS.register("wool_light_blue", () -> new AnitBlockItem(WOOL_LIGHT_BLUE.get()));
+    public static final RegistryObject<Item> WOOL_YELLOW_ITEM = ITEMS.register("wool_yellow", () -> new AnitBlockItem(WOOL_YELLOW.get()));
+    public static final RegistryObject<Item> WOOL_LIME_ITEM = ITEMS.register("wool_lime", () -> new AnitBlockItem(WOOL_LIME.get()));
+    public static final RegistryObject<Item> WOOL_PINK_ITEM = ITEMS.register("wool_pink", () -> new AnitBlockItem(WOOL_PINK.get()));
+    public static final RegistryObject<Item> WOOL_GRAY_ITEM = ITEMS.register("wool_gray", () -> new AnitBlockItem(WOOL_GRAY.get()));
+    public static final RegistryObject<Item> WOOL_LIGHT_GRAY_ITEM = ITEMS.register("wool_light_gray", () -> new AnitBlockItem(WOOL_LIGHT_GRAY.get()));
+    public static final RegistryObject<Item> WOOL_CYAN_ITEM = ITEMS.register("wool_cyan", () -> new AnitBlockItem(WOOL_CYAN.get()));
+    public static final RegistryObject<Item> WOOL_PURPLE_ITEM = ITEMS.register("wool_purple", () -> new AnitBlockItem(WOOL_PURPLE.get()));
+    public static final RegistryObject<Item> WOOL_BLUE_ITEM = ITEMS.register("wool_blue", () -> new AnitBlockItem(WOOL_BLUE.get()));
+    public static final RegistryObject<Item> WOOL_BROWN_ITEM = ITEMS.register("wool_brown", () -> new AnitBlockItem(WOOL_BROWN.get()));
+    public static final RegistryObject<Item> WOOL_GREEN_ITEM = ITEMS.register("wool_green", () -> new AnitBlockItem(WOOL_GREEN.get()));
+    public static final RegistryObject<Item> WOOL_RED_ITEM = ITEMS.register("wool_red", () -> new AnitBlockItem(WOOL_RED.get()));
 
     //Wool Colors Borderd
-    public static final RegistryObject<Item> WOOL_WHITE_BORDER_ITEM = ITEMS.register("wool/white_border", () -> new AnitBlockItem(WOOL_WHITE_BORDER.get()));
-    public static final RegistryObject<Item> WOOL_ORANGE_BORDER_ITEM = ITEMS.register("wool/orange_border", () -> new AnitBlockItem(WOOL_ORANGE_BORDER.get()));
-    public static final RegistryObject<Item> WOOL_MAGENTA_BORDER_ITEM = ITEMS.register("wool/magenta_border", () -> new AnitBlockItem(WOOL_MAGENTA_BORDER.get()));
-    public static final RegistryObject<Item> WOOL_LIGHT_BLUE_BORDER_ITEM = ITEMS.register("wool/light_blue_border", () -> new AnitBlockItem(WOOL_LIGHT_BLUE_BORDER.get()));
-    public static final RegistryObject<Item> WOOL_YELLOW_BORDER_ITEM = ITEMS.register("wool/yellow_border", () -> new AnitBlockItem(WOOL_YELLOW_BORDER.get()));
-    public static final RegistryObject<Item> WOOL_LIME_BORDER_ITEM = ITEMS.register("wool/lime_border", () -> new AnitBlockItem(WOOL_LIME_BORDER.get()));
-    public static final RegistryObject<Item> WOOL_PINK_BORDER_ITEM = ITEMS.register("wool/pink_border", () -> new AnitBlockItem(WOOL_PINK_BORDER.get()));
-    public static final RegistryObject<Item> WOOL_GRAY_BORDER_ITEM = ITEMS.register("wool/gray_border", () -> new AnitBlockItem(WOOL_GRAY_BORDER.get()));
-    public static final RegistryObject<Item> WOOL_LIGHT_GRAY_BORDER_ITEM = ITEMS.register("wool/light_gray_border", () -> new AnitBlockItem(WOOL_LIGHT_GRAY_BORDER.get()));
-    public static final RegistryObject<Item> WOOL_CYAN_BORDER_ITEM = ITEMS.register("wool/cyan_border", () -> new AnitBlockItem(WOOL_CYAN_BORDER.get()));
-    public static final RegistryObject<Item> WOOL_PURPLE_BORDER_ITEM = ITEMS.register("wool/purple_border", () -> new AnitBlockItem(WOOL_PURPLE_BORDER.get()));
-    public static final RegistryObject<Item> WOOL_BLUE_BORDER_ITEM = ITEMS.register("wool/blue_border", () -> new AnitBlockItem(WOOL_BLUE_BORDER.get()));
-    public static final RegistryObject<Item> WOOL_BROWN_BORDER_ITEM = ITEMS.register("wool/brown_border", () -> new AnitBlockItem(WOOL_BROWN_BORDER.get()));
-    public static final RegistryObject<Item> WOOL_GREEN_BORDER_ITEM = ITEMS.register("wool/green_border", () -> new AnitBlockItem(WOOL_GREEN_BORDER.get()));
-    public static final RegistryObject<Item> WOOL_RED_BORDER_ITEM = ITEMS.register("wool/red_border", () -> new AnitBlockItem(WOOL_RED_BORDER.get()));
+    public static final RegistryObject<Item> WOOL_WHITE_BORDER_ITEM = ITEMS.register("wool_white_border", () -> new AnitBlockItem(WOOL_WHITE_BORDER.get()));
+    public static final RegistryObject<Item> WOOL_ORANGE_BORDER_ITEM = ITEMS.register("wool_orange_border", () -> new AnitBlockItem(WOOL_ORANGE_BORDER.get()));
+    public static final RegistryObject<Item> WOOL_MAGENTA_BORDER_ITEM = ITEMS.register("wool_magenta_border", () -> new AnitBlockItem(WOOL_MAGENTA_BORDER.get()));
+    public static final RegistryObject<Item> WOOL_LIGHT_BLUE_BORDER_ITEM = ITEMS.register("wool_light_blue_border", () -> new AnitBlockItem(WOOL_LIGHT_BLUE_BORDER.get()));
+    public static final RegistryObject<Item> WOOL_YELLOW_BORDER_ITEM = ITEMS.register("wool_yellow_border", () -> new AnitBlockItem(WOOL_YELLOW_BORDER.get()));
+    public static final RegistryObject<Item> WOOL_LIME_BORDER_ITEM = ITEMS.register("wool_lime_border", () -> new AnitBlockItem(WOOL_LIME_BORDER.get()));
+    public static final RegistryObject<Item> WOOL_PINK_BORDER_ITEM = ITEMS.register("wool_pink_border", () -> new AnitBlockItem(WOOL_PINK_BORDER.get()));
+    public static final RegistryObject<Item> WOOL_GRAY_BORDER_ITEM = ITEMS.register("wool_gray_border", () -> new AnitBlockItem(WOOL_GRAY_BORDER.get()));
+    public static final RegistryObject<Item> WOOL_LIGHT_GRAY_BORDER_ITEM = ITEMS.register("wool_light_gray_border", () -> new AnitBlockItem(WOOL_LIGHT_GRAY_BORDER.get()));
+    public static final RegistryObject<Item> WOOL_CYAN_BORDER_ITEM = ITEMS.register("wool_cyan_border", () -> new AnitBlockItem(WOOL_CYAN_BORDER.get()));
+    public static final RegistryObject<Item> WOOL_PURPLE_BORDER_ITEM = ITEMS.register("wool_purple_border", () -> new AnitBlockItem(WOOL_PURPLE_BORDER.get()));
+    public static final RegistryObject<Item> WOOL_BLUE_BORDER_ITEM = ITEMS.register("wool_blue_border", () -> new AnitBlockItem(WOOL_BLUE_BORDER.get()));
+    public static final RegistryObject<Item> WOOL_BROWN_BORDER_ITEM = ITEMS.register("wool_brown_border", () -> new AnitBlockItem(WOOL_BROWN_BORDER.get()));
+    public static final RegistryObject<Item> WOOL_GREEN_BORDER_ITEM = ITEMS.register("wool_green_border", () -> new AnitBlockItem(WOOL_GREEN_BORDER.get()));
+    public static final RegistryObject<Item> WOOL_RED_BORDER_ITEM = ITEMS.register("wool_red_border", () -> new AnitBlockItem(WOOL_RED_BORDER.get()));
 
 }

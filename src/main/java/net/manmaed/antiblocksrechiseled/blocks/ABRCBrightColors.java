@@ -37,24 +37,24 @@ public class ABRCBrightColors {
 
     //BlockItems
     //Bright Pure
-    public static final RegistryObject<Item> BRIGHT_WHITE_ITEM = ITEMS.register("bright/white", () -> new AnitBlockItem(BRIGHT_WHITE.get()));
-    public static final RegistryObject<Item> BRIGHT_ORANGE_ITEM = ITEMS.register("bright/orange", () -> new AnitBlockItem(BRIGHT_ORANGE.get()));
-    public static final RegistryObject<Item> BRIGHT_MAGENTA_ITEM = ITEMS.register("bright/magenta", () -> new AnitBlockItem(BRIGHT_MAGENTA.get()));
-    public static final RegistryObject<Item> BRIGHT_YELLOW_ITEM = ITEMS.register("bright/yellow", () -> new AnitBlockItem(BRIGHT_YELLOW.get()));
-    public static final RegistryObject<Item> BRIGHT_CYAN_ITEM = ITEMS.register("bright/cyan", () -> new AnitBlockItem(BRIGHT_CYAN.get()));
-    public static final RegistryObject<Item> BRIGHT_BLUE_ITEM = ITEMS.register("bright/blue", () -> new AnitBlockItem(BRIGHT_BLUE.get()));
-    public static final RegistryObject<Item> BRIGHT_GREEN_ITEM = ITEMS.register("bright/green", () -> new AnitBlockItem(BRIGHT_GREEN.get()));
-    public static final RegistryObject<Item> BRIGHT_RED_ITEM = ITEMS.register("bright/red", () -> new AnitBlockItem(BRIGHT_RED.get()));
-    public static final RegistryObject<Item> BRIGHT_BLACK_ITEM = ITEMS.register("bright/black", () -> new AnitBlockItem(BRIGHT_BLACK.get()));
+    public static final RegistryObject<Item> BRIGHT_WHITE_ITEM = ITEMS.register("bright_white", () -> new AnitBlockItem(BRIGHT_WHITE.get()));
+    public static final RegistryObject<Item> BRIGHT_ORANGE_ITEM = ITEMS.register("bright_orange", () -> new AnitBlockItem(BRIGHT_ORANGE.get()));
+    public static final RegistryObject<Item> BRIGHT_MAGENTA_ITEM = ITEMS.register("bright_magenta", () -> new AnitBlockItem(BRIGHT_MAGENTA.get()));
+    public static final RegistryObject<Item> BRIGHT_YELLOW_ITEM = ITEMS.register("bright_yellow", () -> new AnitBlockItem(BRIGHT_YELLOW.get()));
+    public static final RegistryObject<Item> BRIGHT_CYAN_ITEM = ITEMS.register("bright_cyan", () -> new AnitBlockItem(BRIGHT_CYAN.get()));
+    public static final RegistryObject<Item> BRIGHT_BLUE_ITEM = ITEMS.register("bright_blue", () -> new AnitBlockItem(BRIGHT_BLUE.get()));
+    public static final RegistryObject<Item> BRIGHT_GREEN_ITEM = ITEMS.register("bright_green", () -> new AnitBlockItem(BRIGHT_GREEN.get()));
+    public static final RegistryObject<Item> BRIGHT_RED_ITEM = ITEMS.register("bright_red", () -> new AnitBlockItem(BRIGHT_RED.get()));
+    public static final RegistryObject<Item> BRIGHT_BLACK_ITEM = ITEMS.register("bright_black", () -> new AnitBlockItem(BRIGHT_BLACK.get()));
 
     //Bright Border
-    public static final RegistryObject<Item> BRIGHT_WHITE_BORDER_ITEM = ITEMS.register("bright/white_border", () -> new AnitBlockItem(BRIGHT_WHITE_BORDER.get()));
-    public static final RegistryObject<Item> BRIGHT_ORANGE_BORDER_ITEM = ITEMS.register("bright/orange_border", () -> new AnitBlockItem(BRIGHT_ORANGE_BORDER.get()));
-    public static final RegistryObject<Item> BRIGHT_MAGENTA_BORDER_ITEM = ITEMS.register("bright/magenta_border", () -> new AnitBlockItem(BRIGHT_MAGENTA_BORDER.get()));
-    public static final RegistryObject<Item> BRIGHT_YELLOW_BORDER_ITEM = ITEMS.register("bright/yellow_border", () -> new AnitBlockItem(BRIGHT_YELLOW_BORDER.get()));
-    public static final RegistryObject<Item> BRIGHT_CYAN_BORDER_ITEM = ITEMS.register("bright/cyan_border", () -> new AnitBlockItem(BRIGHT_CYAN_BORDER.get()));
-    public static final RegistryObject<Item> BRIGHT_BLUE_BORDER_ITEM = ITEMS.register("bright/blue_border", () -> new AnitBlockItem(BRIGHT_BLUE_BORDER.get()));
-    public static final RegistryObject<Item> BRIGHT_GREEN_BORDER_ITEM = ITEMS.register("bright/green_border", () -> new AnitBlockItem(BRIGHT_GREEN_BORDER.get()));
-    public static final RegistryObject<Item> BRIGHT_RED_BORDER_ITEM = ITEMS.register("bright/red_border", () -> new AnitBlockItem(BRIGHT_RED_BORDER.get()));
-    public static final RegistryObject<Item> BRIGHT_BLACK_BORDER_ITEM = ITEMS.register("bright/black_border", () -> new AnitBlockItem(BRIGHT_BLACK_BORDER.get()));
+    public static final RegistryObject<Item> BRIGHT_WHITE_BORDER_ITEM = ITEMS.register("bright_white_border", () -> new AnitBlockItem(BRIGHT_WHITE_BORDER.get()));
+    public static final RegistryObject<Item> BRIGHT_ORANGE_BORDER_ITEM = ITEMS.register("bright_orange_border", () -> new AnitBlockItem(BRIGHT_ORANGE_BORDER.get()));
+    public static final RegistryObject<Item> BRIGHT_MAGENTA_BORDER_ITEM = ITEMS.register("bright_magenta_border", () -> new AnitBlockItem(BRIGHT_MAGENTA_BORDER.get()));
+    public static final RegistryObject<Item> BRIGHT_YELLOW_BORDER_ITEM = ITEMS.register("bright_yellow_border", () -> new AnitBlockItem(BRIGHT_YELLOW_BORDER.get()));
+    public static final RegistryObject<Item> BRIGHT_CYAN_BORDER_ITEM = ITEMS.register("bright_cyan_border", () -> new AnitBlockItem(BRIGHT_CYAN_BORDER.get()));
+    public static final RegistryObject<Item> BRIGHT_BLUE_BORDER_ITEM = ITEMS.register("bright_blue_border", () -> new AnitBlockItem(BRIGHT_BLUE_BORDER.get()));
+    public static final RegistryObject<Item> BRIGHT_GREEN_BORDER_ITEM = ITEMS.register("bright_green_border", () -> new AnitBlockItem(BRIGHT_GREEN_BORDER.get()));
+    public static final RegistryObject<Item> BRIGHT_RED_BORDER_ITEM = ITEMS.register("bright_red_border", () -> new AnitBlockItem(BRIGHT_RED_BORDER.get()));
+    public static final RegistryObject<Item> BRIGHT_BLACK_BORDER_ITEM = ITEMS.register("bright_black_border", () -> new AnitBlockItem(BRIGHT_BLACK_BORDER.get()));
 }

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bbb",
+    "bab",
+    "bbb"
+  ],
+  "key": {
+    "b": {
+      "item": "minecraft:white_dye"
+    },
+    "a": {
+      "item": "minecraft:antiblocksrechiseled_bright_black"
+    }
+  },
+  "result": {
+    "item": "antiblocksrechiseled:bright_black_border"
+  }
+}

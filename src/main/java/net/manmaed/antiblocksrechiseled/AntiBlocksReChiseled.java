@@ -25,6 +25,7 @@ public class AntiBlocksReChiseled {
         ABRCBrightColors.BLOCKS.register(event);
         ABRCWoolColors.ITEMS.register(event);
         ABRCBrightColors.ITEMS.register(event);
+        event.addListener(ABRCClient::setRenderLayers);
     }
 
 }

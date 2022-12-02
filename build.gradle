@@ -27,7 +27,7 @@ runs {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
-            property 'forge.enabledGameTestNamespaces', 'antiblocksrechiseled'
+            //property 'forge.enabledGameTestNamespaces', 'antiblocksrechiseled'
             mods {
                 antiblocksrechiseled {
                     source sourceSets.main
@@ -39,19 +39,7 @@ runs {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
-            property 'forge.enabledGameTestNamespaces', 'antiblocksrechiseled'
-            mods {
-                antiblocksrechiseled {
-                    source sourceSets.main
-                }
-            }
-        }
-
-       gameTestServer {
-            workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            property 'forge.enabledGameTestNamespaces', 'antiblocksrechiseled'
+            //property 'forge.enabledGameTestNamespaces', 'antiblocksrechiseled'
             mods {
                 antiblocksrechiseled {
                     source sourceSets.main

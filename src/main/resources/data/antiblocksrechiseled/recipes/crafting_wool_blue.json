@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sds",
+    "dgd",
+    "sds"
+  ],
+  "key": {
+    "g": {
+      "item": "minecraft:glowstone_dust"
+    },
+    "s": {
+      "item": "minecraft:blue_wool"
+    },
+    "d": {
+      "item": "minecraft:blue_dye"
+    }
+  },
+  "result": {
+    "item": "antiblocksrechiseled:wool_blue"
+  }
+}
