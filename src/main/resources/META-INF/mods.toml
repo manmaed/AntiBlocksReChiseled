@@ -1,0 +1,15 @@
+
+modLoader="javafml"
+loaderVersion="[43,)"
+license="All rights reserved"
+[[mods]]
+modId="antiblocksrechiseled"
+version="${file.jarVersion}"
+displayName="AntiBlocksReChiseled"
+#updateJSONURL="https://change.me.example.invalid/updates.json"
+#displayURL="https://change.me.to.your.mods.homepage.example.invalid/"
+#logoFile="examplemod.png"
+credits="manmaed"
+authors="manmaed"
+description='''
+Readds The AnitBlocks From Chsiel'''

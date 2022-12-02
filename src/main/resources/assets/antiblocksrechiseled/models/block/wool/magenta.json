@@ -1,0 +1,8 @@
+{
+  "parent": "antiblocksrechiseled:block/cube_2_layer_no_shade",
+  "render_type": "cutout",
+  "textures": {
+    "bot": "antiblocksrechiseled:block/wool/magenta",
+    "top": "antiblocksrechiseled:block/wool/magenta"
+  }
+}
