@@ -1,7 +1,7 @@
 name: Build & Release For Minecraft VER_HERE 
 
 on:
-  create:
+  push:
     tags:
       - 'v*'
 
