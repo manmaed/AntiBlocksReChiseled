@@ -5,7 +5,7 @@ import net.minecraft.world.level.material.Material;
 
 public class AntiBlock extends Block {
     public AntiBlock() {
-        super(Properties.of(Material.STONE).lightLevel((light) -> {
+        super(Properties.of(Material.STONE).strength(3.0F, 5.0F).requiresCorrectToolForDrops().lightLevel((light) -> {
             return 15;
         }));
     }
