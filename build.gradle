@@ -10,9 +10,9 @@ repositories {
         url "https://www.cursemaven.com"
     }
 }
-//def ENV = System.getenv()
-//version = "${ENV.GITHUB_RUN_NUMBER}" ? "${mod_version}.${ENV.GITHUB_RUN_NUMBER}" : "${mod_version}.nobuildnumber"
-version = "${mod_version}"
+def ENV = System.getenv()
+version = "${ENV.GITHUB_RUN_NUMBER}" ? "${mod_version}.${ENV.GITHUB_RUN_NUMBER}" : "${mod_version}.nobuildnumber"
+//version = "${mod_version}"
 group = 'net.manmaed.antiblocksrechiseled'
 archivesBaseName = 'antiblocksrechiseled'
 
@@ -111,7 +111,7 @@ publishing {
     }
 }
 
-/*if (ENV.CURSE_DEPLOY) {
+if (ENV.CURSE_DEPLOY) {
     curseforge {
         apiKey = ENV.CURSE_DEPLOY
         project {
@@ -122,14 +122,12 @@ publishing {
             addGameVersion "${minecraft_version}"
             mainArtifact(jar) {
                 displayName = "${mod_name} v${version} - ${minecraft_version}"
-                relations {
-                }
             }
             changelog = "changeme"
 
         }
     }
-}*/
+}
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation

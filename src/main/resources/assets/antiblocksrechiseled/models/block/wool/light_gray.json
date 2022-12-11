@@ -1,8 +1,6 @@
 {
-  "parent": "antiblocksrechiseled:block/cube_2_layer_no_shade",
-  "render_type": "cutout",
+  "parent": "antiblocksrechiseled:block/full_bright",
   "textures": {
-    "bot": "antiblocksrechiseled:block/wool/light_gray",
-    "top": "antiblocksrechiseled:block/wool/light_gray"
+    "color": "antiblocksrechiseled:block/wool/light_gray"
   }
 }

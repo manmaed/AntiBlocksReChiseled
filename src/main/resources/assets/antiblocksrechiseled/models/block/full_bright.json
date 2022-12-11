@@ -1,0 +1,22 @@
+{
+  "parent": "block/cube",
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "#color"
+  },
+  "elements": [
+    {
+      "from": [ 0, 0, 0],
+      "to": [ 16, 16, 16],
+      "shade": false,
+      "faces": {
+          "down": { "texture": "#color", "cullface": "down" },
+          "up": { "texture": "#color", "cullface": "up" },
+          "north": { "texture": "#color", "cullface": "north" },
+          "south": { "texture": "#color", "cullface": "south" },
+          "west": { "texture": "#color", "cullface": "west" },
+          "east": { "texture": "#color", "cullface": "east" }
+      }
+    }
+  ]
+}
