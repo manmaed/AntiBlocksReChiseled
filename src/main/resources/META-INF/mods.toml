@@ -2,13 +2,13 @@
 modLoader="javafml"
 loaderVersion="[40,)"
 license="All rights reserved"
+issueTrackerURL = "https://github.com/manmaed/AntiBlocksReChiseled/issues"
 [[mods]]
 modId="antiblocksrechiseled"
 version="${file.jarVersion}"
 displayName="AntiBlocksReChiseled"
-#updateJSONURL="https://change.me.example.invalid/updates.json"
-#displayURL="https://change.me.to.your.mods.homepage.example.invalid/"
-#logoFile="examplemod.png"
+updateJSONURL="https://raw.githubusercontent.com/manmaed/AntiBlocksReChiseled/main/update.json"
+logoFile="abrc.logo.png"
 credits="manmaed"
 authors="manmaed"
 description='''
