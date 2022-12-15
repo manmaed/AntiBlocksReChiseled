@@ -98,7 +98,7 @@ if (ENV.CURSE_DEPLOY) {
 			addGameVersion "Java 17"
 			addGameVersion "${minecraft_version}"
 			afterEvaluate {
-				mainArtifact(remapJar.output) {
+				mainArtifact(remapJar) {
 					displayName = "${mod_name} v${version} - Fabric - ${minecraft_version}"
 					relations {
 						requiredDependency 'fabric-api'
