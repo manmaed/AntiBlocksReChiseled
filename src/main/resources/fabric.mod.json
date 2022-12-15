@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "antiblocksrechiseled",
+  "version": "${version}",
+
+  "name": "AntiBlocksReChiseled",
+  "description": "Readds The AnitBlocks From Chsiel",
+  "authors": [
+    "manmaed"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/antiblocksrechiseled",
+    "sources": "https://github.com/manmaed/AntiBlocksReChiseled/issues"
+  },
+
+  "license": "All rights reserved",
+  "icon": "assets/antiblocksrechiseled/abrc.logo.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled"
+    ]
+  },
+
+  "depends": {
+    "fabricloader": ">=0.14.11",
+    "fabric-api": "*",
+    "minecraft": "~1.19.2",
+    "java": ">=17"
+  }
+}

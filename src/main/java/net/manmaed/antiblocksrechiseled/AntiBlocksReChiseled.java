@@ -1,30 +1,27 @@
 package net.manmaed.antiblocksrechiseled;
 
-import net.manmaed.antiblocksrechiseled.blocks.ABRCBrightColors;
-import net.manmaed.antiblocksrechiseled.blocks.ABRCWoolColors;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.manmaed.antiblocksrechiseled.block.ABRCBrightColors;
+import net.manmaed.antiblocksrechiseled.block.ABRCWoolColors;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.Identifier;
 
-@Mod(AntiBlocksReChiseled.MOD_ID)
-public class AntiBlocksReChiseled {
+public class AntiBlocksReChiseled implements ModInitializer {
 
     public static final String MOD_ID = "antiblocksrechiseled";
-    public static final CreativeModeTab itemGroup = new CreativeModeTab(MOD_ID) {
-        @Override
-        public ItemStack makeIcon() {
-            return new ItemStack(ABRCBrightColors.BRIGHT_WHITE_BORDER.get());
-        }
-    };
 
-    public AntiBlocksReChiseled() {
-        IEventBus event = FMLJavaModLoadingContext.get().getModEventBus();
-        ABRCWoolColors.BLOCKS.register(event);
-        ABRCBrightColors.BLOCKS.register(event);
-        ABRCWoolColors.ITEMS.register(event);
-        ABRCBrightColors.ITEMS.register(event);
+
+    public static final ItemGroup itemGroup = FabricItemGroupBuilder.build(new Identifier(MOD_ID, "name"),
+            () -> new ItemStack(ABRCBrightColors.BRIGHT_WHITE_BORDER));
+
+    @Override
+    public void onInitialize() {
+        ABRCBrightColors.doBlockRegistery();
+        ABRCBrightColors.doBlockItemRegistery();
+        ABRCWoolColors.doBlockRegistery();
+        ABRCWoolColors.doBlockItemRegistery();
+
     }
-
 }
