@@ -1,4 +1,4 @@
-name: Build & Release For Minecraft 1.19.3
+name: Build & Release For Minecraft 1.19.2 - Fabric
 
 on:
   push:
