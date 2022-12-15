@@ -2,7 +2,7 @@
   "lang.file.name": "English US",
   "lang.author.name": "manmaed",
 
-  "itemGroup.antiblocksrechiseled": "AntiBlocks ReChiseled",
+  "itemGroup.antiblocksrechiseled.name": "AntiBlocks ReChiseled",
   "block.antiblocksrechiseled.bright_white": "Bright White AntiBlock",
   "block.antiblocksrechiseled.bright_orange": "Bright Orange AntiBlock",
   "block.antiblocksrechiseled.bright_magenta": "Bright Magenta AntiBlock",
