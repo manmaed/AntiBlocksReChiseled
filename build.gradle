@@ -113,5 +113,5 @@ if (ENV.CURSE_DEPLOY) {
 }
 
 afterEvaluate {
-	tasks.curseforge${curseforge_id}.dependsOn remapJar
+	tasks.curseforge715567.dependsOn remapJar
 }
