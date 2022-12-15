@@ -97,15 +97,12 @@ if (ENV.CURSE_DEPLOY) {
 			addGameVersion "Fabric"
 			addGameVersion "Java 17"
 			addGameVersion "${minecraft_version}"
-			afterEvaluate {
-				mainArtifact(remapJar) {
-					displayName = "${mod_name} v${version} - Fabric - ${minecraft_version}"
-					relations {
-						requiredDependency 'fabric-api'
-						optionalDependency 'ctm-refabricated'
-					}
+			mainArtifact(remapJar.jar) {
+				displayName = "${mod_name} v${version} - Fabric - ${minecraft_version}"
+				relations {
+					requiredDependency 'fabric-api'
+					optionalDependency 'ctm-refabricated'
 				}
-				uploadTask.dependsOn(remapJar)
 			}
 			changelog = "changeme"
 		}
@@ -113,4 +110,8 @@ if (ENV.CURSE_DEPLOY) {
 			forgeGradleIntegration  = false
 		}
 	}
+}
+
+afterEvaluate {
+	tasks.curseforge${curseforge_id}.dependsOn remapJar
 }
