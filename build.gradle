@@ -62,7 +62,7 @@ java {
 	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
 	// if it is present.
 	// If you remove this line, sources will not be generated.
-	withSourcesJar()
+	//withSourcesJar()
 }
 
 jar {
@@ -97,14 +97,20 @@ if (ENV.CURSE_DEPLOY) {
 			addGameVersion "Fabric"
 			addGameVersion "Java 17"
 			addGameVersion "${minecraft_version}"
-			mainArtifact(jar) {
-				displayName = "${mod_name} v${version} - Fbaric - ${minecraft_version}"
-				relations {
-					requiredDependency 'fabric-api'
-					optionalDependency 'ctm-refabricated'
+			afterEvaluate {
+				mainArtifact(remapJar.output) {
+					displayName = "${mod_name} v${version} - Fabric - ${minecraft_version}"
+					relations {
+						requiredDependency 'fabric-api'
+						optionalDependency 'ctm-refabricated'
+					}
 				}
+				uploadTask.dependsOn(remapJar)
 			}
 			changelog = "changeme"
+		}
+		options {
+			forgeGradleIntegration  = false
 		}
 	}
 }
