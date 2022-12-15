@@ -26,10 +26,10 @@ body:
   - type: input
     id: forge-version
     attributes:
-      label: Forge Version
+      label: Forge Version Or Fabric Version
       description: |
         You can get this from the main menu screen in the bottom left corner of the screen.
-      placeholder: 36.0.22
+      placeholder: Forge (36.0.22) -- For the Fabric version please add the loder version (0.14.11) and the api verson (0.69.0)
     validations:
       required: false
   - type: input
