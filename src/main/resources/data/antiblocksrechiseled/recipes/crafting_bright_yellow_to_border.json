@@ -10,10 +10,10 @@
       "item": "minecraft:black_dye"
     },
     "a": {
-      "item": "minecraft:antiblocksrechiseled_bright_color"
+      "item": "antiblocksrechiseled:bright_yellow"
     }
   },
   "result": {
-    "item": "antiblocksrechiseled:bright_color_border"
+    "item": "antiblocksrechiseled:bright_yellow_border"
   }
 }
