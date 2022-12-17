@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "antiblocksrechiseled:bright_green_broder"
+          "name": "antiblocksrechiseled:bright_green_border"
         }
       ],
       "conditions": [
