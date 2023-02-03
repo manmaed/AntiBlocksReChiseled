@@ -67,6 +67,7 @@ repositories {
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+    implementation fg.deobf("curse.maven:ctm-${ctm_id}:${ctm_file_id}")
 }
 
 jar {
@@ -108,7 +109,10 @@ if (ENV.CURSE_DEPLOY) {
             addGameVersion "Java 17"
             addGameVersion "${minecraft_version}"
             mainArtifact(jar) {
-                displayName = "${mod_name} v${version} - ${minecraft_version}"
+                displayName = "${mod_name} v${version} - Forge - ${minecraft_version}"
+                relations {
+                    optionalDependency 'ctm'
+                }
             }
             changelog = "changeme"
 
