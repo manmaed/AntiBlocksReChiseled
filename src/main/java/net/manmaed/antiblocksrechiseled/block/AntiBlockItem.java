@@ -1,12 +1,11 @@
 package net.manmaed.antiblocksrechiseled.block;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 
 public class AntiBlockItem extends BlockItem {
     public AntiBlockItem(Block block) {
-        super(block, new FabricItemSettings().group(AntiBlocksReChiseled.itemGroup));
+        super(block, new FabricItemSettings());
     }
 }

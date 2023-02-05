@@ -1,10 +1,12 @@
 package net.manmaed.antiblocksrechiseled.block;
 
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class ABRCWoolColors {
 
@@ -77,69 +79,74 @@ public class ABRCWoolColors {
     public static final Item WOOL_RED_BORDER_ITEM = new AntiBlockItem(WOOL_RED_BORDER);//"wool_red_border", () -> new AnitBlockItem(WOOL_RED_BORDER.get()));
 
     public static void doBlockRegistery() {
-        Registry.register(Registry.BLOCK, getId("wool_white"), WOOL_WHITE);
-        Registry.register(Registry.BLOCK, getId("wool_orange"), WOOL_ORANGE);
-        Registry.register(Registry.BLOCK, getId("wool_magenta"), WOOL_MAGENTA);
-        Registry.register(Registry.BLOCK, getId("wool_light_blue"), WOOL_LIGHT_BLUE);
-        Registry.register(Registry.BLOCK, getId("wool_yellow"), WOOL_YELLOW);
-        Registry.register(Registry.BLOCK, getId("wool_lime"), WOOL_LIME);
-        Registry.register(Registry.BLOCK, getId("wool_pink"), WOOL_PINK);
-        Registry.register(Registry.BLOCK, getId("wool_gray"), WOOL_GRAY);
-        Registry.register(Registry.BLOCK, getId("wool_light_gray"), WOOL_LIGHT_GRAY);
-        Registry.register(Registry.BLOCK, getId("wool_cyan"), WOOL_CYAN);
-        Registry.register(Registry.BLOCK, getId("wool_purple"), WOOL_PURPLE);
-        Registry.register(Registry.BLOCK, getId("wool_blue"), WOOL_BLUE);
-        Registry.register(Registry.BLOCK, getId("wool_brown"), WOOL_BROWN);
-        Registry.register(Registry.BLOCK, getId("wool_green"), WOOL_GREEN);
-        Registry.register(Registry.BLOCK, getId("wool_red"), WOOL_RED);
-        Registry.register(Registry.BLOCK, getId("wool_white_border"), WOOL_WHITE_BORDER);
-        Registry.register(Registry.BLOCK, getId("wool_orange_border"), WOOL_ORANGE_BORDER);
-        Registry.register(Registry.BLOCK, getId("wool_magenta_border"), WOOL_MAGENTA_BORDER);
-        Registry.register(Registry.BLOCK, getId("wool_light_blue_border"), WOOL_LIGHT_BLUE_BORDER);
-        Registry.register(Registry.BLOCK, getId("wool_yellow_border"), WOOL_YELLOW_BORDER);
-        Registry.register(Registry.BLOCK, getId("wool_lime_border"), WOOL_LIME_BORDER);
-        Registry.register(Registry.BLOCK, getId("wool_pink_border"), WOOL_PINK_BORDER);
-        Registry.register(Registry.BLOCK, getId("wool_gray_border"), WOOL_GRAY_BORDER);
-        Registry.register(Registry.BLOCK, getId("wool_light_gray_border"), WOOL_LIGHT_GRAY_BORDER);
-        Registry.register(Registry.BLOCK, getId("wool_cyan_border"), WOOL_CYAN_BORDER);
-        Registry.register(Registry.BLOCK, getId("wool_purple_border"), WOOL_PURPLE_BORDER);
-        Registry.register(Registry.BLOCK, getId("wool_blue_border"), WOOL_BLUE_BORDER);
-        Registry.register(Registry.BLOCK, getId("wool_brown_border"), WOOL_BROWN_BORDER);
-        Registry.register(Registry.BLOCK, getId("wool_green_border"), WOOL_GREEN_BORDER);
-        Registry.register(Registry.BLOCK, getId("wool_red_border"), WOOL_RED_BORDER);
+        Registry.register(Registries.BLOCK, getId("wool_white"), WOOL_WHITE);
+        Registry.register(Registries.BLOCK, getId("wool_orange"), WOOL_ORANGE);
+        Registry.register(Registries.BLOCK, getId("wool_magenta"), WOOL_MAGENTA);
+        Registry.register(Registries.BLOCK, getId("wool_light_blue"), WOOL_LIGHT_BLUE);
+        Registry.register(Registries.BLOCK, getId("wool_yellow"), WOOL_YELLOW);
+        Registry.register(Registries.BLOCK, getId("wool_lime"), WOOL_LIME);
+        Registry.register(Registries.BLOCK, getId("wool_pink"), WOOL_PINK);
+        Registry.register(Registries.BLOCK, getId("wool_gray"), WOOL_GRAY);
+        Registry.register(Registries.BLOCK, getId("wool_light_gray"), WOOL_LIGHT_GRAY);
+        Registry.register(Registries.BLOCK, getId("wool_cyan"), WOOL_CYAN);
+        Registry.register(Registries.BLOCK, getId("wool_purple"), WOOL_PURPLE);
+        Registry.register(Registries.BLOCK, getId("wool_blue"), WOOL_BLUE);
+        Registry.register(Registries.BLOCK, getId("wool_brown"), WOOL_BROWN);
+        Registry.register(Registries.BLOCK, getId("wool_green"), WOOL_GREEN);
+        Registry.register(Registries.BLOCK, getId("wool_red"), WOOL_RED);
+        Registry.register(Registries.BLOCK, getId("wool_white_border"), WOOL_WHITE_BORDER);
+        Registry.register(Registries.BLOCK, getId("wool_orange_border"), WOOL_ORANGE_BORDER);
+        Registry.register(Registries.BLOCK, getId("wool_magenta_border"), WOOL_MAGENTA_BORDER);
+        Registry.register(Registries.BLOCK, getId("wool_light_blue_border"), WOOL_LIGHT_BLUE_BORDER);
+        Registry.register(Registries.BLOCK, getId("wool_yellow_border"), WOOL_YELLOW_BORDER);
+        Registry.register(Registries.BLOCK, getId("wool_lime_border"), WOOL_LIME_BORDER);
+        Registry.register(Registries.BLOCK, getId("wool_pink_border"), WOOL_PINK_BORDER);
+        Registry.register(Registries.BLOCK, getId("wool_gray_border"), WOOL_GRAY_BORDER);
+        Registry.register(Registries.BLOCK, getId("wool_light_gray_border"), WOOL_LIGHT_GRAY_BORDER);
+        Registry.register(Registries.BLOCK, getId("wool_cyan_border"), WOOL_CYAN_BORDER);
+        Registry.register(Registries.BLOCK, getId("wool_purple_border"), WOOL_PURPLE_BORDER);
+        Registry.register(Registries.BLOCK, getId("wool_blue_border"), WOOL_BLUE_BORDER);
+        Registry.register(Registries.BLOCK, getId("wool_brown_border"), WOOL_BROWN_BORDER);
+        Registry.register(Registries.BLOCK, getId("wool_green_border"), WOOL_GREEN_BORDER);
+        Registry.register(Registries.BLOCK, getId("wool_red_border"), WOOL_RED_BORDER);
     }
 
     public static void doBlockItemRegistery() {
-        Registry.register(Registry.ITEM, getId("wool_white"), WOOL_WHITE_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_orange"), WOOL_ORANGE_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_magenta"), WOOL_MAGENTA_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_light_blue"), WOOL_LIGHT_BLUE_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_yellow"), WOOL_YELLOW_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_lime"), WOOL_LIME_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_pink"), WOOL_PINK_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_gray"), WOOL_GRAY_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_light_gray"), WOOL_LIGHT_GRAY_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_cyan"), WOOL_CYAN_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_purple"), WOOL_PURPLE_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_blue"), WOOL_BLUE_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_brown"), WOOL_BROWN_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_green"), WOOL_GREEN_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_red"), WOOL_RED_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_white_border"), WOOL_WHITE_BORDER_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_orange_border"), WOOL_ORANGE_BORDER_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_magenta_border"), WOOL_MAGENTA_BORDER_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_light_blue_border"), WOOL_LIGHT_BLUE_BORDER_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_yellow_border"), WOOL_YELLOW_BORDER_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_lime_border"), WOOL_LIME_BORDER_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_pink_border"), WOOL_PINK_BORDER_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_gray_border"), WOOL_GRAY_BORDER_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_light_gray_border"), WOOL_LIGHT_GRAY_BORDER_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_cyan_border"), WOOL_CYAN_BORDER_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_purple_border"), WOOL_PURPLE_BORDER_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_blue_border"), WOOL_BLUE_BORDER_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_brown_border"), WOOL_BROWN_BORDER_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_green_border"), WOOL_GREEN_BORDER_ITEM);
-        Registry.register(Registry.ITEM, getId("wool_red_border"), WOOL_RED_BORDER_ITEM);
+        registerItem("wool_white", WOOL_WHITE_ITEM);
+        registerItem("wool_orange", WOOL_ORANGE_ITEM);
+        registerItem("wool_magenta", WOOL_MAGENTA_ITEM);
+        registerItem("wool_light_blue", WOOL_LIGHT_BLUE_ITEM);
+        registerItem("wool_yellow", WOOL_YELLOW_ITEM);
+        registerItem("wool_lime", WOOL_LIME_ITEM);
+        registerItem("wool_pink", WOOL_PINK_ITEM);
+        registerItem("wool_gray", WOOL_GRAY_ITEM);
+        registerItem("wool_light_gray", WOOL_LIGHT_GRAY_ITEM);
+        registerItem("wool_cyan", WOOL_CYAN_ITEM);
+        registerItem("wool_purple", WOOL_PURPLE_ITEM);
+        registerItem("wool_blue", WOOL_BLUE_ITEM);
+        registerItem("wool_brown", WOOL_BROWN_ITEM);
+        registerItem("wool_green", WOOL_GREEN_ITEM);
+        registerItem("wool_red", WOOL_RED_ITEM);
+        registerItem("wool_white_border", WOOL_WHITE_BORDER_ITEM);
+        registerItem("wool_orange_border", WOOL_ORANGE_BORDER_ITEM);
+        registerItem("wool_magenta_border", WOOL_MAGENTA_BORDER_ITEM);
+        registerItem("wool_light_blue_border", WOOL_LIGHT_BLUE_BORDER_ITEM);
+        registerItem("wool_yellow_border", WOOL_YELLOW_BORDER_ITEM);
+        registerItem("wool_lime_border", WOOL_LIME_BORDER_ITEM);
+        registerItem("wool_pink_border", WOOL_PINK_BORDER_ITEM);
+        registerItem("wool_gray_border", WOOL_GRAY_BORDER_ITEM);
+        registerItem("wool_light_gray_border", WOOL_LIGHT_GRAY_BORDER_ITEM);
+        registerItem("wool_cyan_border", WOOL_CYAN_BORDER_ITEM);
+        registerItem("wool_purple_border", WOOL_PURPLE_BORDER_ITEM);
+        registerItem("wool_blue_border", WOOL_BLUE_BORDER_ITEM);
+        registerItem("wool_brown_border", WOOL_BROWN_BORDER_ITEM);
+        registerItem("wool_green_border", WOOL_GREEN_BORDER_ITEM);
+        registerItem("wool_red_border", WOOL_RED_BORDER_ITEM);
+    }
+
+    private static void registerItem(String name, Item item) {
+        Registry.register(Registries.ITEM, getId(name), item);
+        ItemGroupEvents.modifyEntriesEvent(AntiBlocksReChiseled.itemGroup).register(entries -> entries.add(item));
     }
 
     private static Identifier getId(String name) {

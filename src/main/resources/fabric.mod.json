@@ -10,7 +10,7 @@
   ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/antiblocksrechiseled",
-    "sources": "https://github.com/manmaed/AntiBlocksReChiseled/issues"
+    "issues": "https://github.com/manmaed/AntiBlocksReChiseled/issues"
   },
 
   "license": "All rights reserved",
@@ -24,9 +24,9 @@
   },
 
   "depends": {
-    "fabricloader": ">=0.14.11",
+    "fabricloader": ">=0.14.14",
     "fabric-api": "*",
-    "minecraft": "~1.19.2",
+    "minecraft": "~1.19.3",
     "java": ">=17"
   }
 }

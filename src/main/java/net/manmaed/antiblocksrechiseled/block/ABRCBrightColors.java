@@ -1,10 +1,12 @@
 package net.manmaed.antiblocksrechiseled.block;
 
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 
 public class ABRCBrightColors {
@@ -56,49 +58,53 @@ public class ABRCBrightColors {
     public static final Item BRIGHT_BLACK_BORDER_ITEM = new AntiBlockItem(BRIGHT_BLACK_BORDER);//"bright_black_border", () -> new AnitBlockItem(BRIGHT_BLACK_BORDER.get()));
 
     public static void doBlockRegistery() {
-        Registry.register(Registry.BLOCK, getId("bright_white"), BRIGHT_WHITE);
-        Registry.register(Registry.BLOCK, getId("bright_orange"), BRIGHT_ORANGE);
-        Registry.register(Registry.BLOCK, getId("bright_magenta"), BRIGHT_MAGENTA);
-        Registry.register(Registry.BLOCK, getId("bright_yellow"), BRIGHT_YELLOW);
-        Registry.register(Registry.BLOCK, getId("bright_cyan"), BRIGHT_CYAN);
-        Registry.register(Registry.BLOCK, getId("bright_blue"), BRIGHT_BLUE);
-        Registry.register(Registry.BLOCK, getId("bright_green"), BRIGHT_GREEN);
-        Registry.register(Registry.BLOCK, getId("bright_red"), BRIGHT_RED);
-        Registry.register(Registry.BLOCK, getId("bright_black"), BRIGHT_BLACK);
-        Registry.register(Registry.BLOCK, getId("bright_white_border"), BRIGHT_WHITE_BORDER);
-        Registry.register(Registry.BLOCK, getId("bright_orange_border"), BRIGHT_ORANGE_BORDER);
-        Registry.register(Registry.BLOCK, getId("bright_magenta_border"), BRIGHT_MAGENTA_BORDER);
-        Registry.register(Registry.BLOCK, getId("bright_yellow_border"), BRIGHT_YELLOW_BORDER);
-        Registry.register(Registry.BLOCK, getId("bright_cyan_border"), BRIGHT_CYAN_BORDER);
-        Registry.register(Registry.BLOCK, getId("bright_blue_border"), BRIGHT_BLUE_BORDER);
-        Registry.register(Registry.BLOCK, getId("bright_green_border"), BRIGHT_GREEN_BORDER);
-        Registry.register(Registry.BLOCK, getId("bright_red_border"), BRIGHT_RED_BORDER);
-        Registry.register(Registry.BLOCK, getId("bright_black_border"), BRIGHT_BLACK_BORDER);
+        Registry.register(Registries.BLOCK, getId("bright_white"), BRIGHT_WHITE);
+        Registry.register(Registries.BLOCK, getId("bright_orange"), BRIGHT_ORANGE);
+        Registry.register(Registries.BLOCK, getId("bright_magenta"), BRIGHT_MAGENTA);
+        Registry.register(Registries.BLOCK, getId("bright_yellow"), BRIGHT_YELLOW);
+        Registry.register(Registries.BLOCK, getId("bright_cyan"), BRIGHT_CYAN);
+        Registry.register(Registries.BLOCK, getId("bright_blue"), BRIGHT_BLUE);
+        Registry.register(Registries.BLOCK, getId("bright_green"), BRIGHT_GREEN);
+        Registry.register(Registries.BLOCK, getId("bright_red"), BRIGHT_RED);
+        Registry.register(Registries.BLOCK, getId("bright_black"), BRIGHT_BLACK);
+        Registry.register(Registries.BLOCK, getId("bright_white_border"), BRIGHT_WHITE_BORDER);
+        Registry.register(Registries.BLOCK, getId("bright_orange_border"), BRIGHT_ORANGE_BORDER);
+        Registry.register(Registries.BLOCK, getId("bright_magenta_border"), BRIGHT_MAGENTA_BORDER);
+        Registry.register(Registries.BLOCK, getId("bright_yellow_border"), BRIGHT_YELLOW_BORDER);
+        Registry.register(Registries.BLOCK, getId("bright_cyan_border"), BRIGHT_CYAN_BORDER);
+        Registry.register(Registries.BLOCK, getId("bright_blue_border"), BRIGHT_BLUE_BORDER);
+        Registry.register(Registries.BLOCK, getId("bright_green_border"), BRIGHT_GREEN_BORDER);
+        Registry.register(Registries.BLOCK, getId("bright_red_border"), BRIGHT_RED_BORDER);
+        Registry.register(Registries.BLOCK, getId("bright_black_border"), BRIGHT_BLACK_BORDER);
     }
 
     public static void doBlockItemRegistery() {
-        Registry.register(Registry.ITEM, getId("bright_white"), BRIGHT_WHITE_ITEM);
-        Registry.register(Registry.ITEM, getId("bright_orange"), BRIGHT_ORANGE_ITEM);
-        Registry.register(Registry.ITEM, getId("bright_magenta"), BRIGHT_MAGENTA_ITEM);
-        Registry.register(Registry.ITEM, getId("bright_yellow"), BRIGHT_YELLOW_ITEM);
-        Registry.register(Registry.ITEM, getId("bright_cyan"), BRIGHT_CYAN_ITEM);
-        Registry.register(Registry.ITEM, getId("bright_blue"), BRIGHT_BLUE_ITEM);
-        Registry.register(Registry.ITEM, getId("bright_green"), BRIGHT_GREEN_ITEM);
-        Registry.register(Registry.ITEM, getId("bright_red"), BRIGHT_RED_ITEM);
-        Registry.register(Registry.ITEM, getId("bright_black"), BRIGHT_BLACK_ITEM);
-        Registry.register(Registry.ITEM, getId("bright_white_border"), BRIGHT_WHITE_BORDER_ITEM);
-        Registry.register(Registry.ITEM, getId("bright_orange_border"), BRIGHT_ORANGE_BORDER_ITEM);
-        Registry.register(Registry.ITEM, getId("bright_magenta_border"), BRIGHT_MAGENTA_BORDER_ITEM);
-        Registry.register(Registry.ITEM, getId("bright_yellow_border"), BRIGHT_YELLOW_BORDER_ITEM);
-        Registry.register(Registry.ITEM, getId("bright_cyan_border"), BRIGHT_CYAN_BORDER_ITEM);
-        Registry.register(Registry.ITEM, getId("bright_blue_border"), BRIGHT_BLUE_BORDER_ITEM);
-        Registry.register(Registry.ITEM, getId("bright_green_border"), BRIGHT_GREEN_BORDER_ITEM);
-        Registry.register(Registry.ITEM, getId("bright_red_border"), BRIGHT_RED_BORDER_ITEM);
-        Registry.register(Registry.ITEM, getId("bright_black_border"), BRIGHT_BLACK_BORDER_ITEM);
+        registerItem("bright_white", BRIGHT_WHITE_ITEM);
+        registerItem("bright_orange", BRIGHT_ORANGE_ITEM);
+        registerItem("bright_magenta", BRIGHT_MAGENTA_ITEM);
+        registerItem("bright_yellow", BRIGHT_YELLOW_ITEM);
+        registerItem("bright_cyan", BRIGHT_CYAN_ITEM);
+        registerItem("bright_blue", BRIGHT_BLUE_ITEM);
+        registerItem("bright_green", BRIGHT_GREEN_ITEM);
+        registerItem("bright_red", BRIGHT_RED_ITEM);
+        registerItem("bright_black", BRIGHT_BLACK_ITEM);
+        registerItem("bright_white_border", BRIGHT_WHITE_BORDER_ITEM);
+        registerItem("bright_orange_border", BRIGHT_ORANGE_BORDER_ITEM);
+        registerItem("bright_magenta_border", BRIGHT_MAGENTA_BORDER_ITEM);
+        registerItem("bright_yellow_border", BRIGHT_YELLOW_BORDER_ITEM);
+        registerItem("bright_cyan_border", BRIGHT_CYAN_BORDER_ITEM);
+        registerItem("bright_blue_border", BRIGHT_BLUE_BORDER_ITEM);
+        registerItem("bright_green_border", BRIGHT_GREEN_BORDER_ITEM);
+        registerItem("bright_red_border", BRIGHT_RED_BORDER_ITEM);
+        registerItem("bright_black_border", BRIGHT_BLACK_BORDER_ITEM);
 
 
     }
 
+    private static void registerItem(String name, Item item) {
+        Registry.register(Registries.ITEM, getId(name), item);
+        ItemGroupEvents.modifyEntriesEvent(AntiBlocksReChiseled.itemGroup).register(entries -> entries.add(item));
+    }
     private static Identifier getId(String name) {
         return new Identifier(AntiBlocksReChiseled.MOD_ID, name);
     }
