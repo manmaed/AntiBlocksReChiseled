@@ -1,6 +1,5 @@
-
 modLoader="javafml"
-loaderVersion="[43,)"
+loaderVersion="[44,)"
 license="All rights reserved"
 issueTrackerURL = "https://github.com/manmaed/AntiBlocksReChiseled/issues"
 [[mods]]
@@ -8,8 +7,12 @@ modId="antiblocksrechiseled"
 version="${file.jarVersion}"
 displayName="AntiBlocksReChiseled"
 updateJSONURL="https://raw.githubusercontent.com/manmaed/AntiBlocksReChiseled/main/update.json"
-logoFile="abrc.logo.png"
-credits="manmaed"
 authors="manmaed"
-description='''
-Readds The AnitBlocks From Chsiel'''
+logoFile="abrc.logo.png"
+description='''Readds The AnitBlocks From Chsiel'''
+[[dependencies.antiblocksrechiseled]]
+modId="forge"
+mandatory=true
+versionRange="[44.1.8,)"
+ordering="NONE"
+side="BOTH"

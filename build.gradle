@@ -12,7 +12,6 @@ repositories {
 }
 def ENV = System.getenv()
 version = "${ENV.GITHUB_RUN_NUMBER}" ? "${mod_version}.${ENV.GITHUB_RUN_NUMBER}" : "${mod_version}.nobuildnumber"
-//version = "${mod_version}"
 group = 'net.manmaed.antiblocksrechiseled'
 archivesBaseName = 'antiblocksrechiseled'
 
@@ -80,7 +79,7 @@ repositories {
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-    implementation fg.deobf("curse.maven:ctm-${ctm_id}:${ctm_file_id}")
+    //implementation fg.deobf("curse.maven:ctm-${ctm_id}:${ctm_file_id}")
 }
 
 jar {
