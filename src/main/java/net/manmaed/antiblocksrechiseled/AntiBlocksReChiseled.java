@@ -1,6 +1,7 @@
 package net.manmaed.antiblocksrechiseled;
 
 import net.manmaed.antiblocksrechiseled.blocks.ABRCBrightColors;
+import net.manmaed.antiblocksrechiseled.blocks.ABRCSlabs;
 import net.manmaed.antiblocksrechiseled.blocks.ABRCWoolColors;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -23,8 +24,10 @@ public class AntiBlocksReChiseled {
         IEventBus event = FMLJavaModLoadingContext.get().getModEventBus();
         ABRCWoolColors.BLOCKS.register(event);
         ABRCBrightColors.BLOCKS.register(event);
+        ABRCSlabs.BLOCKS.register(event);
         ABRCWoolColors.ITEMS.register(event);
         ABRCBrightColors.ITEMS.register(event);
+        ABRCSlabs.ITEMS.register(event);
     }
 
 }
