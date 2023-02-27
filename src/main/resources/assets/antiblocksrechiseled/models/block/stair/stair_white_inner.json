@@ -1,5 +1,5 @@
 {
-  "parent": "antiblocksrechiseled:block/full_bright_slab_top",
+  "parent": "antiblocksrechiseled:block/full_bright_inner_stair",
   "textures": {
     "color": "antiblocksrechiseled:block/bright/white"
   }

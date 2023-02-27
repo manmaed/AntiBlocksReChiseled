@@ -1,5 +1,5 @@
 {
-  "parent": "antiblocksrechiseled:block/slab/full_bright_slab",
+  "parent": "antiblocksrechiseled:block/full_bright_slab",
   "textures": {
     "color": "antiblocksrechiseled:block/bright/white"
   }
