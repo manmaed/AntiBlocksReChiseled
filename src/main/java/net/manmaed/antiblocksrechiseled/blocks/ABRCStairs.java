@@ -42,7 +42,7 @@ public class ABRCStairs {
     public static final RegistryObject<Block> STAIR_BROWN_WOOL = BLOCKS.register("stair_brown_wool", () -> new AntiStairBlock(ABRCWoolColors.WOOL_BROWN.get().defaultBlockState()));
     public static final RegistryObject<Block> STAIR_GREEN_WOOL = BLOCKS.register("stair_green_wool", () -> new AntiStairBlock(ABRCWoolColors.WOOL_GREEN.get().defaultBlockState()));
     public static final RegistryObject<Block> STAIR_RED_WOOL = BLOCKS.register("stair_red_wool", () -> new AntiStairBlock(ABRCWoolColors.WOOL_RED.get().defaultBlockState()));
-    public static final RegistryObject<Item> STAIR_WHITE_BRIGHT_ITEM = ITEMS.register("stair_white", () -> new AntiBlockItem(STAIR_WHITE_BRIGHT.get()));
+    public static final RegistryObject<Item> STAIR_WHITE_BRIGHT_ITEM = ITEMS.register("stair_white_bright", () -> new AntiBlockItem(STAIR_WHITE_BRIGHT.get()));
     public static final RegistryObject<Item> STAIR_BLACK_ITEM = ITEMS.register("stair_black", () -> new AntiBlockItem(STAIR_BLACK.get()));
     public static final RegistryObject<Item> STAIR_ORANGE_BRIGHT_ITEM = ITEMS.register("stair_orange_bright", () -> new AntiBlockItem(STAIR_ORANGE_BRIGHT.get()));
     public static final RegistryObject<Item> STAIR_MAGENTA_BRIGHT_ITEM = ITEMS.register("stair_magenta_bright", () -> new AntiBlockItem(STAIR_MAGENTA_BRIGHT.get()));

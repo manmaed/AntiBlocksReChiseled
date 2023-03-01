@@ -41,7 +41,7 @@ public class ABRCSlabs {
     public static final RegistryObject<Block> SLAB_BROWN_WOOL = BLOCKS.register("slab_brown_wool", AntiSlabBlock::new);
     public static final RegistryObject<Block> SLAB_GREEN_WOOL = BLOCKS.register("slab_green_wool", AntiSlabBlock::new);
     public static final RegistryObject<Block> SLAB_RED_WOOL = BLOCKS.register("slab_red_wool", AntiSlabBlock::new);
-    public static final RegistryObject<Item> SLAB_WHITE_BRIGHT_ITEM = ITEMS.register("slab_white", () -> new AntiBlockItem(SLAB_WHITE_BRIGHT.get()));
+    public static final RegistryObject<Item> SLAB_WHITE_BRIGHT_ITEM = ITEMS.register("slab_white_bright", () -> new AntiBlockItem(SLAB_WHITE_BRIGHT.get()));
     public static final RegistryObject<Item> SLAB_BLACK_ITEM = ITEMS.register("slab_black", () -> new AntiBlockItem(SLAB_BLACK.get()));
     public static final RegistryObject<Item> SLAB_ORANGE_BRIGHT_ITEM = ITEMS.register("slab_orange_bright", () -> new AntiBlockItem(SLAB_ORANGE_BRIGHT.get()));
     public static final RegistryObject<Item> SLAB_MAGENTA_BRIGHT_ITEM = ITEMS.register("slab_magenta_bright", () -> new AntiBlockItem(SLAB_MAGENTA_BRIGHT.get()));
