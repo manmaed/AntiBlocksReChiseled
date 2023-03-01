@@ -10,7 +10,7 @@
       "to": [ 16, 16, 16],
       "shade": false,
       "faces": {
-        "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#color", "cullface": "down" },
+        "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#color" },
         "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#color", "cullface": "up" },
         "north": { "uv": [ 0, 0, 16,  8 ], "texture": "#color", "cullface": "north" },
         "south": { "uv": [ 0, 0, 16,  8 ], "texture": "#color", "cullface": "south" },

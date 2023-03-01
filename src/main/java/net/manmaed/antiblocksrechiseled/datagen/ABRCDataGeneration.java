@@ -15,6 +15,7 @@ public class ABRCDataGeneration {
         DataGenerator generator =  event.getGenerator();
         ExistingFileHelper fileHelper = event.getExistingFileHelper();
         //generator.addProvider(false, new ModLootTableProvider(generator));
+        generator.addProvider(true, new ModBlockStateProvider(generator, fileHelper));
         generator.addProvider(true, new ModBlockModelProvider(generator, fileHelper));
         generator.addProvider(true, new ModItemModelProvider(generator, fileHelper));
         generator.addProvider(true, new ModBlocksTagsProvider(generator, fileHelper));
