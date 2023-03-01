@@ -120,7 +120,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 
     public void makeBlock(String type, String name) {
-        withExistingParent(name, getLoc(type + "/"+ name));
+        withExistingParent(type + "_" + name, getLoc(type + "/"+ name));
     }
 
     public void makeSlabs(String name) {
