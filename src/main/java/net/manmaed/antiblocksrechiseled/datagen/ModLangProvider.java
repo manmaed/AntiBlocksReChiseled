@@ -1,6 +1,10 @@
 package net.manmaed.antiblocksrechiseled.datagen;
 
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
+import net.manmaed.antiblocksrechiseled.blocks.ABRCBrightColors;
+import net.manmaed.antiblocksrechiseled.blocks.ABRCSlabs;
+import net.manmaed.antiblocksrechiseled.blocks.ABRCStairs;
+import net.manmaed.antiblocksrechiseled.blocks.ABRCWoolColors;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 
@@ -9,111 +13,134 @@ public class ModLangProvider extends LanguageProvider {
         super(gen, AntiBlocksReChiseled.MOD_ID, "en_us");
     }
 
+    private String getMain(String type, String color, Boolean bordered) {
+        if (bordered) {
+            return type + " " + color + " Bordered AntiBlock";
+        } else {
+            return type + " " + color + " AntiBlock";
+
+        }
+    }
+
+    private String getOther(String typeOfBlock, String color, String typeOfColor) {
+        String space = " ";
+        return typeOfColor + space + color + space + "AntiBlock " + typeOfBlock;
+    }
+
     @Override
     protected void addTranslations() {
 
-        /*add(ABRCStairs.STAIR_BLACK.get(), "");
-        */
-        //TODO: Implerment Auto Gen Lang Files
-        /*
-        BRIGHT_WHITE
-BRIGHT_ORANGE
-BRIGHT_MAGENTA
-BRIGHT_YELLOW
-BRIGHT_CYAN
-BRIGHT_BLUE
-BRIGHT_GREEN
-BRIGHT_RED
-BRIGHT_BLACK
-BRIGHT_WHITE_BORDER
-BRIGHT_ORANGE_BORDER
-BRIGHT_MAGENTA_BORDER
-BRIGHT_YELLOW_BORDER
-BRIGHT_CYAN_BORDER
-BRIGHT_BLUE_BORDER
-BRIGHT_GREEN_BORDER
-BRIGHT_RED_BORDER
-BRIGHT_BLACK_BORDER
-WOOL_WHITE
-WOOL_ORANGE
-WOOL_MAGENTA
-WOOL_LIGHT_BLUE
-WOOL_YELLOW
-WOOL_LIME
-WOOL_PINK
-WOOL_GRAY
-WOOL_LIGHT_GRAY
-WOOL_CYAN
-WOOL_PURPLE
-WOOL_BLUE
-WOOL_BROWN
-WOOL_GREEN
-WOOL_RED
-WOOL_WHITE_BORDER
-WOOL_ORANGE_BORDER
-WOOL_MAGENTA_BORDER
-WOOL_LIGHT_BLUE_BORDER
-WOOL_YELLOW_BORDER
-WOOL_LIME_BORDER
-WOOL_PINK_BORDER
-WOOL_GRAY_BORDER
-WOOL_LIGHT_GRAY_BORDER
-WOOL_CYAN_BORDER
-WOOL_PURPLE_BORDER
-WOOL_BLUE_BORDER
-WOOL_BROWN_BORDER
-WOOL_GREEN_BORDER
-WOOL_RED_BORDER
-SLAB_WHITE_BRIGHT
-SLAB_BLACK
-SLAB_ORANGE_BRIGHT
-SLAB_MAGENTA_BRIGHT
-SLAB_YELLOW_BRIGHT
-SLAB_CYAN_BRIGHT
-SLAB_BLUE_BRIGHT
-SLAB_GREEN_BRIGHT
-SLAB_RED_BRIGHT
-SLAB_WHITE_WOOL
-SLAB_ORANGE_WOOL
-SLAB_MAGENTA_WOOL
-SLAB_LIGHT_BLUE_WOOL
-SLAB_YELLOW_WOOL
-SLAB_LIME_WOOL
-SLAB_PINK_WOOL
-SLAB_GRAY_WOOL
-SLAB_LIGHT_GRAY_WOOL
-SLAB_CYAN_WOOL
-SLAB_PURPLE_WOOL
-SLAB_BLUE_WOOL
-SLAB_BROWN_WOOL
-SLAB_GREEN_WOOL
-SLAB_RED_WOOL
-STAIR_WHITE_BRIGHT
-STAIR_BLACK
-STAIR_ORANGE_BRIGHT
-STAIR_MAGENTA_BRIGHT
-STAIR_YELLOW_BRIGHT
-STAIR_CYAN_BRIGHT
-STAIR_BLUE_BRIGHT
-STAIR_GREEN_BRIGHT
-STAIR_RED_BRIGHT
-STAIR_WHITE_WOOL
-STAIR_ORANGE_WOOL
-STAIR_MAGENTA_WOOL
-STAIR_LIGHT_BLUE_WOOL
-STAIR_YELLOW_WOOL
-STAIR_LIME_WOOL
-STAIR_PINK_WOOL
-STAIR_GRAY_WOOL
-STAIR_LIGHT_GRAY_WOOL
-STAIR_CYAN_WOOL
-STAIR_PURPLE_WOOL
-STAIR_BLUE_WOOL
-STAIR_BROWN_WOOL
-STAIR_GREEN_WOOL
-STAIR_RED_WOOL
+        boolean addedTop = false;
+        if (!addedTop) {
+            add("a.lang.file.name", "English US");
+            add("a.lang.author.name", "manmaed");
+            add("itemGroup.antiblocksrechiseled", "AntiBlocks ReChiseled");
+            addedTop = true;
 
-         */
+        }
+        add(ABRCBrightColors.BRIGHT_WHITE.get(), getMain("Bright", "White", false));
+        add(ABRCBrightColors.BRIGHT_ORANGE.get(), getMain("Bright", "Orange", false));
+        add(ABRCBrightColors.BRIGHT_MAGENTA.get(), getMain("Bright", "Magenta", false));
+        add(ABRCBrightColors.BRIGHT_YELLOW.get(), getMain("Bright", "Yellow", false));
+        add(ABRCBrightColors.BRIGHT_CYAN.get(), getMain("Bright", "Cyan", false));
+        add(ABRCBrightColors.BRIGHT_BLUE.get(), getMain("Bright", "Blue", false));
+        add(ABRCBrightColors.BRIGHT_GREEN.get(), getMain("Bright", "Green", false));
+        add(ABRCBrightColors.BRIGHT_RED.get(), getMain("Bright", "Red", false));
+        add(ABRCBrightColors.BRIGHT_BLACK.get(), getMain("Bright", "Black", false));
+        add(ABRCBrightColors.BRIGHT_WHITE_BORDER.get(), getMain("Bright", "White", true));
+        add(ABRCBrightColors.BRIGHT_ORANGE_BORDER.get(), getMain("Bright", "Orange", true));
+        add(ABRCBrightColors.BRIGHT_MAGENTA_BORDER.get(), getMain("Bright", "Magenta", true));
+        add(ABRCBrightColors.BRIGHT_YELLOW_BORDER.get(), getMain("Bright", "Yellow", true));
+        add(ABRCBrightColors.BRIGHT_CYAN_BORDER.get(), getMain("Bright", "Cyan", true));
+        add(ABRCBrightColors.BRIGHT_BLUE_BORDER.get(), getMain("Bright", "Blue", true));
+        add(ABRCBrightColors.BRIGHT_GREEN_BORDER.get(), getMain("Bright", "Green", true));
+        add(ABRCBrightColors.BRIGHT_RED_BORDER.get(), getMain("Bright", "Red", true));
+        add(ABRCBrightColors.BRIGHT_BLACK_BORDER.get(), getMain("Bright", "Black", true));
+
+//WOOL
+        add(ABRCWoolColors.WOOL_WHITE.get(), getMain("Wool", "White", false));
+        add(ABRCWoolColors.WOOL_ORANGE.get(), getMain("Wool", "Orange", false));
+        add(ABRCWoolColors.WOOL_MAGENTA.get(), getMain("Wool", "Magenta", false));
+        add(ABRCWoolColors.WOOL_LIGHT_BLUE.get(), getMain("Wool", "Light Blue", false));
+        add(ABRCWoolColors.WOOL_YELLOW.get(), getMain("Wool", "Yellow", false));
+        add(ABRCWoolColors.WOOL_LIME.get(), getMain("Wool", "Lime", false));
+        add(ABRCWoolColors.WOOL_PINK.get(), getMain("Wool", "Pink", false));
+        add(ABRCWoolColors.WOOL_GRAY.get(), getMain("Wool", "Gray", false));
+        add(ABRCWoolColors.WOOL_LIGHT_GRAY.get(), getMain("Wool", "Light Gray", false));
+        add(ABRCWoolColors.WOOL_CYAN.get(), getMain("Wool", "Cyan", false));
+        add(ABRCWoolColors.WOOL_PURPLE.get(), getMain("Wool", "Purple", false));
+        add(ABRCWoolColors.WOOL_BLUE.get(), getMain("Wool", "Blue", false));
+        add(ABRCWoolColors.WOOL_BROWN.get(), getMain("Wool", "Brown", false));
+        add(ABRCWoolColors.WOOL_GREEN.get(), getMain("Wool", "Green", false));
+        add(ABRCWoolColors.WOOL_RED.get(), getMain("Wool", "Red", false));
+
+        add(ABRCWoolColors.WOOL_WHITE_BORDER.get(), getMain("Wool", "White", true));
+        add(ABRCWoolColors.WOOL_ORANGE_BORDER.get(), getMain("Wool", "Orange", true));
+        add(ABRCWoolColors.WOOL_MAGENTA_BORDER.get(), getMain("Wool", "Magenta", true));
+        add(ABRCWoolColors.WOOL_LIGHT_BLUE_BORDER.get(), getMain("Wool", "Light Blue", true));
+        add(ABRCWoolColors.WOOL_YELLOW_BORDER.get(), getMain("Wool", "Yellow", true));
+        add(ABRCWoolColors.WOOL_LIME_BORDER.get(), getMain("Wool", "Lime", true));
+        add(ABRCWoolColors.WOOL_PINK_BORDER.get(), getMain("Wool", "Pink", true));
+        add(ABRCWoolColors.WOOL_GRAY_BORDER.get(), getMain("Wool", "Gray", true));
+        add(ABRCWoolColors.WOOL_LIGHT_GRAY_BORDER.get(), getMain("Wool", "Light Gray", true));
+        add(ABRCWoolColors.WOOL_CYAN_BORDER.get(), getMain("Wool", "Cyan", true));
+        add(ABRCWoolColors.WOOL_PURPLE_BORDER.get(), getMain("Wool", "Purple", true));
+        add(ABRCWoolColors.WOOL_BLUE_BORDER.get(), getMain("Wool", "Blue", true));
+        add(ABRCWoolColors.WOOL_BROWN_BORDER.get(), getMain("Wool", "Brown", true));
+        add(ABRCWoolColors.WOOL_GREEN_BORDER.get(), getMain("Wool", "Green", true));
+        add(ABRCWoolColors.WOOL_RED_BORDER.get(), getMain("Wool", "Red", true));
+
+//SLABS
+        add(ABRCSlabs.SLAB_WHITE_BRIGHT.get(), getOther("Slab", "White", "Bright"));
+        add(ABRCSlabs.SLAB_BLACK.get(), getOther("Slab", "Black", "Bright"));
+        add(ABRCSlabs.SLAB_ORANGE_BRIGHT.get(), getOther("Slab", "Orange", "Bright"));
+        add(ABRCSlabs.SLAB_MAGENTA_BRIGHT.get(), getOther("Slab", "Magenta", "Bright"));
+        add(ABRCSlabs.SLAB_YELLOW_BRIGHT.get(), getOther("Slab", "Yellow", "Bright"));
+        add(ABRCSlabs.SLAB_CYAN_BRIGHT.get(), getOther("Slab", "Cyan", "Bright"));
+        add(ABRCSlabs.SLAB_BLUE_BRIGHT.get(), getOther("Slab", "Blue", "Bright"));
+        add(ABRCSlabs.SLAB_GREEN_BRIGHT.get(), getOther("Slab", "Green", "Bright"));
+        add(ABRCSlabs.SLAB_RED_BRIGHT.get(), getOther("Slab", "Red", "Bright"));
+        add(ABRCSlabs.SLAB_WHITE_WOOL.get(), getOther("Slab", "White", "Wool"));
+        add(ABRCSlabs.SLAB_ORANGE_WOOL.get(), getOther("Slab", "Orange", "Wool"));
+        add(ABRCSlabs.SLAB_MAGENTA_WOOL.get(), getOther("Slab", "Magenta", "Wool"));
+        add(ABRCSlabs.SLAB_LIGHT_BLUE_WOOL.get(), getOther("Slab", "Light Blue", "Wool"));
+        add(ABRCSlabs.SLAB_YELLOW_WOOL.get(), getOther("Slab", "Yellow", "Wool"));
+        add(ABRCSlabs.SLAB_LIME_WOOL.get(), getOther("Slab", "Lime", "Wool"));
+        add(ABRCSlabs.SLAB_PINK_WOOL.get(), getOther("Slab", "Pink", "Wool"));
+        add(ABRCSlabs.SLAB_GRAY_WOOL.get(), getOther("Slab", "Gray", "Wool"));
+        add(ABRCSlabs.SLAB_LIGHT_GRAY_WOOL.get(), getOther("Slab", "Light Gray", "Wool"));
+        add(ABRCSlabs.SLAB_CYAN_WOOL.get(), getOther("Slab", "Cyan", "Wool"));
+        add(ABRCSlabs.SLAB_PURPLE_WOOL.get(), getOther("Slab", "Purple", "Wool"));
+        add(ABRCSlabs.SLAB_BLUE_WOOL.get(), getOther("Slab", "Blue", "Wool"));
+        add(ABRCSlabs.SLAB_BROWN_WOOL.get(), getOther("Slab", "Brown", "Wool"));
+        add(ABRCSlabs.SLAB_GREEN_WOOL.get(), getOther("Slab", "Green", "Wool"));
+        add(ABRCSlabs.SLAB_RED_WOOL.get(), getOther("Slab", "Red", "Wool"));
+
+//Starirs
+        add(ABRCStairs.STAIR_WHITE_BRIGHT.get(), getOther("Stair", "White", "Bright"));
+        add(ABRCStairs.STAIR_BLACK.get(), getOther("Stair", "Black", "Bright"));
+        add(ABRCStairs.STAIR_ORANGE_BRIGHT.get(), getOther("Stair", "Orange", "Bright"));
+        add(ABRCStairs.STAIR_MAGENTA_BRIGHT.get(), getOther("Stair", "Magenta", "Bright"));
+        add(ABRCStairs.STAIR_YELLOW_BRIGHT.get(), getOther("Stair", "Yellow", "Bright"));
+        add(ABRCStairs.STAIR_CYAN_BRIGHT.get(), getOther("Stair", "Cyan", "Bright"));
+        add(ABRCStairs.STAIR_BLUE_BRIGHT.get(), getOther("Stair", "Blue", "Bright"));
+        add(ABRCStairs.STAIR_GREEN_BRIGHT.get(), getOther("Stair", "Green", "Bright"));
+        add(ABRCStairs.STAIR_RED_BRIGHT.get(), getOther("Stair", "Red", "Bright"));
+        add(ABRCStairs.STAIR_WHITE_WOOL.get(), getOther("Stair", "White", "Wool"));
+        add(ABRCStairs.STAIR_ORANGE_WOOL.get(), getOther("Stair", "Orange", "Wool"));
+        add(ABRCStairs.STAIR_MAGENTA_WOOL.get(), getOther("Stair", "Magenta", "Wool"));
+        add(ABRCStairs.STAIR_LIGHT_BLUE_WOOL.get(), getOther("Stair", "Light Blue", "Wool"));
+        add(ABRCStairs.STAIR_YELLOW_WOOL.get(), getOther("Stair", "Yellow", "Wool"));
+        add(ABRCStairs.STAIR_LIME_WOOL.get(), getOther("Stair", "Lime", "Wool"));
+        add(ABRCStairs.STAIR_PINK_WOOL.get(), getOther("Stair", "Pink", "Wool"));
+        add(ABRCStairs.STAIR_GRAY_WOOL.get(), getOther("Stair", "Gray", "Wool"));
+        add(ABRCStairs.STAIR_LIGHT_GRAY_WOOL.get(), getOther("Stair", "Light Gray", "Wool"));
+        add(ABRCStairs.STAIR_CYAN_WOOL.get(), getOther("Stair", "Cyan", "Wool"));
+        add(ABRCStairs.STAIR_PURPLE_WOOL.get(), getOther("Stair", "Purple", "Wool"));
+        add(ABRCStairs.STAIR_BLUE_WOOL.get(), getOther("Stair", "Blue", "Wool"));
+        add(ABRCStairs.STAIR_BROWN_WOOL.get(), getOther("Stair", "Brown", "Wool"));
+        add(ABRCStairs.STAIR_GREEN_WOOL.get(), getOther("Stair", "Green", "Wool"));
+        add(ABRCStairs.STAIR_RED_WOOL.get(), getOther("Stair", "Red", "Wool"));
 
 
     }
