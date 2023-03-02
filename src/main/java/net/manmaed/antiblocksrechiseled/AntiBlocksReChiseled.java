@@ -28,6 +28,8 @@ public class AntiBlocksReChiseled {
         ABRCBrightColors.ITEMS.register(event);
         ABRCSlabs.ITEMS.register(event);
         ABRCStairs.ITEMS.register(event);
+        ABRCTests.BLOCKS.register(event);
+        ABRCTests.ITEMS.register(event);
     }
 
 }

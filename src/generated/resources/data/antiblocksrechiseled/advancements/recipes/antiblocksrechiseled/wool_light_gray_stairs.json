@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "antiblocksrechiseled:wool_light_gray_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wool_light_gray": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "antiblocksrechiseled:wool_light_gray"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_wool_light_gray",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "antiblocksrechiseled:wool_light_gray_stairs"
+    ]
+  }
+}

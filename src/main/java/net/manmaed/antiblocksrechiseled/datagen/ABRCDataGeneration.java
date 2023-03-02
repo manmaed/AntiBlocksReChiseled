@@ -2,7 +2,6 @@ package net.manmaed.antiblocksrechiseled.datagen;
 
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -22,6 +21,6 @@ public class ABRCDataGeneration {
         generator.addProvider(true, new ModBlocksTagsProvider(generator, fileHelper));
         generator.addProvider(true, new ModLangProvider(generator));
         generator.addProvider(true, new ModLootTablesProvider(generator));
-        generator.addProvider(true, new RecipeProvider(generator));
+        generator.addProvider(true, new ModRecipeProvider(generator));
     }
 }

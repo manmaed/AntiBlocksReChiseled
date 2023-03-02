@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "antiblocksrechiseled:wool_red_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wool_red": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "antiblocksrechiseled:wool_red"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_wool_red",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "antiblocksrechiseled:wool_red_stairs"
+    ]
+  }
+}
