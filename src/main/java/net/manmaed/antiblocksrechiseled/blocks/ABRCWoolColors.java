@@ -1,6 +1,7 @@
 package net.manmaed.antiblocksrechiseled.blocks;
 
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
+import net.manmaed.antiblocksrechiseled.blocks.base.AntiBlock;
 import net.manmaed.antiblocksrechiseled.items.AntiBlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
