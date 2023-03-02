@@ -1,9 +1,6 @@
 package net.manmaed.antiblocksrechiseled;
 
-import net.manmaed.antiblocksrechiseled.blocks.ABRCBrightColors;
-import net.manmaed.antiblocksrechiseled.blocks.ABRCSlabs;
-import net.manmaed.antiblocksrechiseled.blocks.ABRCStairs;
-import net.manmaed.antiblocksrechiseled.blocks.ABRCWoolColors;
+import net.manmaed.antiblocksrechiseled.blocks.*;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -31,6 +28,8 @@ public class AntiBlocksReChiseled {
         ABRCBrightColors.ITEMS.register(event);
         ABRCSlabs.ITEMS.register(event);
         ABRCStairs.ITEMS.register(event);
+        ABRCTests.BLOCKS.register(event);
+        ABRCTests.ITEMS.register(event);
     }
 
 }

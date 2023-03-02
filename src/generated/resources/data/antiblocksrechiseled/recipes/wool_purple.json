@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "d": {
+      "item": "minecraft:purple_dye"
+    },
+    "g": {
+      "item": "minecraft:glowstone_dust"
+    },
+    "w": {
+      "item": "minecraft:purple_wool"
+    }
+  },
+  "pattern": [
+    "wdw",
+    "wgw",
+    "wdw"
+  ],
+  "result": {
+    "count": 4,
+    "item": "antiblocksrechiseled:wool_purple"
+  }
+}

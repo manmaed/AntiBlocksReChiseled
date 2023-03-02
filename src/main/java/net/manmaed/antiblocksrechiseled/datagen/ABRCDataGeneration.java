@@ -20,5 +20,7 @@ public class ABRCDataGeneration {
         generator.addProvider(true, new ModItemModelProvider(generator, fileHelper));
         generator.addProvider(true, new ModBlocksTagsProvider(generator, fileHelper));
         generator.addProvider(true, new ModLangProvider(generator));
+        generator.addProvider(true, new ModLootTablesProvider(generator));
+        generator.addProvider(true, new ModRecipeProvider(generator));
     }
 }
