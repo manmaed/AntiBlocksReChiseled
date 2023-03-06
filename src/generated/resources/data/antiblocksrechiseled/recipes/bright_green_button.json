@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "antiblocksrechiseled:bright_green"
+    }
+  ],
+  "result": {
+    "item": "antiblocksrechiseled:button_bright_green"
+  }
+}

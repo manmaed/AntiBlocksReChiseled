@@ -117,6 +117,58 @@ public class ModBlockModelProvider extends BlockModelProvider {
         makeStairs("stair_brown_wool", "wool/brown");
         makeStairs("stair_green_wool", "wool/green");
         makeStairs("stair_red_wool", "wool/red");
+
+        //Button
+        makeButton("button_bright_white", "bright/white");
+        makeButton("button_bright_orange", "bright/black");
+        makeButton("button_bright_magenta", "bright/orange");
+        makeButton("button_bright_yellow", "bright/magenta");
+        makeButton("button_bright_cyan", "bright/yellow");
+        makeButton("button_bright_blue", "bright/cyan");
+        makeButton("button_bright_green", "bright/blue");
+        makeButton("button_bright_red", "bright/green");
+        makeButton("button_bright_black", "bright/red");
+        makeButton("button_wool_white", "wool/white");
+        makeButton("button_wool_orange", "wool/orange");
+        makeButton("button_wool_magenta", "wool/magenta");
+        makeButton("button_wool_light_blue", "wool/light_blue");
+        makeButton("button_wool_yellow", "wool/yellow");
+        makeButton("button_wool_lime", "wool/lime");
+        makeButton("button_wool_pink", "wool/pink");
+        makeButton("button_wool_gray", "wool/gray");
+        makeButton("button_wool_light_gray", "wool/light_gray");
+        makeButton("button_wool_cyan", "wool/cyan");
+        makeButton("button_wool_purple", "wool/purple");
+        makeButton("button_wool_blue", "wool/blue");
+        makeButton("button_wool_brown", "wool/brown");
+        makeButton("button_wool_green", "wool/green");
+        makeButton("button_wool_red", "wool/red");
+
+        //Pressure Plate
+        makePressurePlate("pressure_plate_bright_white", "bright/white");
+        makePressurePlate("pressure_plate_bright_orange", "bright/black");
+        makePressurePlate("pressure_plate_bright_magenta", "bright/orange");
+        makePressurePlate("pressure_plate_bright_yellow", "bright/magenta");
+        makePressurePlate("pressure_plate_bright_cyan", "bright/yellow");
+        makePressurePlate("pressure_plate_bright_blue", "bright/cyan");
+        makePressurePlate("pressure_plate_bright_green", "bright/blue");
+        makePressurePlate("pressure_plate_bright_red", "bright/green");
+        makePressurePlate("pressure_plate_bright_black", "bright/red");
+        makePressurePlate("pressure_plate_wool_white", "wool/white");
+        makePressurePlate("pressure_plate_wool_orange", "wool/orange");
+        makePressurePlate("pressure_plate_wool_magenta", "wool/magenta");
+        makePressurePlate("pressure_plate_wool_light_blue", "wool/light_blue");
+        makePressurePlate("pressure_plate_wool_yellow", "wool/yellow");
+        makePressurePlate("pressure_plate_wool_lime", "wool/lime");
+        makePressurePlate("pressure_plate_wool_pink", "wool/pink");
+        makePressurePlate("pressure_plate_wool_gray", "wool/gray");
+        makePressurePlate("pressure_plate_wool_light_gray", "wool/light_gray");
+        makePressurePlate("pressure_plate_wool_cyan", "wool/cyan");
+        makePressurePlate("pressure_plate_wool_purple", "wool/purple");
+        makePressurePlate("pressure_plate_wool_blue", "wool/blue");
+        makePressurePlate("pressure_plate_wool_brown", "wool/brown");
+        makePressurePlate("pressure_plate_wool_green", "wool/green");
+        makePressurePlate("pressure_plate_wool_red", "wool/red");
     }
 
     /*
@@ -137,5 +189,16 @@ public class ModBlockModelProvider extends BlockModelProvider {
         singleTexture("block/stair/" + name, getLoc("full_bright_stair"), "color", getLoc(color));
         singleTexture("block/stair/" + name + "_inner", getLoc("full_bright_inner_stair"), "color", getLoc(color));
         singleTexture("block/stair/" + name + "_outer", getLoc("full_bright_outer_stair"), "color", getLoc(color));
+    }
+
+    private void makeButton(String name, String color) {
+        singleTexture("block/button/" + name, getLoc("full_bright_button"), "color", getLoc(color));
+        singleTexture("block/button/" + name + "_pressed", getLoc("full_bright_button_pressed"), "color", getLoc(color));
+        singleTexture("block/button/" + name + "_inventory", getLoc("full_bright_button_inventory"), "color", getLoc(color));
+    }
+
+    private void makePressurePlate(String name, String color) {
+        singleTexture("block/pressure_plate/" + name, getLoc("full_bright_pressure_plate_up"), "color", getLoc(color));
+        singleTexture("block/pressure_plate/" + name + "_down", getLoc("full_bright_pressure_plate_down"), "color", getLoc(color));
     }
 }

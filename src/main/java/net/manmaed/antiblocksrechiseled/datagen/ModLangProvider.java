@@ -1,10 +1,7 @@
 package net.manmaed.antiblocksrechiseled.datagen;
 
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
-import net.manmaed.antiblocksrechiseled.blocks.ABRCBrightColors;
-import net.manmaed.antiblocksrechiseled.blocks.ABRCSlabs;
-import net.manmaed.antiblocksrechiseled.blocks.ABRCStairs;
-import net.manmaed.antiblocksrechiseled.blocks.ABRCWoolColors;
+import net.manmaed.antiblocksrechiseled.blocks.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 
@@ -141,6 +138,58 @@ public class ModLangProvider extends LanguageProvider {
         add(ABRCStairs.STAIR_BROWN_WOOL.get(), getOther("Stair", "Brown", "Wool"));
         add(ABRCStairs.STAIR_GREEN_WOOL.get(), getOther("Stair", "Green", "Wool"));
         add(ABRCStairs.STAIR_RED_WOOL.get(), getOther("Stair", "Red", "Wool"));
+
+        //Buttons
+        add(ABRCButtons.BUTTON_BRIGHT_WHITE.get(), getOther("Button", "White", "Bright"));
+        add(ABRCButtons.BUTTON_BRIGHT_ORANGE.get(), getOther("Button", "Black", "Bright"));
+        add(ABRCButtons.BUTTON_BRIGHT_MAGENTA.get(), getOther("Button", "Orange", "Bright"));
+        add(ABRCButtons.BUTTON_BRIGHT_YELLOW.get(), getOther("Button", "Magenta", "Bright"));
+        add(ABRCButtons.BUTTON_BRIGHT_CYAN.get(), getOther("Button", "Yellow", "Bright"));
+        add(ABRCButtons.BUTTON_BRIGHT_BLUE.get(), getOther("Button", "Cyan", "Bright"));
+        add(ABRCButtons.BUTTON_BRIGHT_GREEN.get(), getOther("Button", "Blue", "Bright"));
+        add(ABRCButtons.BUTTON_BRIGHT_RED.get(), getOther("Button", "Green", "Bright"));
+        add(ABRCButtons.BUTTON_BRIGHT_BLACK.get(), getOther("Button", "Red", "Bright"));
+        add(ABRCButtons.BUTTON_WOOL_WHITE.get(), getOther("Button", "White", "Wool"));
+        add(ABRCButtons.BUTTON_WOOL_ORANGE.get(), getOther("Button", "Orange", "Wool"));
+        add(ABRCButtons.BUTTON_WOOL_MAGENTA.get(), getOther("Button", "Magenta", "Wool"));
+        add(ABRCButtons.BUTTON_WOOL_LIGHT_BLUE.get(), getOther("Button", "Light Blue", "Wool"));
+        add(ABRCButtons.BUTTON_WOOL_YELLOW.get(), getOther("Button", "Yellow", "Wool"));
+        add(ABRCButtons.BUTTON_WOOL_LIME.get(), getOther("Button", "Lime", "Wool"));
+        add(ABRCButtons.BUTTON_WOOL_PINK.get(), getOther("Button", "Pink", "Wool"));
+        add(ABRCButtons.BUTTON_WOOL_GRAY.get(), getOther("Button", "Gray", "Wool"));
+        add(ABRCButtons.BUTTON_WOOL_LIGHT_GRAY.get(), getOther("Button", "Light Gray", "Wool"));
+        add(ABRCButtons.BUTTON_WOOL_CYAN.get(), getOther("Button", "Cyan", "Wool"));
+        add(ABRCButtons.BUTTON_WOOL_PURPLE.get(), getOther("Button", "Purple", "Wool"));
+        add(ABRCButtons.BUTTON_WOOL_BLUE.get(), getOther("Button", "Blue", "Wool"));
+        add(ABRCButtons.BUTTON_WOOL_BROWN.get(), getOther("Button", "Brown", "Wool"));
+        add(ABRCButtons.BUTTON_WOOL_GREEN.get(), getOther("Button", "Green", "Wool"));
+        add(ABRCButtons.BUTTON_WOOL_RED.get(), getOther("Button", "Red", "Wool"));
+
+        //Plates
+        add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_WHITE.get(), getOther("Pressure Plate", "White", "Bright"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_ORANGE.get(), getOther("Pressure Plate", "Black", "Bright"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_MAGENTA.get(), getOther("Pressure Plate", "Orange", "Bright"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_YELLOW.get(), getOther("Pressure Plate", "Magenta", "Bright"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_CYAN.get(), getOther("Pressure Plate", "Yellow", "Bright"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_BLUE.get(), getOther("Pressure Plate", "Cyan", "Bright"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_GREEN.get(), getOther("Pressure Plate", "Blue", "Bright"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_RED.get(), getOther("Pressure Plate", "Green", "Bright"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_BLACK.get(), getOther("Pressure Plate", "Red", "Bright"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_WOOL_WHITE.get(), getOther("Pressure Plate", "White", "Wool"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_WOOL_ORANGE.get(), getOther("Pressure Plate", "Orange", "Wool"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_WOOL_MAGENTA.get(), getOther("Pressure Plate", "Magenta", "Wool"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_WOOL_LIGHT_BLUE.get(), getOther("Pressure Plate", "Light Blue", "Wool"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_WOOL_YELLOW.get(), getOther("Pressure Plate", "Yellow", "Wool"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_WOOL_LIME.get(), getOther("Pressure Plate", "Lime", "Wool"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_WOOL_PINK.get(), getOther("Pressure Plate", "Pink", "Wool"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_WOOL_GRAY.get(), getOther("Pressure Plate", "Gray", "Wool"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_WOOL_LIGHT_GRAY.get(), getOther("Pressure Plate", "Light Gray", "Wool"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_WOOL_CYAN.get(), getOther("Pressure Plate", "Cyan", "Wool"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_WOOL_PURPLE.get(), getOther("Pressure Plate", "Purple", "Wool"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_WOOL_BLUE.get(), getOther("Pressure Plate", "Blue", "Wool"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_WOOL_BROWN.get(), getOther("Pressure Plate", "Brown", "Wool"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_WOOL_GREEN.get(), getOther("Pressure Plate", "Green", "Wool"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_WOOL_RED.get(), getOther("Pressure Plate", "Red", "Wool"));
 
 
     }

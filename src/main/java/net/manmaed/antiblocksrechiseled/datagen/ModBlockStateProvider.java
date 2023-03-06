@@ -1,16 +1,11 @@
 package net.manmaed.antiblocksrechiseled.datagen;
 
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
-import net.manmaed.antiblocksrechiseled.blocks.ABRCBrightColors;
-import net.manmaed.antiblocksrechiseled.blocks.ABRCSlabs;
-import net.manmaed.antiblocksrechiseled.blocks.ABRCStairs;
-import net.manmaed.antiblocksrechiseled.blocks.ABRCWoolColors;
+import net.manmaed.antiblocksrechiseled.blocks.*;
 import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.Half;
 import net.minecraft.world.level.block.state.properties.SlabType;
 import net.minecraft.world.level.block.state.properties.StairsShape;
@@ -130,6 +125,56 @@ public class ModBlockStateProvider extends BlockStateProvider {
         mystairsBlock(ABRCStairs.STAIR_BROWN_WOOL.get(), "stair_brown_wool");
         mystairsBlock(ABRCStairs.STAIR_GREEN_WOOL.get(), "stair_green_wool");
         mystairsBlock(ABRCStairs.STAIR_RED_WOOL.get(), "stair_red_wool");
+
+        myButtonBlock(ABRCButtons.BUTTON_BRIGHT_WHITE.get(), "button_bright_white");
+        myButtonBlock(ABRCButtons.BUTTON_BRIGHT_ORANGE.get(), "button_bright_orange");
+        myButtonBlock(ABRCButtons.BUTTON_BRIGHT_MAGENTA.get(), "button_bright_magenta");
+        myButtonBlock(ABRCButtons.BUTTON_BRIGHT_YELLOW.get(), "button_bright_yellow");
+        myButtonBlock(ABRCButtons.BUTTON_BRIGHT_CYAN.get(), "button_bright_cyan");
+        myButtonBlock(ABRCButtons.BUTTON_BRIGHT_BLUE.get(), "button_bright_blue");
+        myButtonBlock(ABRCButtons.BUTTON_BRIGHT_GREEN.get(), "button_bright_green");
+        myButtonBlock(ABRCButtons.BUTTON_BRIGHT_RED.get(), "button_bright_red");
+        myButtonBlock(ABRCButtons.BUTTON_BRIGHT_BLACK.get(), "button_bright_black");
+        myButtonBlock(ABRCButtons.BUTTON_WOOL_WHITE.get(), "button_wool_white");
+        myButtonBlock(ABRCButtons.BUTTON_WOOL_ORANGE.get(), "button_wool_orange");
+        myButtonBlock(ABRCButtons.BUTTON_WOOL_MAGENTA.get(), "button_wool_magenta");
+        myButtonBlock(ABRCButtons.BUTTON_WOOL_LIGHT_BLUE.get(), "button_wool_light_blue");
+        myButtonBlock(ABRCButtons.BUTTON_WOOL_YELLOW.get(), "button_wool_yellow");
+        myButtonBlock(ABRCButtons.BUTTON_WOOL_LIME.get(), "button_wool_lime");
+        myButtonBlock(ABRCButtons.BUTTON_WOOL_PINK.get(), "button_wool_pink");
+        myButtonBlock(ABRCButtons.BUTTON_WOOL_GRAY.get(), "button_wool_gray");
+        myButtonBlock(ABRCButtons.BUTTON_WOOL_LIGHT_GRAY.get(), "button_wool_light_gray");
+        myButtonBlock(ABRCButtons.BUTTON_WOOL_CYAN.get(), "button_wool_cyan");
+        myButtonBlock(ABRCButtons.BUTTON_WOOL_PURPLE.get(), "button_wool_purple");
+        myButtonBlock(ABRCButtons.BUTTON_WOOL_BLUE.get(), "button_wool_blue");
+        myButtonBlock(ABRCButtons.BUTTON_WOOL_BROWN.get(), "button_wool_brown");
+        myButtonBlock(ABRCButtons.BUTTON_WOOL_GREEN.get(), "button_wool_green");
+        myButtonBlock(ABRCButtons.BUTTON_WOOL_RED.get(), "button_wool_red");
+
+        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_WHITE.get(), "pressure_plate_bright_white");
+        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_ORANGE.get(), "pressure_plate_bright_orange");
+        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_MAGENTA.get(), "pressure_plate_bright_magenta");
+        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_YELLOW.get(), "pressure_plate_bright_yellow");
+        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_CYAN.get(), "pressure_plate_bright_cyan");
+        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_BLUE.get(), "pressure_plate_bright_blue");
+        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_GREEN.get(), "pressure_plate_bright_green");
+        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_RED.get(), "pressure_plate_bright_red");
+        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_BLACK.get(), "pressure_plate_bright_black");
+        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_WOOL_WHITE.get(), "pressure_plate_wool_white");
+        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_WOOL_ORANGE.get(), "pressure_plate_wool_orange");
+        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_WOOL_MAGENTA.get(), "pressure_plate_wool_magenta");
+        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_WOOL_LIGHT_BLUE.get(), "pressure_plate_wool_light_blue");
+        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_WOOL_YELLOW.get(), "pressure_plate_wool_yellow");
+        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_WOOL_LIME.get(), "pressure_plate_wool_lime");
+        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_WOOL_PINK.get(), "pressure_plate_wool_pink");
+        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_WOOL_GRAY.get(), "pressure_plate_wool_gray");
+        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_WOOL_LIGHT_GRAY.get(), "pressure_plate_wool_light_gray");
+        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_WOOL_CYAN.get(), "pressure_plate_wool_cyan");
+        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_WOOL_PURPLE.get(), "pressure_plate_wool_purple");
+        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_WOOL_BLUE.get(), "pressure_plate_wool_blue");
+        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_WOOL_BROWN.get(), "pressure_plate_wool_brown");
+        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_WOOL_GREEN.get(), "pressure_plate_wool_green");
+        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_WOOL_RED.get(), "pressure_plate_wool_red");
     }
 
     public void mystairsBlock(Block block, String name) {
@@ -167,11 +212,34 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 .partialState().with(SlabBlock.TYPE, SlabType.DOUBLE).addModels(new ConfiguredModel(doubleslab));
     }
 
-    private ModelFile getFile(String name) {
-        return models().getBuilder(AntiBlocksReChiseled.MOD_ID + ":block/" + name);
+    public void myButtonBlock(Block block, String name) {
+        String model = "button/" + name;
+        ModelFile button = getFile(model);
+        ModelFile buttonPressed = getFile(model + "_pressed");
+        getVariantBuilder(block).forAllStates(state -> {
+            Direction facing = state.getValue(ButtonBlock.FACING);
+            AttachFace face = state.getValue(ButtonBlock.FACE);
+            boolean powered = state.getValue(ButtonBlock.POWERED);
+
+            return ConfiguredModel.builder()
+                    .modelFile(powered ? buttonPressed : button)
+                    .rotationX(face == AttachFace.FLOOR ? 0 : (face == AttachFace.WALL ? 90 : 180))
+                    .rotationY((int) (face == AttachFace.CEILING ? facing : facing.getOpposite()).toYRot())
+                    .uvLock(face == AttachFace.WALL)
+                    .build();
+        });
     }
 
-    public ResourceLocation getLoc(String name) {
-        return new ResourceLocation(AntiBlocksReChiseled.MOD_ID, "block/" + name);
+    public void myPressurePlateBlock(Block block, String name) {
+        String model = "pressure_plate/" + name;
+        ModelFile pressurePlate = getFile(model);
+        ModelFile pressurePlateDown = getFile(model + "_down");
+        getVariantBuilder(block)
+                .partialState().with(PressurePlateBlock.POWERED, true).addModels(new ConfiguredModel(pressurePlateDown))
+                .partialState().with(PressurePlateBlock.POWERED, false).addModels(new ConfiguredModel(pressurePlate));
+    }
+
+    private ModelFile getFile(String name) {
+        return models().getBuilder(AntiBlocksReChiseled.MOD_ID + ":block/" + name);
     }
 }

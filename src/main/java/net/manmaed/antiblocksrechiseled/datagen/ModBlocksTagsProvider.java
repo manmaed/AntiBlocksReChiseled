@@ -1,10 +1,7 @@
 package net.manmaed.antiblocksrechiseled.datagen;
 
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
-import net.manmaed.antiblocksrechiseled.blocks.ABRCBrightColors;
-import net.manmaed.antiblocksrechiseled.blocks.ABRCSlabs;
-import net.manmaed.antiblocksrechiseled.blocks.ABRCStairs;
-import net.manmaed.antiblocksrechiseled.blocks.ABRCWoolColors;
+import net.manmaed.antiblocksrechiseled.blocks.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;
@@ -122,7 +119,58 @@ public class ModBlocksTagsProvider extends BlockTagsProvider {
                 ABRCStairs.STAIR_BLUE_WOOL.get(),
                 ABRCStairs.STAIR_BROWN_WOOL.get(),
                 ABRCStairs.STAIR_GREEN_WOOL.get(),
-                ABRCStairs.STAIR_RED_WOOL.get()
+                ABRCStairs.STAIR_RED_WOOL.get(),
+
+                ABRCButtons.BUTTON_BRIGHT_WHITE.get(),
+                ABRCButtons.BUTTON_BRIGHT_ORANGE.get(),
+                ABRCButtons.BUTTON_BRIGHT_MAGENTA.get(),
+                ABRCButtons.BUTTON_BRIGHT_YELLOW.get(),
+                ABRCButtons.BUTTON_BRIGHT_CYAN.get(),
+                ABRCButtons.BUTTON_BRIGHT_BLUE.get(),
+                ABRCButtons.BUTTON_BRIGHT_GREEN.get(),
+                ABRCButtons.BUTTON_BRIGHT_RED.get(),
+                ABRCButtons.BUTTON_BRIGHT_BLACK.get(),
+                ABRCButtons.BUTTON_WOOL_WHITE.get(),
+                ABRCButtons.BUTTON_WOOL_ORANGE.get(),
+                ABRCButtons.BUTTON_WOOL_MAGENTA.get(),
+                ABRCButtons.BUTTON_WOOL_LIGHT_BLUE.get(),
+                ABRCButtons.BUTTON_WOOL_YELLOW.get(),
+                ABRCButtons.BUTTON_WOOL_LIME.get(),
+                ABRCButtons.BUTTON_WOOL_PINK.get(),
+                ABRCButtons.BUTTON_WOOL_GRAY.get(),
+                ABRCButtons.BUTTON_WOOL_LIGHT_GRAY.get(),
+                ABRCButtons.BUTTON_WOOL_CYAN.get(),
+                ABRCButtons.BUTTON_WOOL_PURPLE.get(),
+                ABRCButtons.BUTTON_WOOL_BLUE.get(),
+                ABRCButtons.BUTTON_WOOL_BROWN.get(),
+                ABRCButtons.BUTTON_WOOL_GREEN.get(),
+                ABRCButtons.BUTTON_WOOL_RED.get(),
+
+                //Pressure Plates
+                ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_WHITE.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_ORANGE.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_MAGENTA.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_YELLOW.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_CYAN.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_BLUE.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_GREEN.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_RED.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_BLACK.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_WHITE.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_ORANGE.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_MAGENTA.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_LIGHT_BLUE.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_YELLOW.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_LIME.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_PINK.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_GRAY.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_LIGHT_GRAY.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_CYAN.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_PURPLE.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_BLUE.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_BROWN.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_GREEN.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_RED.get()
         );
         tag(BlockTags.NEEDS_IRON_TOOL).add(
                 //Bright Colors
@@ -227,7 +275,59 @@ public class ModBlocksTagsProvider extends BlockTagsProvider {
                 ABRCStairs.STAIR_BLUE_WOOL.get(),
                 ABRCStairs.STAIR_BROWN_WOOL.get(),
                 ABRCStairs.STAIR_GREEN_WOOL.get(),
-                ABRCStairs.STAIR_RED_WOOL.get()
+                ABRCStairs.STAIR_RED_WOOL.get(),
+
+                //Buttons
+                ABRCButtons.BUTTON_BRIGHT_WHITE.get(),
+                ABRCButtons.BUTTON_BRIGHT_ORANGE.get(),
+                ABRCButtons.BUTTON_BRIGHT_MAGENTA.get(),
+                ABRCButtons.BUTTON_BRIGHT_YELLOW.get(),
+                ABRCButtons.BUTTON_BRIGHT_CYAN.get(),
+                ABRCButtons.BUTTON_BRIGHT_BLUE.get(),
+                ABRCButtons.BUTTON_BRIGHT_GREEN.get(),
+                ABRCButtons.BUTTON_BRIGHT_RED.get(),
+                ABRCButtons.BUTTON_BRIGHT_BLACK.get(),
+                ABRCButtons.BUTTON_WOOL_WHITE.get(),
+                ABRCButtons.BUTTON_WOOL_ORANGE.get(),
+                ABRCButtons.BUTTON_WOOL_MAGENTA.get(),
+                ABRCButtons.BUTTON_WOOL_LIGHT_BLUE.get(),
+                ABRCButtons.BUTTON_WOOL_YELLOW.get(),
+                ABRCButtons.BUTTON_WOOL_LIME.get(),
+                ABRCButtons.BUTTON_WOOL_PINK.get(),
+                ABRCButtons.BUTTON_WOOL_GRAY.get(),
+                ABRCButtons.BUTTON_WOOL_LIGHT_GRAY.get(),
+                ABRCButtons.BUTTON_WOOL_CYAN.get(),
+                ABRCButtons.BUTTON_WOOL_PURPLE.get(),
+                ABRCButtons.BUTTON_WOOL_BLUE.get(),
+                ABRCButtons.BUTTON_WOOL_BROWN.get(),
+                ABRCButtons.BUTTON_WOOL_GREEN.get(),
+                ABRCButtons.BUTTON_WOOL_RED.get(),
+
+                //Pressure Plates
+                ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_WHITE.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_ORANGE.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_MAGENTA.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_YELLOW.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_CYAN.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_BLUE.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_GREEN.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_RED.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_BLACK.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_WHITE.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_ORANGE.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_MAGENTA.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_LIGHT_BLUE.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_YELLOW.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_LIME.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_PINK.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_GRAY.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_LIGHT_GRAY.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_CYAN.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_PURPLE.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_BLUE.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_BROWN.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_GREEN.get(),
+                ABRCPressurePlates.PRESSURE_PLATE_WOOL_RED.get()
         );
     }
 }

@@ -1,12 +1,12 @@
 package net.manmaed.antiblocksrechiseled.datagen;
 
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
-import net.manmaed.antiblocksrechiseled.blocks.ABRCBrightColors;
-import net.manmaed.antiblocksrechiseled.blocks.ABRCSlabs;
-import net.manmaed.antiblocksrechiseled.blocks.ABRCStairs;
-import net.manmaed.antiblocksrechiseled.blocks.ABRCWoolColors;
+import net.manmaed.antiblocksrechiseled.blocks.*;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.recipes.*;
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -24,6 +24,7 @@ public class ModRecipeProvider extends RecipeProvider {
     public static ResourceLocation getSave(String string) {
         return new ResourceLocation(AntiBlocksReChiseled.MOD_ID, string);
     }
+
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
         //Bright White Builder
@@ -145,6 +146,56 @@ public class ModRecipeProvider extends RecipeProvider {
         myStairBuilder(ABRCStairs.STAIR_RED_BRIGHT.get(), ABRCBrightColors.BRIGHT_RED.get(), consumer);
         myStairBuilder(ABRCStairs.STAIR_BLACK.get(), ABRCBrightColors.BRIGHT_BLACK.get(), consumer);
 
+        myButtonBuilder(ABRCButtons.BUTTON_BRIGHT_WHITE.get(), ABRCBrightColors.BRIGHT_WHITE.get(), consumer);
+        myButtonBuilder(ABRCButtons.BUTTON_BRIGHT_ORANGE.get(), ABRCBrightColors.BRIGHT_ORANGE.get(), consumer);
+        myButtonBuilder(ABRCButtons.BUTTON_BRIGHT_MAGENTA.get(), ABRCBrightColors.BRIGHT_MAGENTA.get(), consumer);
+        myButtonBuilder(ABRCButtons.BUTTON_BRIGHT_YELLOW.get(), ABRCBrightColors.BRIGHT_YELLOW.get(), consumer);
+        myButtonBuilder(ABRCButtons.BUTTON_BRIGHT_CYAN.get(), ABRCBrightColors.BRIGHT_CYAN.get(), consumer);
+        myButtonBuilder(ABRCButtons.BUTTON_BRIGHT_BLUE.get(), ABRCBrightColors.BRIGHT_BLUE.get(), consumer);
+        myButtonBuilder(ABRCButtons.BUTTON_BRIGHT_GREEN.get(), ABRCBrightColors.BRIGHT_GREEN.get(), consumer);
+        myButtonBuilder(ABRCButtons.BUTTON_BRIGHT_RED.get(), ABRCBrightColors.BRIGHT_RED.get(), consumer);
+        myButtonBuilder(ABRCButtons.BUTTON_BRIGHT_BLACK.get(), ABRCBrightColors.BRIGHT_BLACK.get(), consumer);
+        myButtonBuilder(ABRCButtons.BUTTON_WOOL_WHITE.get(), ABRCWoolColors.WOOL_WHITE.get(), consumer);
+        myButtonBuilder(ABRCButtons.BUTTON_WOOL_ORANGE.get(), ABRCWoolColors.WOOL_ORANGE.get(), consumer);
+        myButtonBuilder(ABRCButtons.BUTTON_WOOL_MAGENTA.get(), ABRCWoolColors.WOOL_MAGENTA.get(), consumer);
+        myButtonBuilder(ABRCButtons.BUTTON_WOOL_LIGHT_BLUE.get(), ABRCWoolColors.WOOL_LIGHT_BLUE.get(), consumer);
+        myButtonBuilder(ABRCButtons.BUTTON_WOOL_YELLOW.get(), ABRCWoolColors.WOOL_YELLOW.get(), consumer);
+        myButtonBuilder(ABRCButtons.BUTTON_WOOL_LIME.get(), ABRCWoolColors.WOOL_LIME.get(), consumer);
+        myButtonBuilder(ABRCButtons.BUTTON_WOOL_PINK.get(), ABRCWoolColors.WOOL_PINK.get(), consumer);
+        myButtonBuilder(ABRCButtons.BUTTON_WOOL_GRAY.get(), ABRCWoolColors.WOOL_GRAY.get(), consumer);
+        myButtonBuilder(ABRCButtons.BUTTON_WOOL_LIGHT_GRAY.get(), ABRCWoolColors.WOOL_LIGHT_GRAY.get(), consumer);
+        myButtonBuilder(ABRCButtons.BUTTON_WOOL_CYAN.get(), ABRCWoolColors.WOOL_CYAN.get(), consumer);
+        myButtonBuilder(ABRCButtons.BUTTON_WOOL_PURPLE.get(), ABRCWoolColors.WOOL_PURPLE.get(), consumer);
+        myButtonBuilder(ABRCButtons.BUTTON_WOOL_BLUE.get(), ABRCWoolColors.WOOL_BLUE.get(), consumer);
+        myButtonBuilder(ABRCButtons.BUTTON_WOOL_BROWN.get(), ABRCWoolColors.WOOL_BROWN.get(), consumer);
+        myButtonBuilder(ABRCButtons.BUTTON_WOOL_GREEN.get(), ABRCWoolColors.WOOL_GREEN.get(), consumer);
+        myButtonBuilder(ABRCButtons.BUTTON_WOOL_RED.get(), ABRCWoolColors.WOOL_RED.get(), consumer);
+
+        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_WHITE.get(), ABRCBrightColors.BRIGHT_WHITE.get(), consumer);
+        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_ORANGE.get(), ABRCBrightColors.BRIGHT_ORANGE.get(), consumer);
+        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_MAGENTA.get(), ABRCBrightColors.BRIGHT_MAGENTA.get(), consumer);
+        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_YELLOW.get(), ABRCBrightColors.BRIGHT_YELLOW.get(), consumer);
+        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_CYAN.get(), ABRCBrightColors.BRIGHT_CYAN.get(), consumer);
+        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_BLUE.get(), ABRCBrightColors.BRIGHT_BLUE.get(), consumer);
+        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_GREEN.get(), ABRCBrightColors.BRIGHT_GREEN.get(), consumer);
+        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_RED.get(), ABRCBrightColors.BRIGHT_RED.get(), consumer);
+        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_BLACK.get(), ABRCBrightColors.BRIGHT_BLACK.get(), consumer);
+        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_WOOL_WHITE.get(), ABRCWoolColors.WOOL_WHITE.get(), consumer);
+        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_WOOL_ORANGE.get(), ABRCWoolColors.WOOL_ORANGE.get(), consumer);
+        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_WOOL_MAGENTA.get(), ABRCWoolColors.WOOL_MAGENTA.get(), consumer);
+        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_WOOL_LIGHT_BLUE.get(), ABRCWoolColors.WOOL_LIGHT_BLUE.get(), consumer);
+        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_WOOL_YELLOW.get(), ABRCWoolColors.WOOL_YELLOW.get(), consumer);
+        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_WOOL_LIME.get(), ABRCWoolColors.WOOL_LIME.get(), consumer);
+        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_WOOL_PINK.get(), ABRCWoolColors.WOOL_PINK.get(), consumer);
+        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_WOOL_GRAY.get(), ABRCWoolColors.WOOL_GRAY.get(), consumer);
+        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_WOOL_LIGHT_GRAY.get(), ABRCWoolColors.WOOL_LIGHT_GRAY.get(), consumer);
+        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_WOOL_CYAN.get(), ABRCWoolColors.WOOL_CYAN.get(), consumer);
+        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_WOOL_PURPLE.get(), ABRCWoolColors.WOOL_PURPLE.get(), consumer);
+        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_WOOL_BLUE.get(), ABRCWoolColors.WOOL_BLUE.get(), consumer);
+        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_WOOL_BROWN.get(), ABRCWoolColors.WOOL_BROWN.get(), consumer);
+        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_WOOL_GREEN.get(), ABRCWoolColors.WOOL_GREEN.get(), consumer);
+        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_WOOL_RED.get(), ABRCWoolColors.WOOL_RED.get(), consumer);
+
     }
 
     protected static void woolBuilder(ItemLike itemOut, ItemLike wool, ItemLike dye, Consumer<FinishedRecipe> recipeConsumer) {
@@ -191,12 +242,28 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(recipeConsumer, getSave(itemIn.asItem().toString().toLowerCase() + "_stairs"));
     }
 
-    protected static void mySlabBuilder(ItemLike itemIn, ItemLike itemOut, Consumer<FinishedRecipe> recipeConsumer) {
+    protected static void mySlabBuilder(ItemLike itemOut, ItemLike itemIn, Consumer<FinishedRecipe> recipeConsumer) {
         ShapedRecipeBuilder.shaped(itemOut, 6)
                 .define('#', itemIn)
                 .pattern("###")
                 .unlockedBy(getHasName(itemIn), has(itemIn))
-                .save(recipeConsumer, itemIn.asItem().toString().toLowerCase() + "_slabs");
+                .save(recipeConsumer, getSave(itemIn.asItem().toString().toLowerCase() + "_slabs"));
     }
+
+    protected static void myButtonBuilder(ItemLike itemOut, ItemLike itemIn, Consumer<FinishedRecipe> recipeConsumer) {
+        ShapelessRecipeBuilder.shapeless(itemOut)
+                .requires(itemIn)
+                .unlockedBy(getHasName(itemIn), has(itemIn))
+                .save(recipeConsumer, getSave(itemIn.asItem().toString().toLowerCase() + "_button"));
+    }
+
+    protected static void myPlateBuilder(ItemLike itemOut, ItemLike itemIn, Consumer<FinishedRecipe> recipeConsumer) {
+        ShapedRecipeBuilder.shaped(itemOut, 6)
+                .define('#', itemIn)
+                .pattern("##")
+                .unlockedBy(getHasName(itemIn), has(itemIn))
+                .save(recipeConsumer, getSave(itemIn.asItem().toString().toLowerCase() + "_pressure_plate"));
+    }
+
 
 }

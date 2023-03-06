@@ -117,6 +117,56 @@ public class ModItemModelProvider extends ItemModelProvider {
         makeStairs("stair_green_wool");
         makeStairs("stair_red_wool");
 
+        makeButton("button_bright_white");
+        makeButton("button_bright_orange");
+        makeButton("button_bright_magenta");
+        makeButton("button_bright_yellow");
+        makeButton("button_bright_cyan");
+        makeButton("button_bright_blue");
+        makeButton("button_bright_green");
+        makeButton("button_bright_red");
+        makeButton("button_bright_black");
+        makeButton("button_wool_white");
+        makeButton("button_wool_orange");
+        makeButton("button_wool_magenta");
+        makeButton("button_wool_light_blue");
+        makeButton("button_wool_yellow");
+        makeButton("button_wool_lime");
+        makeButton("button_wool_pink");
+        makeButton("button_wool_gray");
+        makeButton("button_wool_light_gray");
+        makeButton("button_wool_cyan");
+        makeButton("button_wool_purple");
+        makeButton("button_wool_blue");
+        makeButton("button_wool_brown");
+        makeButton("button_wool_green");
+        makeButton("button_wool_red");
+
+        makePlate("pressure_plate_bright_white");
+        makePlate("pressure_plate_bright_orange");
+        makePlate("pressure_plate_bright_magenta");
+        makePlate("pressure_plate_bright_yellow");
+        makePlate("pressure_plate_bright_cyan");
+        makePlate("pressure_plate_bright_blue");
+        makePlate("pressure_plate_bright_green");
+        makePlate("pressure_plate_bright_red");
+        makePlate("pressure_plate_bright_black");
+        makePlate("pressure_plate_wool_white");
+        makePlate("pressure_plate_wool_orange");
+        makePlate("pressure_plate_wool_magenta");
+        makePlate("pressure_plate_wool_light_blue");
+        makePlate("pressure_plate_wool_yellow");
+        makePlate("pressure_plate_wool_lime");
+        makePlate("pressure_plate_wool_pink");
+        makePlate("pressure_plate_wool_gray");
+        makePlate("pressure_plate_wool_light_gray");
+        makePlate("pressure_plate_wool_cyan");
+        makePlate("pressure_plate_wool_purple");
+        makePlate("pressure_plate_wool_blue");
+        makePlate("pressure_plate_wool_brown");
+        makePlate("pressure_plate_wool_green");
+        makePlate("pressure_plate_wool_red");
+
     }
 
     public void makeBlock(String type, String name) {
@@ -129,5 +179,16 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     public void makeStairs(String name) {
         withExistingParent(name, getLoc("stair/"+ name));
+    }
+
+    public void makeButton(String name) {
+        withExistingParent(name, getLoc("button/" + name+ "_inventory"));
+    }
+
+    public void makePlate(String name) {
+        withExistingParent(name, getLoc("pressure_plate/" + name));
+    }
+    public void makeOthers(String type, String name) {
+        withExistingParent(name, getLoc(type + "/" + name));
     }
 }

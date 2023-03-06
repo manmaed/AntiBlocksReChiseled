@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "antiblocksrechiseled:wool_light_gray"
+    }
+  ],
+  "result": {
+    "item": "antiblocksrechiseled:button_wool_light_gray"
+  }
+}

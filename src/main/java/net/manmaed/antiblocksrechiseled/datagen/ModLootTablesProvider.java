@@ -2,10 +2,7 @@ package net.manmaed.antiblocksrechiseled.datagen;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
-import net.manmaed.antiblocksrechiseled.blocks.ABRCBrightColors;
-import net.manmaed.antiblocksrechiseled.blocks.ABRCSlabs;
-import net.manmaed.antiblocksrechiseled.blocks.ABRCStairs;
-import net.manmaed.antiblocksrechiseled.blocks.ABRCWoolColors;
+import net.manmaed.antiblocksrechiseled.blocks.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.data.loot.LootTableProvider;
@@ -140,6 +137,54 @@ public class ModLootTablesProvider extends LootTableProvider {
             dropSelf(ABRCStairs.STAIR_BROWN_WOOL.get());
             dropSelf(ABRCStairs.STAIR_GREEN_WOOL.get());
             dropSelf(ABRCStairs.STAIR_RED_WOOL.get());
+            dropSelf(ABRCButtons.BUTTON_BRIGHT_WHITE.get());
+            dropSelf(ABRCButtons.BUTTON_BRIGHT_ORANGE.get());
+            dropSelf(ABRCButtons.BUTTON_BRIGHT_MAGENTA.get());
+            dropSelf(ABRCButtons.BUTTON_BRIGHT_YELLOW.get());
+            dropSelf(ABRCButtons.BUTTON_BRIGHT_CYAN.get());
+            dropSelf(ABRCButtons.BUTTON_BRIGHT_BLUE.get());
+            dropSelf(ABRCButtons.BUTTON_BRIGHT_GREEN.get());
+            dropSelf(ABRCButtons.BUTTON_BRIGHT_RED.get());
+            dropSelf(ABRCButtons.BUTTON_BRIGHT_BLACK.get());
+            dropSelf(ABRCButtons.BUTTON_WOOL_WHITE.get());
+            dropSelf(ABRCButtons.BUTTON_WOOL_ORANGE.get());
+            dropSelf(ABRCButtons.BUTTON_WOOL_MAGENTA.get());
+            dropSelf(ABRCButtons.BUTTON_WOOL_LIGHT_BLUE.get());
+            dropSelf(ABRCButtons.BUTTON_WOOL_YELLOW.get());
+            dropSelf(ABRCButtons.BUTTON_WOOL_LIME.get());
+            dropSelf(ABRCButtons.BUTTON_WOOL_PINK.get());
+            dropSelf(ABRCButtons.BUTTON_WOOL_GRAY.get());
+            dropSelf(ABRCButtons.BUTTON_WOOL_LIGHT_GRAY.get());
+            dropSelf(ABRCButtons.BUTTON_WOOL_CYAN.get());
+            dropSelf(ABRCButtons.BUTTON_WOOL_PURPLE.get());
+            dropSelf(ABRCButtons.BUTTON_WOOL_BLUE.get());
+            dropSelf(ABRCButtons.BUTTON_WOOL_BROWN.get());
+            dropSelf(ABRCButtons.BUTTON_WOOL_GREEN.get());
+            dropSelf(ABRCButtons.BUTTON_WOOL_RED.get());
+            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_WHITE.get());
+            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_ORANGE.get());
+            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_MAGENTA.get());
+            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_YELLOW.get());
+            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_CYAN.get());
+            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_BLUE.get());
+            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_GREEN.get());
+            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_RED.get());
+            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_BLACK.get());
+            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_WOOL_WHITE.get());
+            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_WOOL_ORANGE.get());
+            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_WOOL_MAGENTA.get());
+            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_WOOL_LIGHT_BLUE.get());
+            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_WOOL_YELLOW.get());
+            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_WOOL_LIME.get());
+            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_WOOL_PINK.get());
+            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_WOOL_GRAY.get());
+            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_WOOL_LIGHT_GRAY.get());
+            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_WOOL_CYAN.get());
+            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_WOOL_PURPLE.get());
+            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_WOOL_BLUE.get());
+            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_WOOL_BROWN.get());
+            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_WOOL_GREEN.get());
+            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_WOOL_RED.get());
         }
 
         @Override
@@ -149,6 +194,8 @@ public class ModLootTablesProvider extends LootTableProvider {
             ABRCWoolColors.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
             ABRCSlabs.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
             ABRCStairs.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
+            ABRCButtons.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
+            ABRCPressurePlates.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
             return blocks;
         }
     }
