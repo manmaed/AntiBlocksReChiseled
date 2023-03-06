@@ -4,6 +4,7 @@
       "0.2.1": "Alpha port to 1.19.3"
     },
     "1.19.2": {
+      "0.1.7": "fixed stuffed buttons and pressure plate item models lang files and and fixed amout of plates given from crafting and the wool broders recipes",
       "0.1.6": "fixed more missing recipes + 5ull Requested Buttons and Pressure Plates",
       "0.1.5": "fixed missing recipes and block loot tables",
       "0.1.4": "5ull Requested Slabs and Stairs",
