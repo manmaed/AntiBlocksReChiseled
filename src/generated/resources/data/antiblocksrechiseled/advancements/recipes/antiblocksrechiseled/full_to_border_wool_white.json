@@ -3,16 +3,16 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "antiblocksrechiseled:full_to_border_wool_red_border"
+        "recipe": "antiblocksrechiseled:full_to_border_wool_white"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_wool_red_border": {
+    "has_wool_white": {
       "conditions": {
         "items": [
           {
             "items": [
-              "antiblocksrechiseled:wool_red_border"
+              "antiblocksrechiseled:wool_white"
             ]
           }
         ]
@@ -22,13 +22,13 @@
   },
   "requirements": [
     [
-      "has_wool_red_border",
+      "has_wool_white",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "antiblocksrechiseled:full_to_border_wool_red_border"
+      "antiblocksrechiseled:full_to_border_wool_white"
     ]
   }
 }

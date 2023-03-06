@@ -75,21 +75,21 @@ public class ModRecipeProvider extends RecipeProvider {
         woolBuilder(ABRCWoolColors.WOOL_RED.get(), Blocks.RED_WOOL, Items.RED_DYE, consumer);
 
         //Wool with Borders
-        fullToBorderedBuilder(ABRCWoolColors.WOOL_WHITE.get(), ABRCWoolColors.WOOL_WHITE_BORDER.get(), false, consumer);
-        fullToBorderedBuilder(ABRCWoolColors.WOOL_ORANGE.get(), ABRCWoolColors.WOOL_ORANGE_BORDER.get(), false, consumer);
-        fullToBorderedBuilder(ABRCWoolColors.WOOL_MAGENTA.get(), ABRCWoolColors.WOOL_MAGENTA_BORDER.get(), false, consumer);
-        fullToBorderedBuilder(ABRCWoolColors.WOOL_LIGHT_BLUE.get(), ABRCWoolColors.WOOL_LIGHT_BLUE_BORDER.get(), false, consumer);
-        fullToBorderedBuilder(ABRCWoolColors.WOOL_YELLOW.get(), ABRCWoolColors.WOOL_YELLOW_BORDER.get(), false, consumer);
-        fullToBorderedBuilder(ABRCWoolColors.WOOL_LIME.get(), ABRCWoolColors.WOOL_LIME_BORDER.get(), false, consumer);
-        fullToBorderedBuilder(ABRCWoolColors.WOOL_PINK.get(), ABRCWoolColors.WOOL_PINK_BORDER.get(), false, consumer);
-        fullToBorderedBuilder(ABRCWoolColors.WOOL_GRAY.get(), ABRCWoolColors.WOOL_GRAY_BORDER.get(), false, consumer);
-        fullToBorderedBuilder(ABRCWoolColors.WOOL_LIGHT_GRAY.get(), ABRCWoolColors.WOOL_LIGHT_GRAY_BORDER.get(), false, consumer);
-        fullToBorderedBuilder(ABRCWoolColors.WOOL_CYAN.get(), ABRCWoolColors.WOOL_CYAN_BORDER.get(), false, consumer);
-        fullToBorderedBuilder(ABRCWoolColors.WOOL_PURPLE.get(), ABRCWoolColors.WOOL_PURPLE_BORDER.get(), false, consumer);
-        fullToBorderedBuilder(ABRCWoolColors.WOOL_BLUE.get(), ABRCWoolColors.WOOL_BLUE_BORDER.get(), false, consumer);
-        fullToBorderedBuilder(ABRCWoolColors.WOOL_BROWN.get(), ABRCWoolColors.WOOL_BROWN_BORDER.get(), false, consumer);
-        fullToBorderedBuilder(ABRCWoolColors.WOOL_GREEN.get(), ABRCWoolColors.WOOL_GREEN_BORDER.get(), false, consumer);
-        fullToBorderedBuilder(ABRCWoolColors.WOOL_RED.get(), ABRCWoolColors.WOOL_RED_BORDER.get(), false, consumer);
+        fullToBorderedBuilder(ABRCWoolColors.WOOL_WHITE_BORDER.get(), ABRCWoolColors.WOOL_WHITE.get(), false, consumer);
+        fullToBorderedBuilder(ABRCWoolColors.WOOL_ORANGE_BORDER.get(), ABRCWoolColors.WOOL_ORANGE.get(), false, consumer);
+        fullToBorderedBuilder(ABRCWoolColors.WOOL_MAGENTA_BORDER.get(), ABRCWoolColors.WOOL_MAGENTA.get(), false, consumer);
+        fullToBorderedBuilder(ABRCWoolColors.WOOL_LIGHT_BLUE_BORDER.get(), ABRCWoolColors.WOOL_LIGHT_BLUE.get(), false, consumer);
+        fullToBorderedBuilder(ABRCWoolColors.WOOL_YELLOW_BORDER.get(), ABRCWoolColors.WOOL_YELLOW.get(), false, consumer);
+        fullToBorderedBuilder(ABRCWoolColors.WOOL_LIME_BORDER.get(), ABRCWoolColors.WOOL_LIME.get(), false, consumer);
+        fullToBorderedBuilder(ABRCWoolColors.WOOL_PINK_BORDER.get(), ABRCWoolColors.WOOL_PINK.get(), false, consumer);
+        fullToBorderedBuilder(ABRCWoolColors.WOOL_GRAY_BORDER.get(), ABRCWoolColors.WOOL_GRAY.get(), false, consumer);
+        fullToBorderedBuilder(ABRCWoolColors.WOOL_LIGHT_GRAY_BORDER.get(), ABRCWoolColors.WOOL_LIGHT_GRAY.get(), false, consumer);
+        fullToBorderedBuilder(ABRCWoolColors.WOOL_CYAN_BORDER.get(), ABRCWoolColors.WOOL_CYAN.get(), false, consumer);
+        fullToBorderedBuilder(ABRCWoolColors.WOOL_PURPLE_BORDER.get(), ABRCWoolColors.WOOL_PURPLE.get(), false, consumer);
+        fullToBorderedBuilder(ABRCWoolColors.WOOL_BLUE_BORDER.get(), ABRCWoolColors.WOOL_BLUE.get(), false, consumer);
+        fullToBorderedBuilder(ABRCWoolColors.WOOL_BROWN_BORDER.get(), ABRCWoolColors.WOOL_BROWN.get(), false, consumer);
+        fullToBorderedBuilder(ABRCWoolColors.WOOL_GREEN_BORDER.get(), ABRCWoolColors.WOOL_GREEN.get(), false, consumer);
+        fullToBorderedBuilder(ABRCWoolColors.WOOL_RED_BORDER.get(), ABRCWoolColors.WOOL_RED.get(), false, consumer);
 
         //Slabs
         //-Wool
@@ -215,7 +215,7 @@ public class ModRecipeProvider extends RecipeProvider {
     }
 
     protected static void fullToBorderedBuilder(ItemLike itemOut, ItemLike colorBlock, Boolean invertDye, Consumer<FinishedRecipe> recipeConsumer) {
-        if (invertDye) {
+        if (!invertDye) {
             ShapedRecipeBuilder.shaped(itemOut, 2)
                     .define('#', colorBlock).define('d', Items.BLACK_DYE)
                     .pattern("ddd")
@@ -258,7 +258,7 @@ public class ModRecipeProvider extends RecipeProvider {
     }
 
     protected static void myPlateBuilder(ItemLike itemOut, ItemLike itemIn, Consumer<FinishedRecipe> recipeConsumer) {
-        ShapedRecipeBuilder.shaped(itemOut, 6)
+        ShapedRecipeBuilder.shaped(itemOut)
                 .define('#', itemIn)
                 .pattern("##")
                 .unlockedBy(getHasName(itemIn), has(itemIn))

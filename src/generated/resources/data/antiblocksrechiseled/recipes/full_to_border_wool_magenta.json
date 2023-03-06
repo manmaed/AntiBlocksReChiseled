@@ -2,10 +2,10 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "antiblocksrechiseled:wool_red_border"
+      "item": "antiblocksrechiseled:wool_magenta"
     },
     "d": {
-      "item": "minecraft:white_dye"
+      "item": "minecraft:black_dye"
     }
   },
   "pattern": [
@@ -15,6 +15,6 @@
   ],
   "result": {
     "count": 2,
-    "item": "antiblocksrechiseled:wool_red"
+    "item": "antiblocksrechiseled:wool_magenta_border"
   }
 }

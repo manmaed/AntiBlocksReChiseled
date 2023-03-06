@@ -141,14 +141,15 @@ public class ModLangProvider extends LanguageProvider {
 
         //Buttons
         add(ABRCButtons.BUTTON_BRIGHT_WHITE.get(), getOther("Button", "White", "Bright"));
-        add(ABRCButtons.BUTTON_BRIGHT_ORANGE.get(), getOther("Button", "Black", "Bright"));
-        add(ABRCButtons.BUTTON_BRIGHT_MAGENTA.get(), getOther("Button", "Orange", "Bright"));
-        add(ABRCButtons.BUTTON_BRIGHT_YELLOW.get(), getOther("Button", "Magenta", "Bright"));
-        add(ABRCButtons.BUTTON_BRIGHT_CYAN.get(), getOther("Button", "Yellow", "Bright"));
-        add(ABRCButtons.BUTTON_BRIGHT_BLUE.get(), getOther("Button", "Cyan", "Bright"));
-        add(ABRCButtons.BUTTON_BRIGHT_GREEN.get(), getOther("Button", "Blue", "Bright"));
-        add(ABRCButtons.BUTTON_BRIGHT_RED.get(), getOther("Button", "Green", "Bright"));
-        add(ABRCButtons.BUTTON_BRIGHT_BLACK.get(), getOther("Button", "Red", "Bright"));
+        add(ABRCButtons.BUTTON_BRIGHT_ORANGE.get(), getOther("Button", "Orange", "Bright"));
+        add(ABRCButtons.BUTTON_BRIGHT_MAGENTA.get(), getOther("Button", "Magenta", "Bright"));
+        add(ABRCButtons.BUTTON_BRIGHT_YELLOW.get(), getOther("Button", "Yellow", "Bright"));
+        add(ABRCButtons.BUTTON_BRIGHT_CYAN.get(), getOther("Button", "Cyan", "Bright"));
+        add(ABRCButtons.BUTTON_BRIGHT_BLUE.get(), getOther("Button", "Blue", "Bright"));
+        add(ABRCButtons.BUTTON_BRIGHT_GREEN.get(), getOther("Button", "Green", "Bright"));
+        add(ABRCButtons.BUTTON_BRIGHT_RED.get(), getOther("Button", "Red", "Bright"));
+        add(ABRCButtons.BUTTON_BRIGHT_BLACK.get(), getOther("Button", "Black", "Bright"));
+
         add(ABRCButtons.BUTTON_WOOL_WHITE.get(), getOther("Button", "White", "Wool"));
         add(ABRCButtons.BUTTON_WOOL_ORANGE.get(), getOther("Button", "Orange", "Wool"));
         add(ABRCButtons.BUTTON_WOOL_MAGENTA.get(), getOther("Button", "Magenta", "Wool"));
@@ -167,14 +168,15 @@ public class ModLangProvider extends LanguageProvider {
 
         //Plates
         add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_WHITE.get(), getOther("Pressure Plate", "White", "Bright"));
-        add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_ORANGE.get(), getOther("Pressure Plate", "Black", "Bright"));
-        add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_MAGENTA.get(), getOther("Pressure Plate", "Orange", "Bright"));
-        add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_YELLOW.get(), getOther("Pressure Plate", "Magenta", "Bright"));
-        add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_CYAN.get(), getOther("Pressure Plate", "Yellow", "Bright"));
-        add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_BLUE.get(), getOther("Pressure Plate", "Cyan", "Bright"));
-        add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_GREEN.get(), getOther("Pressure Plate", "Blue", "Bright"));
-        add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_RED.get(), getOther("Pressure Plate", "Green", "Bright"));
-        add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_BLACK.get(), getOther("Pressure Plate", "Red", "Bright"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_ORANGE.get(), getOther("Pressure Plate", "Orange", "Bright"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_MAGENTA.get(), getOther("Pressure Plate", "Magenta", "Bright"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_YELLOW.get(), getOther("Pressure Plate", "Yellow", "Bright"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_CYAN.get(), getOther("Pressure Plate", "Cyan", "Bright"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_BLUE.get(), getOther("Pressure Plate", "Blue", "Bright"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_GREEN.get(), getOther("Pressure Plate", "Green", "Bright"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_RED.get(), getOther("Pressure Plate", "Red", "Bright"));
+        add(ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_BLACK.get(), getOther("Pressure Plate", "Black", "Bright"));
+
         add(ABRCPressurePlates.PRESSURE_PLATE_WOOL_WHITE.get(), getOther("Pressure Plate", "White", "Wool"));
         add(ABRCPressurePlates.PRESSURE_PLATE_WOOL_ORANGE.get(), getOther("Pressure Plate", "Orange", "Wool"));
         add(ABRCPressurePlates.PRESSURE_PLATE_WOOL_MAGENTA.get(), getOther("Pressure Plate", "Magenta", "Wool"));

@@ -120,14 +120,14 @@ public class ModBlockModelProvider extends BlockModelProvider {
 
         //Button
         makeButton("button_bright_white", "bright/white");
-        makeButton("button_bright_orange", "bright/black");
-        makeButton("button_bright_magenta", "bright/orange");
-        makeButton("button_bright_yellow", "bright/magenta");
-        makeButton("button_bright_cyan", "bright/yellow");
-        makeButton("button_bright_blue", "bright/cyan");
-        makeButton("button_bright_green", "bright/blue");
-        makeButton("button_bright_red", "bright/green");
-        makeButton("button_bright_black", "bright/red");
+        makeButton("button_bright_orange", "bright/orange");
+        makeButton("button_bright_magenta", "bright/magenta");
+        makeButton("button_bright_yellow", "bright/yellow");
+        makeButton("button_bright_cyan", "bright/cyan");
+        makeButton("button_bright_blue", "bright/blue");
+        makeButton("button_bright_green", "bright/green");
+        makeButton("button_bright_red", "bright/red");
+        makeButton("button_bright_black", "bright/black");
         makeButton("button_wool_white", "wool/white");
         makeButton("button_wool_orange", "wool/orange");
         makeButton("button_wool_magenta", "wool/magenta");
@@ -146,14 +146,14 @@ public class ModBlockModelProvider extends BlockModelProvider {
 
         //Pressure Plate
         makePressurePlate("pressure_plate_bright_white", "bright/white");
-        makePressurePlate("pressure_plate_bright_orange", "bright/black");
-        makePressurePlate("pressure_plate_bright_magenta", "bright/orange");
-        makePressurePlate("pressure_plate_bright_yellow", "bright/magenta");
-        makePressurePlate("pressure_plate_bright_cyan", "bright/yellow");
-        makePressurePlate("pressure_plate_bright_blue", "bright/cyan");
-        makePressurePlate("pressure_plate_bright_green", "bright/blue");
-        makePressurePlate("pressure_plate_bright_red", "bright/green");
-        makePressurePlate("pressure_plate_bright_black", "bright/red");
+        makePressurePlate("pressure_plate_bright_orange", "bright/orange");
+        makePressurePlate("pressure_plate_bright_magenta", "bright/magenta");
+        makePressurePlate("pressure_plate_bright_yellow", "bright/yellow");
+        makePressurePlate("pressure_plate_bright_cyan", "bright/cyan");
+        makePressurePlate("pressure_plate_bright_blue", "bright/blue");
+        makePressurePlate("pressure_plate_bright_green", "bright/green");
+        makePressurePlate("pressure_plate_bright_red", "bright/red");
+        makePressurePlate("pressure_plate_bright_black", "bright/black");
         makePressurePlate("pressure_plate_wool_white", "wool/white");
         makePressurePlate("pressure_plate_wool_orange", "wool/orange");
         makePressurePlate("pressure_plate_wool_magenta", "wool/magenta");

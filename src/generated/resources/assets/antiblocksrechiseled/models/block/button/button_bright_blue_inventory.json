@@ -1,6 +1,6 @@
 {
   "parent": "antiblocksrechiseled:block/full_bright_button_inventory",
   "textures": {
-    "color": "antiblocksrechiseled:block/bright/cyan"
+    "color": "antiblocksrechiseled:block/bright/blue"
   }
 }
