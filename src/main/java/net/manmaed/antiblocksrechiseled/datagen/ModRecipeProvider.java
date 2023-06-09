@@ -2,11 +2,8 @@ package net.manmaed.antiblocksrechiseled.datagen;
 
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
 import net.manmaed.antiblocksrechiseled.blocks.*;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.data.PackOutput;
+import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -17,8 +14,10 @@ import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider {
 
-    public ModRecipeProvider(DataGenerator dataGenerator) {
-        super(dataGenerator);
+    public static RecipeCategory block = RecipeCategory.BUILDING_BLOCKS;
+
+    public ModRecipeProvider(PackOutput output) {
+        super(output);
     }
 
     public static ResourceLocation getSave(String string) {
@@ -26,9 +25,9 @@ public class ModRecipeProvider extends RecipeProvider {
     }
 
     @Override
-    protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
+    protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
         //Bright White Builder
-        ShapedRecipeBuilder.shaped(ABRCBrightColors.BRIGHT_WHITE.get(), 4)
+        ShapedRecipeBuilder.shaped(block ,ABRCBrightColors.BRIGHT_WHITE.get(), 4)
                 .define('s', Ingredient.of(Blocks.STONE.asItem()))
                 .define('d', Ingredient.of(Items.WHITE_DYE))
                 .define('g', Ingredient.of(Items.GLOWSTONE_DUST))
@@ -199,7 +198,7 @@ public class ModRecipeProvider extends RecipeProvider {
     }
 
     protected static void woolBuilder(ItemLike itemOut, ItemLike wool, ItemLike dye, Consumer<FinishedRecipe> recipeConsumer) {
-        ShapedRecipeBuilder.shaped(itemOut, 4)
+        ShapedRecipeBuilder.shaped(block, itemOut, 4)
                 .define('w', wool).define('d', dye).define('g', Items.GLOWSTONE_DUST)
                 .pattern("wdw")
                 .pattern("wgw")
@@ -208,7 +207,7 @@ public class ModRecipeProvider extends RecipeProvider {
     }
 
     protected static void whiteToColorBuilder(ItemLike itemOut, ItemLike dye, Consumer<FinishedRecipe> recipeConsumer) {
-        ShapelessRecipeBuilder.shapeless(itemOut, 4)
+        ShapelessRecipeBuilder.shapeless(block,itemOut, 4)
                 .requires(dye).requires(ABRCBrightColors.BRIGHT_WHITE.get())
                 .unlockedBy("has_anitblock", has(ABRCBrightColors.BRIGHT_WHITE.get()))
                 .save(recipeConsumer);
@@ -216,14 +215,14 @@ public class ModRecipeProvider extends RecipeProvider {
 
     protected static void fullToBorderedBuilder(ItemLike itemOut, ItemLike colorBlock, Boolean invertDye, Consumer<FinishedRecipe> recipeConsumer) {
         if (!invertDye) {
-            ShapedRecipeBuilder.shaped(itemOut, 2)
+            ShapedRecipeBuilder.shaped(block, itemOut, 2)
                     .define('#', colorBlock).define('d', Items.BLACK_DYE)
                     .pattern("ddd")
                     .pattern("d#d")
                     .pattern("ddd")
                     .unlockedBy(getHasName(colorBlock), has(colorBlock))
                     .save(recipeConsumer, getSave("full_to_border_" + colorBlock.asItem().toString().toLowerCase()));
-        } else ShapedRecipeBuilder.shaped(itemOut, 2)
+        } else ShapedRecipeBuilder.shaped(block, itemOut, 2)
                 .define('#', colorBlock).define('d', Items.WHITE_DYE)
                 .pattern("ddd")
                 .pattern("d#d")
@@ -233,7 +232,7 @@ public class ModRecipeProvider extends RecipeProvider {
     }
 
     protected static void myStairBuilder(ItemLike itemOut, ItemLike itemIn, Consumer<FinishedRecipe> recipeConsumer) {
-        ShapedRecipeBuilder.shaped(itemOut, 4)
+        ShapedRecipeBuilder.shaped(block, itemOut, 4)
                 .define('#', itemIn)
                 .pattern("#  ")
                 .pattern("## ")
@@ -243,7 +242,7 @@ public class ModRecipeProvider extends RecipeProvider {
     }
 
     protected static void mySlabBuilder(ItemLike itemOut, ItemLike itemIn, Consumer<FinishedRecipe> recipeConsumer) {
-        ShapedRecipeBuilder.shaped(itemOut, 6)
+        ShapedRecipeBuilder.shaped(block, itemOut, 6)
                 .define('#', itemIn)
                 .pattern("###")
                 .unlockedBy(getHasName(itemIn), has(itemIn))
@@ -251,19 +250,18 @@ public class ModRecipeProvider extends RecipeProvider {
     }
 
     protected static void myButtonBuilder(ItemLike itemOut, ItemLike itemIn, Consumer<FinishedRecipe> recipeConsumer) {
-        ShapelessRecipeBuilder.shapeless(itemOut)
+        ShapelessRecipeBuilder.shapeless(block, itemOut)
                 .requires(itemIn)
                 .unlockedBy(getHasName(itemIn), has(itemIn))
                 .save(recipeConsumer, getSave(itemIn.asItem().toString().toLowerCase() + "_button"));
     }
 
     protected static void myPlateBuilder(ItemLike itemOut, ItemLike itemIn, Consumer<FinishedRecipe> recipeConsumer) {
-        ShapedRecipeBuilder.shaped(itemOut)
+        ShapedRecipeBuilder.shaped(block, itemOut)
                 .define('#', itemIn)
                 .pattern("##")
                 .unlockedBy(getHasName(itemIn), has(itemIn))
                 .save(recipeConsumer, getSave(itemIn.asItem().toString().toLowerCase() + "_pressure_plate"));
     }
-
 
 }

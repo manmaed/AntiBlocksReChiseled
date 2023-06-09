@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "antiblocksrechiseled:wool_light_blue"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "antiblocksrechiseled:slab_light_blue_wool"
+  },
+  "show_notification": true
+}

@@ -2,12 +2,12 @@ package net.manmaed.antiblocksrechiseled.datagen;
 
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
 import net.manmaed.antiblocksrechiseled.blocks.*;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
 
 public class ModLangProvider extends LanguageProvider {
-    public ModLangProvider(DataGenerator gen) {
-        super(gen, AntiBlocksReChiseled.MOD_ID, "en_us");
+    public ModLangProvider(PackOutput packOutput) {
+        super(packOutput, AntiBlocksReChiseled.MOD_ID, "en_us");
     }
 
     private String getMain(String type, String color, Boolean bordered) {

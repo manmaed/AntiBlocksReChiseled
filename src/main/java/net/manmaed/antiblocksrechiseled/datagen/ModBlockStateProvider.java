@@ -4,6 +4,7 @@ import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
 import net.manmaed.antiblocksrechiseled.blocks.*;
 import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.Half;
@@ -17,8 +18,8 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class ModBlockStateProvider extends BlockStateProvider {
 
-    public ModBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
-        super(gen, AntiBlocksReChiseled.MOD_ID, exFileHelper);
+    public ModBlockStateProvider(PackOutput packOutput, ExistingFileHelper exFileHelper) {
+        super(packOutput, AntiBlocksReChiseled.MOD_ID, exFileHelper);
     }
 
     @Override

@@ -2,19 +2,21 @@ package net.manmaed.antiblocksrechiseled.datagen;
 
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
 import net.manmaed.antiblocksrechiseled.blocks.*;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
-public class ModBlocksTagsProvider extends BlockTagsProvider {
-    public ModBlocksTagsProvider(DataGenerator dataGenerator, @Nullable ExistingFileHelper existingFileHelper) {
-        super(dataGenerator, AntiBlocksReChiseled.MOD_ID, existingFileHelper);
-    }
+import java.util.concurrent.CompletableFuture;
 
+public class ModBlocksTagsProvider extends BlockTagsProvider {
+    public ModBlocksTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> completableFuture, @Nullable ExistingFileHelper existingFileHelper) {
+        super(packOutput, completableFuture, AntiBlocksReChiseled.MOD_ID, existingFileHelper);
+    }
     @Override
-    protected void addTags() {
+    protected void addTags(HolderLookup.Provider provider) {
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
 
                 //Bright Colors

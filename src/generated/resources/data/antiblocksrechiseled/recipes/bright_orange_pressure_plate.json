@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "antiblocksrechiseled:bright_orange"
+    }
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "item": "antiblocksrechiseled:pressure_plate_bright_orange"
+  },
+  "show_notification": true
+}

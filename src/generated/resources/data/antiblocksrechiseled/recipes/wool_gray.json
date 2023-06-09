@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "d": {
+      "item": "minecraft:gray_dye"
+    },
+    "g": {
+      "item": "minecraft:glowstone_dust"
+    },
+    "w": {
+      "item": "minecraft:gray_wool"
+    }
+  },
+  "pattern": [
+    "wdw",
+    "wgw",
+    "wdw"
+  ],
+  "result": {
+    "count": 4,
+    "item": "antiblocksrechiseled:wool_gray"
+  },
+  "show_notification": true
+}

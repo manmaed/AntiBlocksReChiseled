@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "antiblocksrechiseled:block/pressure_plate/pressure_plate_bright_black"
+    },
+    "powered=true": {
+      "model": "antiblocksrechiseled:block/pressure_plate/pressure_plate_bright_black_down"
+    }
+  }
+}

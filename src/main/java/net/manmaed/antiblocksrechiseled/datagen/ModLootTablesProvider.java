@@ -1,46 +1,32 @@
 package net.manmaed.antiblocksrechiseled.datagen;
 
+
 import com.google.common.collect.ImmutableList;
-import com.mojang.datafixers.util.Pair;
 import net.manmaed.antiblocksrechiseled.blocks.*;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.loot.BlockLoot;
+import net.minecraft.data.PackOutput;
+import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.data.loot.LootTableProvider;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.storage.loot.LootTable;
-import net.minecraft.world.level.storage.loot.LootTables;
-import net.minecraft.world.level.storage.loot.ValidationContext;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
-import java.util.function.Supplier;
+import java.util.Set;
 
 public class ModLootTablesProvider extends LootTableProvider {
-    public ModLootTablesProvider(DataGenerator dataGenerator) {
-        super(dataGenerator);
+    public ModLootTablesProvider(PackOutput packOutput) {
+        super(packOutput, Set.of(), ImmutableList.of(new LootTableProvider.SubProviderEntry(ModBlockLoot::new, LootContextParamSets.BLOCK)));
     }
 
-    @Override
-    protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> getTables() {
-        return ImmutableList.of(
-                Pair.of(ModBlockLoot::new, LootContextParamSets.BLOCK));
-    }
+    public static class ModBlockLoot extends BlockLootSubProvider {
+        protected ModBlockLoot() {
+            super(Set.of(), FeatureFlags.REGISTRY.allFlags());
+        }
 
-    @Override
-    protected void validate(Map<ResourceLocation, LootTable> map, ValidationContext validationTracker) {
-        map.forEach((location, lootTable) -> LootTables.validate(validationTracker, location, lootTable));
-    }
-
-    private static class ModBlockLoot extends BlockLoot {
         @Override
-        protected void addTables() {
+        protected void generate() {
             dropSelf(ABRCBrightColors.BRIGHT_WHITE.get());
             dropSelf(ABRCBrightColors.BRIGHT_ORANGE.get());
             dropSelf(ABRCBrightColors.BRIGHT_MAGENTA.get());

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:orange_dye"
+    },
+    {
+      "item": "antiblocksrechiseled:bright_white"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "antiblocksrechiseled:bright_orange"
+  }
+}
