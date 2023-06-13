@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bright_magenta": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "antiblocksrechiseled:bright_magenta"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "antiblocksrechiseled:bright_magenta_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_bright_magenta",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "antiblocksrechiseled:bright_magenta_stairs"
+    ]
+  },
+  "sends_telemetry_event": false
+}

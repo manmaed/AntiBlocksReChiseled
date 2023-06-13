@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "antiblocksrechiseled:wool_magenta_pressure_plate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wool_magenta": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "antiblocksrechiseled:wool_magenta"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_wool_magenta",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "antiblocksrechiseled:wool_magenta_pressure_plate"
+    ]
+  },
+  "sends_telemetry_event": false
+}

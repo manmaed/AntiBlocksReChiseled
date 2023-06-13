@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "antiblocksrechiseled:wool_gray"
+    }
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "item": "antiblocksrechiseled:pressure_plate_wool_gray"
+  },
+  "show_notification": true
+}

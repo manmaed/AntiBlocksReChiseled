@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "antiblocksrechiseled:wool_orange"
+    }
+  ],
+  "result": {
+    "item": "antiblocksrechiseled:button_wool_orange"
+  }
+}

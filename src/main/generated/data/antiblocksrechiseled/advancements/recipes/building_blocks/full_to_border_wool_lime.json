@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "antiblocksrechiseled:full_to_border_wool_lime"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wool_lime": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "antiblocksrechiseled:wool_lime"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_wool_lime",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "antiblocksrechiseled:full_to_border_wool_lime"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "antiblocksrechiseled:bright_white_border"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "antiblocksrechiseled:blocks/bright_white_border"
+}
