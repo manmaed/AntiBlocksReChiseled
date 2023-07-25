@@ -80,7 +80,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         myslabBlock(ABRCSlabs.SLAB_WHITE_BRIGHT.get(), getFile("slab/slab_white_bright"), getFile("slab/slab_white_bright_top"), getFile("bright/white"));
         myslabBlock(ABRCSlabs.SLAB_BLACK.get(), getFile("slab/slab_black"), getFile("slab/slab_black_top"), getFile("bright/black"));
         myslabBlock(ABRCSlabs.SLAB_ORANGE_BRIGHT.get(), getFile("slab/slab_orange_bright"), getFile("slab/slab_orange_bright_top"), getFile("bright/orange"));
-        myslabBlock(ABRCSlabs.SLAB_MAGENTA_BRIGHT.get(), getFile("slab/slab_magmyenta_bright"), getFile("slab/slab_magenta_bright_top"), getFile("bright/magenta"));
+        myslabBlock(ABRCSlabs.SLAB_MAGENTA_BRIGHT.get(), getFile("slab/slab_magenta_bright"), getFile("slab/slab_magenta_bright_top"), getFile("bright/magenta"));
         myslabBlock(ABRCSlabs.SLAB_YELLOW_BRIGHT.get(), getFile("slab/slab_yellow_bright"), getFile("slab/slab_yellow_bright_top"), getFile("bright/yellow"));
         myslabBlock(ABRCSlabs.SLAB_CYAN_BRIGHT.get(), getFile("slab/slab_cyan_bright"), getFile("slab/slab_cyan_bright_top"), getFile("bright/cyan"));
         myslabBlock(ABRCSlabs.SLAB_BLUE_BRIGHT.get(), getFile("slab/slab_blue_bright"), getFile("slab/slab_blue_bright_top"), getFile("bright/blue"));
