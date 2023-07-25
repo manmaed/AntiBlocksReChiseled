@@ -82,7 +82,7 @@ repositories {
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     implementation fg.deobf("curse.maven:ctm-${ctm_id}:${ctm_file_id}")
-    implementation fg.deobf("me.shedaniel:RoughlyEnoughItems-forge:9.1.591")
+    //implementation fg.deobf("me.shedaniel:RoughlyEnoughItems-forge:9.1.591")
 }
 
 jar {
