@@ -8,7 +8,7 @@ body:
       value: |
         To help us help you, please provide as much information as you can, this helps us with debugging and reproducting the issue.
   - type: input
-    id: bg-version
+    id: abrc-version
     attributes:
       label: AntiBlocksReChiseled version
       description: |
@@ -22,16 +22,28 @@ body:
       label: Minecraft Version
       placeholder: 1.19.2
     validations:
+      required: false
+  - type: dropdown
+    id: modloader-name
+    validations:
       required: true
-  - type: input
-    id: forge-version
+    attributes:
+      label: Forge Or Fabric?
+      description: |
+        Is this Forge Or Fabric
+      multiple: false
+      options:
+        - 'Forge'
+        - 'Fabric'
+      - type: input
+    id: modloader-version
     attributes:
       label: Forge Version Or Fabric Version
       description: |
         You can get this from the main menu screen in the bottom left corner of the screen.
-      placeholder: Forge (36.0.22) -- For the Fabric version please add the loder version (0.14.11) and the api verson (0.69.0)
+      placeholder: Forge (36.0.22) -- For the Fabric version please add the loader version (0.14.11) and the api verson (0.69.0)
     validations:
-      required: false
+      required: true
   - type: input
     id: modpack
     attributes:
