@@ -1,6 +1,7 @@
 {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/antiblocksrechiseled",
     "1.20.1": {
+      "0.4.2": "Fix #8 (No Texutre on Bright Magenta Slab)",
       "0.4.1": "Port to 1.20.1"
     },
     "1.20": {
@@ -10,6 +11,7 @@
       "0.2.1": "Alpha port to 1.19.3"
     },
     "1.19.2": {
+      "0.1.8": "Fix #8 (No Texutre on Bright Magenta Slab)",
       "0.1.7": "fixed stuffed buttons and pressure plate item models lang files and and fixed amout of plates given from crafting and the wool broders recipes",
       "0.1.6": "fixed more missing recipes + 5ull Requested Buttons and Pressure Plates",
       "0.1.5": "fixed missing recipes and block loot tables",
