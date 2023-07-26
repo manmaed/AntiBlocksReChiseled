@@ -24,7 +24,7 @@ body:
     validations:
       required: false
   - type: dropdown
-    id: modloader-name
+  id: modloader-name
     validations:
       required: true
     attributes:
