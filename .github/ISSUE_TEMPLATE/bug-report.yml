@@ -28,7 +28,7 @@ body:
     validations:
       required: true
     attributes:
-      label: Forge Or Fabric?
+      label: Is it Forge Or Fabric?
       description: |
         Is this Forge Or Fabric
       multiple: false
