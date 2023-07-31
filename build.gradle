@@ -3,7 +3,7 @@ plugins {
     id 'idea'
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
-    id 'com.matthewprenger.cursegradle' version '1.4.0'
+    id "me.modmuss50.mod-publish-plugin" version "0.2.1"
 }
 
 repositories {
@@ -15,7 +15,7 @@ def ENV = System.getenv()
 version = "${ENV.GITHUB_RUN_NUMBER}" ? "${mod_version}.${ENV.GITHUB_RUN_NUMBER}" : "${mod_version}.nobuildnumber"
 group = 'net.manmaed.antiblocksrechiseled'
 base {
-archivesBaseName = 'antiblocksrechiseled'
+    archivesBaseName = 'antiblocksrechiseled'
 }
 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
@@ -25,7 +25,7 @@ println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty '
 minecraft {
     mappings channel: "${minecraft_mappings}", version: "${minecraft_version}"
     copyIdeResources = true
-runs {
+    runs {
         client {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
@@ -50,7 +50,7 @@ runs {
             }
         }
 
-       gameTestServer {
+        gameTestServer {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
@@ -115,7 +115,24 @@ publishing {
     }
 }
 
-if (ENV.CURSE_DEPLOY) {
+publishMods {
+    dryRun = providers.environmentVariable("CURSE_TOKEN").getOrNull() == null
+    file = reobfJar.archiveFile
+    modLoaders.add("forge")
+    curseforge {
+        accessToken = providers.environmentVariable("CURSE_DEPLOY")
+        id = project.curseforge_id
+        releaseType = BETA
+        minecraftVersions.add("Java 17")
+        minecraftVersions.add("${minecraft_version}")
+        optional {
+            slug = 'ctm'
+        }
+        displayName = "${mod_name} v${version} - Forge - ${minecraft_version}"
+        changelog = "changeme"
+    }
+}
+/*if (ENV.CURSE_DEPLOY) {
     curseforge {
         apiKey = ENV.CURSE_DEPLOY
         project {
@@ -134,7 +151,7 @@ if (ENV.CURSE_DEPLOY) {
 
         }
     }
-}
+}*/
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
