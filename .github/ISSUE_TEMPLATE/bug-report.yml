@@ -24,13 +24,13 @@ body:
     validations:
       required: true
   - type: dropdown
-    id: modloader
-      validations:
+    id: modlaoder
+    validations:
         required: true
     attributes:
-      label: Is this Forge or Fabric?
+      label: Forge or Fabric?
       description: |
-        Is this Forge or Fabric?
+        Are you Using Forge Or Fabric?
       multiple: false
       options:
         - 'Forge'
