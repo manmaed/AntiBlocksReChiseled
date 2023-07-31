@@ -24,17 +24,17 @@ body:
     validations:
       required: true
   - type: dropdown
-    id: modloader-version
-    validations:
-    required: true
+    id: modloader
+      validations:
+        required: true
     attributes:
-    label: Is this Forge or Fabric?
-    description: |
-    Is this Forge or Fabric?
-    multiple: false
-    options:
-    - 'Forge'
-    - 'Fabric'
+      label: Is this Forge or Fabric?
+      description: |
+        Is this Forge or Fabric?
+      multiple: false
+      options:
+        - 'Forge'
+        - 'Fabric'
   - type: input
     id: modpack
     attributes:
