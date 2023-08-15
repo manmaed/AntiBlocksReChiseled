@@ -1,7 +1,7 @@
 plugins {
     id 'fabric-loom' version '1.0-SNAPSHOT'
     id 'maven-publish'
-    id "me.modmuss50.mod-publish-plugin" version "0.2.1"
+    id "me.modmuss50.mod-publish-plugin" version "0.3.0"
 }
 
 def ENV = System.getenv()
@@ -33,6 +33,18 @@ loom {
         "antiblocksrechiseled" {
             sourceSet sourceSets.main
             sourceSet sourceSets.client
+        }
+    }
+    runs {
+        // This adds a new gradle task that runs the datagen API: "gradlew runDatagen"
+        datagen {
+            inherit server
+            name "Data Generation"
+            vmArg "-Dfabric-api.datagen"
+            vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
+            vmArg "-Dfabric-api.datagen.modid=antiblocksrechiseled"
+
+            runDir "build/datagen"
         }
     }
 }
@@ -110,23 +122,23 @@ publishing {
 }
 
 publishMods {
-    dryRun = providers.environmentVariable("CURSE_TOKEN").getOrNull() == null
+    dryRun = providers.environmentVariable("CURSE_DEPLOY").getOrNull() == null
     file = remapJar.archiveFile
     modLoaders.add("fabric")
+    type = BETA
+    changelog = "changeme"
+    displayName = "${mod_name} v${version} - Fabric - ${minecraft_version}"
     curseforge {
         accessToken = providers.environmentVariable("CURSE_DEPLOY")
-        id = project.curseforge_id
-        releaseType = BETA
+        projectId = project.curseforge_id
         minecraftVersions.add("Java 17")
         minecraftVersions.add("${minecraft_version}")
-        required {
+        requires {
             slug = 'fabric-api'
         }
         optional {
             slug = 'ctm-refabricated'
         }
-        displayName = "${mod_name} v${version} - Fabric - ${minecraft_version}"
-        changelog = "changeme"
     }
 }
 
