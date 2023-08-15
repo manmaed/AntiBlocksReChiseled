@@ -8,7 +8,7 @@ plugins {
 
 repositories {
     maven {
-        url "https://www.cursemaven.com"
+        url "https://maven.curse.tools"
     }
 }
 def ENV = System.getenv()
@@ -31,6 +31,8 @@ minecraft {
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
             property 'forge.enabledGameTestNamespaces', 'antiblocksrechiseled'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
             mods {
                 antiblocksrechiseled {
                     source sourceSets.main
@@ -43,6 +45,8 @@ minecraft {
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
             property 'forge.enabledGameTestNamespaces', 'antiblocksrechiseled'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
             mods {
                 antiblocksrechiseled {
                     source sourceSets.main
@@ -116,20 +120,20 @@ publishing {
 }
 
 publishMods {
-    dryRun = providers.environmentVariable("CURSE_TOKEN").getOrNull() == null
-    file = reobfJar.archiveFile
+    dryRun = providers.environmentVariable("CURSE_DEPLOY").getOrNull() == null
+    file = jar.archiveFile
     modLoaders.add("forge")
+    type = BETA
+    changelog = "changeme"
+    displayName = "${mod_name} v${version} - Forge - ${minecraft_version}"
     curseforge {
         accessToken = providers.environmentVariable("CURSE_DEPLOY")
-        id = project.curseforge_id
-        releaseType = BETA
+        projectId = project.curseforge_id
         minecraftVersions.add("Java 17")
         minecraftVersions.add("${minecraft_version}")
         optional {
             slug = 'ctm'
         }
-        displayName = "${mod_name} v${version} - Forge - ${minecraft_version}"
-        changelog = "changeme"
     }
 }
 /*if (ENV.CURSE_DEPLOY) {
