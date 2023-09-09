@@ -8,9 +8,14 @@ plugins {
 
 repositories {
     maven {
+        name = 'Saps'
+        url = 'https://maven.saps.dev/mirror'
+    }
+    maven {
         url "https://maven.curse.tools"
     }
 }
+
 def ENV = System.getenv()
 version = "${ENV.GITHUB_RUN_NUMBER}" ? "${mod_version}.${ENV.GITHUB_RUN_NUMBER}" : "${mod_version}.nobuildnumber"
 group = 'net.manmaed.antiblocksrechiseled'
