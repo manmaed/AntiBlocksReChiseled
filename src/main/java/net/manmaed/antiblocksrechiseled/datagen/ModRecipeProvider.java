@@ -25,7 +25,7 @@ public class ModRecipeProvider extends RecipeProvider {
     }
 
     @Override
-    protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
+    protected void buildRecipes(RecipeOutput consumer) {
         //Bright White Builder
         ShapedRecipeBuilder.shaped(block ,ABRCBrightColors.BRIGHT_WHITE.get(), 4)
                 .define('s', Ingredient.of(Blocks.STONE.asItem()))
@@ -197,7 +197,7 @@ public class ModRecipeProvider extends RecipeProvider {
 
     }
 
-    protected static void woolBuilder(ItemLike itemOut, ItemLike wool, ItemLike dye, Consumer<FinishedRecipe> recipeConsumer) {
+    protected static void woolBuilder(ItemLike itemOut, ItemLike wool, ItemLike dye, RecipeOutput  recipeConsumer) {
         ShapedRecipeBuilder.shaped(block, itemOut, 4)
                 .define('w', wool).define('d', dye).define('g', Items.GLOWSTONE_DUST)
                 .pattern("wdw")
@@ -206,14 +206,14 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_wool", has(Blocks.WHITE_WOOL)).save(recipeConsumer);
     }
 
-    protected static void whiteToColorBuilder(ItemLike itemOut, ItemLike dye, Consumer<FinishedRecipe> recipeConsumer) {
+    protected static void whiteToColorBuilder(ItemLike itemOut, ItemLike dye, RecipeOutput  recipeConsumer) {
         ShapelessRecipeBuilder.shapeless(block,itemOut, 4)
                 .requires(dye).requires(ABRCBrightColors.BRIGHT_WHITE.get())
                 .unlockedBy("has_anitblock", has(ABRCBrightColors.BRIGHT_WHITE.get()))
                 .save(recipeConsumer);
     }
 
-    protected static void fullToBorderedBuilder(ItemLike itemOut, ItemLike colorBlock, Boolean invertDye, Consumer<FinishedRecipe> recipeConsumer) {
+    protected static void fullToBorderedBuilder(ItemLike itemOut, ItemLike colorBlock, Boolean invertDye, RecipeOutput  recipeConsumer) {
         if (!invertDye) {
             ShapedRecipeBuilder.shaped(block, itemOut, 2)
                     .define('#', colorBlock).define('d', Items.BLACK_DYE)
@@ -231,7 +231,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(recipeConsumer, getSave("full_to_border_" + colorBlock.asItem().toString().toLowerCase()));
     }
 
-    protected static void myStairBuilder(ItemLike itemOut, ItemLike itemIn, Consumer<FinishedRecipe> recipeConsumer) {
+    protected static void myStairBuilder(ItemLike itemOut, ItemLike itemIn, RecipeOutput  recipeConsumer) {
         ShapedRecipeBuilder.shaped(block, itemOut, 4)
                 .define('#', itemIn)
                 .pattern("#  ")
@@ -241,7 +241,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(recipeConsumer, getSave(itemIn.asItem().toString().toLowerCase() + "_stairs"));
     }
 
-    protected static void mySlabBuilder(ItemLike itemOut, ItemLike itemIn, Consumer<FinishedRecipe> recipeConsumer) {
+    protected static void mySlabBuilder(ItemLike itemOut, ItemLike itemIn, RecipeOutput  recipeConsumer) {
         ShapedRecipeBuilder.shaped(block, itemOut, 6)
                 .define('#', itemIn)
                 .pattern("###")
@@ -249,14 +249,14 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(recipeConsumer, getSave(itemIn.asItem().toString().toLowerCase() + "_slabs"));
     }
 
-    protected static void myButtonBuilder(ItemLike itemOut, ItemLike itemIn, Consumer<FinishedRecipe> recipeConsumer) {
+    protected static void myButtonBuilder(ItemLike itemOut, ItemLike itemIn, RecipeOutput  recipeConsumer) {
         ShapelessRecipeBuilder.shapeless(block, itemOut)
                 .requires(itemIn)
                 .unlockedBy(getHasName(itemIn), has(itemIn))
                 .save(recipeConsumer, getSave(itemIn.asItem().toString().toLowerCase() + "_button"));
     }
 
-    protected static void myPlateBuilder(ItemLike itemOut, ItemLike itemIn, Consumer<FinishedRecipe> recipeConsumer) {
+    protected static void myPlateBuilder(ItemLike itemOut, ItemLike itemIn, RecipeOutput  recipeConsumer) {
         ShapedRecipeBuilder.shaped(block, itemOut)
                 .define('#', itemIn)
                 .pattern("##")

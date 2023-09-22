@@ -3,7 +3,7 @@ plugins {
     id 'idea'
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
-    id "me.modmuss50.mod-publish-plugin" version "0.2.1"
+    id "me.modmuss50.mod-publish-plugin" version "0.3.5"
 }
 
 repositories {
@@ -125,7 +125,7 @@ publishMods {
     modLoaders.add("forge")
     type = BETA
     changelog = "changeme"
-    displayName = "${mod_name} v${version} - Forge - ${minecraft_version}"
+    displayName = "${mod_name} v${mod_version} - Forge - ${minecraft_version}"
     curseforge {
         accessToken = providers.environmentVariable("CURSE_DEPLOY")
         projectId = project.curseforge_id
@@ -136,26 +136,6 @@ publishMods {
         }
     }
 }
-/*if (ENV.CURSE_DEPLOY) {
-    curseforge {
-        apiKey = ENV.CURSE_DEPLOY
-        project {
-            id = project.curseforge_id
-            releaseType = "${curseforge_releasetype}"
-            addGameVersion "Forge"
-            addGameVersion "Java 17"
-            addGameVersion "${minecraft_version}"
-            mainArtifact(jar) {
-                displayName = "${mod_name} v${version} - Forge - ${minecraft_version}"
-                relations {
-                    optionalDependency 'ctm'
-                }
-            }
-            changelog = "changeme"
-
-        }
-    }
-}*/
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
