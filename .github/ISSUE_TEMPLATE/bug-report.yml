@@ -28,13 +28,21 @@ body:
     validations:
         required: true
     attributes:
-      label: Forge or Fabric?
+      label: Forge, Fabric or Neo?
       description: |
-        Are you Using Forge Or Fabric?
+        Are you Using Forge, Fabric or Neo?
       multiple: false
       options:
         - 'Forge'
         - 'Fabric'
+        - 'Neo'
+  - type: input
+    id: modloader-version
+    attributes:
+      label: Forge/Fabric/Neo Version
+      placeholder: Forge/Neo (48.0.1) - Fabric (0.14.22)
+    validations:
+      required: true
   - type: input
     id: modpack
     attributes:
