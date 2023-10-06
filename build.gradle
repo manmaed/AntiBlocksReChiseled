@@ -9,7 +9,7 @@ version = "${ENV.GITHUB_RUN_NUMBER}" ? "${mod_version}.${ENV.GITHUB_RUN_NUMBER}"
 group = project.maven_group
 
 base {
-    archivesName = project.archives_base_name
+    archivesName = project.archives_base_name + "-fabric"
 }
 
 repositories {
