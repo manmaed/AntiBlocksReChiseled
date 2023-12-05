@@ -1,7 +1,7 @@
 plugins {
-    id 'fabric-loom' version '1.0-SNAPSHOT'
+    id 'fabric-loom' version '1.4-SNAPSHOT'
     id 'maven-publish'
-    id "me.modmuss50.mod-publish-plugin" version "0.3.5"
+    id "me.modmuss50.mod-publish-plugin" version "0.4.5"
 }
 
 def ENV = System.getenv()
@@ -136,36 +136,5 @@ publishMods {
         requires {
             slug = 'fabric-api'
         }
-        optional {
-            slug = 'ctm-refabricated'
-        }
     }
 }
-
-/*if (ENV.CURSE_DEPLOY) {
-	curseforge {
-		apiKey = ENV.CURSE_DEPLOY
-		project {
-			id = project.curseforge_id
-			releaseType = "${curseforge_releasetype}"
-			addGameVersion "Fabric"
-			addGameVersion "Java 17"
-			addGameVersion "${minecraft_version}"
-			mainArtifact(remapJar) {
-				displayName = "${mod_name} v${version} - Fabric - ${minecraft_version}"
-				relations {
-					requiredDependency 'fabric-api'
-					optionalDependency 'ctm-refabricated'
-				}
-			}
-			changelog = "changeme"
-		}
-		options {
-			forgeGradleIntegration  = false
-		}
-	}
-}*/
-
-/*afterEvaluate {
-	tasks.curseforge715567.dependsOn remapJar
-}*/

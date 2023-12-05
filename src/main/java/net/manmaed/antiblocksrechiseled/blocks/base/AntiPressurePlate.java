@@ -12,12 +12,13 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class AntiPressurePlate extends AbstractPressurePlateBlock {
+public class AntiPressurePlate extends PressurePlateBlock {
+
 
     public static final BooleanProperty POWERED = Properties.POWERED;
     private final AntiPressurePlate.ActivationRule activationRule;
     public AntiPressurePlate() {
-        super(Settings.create()
+        super(BlockSetType.STONE ,Settings.create()
                 .mapColor(MapColor.STONE_GRAY)
                 .solid()
                 .instrument(Instrument.BASEDRUM)
@@ -25,9 +26,10 @@ public class AntiPressurePlate extends AbstractPressurePlateBlock {
                 .noCollision()
                 .strength(0.5F)
                 .pistonBehavior(PistonBehavior.DESTROY)
-                .luminance(light -> 15), BlockSetType.STONE);
+                .luminance(light -> 15));
         this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(POWERED, false));
         this.activationRule = ActivationRule.PLAYERS;
+        ;
     }
 
     @Override
@@ -39,6 +41,8 @@ public class AntiPressurePlate extends AbstractPressurePlateBlock {
     protected BlockState setRedstoneOutput(BlockState state, int rsOut) {
         return (BlockState)state.with(POWERED, rsOut > 0) ;
     }
+
+
     @Override
     protected int getRedstoneOutput(World world, BlockPos pos) {
         Class var10000;
