@@ -1,9 +1,10 @@
 package net.manmaed.antiblocksrechiseled.datagen;
 
+
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
-import net.manmaed.antiblocksrechiseled.blocks.*;
 import net.minecraft.data.PackOutput;
-import net.minecraftforge.common.data.LanguageProvider;
+import net.neoforged.neoforge.common.data.LanguageProvider;
+import net.manmaed.antiblocksrechiseled.blocks.*;
 
 public class ModLangProvider extends LanguageProvider {
     public ModLangProvider(PackOutput packOutput) {

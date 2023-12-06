@@ -9,7 +9,7 @@ import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -176,12 +176,12 @@ public class ModLootTablesProvider extends LootTableProvider {
         @Override
         protected Iterable<Block> getKnownBlocks() {
             List<Block> blocks = new ArrayList<>();
-            ABRCBrightColors.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
-            ABRCWoolColors.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
-            ABRCSlabs.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
-            ABRCStairs.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
-            ABRCButtons.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
-            ABRCPressurePlates.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
+            ABRCBrightColors.BLOCKS.getEntries().stream().map(DeferredHolder::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
+            ABRCWoolColors.BLOCKS.getEntries().stream().map(DeferredHolder::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
+            ABRCSlabs.BLOCKS.getEntries().stream().map(DeferredHolder::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
+            ABRCStairs.BLOCKS.getEntries().stream().map(DeferredHolder::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
+            ABRCButtons.BLOCKS.getEntries().stream().map(DeferredHolder::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
+            ABRCPressurePlates.BLOCKS.getEntries().stream().map(DeferredHolder::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
             return blocks;
         }
     }

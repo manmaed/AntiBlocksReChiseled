@@ -3,10 +3,10 @@ package net.manmaed.antiblocksrechiseled.datagen;
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 @Mod.EventBusSubscriber(modid = AntiBlocksReChiseled.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ABRCDataGeneration {
@@ -22,6 +22,6 @@ public class ABRCDataGeneration {
         generator.addProvider(true, new ModBlocksTagsProvider(packOutput, event.getLookupProvider(), fileHelper));
         generator.addProvider(true, new ModLangProvider(packOutput));
         generator.addProvider(true, new ModLootTablesProvider(packOutput));
-        generator.addProvider(true, new ModRecipeProvider(packOutput));
+        generator.addProvider(true, new ModRecipeProvider(packOutput, event.getLookupProvider()));
     }
 }
