@@ -52,6 +52,27 @@ sourceSets.main.resources {
 dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
 }
+tasks.withType(ProcessResources).configureEach {
+    var replaceProperties = [
+            version: version
+    ]
+    inputs.properties replaceProperties
+
+    filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
+        expand replaceProperties + [project: project]
+    }
+}
+
+/*tasks.withType(ProcessResources).configureEach {
+    var replaceProperties = [
+            version: version
+    ]
+    inputs.properties replaceProperties
+
+    filesMatching(['META-INF/mods.toml']) {
+        expand replaceProperties + [project: project]
+    }
+}*/
 
 publishMods {
     dryRun = providers.environmentVariable("CURSE_DEPLOY").getOrNull() == null
