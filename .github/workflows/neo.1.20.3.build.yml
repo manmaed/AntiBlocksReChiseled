@@ -3,7 +3,7 @@ name: Build & Release For Minecraft 1.20.3 - Neo
 on:
   push:
     tags:
-      - 'v*'
+      - 'v*-neo'
 
 jobs:
   build:
