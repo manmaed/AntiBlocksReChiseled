@@ -7,6 +7,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BasePressurePlateBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
@@ -19,15 +20,15 @@ import net.minecraft.world.phys.AABB;
 
 import java.util.List;
 
-public class AntiPressurePlate extends BasePressurePlateBlock {
+public class AntiPressurePlate extends PressurePlateBlock {
 
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
     private final AntiPressurePlate.Sensitivity sensitivity;
 
     public AntiPressurePlate() {
-        super(Properties.of().mapColor(MapColor.STONE).forceSolidOn().instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().noCollission().strength(0.5F).pushReaction(PushReaction.DESTROY).lightLevel((light) -> {
+        super(BlockSetType.STONE, Properties.of().mapColor(MapColor.STONE).forceSolidOn().instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().noCollission().strength(0.5F).pushReaction(PushReaction.DESTROY).lightLevel((light) -> {
             return 15;
-        }), BlockSetType.STONE);
+        }));
         this.registerDefaultState(this.stateDefinition.any().setValue(POWERED, Boolean.valueOf(false)));
         this.sensitivity = Sensitivity.PLAYERS;
     }

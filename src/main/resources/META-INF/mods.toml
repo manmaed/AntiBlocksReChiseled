@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[48,)"
+loaderVersion="[49,)"
 license="All rights reserved"
 issueTrackerURL = "https://github.com/manmaed/AntiBlocksReChiseled/issues"
 [[mods]]
@@ -13,6 +13,6 @@ description='''Readds The AnitBlocks From Chsiel'''
 [[dependencies.antiblocksrechiseled]]
 modId="forge"
 mandatory=true
-versionRange="[48.0.1,)"
+versionRange="[49,)"
 ordering="NONE"
 side="BOTH"

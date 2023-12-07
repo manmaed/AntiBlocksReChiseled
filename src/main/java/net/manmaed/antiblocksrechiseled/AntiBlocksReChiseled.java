@@ -13,6 +13,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.Arrays;
+import java.util.List;
+
 @Mod(AntiBlocksReChiseled.MOD_ID)
 public class AntiBlocksReChiseled {
 
@@ -22,10 +25,16 @@ public class AntiBlocksReChiseled {
             .icon(() -> new ItemStack(ABRCBrightColors.BRIGHT_WHITE_BORDER.get()))
             .title(Component.translatable("itemGroup." + MOD_ID ))
             .displayItems((parameters, output) -> {
-                for (Item item: ForgeRegistries.ITEMS.getValues()) {
-                    if (item.getCreatorModId(item.getDefaultInstance()).equals(MOD_ID)) {
-                        output.accept(item);
-                    }
+                List<DeferredRegister<Item>> myItems = Arrays.asList(
+                        ABRCWoolColors.ITEMS,
+                        ABRCBrightColors.ITEMS,
+                        ABRCSlabs.ITEMS,
+                        ABRCStairs.ITEMS,
+                        ABRCButtons.ITEMS,
+                        ABRCPressurePlates.ITEMS
+                );
+                for (DeferredRegister<Item> register : myItems) {
+                    register.getEntries().forEach(entry -> output.accept(entry.get()));
                 }
             })
             .build());
@@ -44,27 +53,6 @@ public class AntiBlocksReChiseled {
         ABRCStairs.ITEMS.register(event);
         ABRCButtons.ITEMS.register(event);
         ABRCPressurePlates.ITEMS.register(event);
-        /*ABRCTests.BLOCKS.register(event);
-        ABRCTests.ITEMS.register(event);*/
         CREATIVE_MODE_TABS.register(event);
-
-        /*event.addListener(this::createTab);*/
     }
-
-    /*public void createTab(BuildCreativeModeTabContentsEvent event) {
-        event.getTabKey()
-        event.registerCreativeModeTab(new ResourceLocation(MOD_ID, "creative_tab"), builder -> builder
-                .icon(() -> new ItemStack(ABRCBrightColors.BRIGHT_WHITE_BORDER.get()))
-                .title(Component.translatable("itemGroup." + MOD_ID))
-                .displayItems((features, output, hasPrems) -> {
-                    for (Item item : ForgeRegistries.ITEMS.getValues()) {
-                        if (item.getCreatorModId(item.getDefaultInstance()).equals(MOD_ID)) {
-                            //LogHelper.warn("This item is form this mod" + item.toString());
-                            output.accept(item);
-                        }
-                    }
-                })
-        );
-    }*/
-
 }

@@ -8,9 +8,9 @@ import net.minecraft.world.level.material.PushReaction;
 
 public class AntiButton extends ButtonBlock {
     public AntiButton() {
-        super(Properties.of().noCollission().strength(3.0F).pushReaction(PushReaction.DESTROY).requiresCorrectToolForDrops().lightLevel((light) -> {
+        super(BlockSetType.STONE, 20 , Properties.of().noCollission().strength(3.0F).pushReaction(PushReaction.DESTROY).requiresCorrectToolForDrops().lightLevel((light) -> {
             return 15;
-        }), BlockSetType.STONE, 20, false);
+        }));
     }
 
     @Override

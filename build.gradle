@@ -6,14 +6,10 @@ plugins {
     id "me.modmuss50.mod-publish-plugin" version "0.3.5"
 }
 
-repositories {
-    maven {
-        url "https://maven.curse.tools"
-    }
-}
 def ENV = System.getenv()
 version = "${ENV.GITHUB_RUN_NUMBER}" ? "${mod_version}.${ENV.GITHUB_RUN_NUMBER}" : "${mod_version}.nobuildnumber"
 group = project.maven_group
+
 base {
     archivesBaseName = project.archives_base_name + "-forge"
 }
@@ -26,63 +22,36 @@ minecraft {
     mappings channel: "${minecraft_mappings}", version: "${minecraft_version}"
     copyIdeResources = true
     runs {
-        client {
+        configureEach {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
-            property 'forge.enabledGameTestNamespaces', 'antiblocksrechiseled'
-            property 'mixin.env.remapRefMap', 'true'
-            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
-            mods {
-                antiblocksrechiseled {
-                    source sourceSets.main
-                }
-            }
+        }
+
+        client {
+            property 'forge.enabledGameTestNamespaces', project.archives_base_name
         }
 
         server {
-            workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            property 'forge.enabledGameTestNamespaces', 'antiblocksrechiseled'
-            property 'mixin.env.remapRefMap', 'true'
-            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
-            mods {
-                antiblocksrechiseled {
-                    source sourceSets.main
-                }
-            }
-        }
-
-        gameTestServer {
-            workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            property 'forge.enabledGameTestNamespaces', 'antiblocksrechiseled'
-            mods {
-                antiblocksrechiseled {
-                    source sourceSets.main
-                }
-            }
+            property 'forge.enabledGameTestNamespaces', project.archives_base_name
+            args '--nogui'
         }
 
         data {
-            workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            args '--mod', 'antiblocksrechiseled', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
-            mods {
-                antiblocksrechiseled {
-                    source sourceSets.main
-                }
-            }
+            workingDirectory project.file('run-data')
+            args '--mod', project.archives_base_name, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
         }
     }
 }
 
-sourceSets.main.resources { srcDir 'src/generated/resources' }
+sourceSets.main.resources {
+    srcDir 'src/generated/resources'
+}
 
 repositories {
+    maven {
+        url "https://maven.curse.tools"
+    }
 }
 
 dependencies {
@@ -131,12 +100,15 @@ publishMods {
         projectId = project.curseforge_id
         minecraftVersions.add("Java 17")
         minecraftVersions.add("${minecraft_version}")
-        optional {
-            slug = 'ctm'
-        }
     }
 }
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+}
+
+sourceSets.each {
+    def dir = layout.buildDirectory.dir("sourcesSets/$it.name")
+    it.output.resourcesDir = dir
+    it.java.destinationDirectory = dir
 }
