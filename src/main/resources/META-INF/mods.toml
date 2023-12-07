@@ -4,7 +4,7 @@ license="All rights reserved"
 issueTrackerURL = "https://github.com/manmaed/AntiBlocksReChiseled/issues"
 [[mods]]
 modId="antiblocksrechiseled"
-version="${file.jarVersion}"
+version="${version}"
 displayName="AntiBlocksReChiseled"
 updateJSONURL="https://raw.githubusercontent.com/manmaed/AntiBlocksReChiseled/main/forge/update.json"
 authors="manmaed"

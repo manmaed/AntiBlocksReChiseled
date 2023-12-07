@@ -88,6 +88,17 @@ publishing {
     }
 }
 
+tasks.named('processResources', ProcessResources).configure {
+    var replaceProperties = [
+            version: version
+    ]
+    inputs.properties replaceProperties
+
+    filesMatching(['META-INF/mods.toml']) {
+        expand replaceProperties + [project: project]
+    }
+}
+
 publishMods {
     dryRun = providers.environmentVariable("CURSE_DEPLOY").getOrNull() == null
     file = jar.archiveFile
