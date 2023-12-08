@@ -127,7 +127,7 @@ publishMods {
     modLoaders.add("fabric")
     type = BETA
     changelog = "changeme"
-    displayName = "${mod_name} v${version} - Fabric - ${minecraft_version}"
+    displayName = "${mod_name} v${project.version} - Fabric - ${minecraft_version}"
     curseforge {
         accessToken = providers.environmentVariable("CURSE_DEPLOY")
         projectId = project.curseforge_id
