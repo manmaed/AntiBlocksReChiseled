@@ -28,6 +28,7 @@
       "0.1.0": "Mod Created"
     },
     "1.18.2": {
+      "0.0.4": "Backport of 0.1.4 to 0.1.8",
       "0.0.3": "Backport of 0.1.3",
       "0.0.2": "Barkport of 0.1.2",
       "0.0.1": "Backport of 0.1.1",
@@ -44,10 +45,10 @@
       "1.20-recommended": "0.3.1",
       "1.19.3-latest": "0.2.1",
       "1.19.3-recommended": "0.2.1",
-      "1.19.2-latest": "0.1.6",
-      "1.19.2-recommended": "0.1.6",
-      "1.18.2-latest": "0.0.3",
-      "1.18.2-recommended": "0.0.3"
+      "1.19.2-latest": "0.1.8",
+      "1.19.2-recommended": "0.1.8",
+      "1.18.2-latest": "0.0.4",
+      "1.18.2-recommended": "0.0.4"
     }
   }
   
