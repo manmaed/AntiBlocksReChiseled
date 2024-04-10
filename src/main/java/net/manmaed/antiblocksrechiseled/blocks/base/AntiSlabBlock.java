@@ -1,11 +1,10 @@
-package net.manmaed.antiblocksrechiseled.blocks;
+package net.manmaed.antiblocksrechiseled.blocks.base;
 
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.material.Material;
 
-public class AntiBlock extends Block {
-    public AntiBlock() {
+public class AntiSlabBlock extends SlabBlock {
+    public AntiSlabBlock() {
         super(Properties.of(Material.STONE).strength(3.0F, 5.0F).requiresCorrectToolForDrops().lightLevel((light) -> {
             return 15;
         }));
