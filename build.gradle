@@ -11,7 +11,7 @@ repositories {
     }
 }
 def ENV = System.getenv()
-version = "${ENV.GITHUB_RUN_NUMBER}" ? "${mod_version}.${ENV.GITHUB_RUN_NUMBER}" : "${mod_version}.nobuildnumber"
+version = "${mod_version}.4"
 group = 'net.manmaed.antiblocksrechiseled'
 archivesBaseName = 'antiblocksrechiseled'
 
