@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "antiblocksrechiseled:wool_magenta_button"
+    ]
+  },
+  "criteria": {
+    "has_wool_magenta": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "antiblocksrechiseled:wool_magenta"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "antiblocksrechiseled:wool_magenta_button"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_wool_magenta",
+      "has_the_recipe"
+    ]
+  ]
+}

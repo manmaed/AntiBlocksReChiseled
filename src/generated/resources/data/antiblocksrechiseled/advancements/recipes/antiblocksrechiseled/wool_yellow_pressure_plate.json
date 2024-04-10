@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "antiblocksrechiseled:wool_yellow_pressure_plate"
+    ]
+  },
+  "criteria": {
+    "has_wool_yellow": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "antiblocksrechiseled:wool_yellow"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "antiblocksrechiseled:wool_yellow_pressure_plate"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_wool_yellow",
+      "has_the_recipe"
+    ]
+  ]
+}

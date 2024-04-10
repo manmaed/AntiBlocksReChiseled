@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "antiblocksrechiseled:wool_lime"
+    }
+  },
+  "result": {
+    "item": "antiblocksrechiseled:stair_lime_wool",
+    "count": 4
+  }
+}

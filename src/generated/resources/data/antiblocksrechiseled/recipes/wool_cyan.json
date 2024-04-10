@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "wdw",
+    "wgw",
+    "wdw"
+  ],
+  "key": {
+    "w": {
+      "item": "minecraft:cyan_wool"
+    },
+    "d": {
+      "item": "minecraft:cyan_dye"
+    },
+    "g": {
+      "item": "minecraft:glowstone_dust"
+    }
+  },
+  "result": {
+    "item": "antiblocksrechiseled:wool_cyan",
+    "count": 4
+  }
+}

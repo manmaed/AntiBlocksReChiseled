@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "antiblocksrechiseled:bright_yellow"
+    }
+  },
+  "result": {
+    "item": "antiblocksrechiseled:slab_yellow_bright",
+    "count": 6
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "antiblocksrechiseled:full_to_border_wool_white"
+    ]
+  },
+  "criteria": {
+    "has_wool_white": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "antiblocksrechiseled:wool_white"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "antiblocksrechiseled:full_to_border_wool_white"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_wool_white",
+      "has_the_recipe"
+    ]
+  ]
+}

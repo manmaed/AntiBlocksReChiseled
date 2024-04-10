@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "wdw",
+    "wgw",
+    "wdw"
+  ],
+  "key": {
+    "w": {
+      "item": "minecraft:blue_wool"
+    },
+    "d": {
+      "item": "minecraft:blue_dye"
+    },
+    "g": {
+      "item": "minecraft:glowstone_dust"
+    }
+  },
+  "result": {
+    "item": "antiblocksrechiseled:wool_blue",
+    "count": 4
+  }
+}

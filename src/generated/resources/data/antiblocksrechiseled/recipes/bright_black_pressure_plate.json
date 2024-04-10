@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "antiblocksrechiseled:bright_black"
+    }
+  },
+  "result": {
+    "item": "antiblocksrechiseled:pressure_plate_bright_black"
+  }
+}

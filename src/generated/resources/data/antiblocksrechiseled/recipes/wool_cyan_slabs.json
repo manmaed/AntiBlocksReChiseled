@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "antiblocksrechiseled:wool_cyan"
+    }
+  },
+  "result": {
+    "item": "antiblocksrechiseled:slab_cyan_wool",
+    "count": 6
+  }
+}

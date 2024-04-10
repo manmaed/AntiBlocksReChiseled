@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "wdw",
+    "wgw",
+    "wdw"
+  ],
+  "key": {
+    "w": {
+      "item": "minecraft:lime_wool"
+    },
+    "d": {
+      "item": "minecraft:lime_dye"
+    },
+    "g": {
+      "item": "minecraft:glowstone_dust"
+    }
+  },
+  "result": {
+    "item": "antiblocksrechiseled:wool_lime",
+    "count": 4
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ddd",
+    "d#d",
+    "ddd"
+  ],
+  "key": {
+    "#": {
+      "item": "antiblocksrechiseled:bright_blue"
+    },
+    "d": {
+      "item": "minecraft:black_dye"
+    }
+  },
+  "result": {
+    "item": "antiblocksrechiseled:bright_blue_border",
+    "count": 2
+  }
+}

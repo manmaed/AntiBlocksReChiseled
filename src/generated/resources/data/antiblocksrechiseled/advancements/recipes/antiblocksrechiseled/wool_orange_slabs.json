@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "antiblocksrechiseled:wool_orange_slabs"
+    ]
+  },
+  "criteria": {
+    "has_wool_orange": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "antiblocksrechiseled:wool_orange"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "antiblocksrechiseled:wool_orange_slabs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_wool_orange",
+      "has_the_recipe"
+    ]
+  ]
+}

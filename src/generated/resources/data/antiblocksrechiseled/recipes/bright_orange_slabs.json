@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "antiblocksrechiseled:bright_orange"
+    }
+  },
+  "result": {
+    "item": "antiblocksrechiseled:slab_orange_bright",
+    "count": 6
+  }
+}

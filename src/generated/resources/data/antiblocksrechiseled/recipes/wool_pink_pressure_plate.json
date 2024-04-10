@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "antiblocksrechiseled:wool_pink"
+    }
+  },
+  "result": {
+    "item": "antiblocksrechiseled:pressure_plate_wool_pink"
+  }
+}

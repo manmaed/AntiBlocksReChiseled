@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "antiblocksrechiseled:wool_green_button"
+    ]
+  },
+  "criteria": {
+    "has_wool_green": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "antiblocksrechiseled:wool_green"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "antiblocksrechiseled:wool_green_button"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_wool_green",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "antiblocksrechiseled:full_to_border_bright_green"
+    ]
+  },
+  "criteria": {
+    "has_bright_green": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "antiblocksrechiseled:bright_green"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "antiblocksrechiseled:full_to_border_bright_green"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_bright_green",
+      "has_the_recipe"
+    ]
+  ]
+}

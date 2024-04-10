@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "antiblocksrechiseled:wool_lime"
+    }
+  },
+  "result": {
+    "item": "antiblocksrechiseled:slab_lime_wool",
+    "count": 6
+  }
+}
