@@ -12,7 +12,7 @@ logoFile="abrc.logo.png"
 description='''Readds The AnitBlocks From Chsiel'''
 [[dependencies.antiblocksrechiseled]]
 modId="neoforge"
-mandatory=true
-versionRange="[20.4.3-beta,)"
+required=true
+versionRange="[20.5.0-beta,)"
 ordering="NONE"
 side="BOTH"
