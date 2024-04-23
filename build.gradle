@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.4-SNAPSHOT'
+    id 'fabric-loom' version '1.6-SNAPSHOT'
     id 'maven-publish'
     id "me.modmuss50.mod-publish-plugin" version "0.4.5"
 }
@@ -131,7 +131,7 @@ publishMods {
     curseforge {
         accessToken = providers.environmentVariable("CURSE_DEPLOY")
         projectId = project.curseforge_id
-        minecraftVersions.add("Java 17")
+        minecraftVersions.add("Java 21")
         minecraftVersions.add("${minecraft_version}")
         requires {
             slug = 'fabric-api'
