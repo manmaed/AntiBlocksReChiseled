@@ -11,9 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "antiblocksrechiseled:wool_brown"
-            ]
+            "items": "antiblocksrechiseled:wool_brown"
           }
         ]
       },
@@ -22,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_wool_brown",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_wool_brown"
     ]
   ],
   "rewards": {
     "recipes": [
       "antiblocksrechiseled:wool_brown_pressure_plate"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

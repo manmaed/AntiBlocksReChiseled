@@ -13,7 +13,6 @@
   ],
   "result": {
     "count": 4,
-    "item": "antiblocksrechiseled:stair_pink_wool"
-  },
-  "show_notification": true
+    "id": "antiblocksrechiseled:stair_pink_wool"
+  }
 }

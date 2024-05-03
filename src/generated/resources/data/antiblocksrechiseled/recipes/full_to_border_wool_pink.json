@@ -16,7 +16,6 @@
   ],
   "result": {
     "count": 2,
-    "item": "antiblocksrechiseled:wool_pink_border"
-  },
-  "show_notification": true
+    "id": "antiblocksrechiseled:wool_pink_border"
+  }
 }

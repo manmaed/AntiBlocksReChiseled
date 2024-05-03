@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "antiblocksrechiseled:bright_green"
-            ]
+            "items": "antiblocksrechiseled:bright_green"
           }
         ]
       },
@@ -22,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_bright_green",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_bright_green"
     ]
   ],
   "rewards": {
     "recipes": [
       "antiblocksrechiseled:bright_green_button"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

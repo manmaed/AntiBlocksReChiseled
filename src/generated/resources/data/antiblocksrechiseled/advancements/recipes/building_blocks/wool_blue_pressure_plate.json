@@ -11,9 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "antiblocksrechiseled:wool_blue"
-            ]
+            "items": "antiblocksrechiseled:wool_blue"
           }
         ]
       },
@@ -22,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_wool_blue",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_wool_blue"
     ]
   ],
   "rewards": {
     "recipes": [
       "antiblocksrechiseled:wool_blue_pressure_plate"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }
