@@ -3,7 +3,7 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'maven-publish'
-    id 'net.neoforged.gradle.userdev' version '7.0.107'
+    id 'net.neoforged.gradle.userdev' version "${neo_gradle}"
     id "me.modmuss50.mod-publish-plugin" version "0.4.5"
 }
 
@@ -62,17 +62,6 @@ tasks.withType(ProcessResources).configureEach {
         expand replaceProperties + [project: project]
     }
 }
-
-/*tasks.withType(ProcessResources).configureEach {
-    var replaceProperties = [
-            version: version
-    ]
-    inputs.properties replaceProperties
-
-    filesMatching(['META-INF/mods.toml']) {
-        expand replaceProperties + [project: project]
-    }
-}*/
 
 publishMods {
     dryRun = providers.environmentVariable("CURSE_DEPLOY").getOrNull() == null
