@@ -11,9 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "antiblocksrechiseled:wool_pink"
-            ]
+            "items": "antiblocksrechiseled:wool_pink"
           }
         ]
       },
@@ -22,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_wool_pink",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_wool_pink"
     ]
   ],
   "rewards": {
     "recipes": [
       "antiblocksrechiseled:wool_pink_slabs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

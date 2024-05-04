@@ -11,9 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "antiblocksrechiseled:wool_gray"
-            ]
+            "items": "antiblocksrechiseled:wool_gray"
           }
         ]
       },
@@ -22,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_wool_gray",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_wool_gray"
     ]
   ],
   "rewards": {
     "recipes": [
       "antiblocksrechiseled:wool_gray_button"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

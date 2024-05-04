@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "antiblocksrechiseled:bright_cyan"
-            ]
+            "items": "antiblocksrechiseled:bright_cyan"
           }
         ]
       },
@@ -22,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_bright_cyan",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_bright_cyan"
     ]
   ],
   "rewards": {
     "recipes": [
       "antiblocksrechiseled:bright_cyan_slabs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

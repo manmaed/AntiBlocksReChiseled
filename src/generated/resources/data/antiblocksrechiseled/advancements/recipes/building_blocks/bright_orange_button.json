@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "antiblocksrechiseled:bright_orange"
-            ]
+            "items": "antiblocksrechiseled:bright_orange"
           }
         ]
       },
@@ -22,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_bright_orange",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_bright_orange"
     ]
   ],
   "rewards": {
     "recipes": [
       "antiblocksrechiseled:bright_orange_button"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }
