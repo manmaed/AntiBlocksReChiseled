@@ -2,7 +2,7 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'maven-publish'
-    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id 'net.minecraftforge.gradle' version '[6.0.24,6.2)'
     id "me.modmuss50.mod-publish-plugin" version "0.4.5"
 }
 
@@ -11,15 +11,16 @@ version = "${ENV.GITHUB_RUN_NUMBER}" ? "${mod_version}.${ENV.GITHUB_RUN_NUMBER}"
 group = project.maven_group
 
 base {
-    archivesBaseName = project.archives_base_name + "-forge"
+    archivesName = project.archives_base_name + "-forge"
 }
 
-// Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
-java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+// Mojang ships Java 21 to end users in 1.20.5+, so your mod should target Java 21.
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
     mappings channel: "${minecraft_mappings}", version: "${minecraft_version}"
+    reobf = false
     copyIdeResources = true
     runs {
         configureEach {
@@ -29,17 +30,17 @@ minecraft {
         }
 
         client {
-            property 'forge.enabledGameTestNamespaces', project.archives_base_name
+            property 'forge.enabledGameTestNamespaces', archives_base_name
         }
 
         server {
-            property 'forge.enabledGameTestNamespaces', project.archives_base_name
+            property 'forge.enabledGameTestNamespaces', archives_base_name
             args '--nogui'
         }
 
         data {
             workingDirectory project.file('run-data')
-            args '--mod', project.archives_base_name, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', archives_base_name, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
         }
     }
 }
@@ -56,6 +57,7 @@ repositories {
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+    implementation('net.sf.jopt-simple:jopt-simple:5.0.4') { version { strictly '5.0.4' } }
     //implementation fg.deobf("curse.maven:ctm-${ctm_id}:${ctm_file_id}")
 }
 
