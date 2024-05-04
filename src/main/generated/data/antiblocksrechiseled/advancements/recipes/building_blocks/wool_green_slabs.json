@@ -11,9 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "antiblocksrechiseled:wool_green"
-            ]
+            "items": "antiblocksrechiseled:wool_green"
           }
         ]
       },
@@ -22,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_wool_green",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_wool_green"
     ]
   ],
   "rewards": {
     "recipes": [
       "antiblocksrechiseled:wool_green_slabs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

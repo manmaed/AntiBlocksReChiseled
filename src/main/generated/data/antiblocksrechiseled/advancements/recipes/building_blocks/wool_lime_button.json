@@ -11,9 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "antiblocksrechiseled:wool_lime"
-            ]
+            "items": "antiblocksrechiseled:wool_lime"
           }
         ]
       },
@@ -22,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_wool_lime",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_wool_lime"
     ]
   ],
   "rewards": {
     "recipes": [
       "antiblocksrechiseled:wool_lime_button"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }
