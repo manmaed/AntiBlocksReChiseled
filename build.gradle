@@ -64,7 +64,7 @@ tasks.withType(ProcessResources).configureEach {
 }
 
 publishMods {
-    dryRun = providers.environmentVariable("CURSE_DEPLOY").getOrNull() == null
+    dryRun = (providers.environmentVariable("CURSE_DEPLOY").getOrNull() || providers.environmentVariable("MODRINTH_DEPLOY").getOrNull()) == null
     file = jar.archiveFile
     modLoaders.add("neoforge")
     type = BETA
@@ -76,6 +76,12 @@ publishMods {
         minecraftVersions.add("Java 21")
         minecraftVersions.add("${minecraft_version}")
     }
+    modrinth {
+        accessToken = providers.environmentVariable("MODRINTH_DEPLOY")
+        projectId  = project.modrinth_id
+        minecraftVersions.add("${minecraft_version}")
+    }
+
 }
 
 tasks.withType(JavaCompile).configureEach {
