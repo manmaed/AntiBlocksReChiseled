@@ -51,8 +51,11 @@ sourceSets.main.resources {
 
 dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
+    implementation "curse.maven:fusion-connected-textures-${fusion_id}:${fusion_fileid}"
+    //implementation "curse.maven:ctm-${ctm_id}:${ctm_file_id}"
+
 }
-tasks.withType(ProcessResources).configureEach {
+/*tasks.withType(ProcessResources).configureEach {
     var replaceProperties = [
             version: version
     ]
@@ -61,21 +64,10 @@ tasks.withType(ProcessResources).configureEach {
     filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
         expand replaceProperties + [project: project]
     }
-}
-
-/*tasks.withType(ProcessResources).configureEach {
-    var replaceProperties = [
-            version: version
-    ]
-    inputs.properties replaceProperties
-
-    filesMatching(['META-INF/mods.toml']) {
-        expand replaceProperties + [project: project]
-    }
 }*/
 
 publishMods {
-    dryRun = providers.environmentVariable("CURSE_DEPLOY").getOrNull() == null
+    dryRun = (providers.environmentVariable("CURSE_DEPLOY").getOrNull() || providers.environmentVariable("MODRINTH_DEPLOY").getOrNull()) == null
     file = jar.archiveFile
     modLoaders.add("neoforge")
     type = BETA
@@ -85,6 +77,11 @@ publishMods {
         accessToken = providers.environmentVariable("CURSE_DEPLOY")
         projectId = project.curseforge_id
         minecraftVersions.add("Java 17")
+        minecraftVersions.add("${minecraft_version}")
+    }
+    modrinth {
+        accessToken = providers.environmentVariable("MODRINTH_DEPLOY")
+        projectId  = project.modrinth_id
         minecraftVersions.add("${minecraft_version}")
     }
 }
