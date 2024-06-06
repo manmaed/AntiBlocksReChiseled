@@ -100,7 +100,7 @@ tasks.named('processResources', ProcessResources).configure {
 }
 
 publishMods {
-    dryRun = providers.environmentVariable("CURSE_DEPLOY").getOrNull() == null
+    dryRun = (providers.environmentVariable("CURSE_DEPLOY").getOrNull() || providers.environmentVariable("MODRINTH_DEPLOY").getOrNull()) == null
     file = jar.archiveFile
     modLoaders.add("forge")
     type = BETA
@@ -110,6 +110,11 @@ publishMods {
         accessToken = providers.environmentVariable("CURSE_DEPLOY")
         projectId = project.curseforge_id
         minecraftVersions.add("Java 17")
+        minecraftVersions.add("${minecraft_version}")
+    }
+    modrinth {
+        accessToken = providers.environmentVariable("MODRINTH_DEPLOY")
+        projectId  = project.modrinth_id
         minecraftVersions.add("${minecraft_version}")
     }
 }
