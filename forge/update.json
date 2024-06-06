@@ -4,9 +4,10 @@
       "0.9.1": "Port to Forge 1.20.6"
     },
     "1.20.4": {
-      "0.7.1": "Port to Neo 1.20.4"
+      "0.7.1": "Port to Neo 1.20.4",
+      "0.7.2": "Added Support for Fusion Connected Texutres"
     },
-    "1.20.3" :{
+    "1.20.3": {
       "0.6.1": "Port to Forge"
     },
     "1.20.1": {
@@ -40,8 +41,8 @@
     "promos": {
       "1.20.6-latest": "0.9.1",
       "1.20.6-recommended": "0.9.1",
-      "1.20.4-latest": "0.7.1",
-      "1.20.4-recommended": "0.7.1",
+      "1.20.4-latest": "0.7.2",
+      "1.20.4-recommended": "0.7.2",
       "1.20.3-latest": "0.6.1",
       "1.20.3-recommended": "0.6.1",
       "1.20.1-latest": "0.4.2",
