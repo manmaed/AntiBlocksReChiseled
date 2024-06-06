@@ -55,16 +55,16 @@ dependencies {
     //implementation "curse.maven:ctm-${ctm_id}:${ctm_file_id}"
 
 }
-/*tasks.withType(ProcessResources).configureEach {
+tasks.withType(ProcessResources).configureEach {
     var replaceProperties = [
             version: version
     ]
     inputs.properties replaceProperties
 
-    filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
+    filesMatching(['META-INF/mods.toml']) {
         expand replaceProperties + [project: project]
     }
-}*/
+}
 
 publishMods {
     dryRun = (providers.environmentVariable("CURSE_DEPLOY").getOrNull() || providers.environmentVariable("MODRINTH_DEPLOY").getOrNull()) == null
