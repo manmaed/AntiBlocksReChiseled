@@ -7,7 +7,7 @@ plugins {
 }
 
 def ENV = System.getenv()
-version = "${mod_version}.3"
+version = "${ENV.GITHUB_RUN_NUMBER}" ? "${mod_version}.(${ENV.GITHUB_RUN_NUMBER} - 1)" : "${mod_version}.nobuildnumber"
 group = project.maven_group
 
 base {
