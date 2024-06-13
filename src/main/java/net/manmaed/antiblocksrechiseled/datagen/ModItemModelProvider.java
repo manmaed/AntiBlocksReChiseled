@@ -13,7 +13,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 
     private ResourceLocation getLoc(String loc) {
-        return new ResourceLocation(AntiBlocksReChiseled.MOD_ID, "block/" + loc);
+        return ResourceLocation.fromNamespaceAndPath(AntiBlocksReChiseled.MOD_ID, "block/" + loc);
     }
     @Override
     protected void registerModels() {

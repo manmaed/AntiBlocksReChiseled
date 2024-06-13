@@ -22,7 +22,7 @@ public class ModRecipeProvider extends RecipeProvider {
     }
 
     public static ResourceLocation getSave(String string) {
-        return new ResourceLocation(AntiBlocksReChiseled.MOD_ID, string);
+        return ResourceLocation.fromNamespaceAndPath(AntiBlocksReChiseled.MOD_ID, string);
     }
 
     @Override

@@ -7,7 +7,9 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.data.loot.LootTableProvider;
+import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -23,8 +25,8 @@ public class ModLootTablesProvider extends LootTableProvider {
     }
 
     public static class ModBlockLoot extends BlockLootSubProvider {
-        protected ModBlockLoot() {
-            super(Set.of(), FeatureFlags.REGISTRY.allFlags());
+        protected ModBlockLoot(HolderLookup.Provider lookup) {
+            super(Set.of(), FeatureFlags.REGISTRY.allFlags(), lookup);
         }
 
         @Override
