@@ -128,6 +128,6 @@ public class ABRCButtons {
     }
 
     private static Identifier getId(String name) {
-        return new Identifier(AntiBlocksReChiseled.MOD_ID, name);
+        return Identifier.of(AntiBlocksReChiseled.MOD_ID, name);
     }
 }

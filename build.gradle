@@ -84,8 +84,7 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-    // Minecraft 1.18 (1.18-pre2) upwards uses Java 17.
-    it.options.release = 17
+    it.options.release = 21
 }
 
 java {
@@ -93,8 +92,8 @@ java {
     // if it is present.
     // If you remove this line, sources will not be generated.
     //withSourcesJar()
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 
 }
 
@@ -136,6 +135,9 @@ publishMods {
         requires {
             slug = 'fabric-api'
         }
+        optional {
+            slug = 'fusion-connected-textures'
+        }
     }
     modrinth {
         accessToken = providers.environmentVariable("MODRINTH_DEPLOY")
@@ -143,6 +145,9 @@ publishMods {
         minecraftVersions.add("${minecraft_version}")
         requires {
             slug = 'fabric-api'
+        }
+        optional {
+            slug = 'fusion-connected-textures'
         }
     }
 }

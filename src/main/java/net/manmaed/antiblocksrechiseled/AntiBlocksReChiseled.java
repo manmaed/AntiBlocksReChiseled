@@ -17,7 +17,7 @@ public class AntiBlocksReChiseled implements ModInitializer {
     public static final String MOD_ID = "antiblocksrechiseled";
 
 
-    public static final RegistryKey<ItemGroup> itemGroup = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(MOD_ID, "item_group"));
+    public static final RegistryKey<ItemGroup> itemGroup = RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier.of(MOD_ID, "item_group"));
 
 
     @Override

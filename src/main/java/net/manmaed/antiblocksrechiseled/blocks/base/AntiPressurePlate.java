@@ -1,7 +1,7 @@
 package net.manmaed.antiblocksrechiseled.blocks.base;
 
 import net.minecraft.block.*;
-import net.minecraft.block.enums.Instrument;
+import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -21,13 +21,13 @@ public class AntiPressurePlate extends PressurePlateBlock {
         super(BlockSetType.STONE ,Settings.create()
                 .mapColor(MapColor.STONE_GRAY)
                 .solid()
-                .instrument(Instrument.BASEDRUM)
+                .instrument(NoteBlockInstrument.BASEDRUM)
                 .requiresTool()
                 .noCollision()
                 .strength(0.5F)
                 .pistonBehavior(PistonBehavior.DESTROY)
                 .luminance(light -> 15));
-        this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(POWERED, false));
+        this.setDefaultState((BlockState) ((BlockState) this.stateManager.getDefaultState()).with(POWERED, false));
         this.activationRule = ActivationRule.PLAYERS;
         ;
     }
