@@ -23,7 +23,7 @@ public class ModRecipeProvider extends RecipeProvider {
     }
 
     public static ResourceLocation getSave(String string) {
-        return new ResourceLocation(AntiBlocksReChiseled.MOD_ID, string);
+        return ResourceLocation.fromNamespaceAndPath(AntiBlocksReChiseled.MOD_ID, string);
     }
 
     @Override
@@ -223,14 +223,14 @@ public class ModRecipeProvider extends RecipeProvider {
                     .pattern("d#d")
                     .pattern("ddd")
                     .unlockedBy(getHasName(colorBlock), has(colorBlock))
-                    .save(recipeConsumer, getSave("full_to_border_" + colorBlock.asItem().toString().toLowerCase()));
+                    .save(recipeConsumer, getSave("full_to_border_" + getItemName(colorBlock)));
         } else ShapedRecipeBuilder.shaped(block, itemOut, 2)
                 .define('#', colorBlock).define('d', Items.WHITE_DYE)
                 .pattern("ddd")
                 .pattern("d#d")
                 .pattern("ddd")
                 .unlockedBy(getHasName(colorBlock), has(colorBlock))
-                .save(recipeConsumer, getSave("full_to_border_" + colorBlock.asItem().toString().toLowerCase()));
+                .save(recipeConsumer, getSave("full_to_border_" + getItemName(colorBlock)));
     }
 
     protected static void myStairBuilder(ItemLike itemOut, ItemLike itemIn, RecipeOutput  recipeConsumer) {
@@ -240,7 +240,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("## ")
                 .pattern("###")
                 .unlockedBy(getHasName(itemIn), has(itemIn))
-                .save(recipeConsumer, getSave(itemIn.asItem().toString().toLowerCase() + "_stairs"));
+                .save(recipeConsumer, getSave(getItemName(itemIn) + "_stairs"));
     }
 
     protected static void mySlabBuilder(ItemLike itemOut, ItemLike itemIn, RecipeOutput  recipeConsumer) {
@@ -248,14 +248,14 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('#', itemIn)
                 .pattern("###")
                 .unlockedBy(getHasName(itemIn), has(itemIn))
-                .save(recipeConsumer, getSave(itemIn.asItem().toString().toLowerCase() + "_slabs"));
+                .save(recipeConsumer, getSave(getItemName(itemIn) + "_slabs"));
     }
 
     protected static void myButtonBuilder(ItemLike itemOut, ItemLike itemIn, RecipeOutput  recipeConsumer) {
         ShapelessRecipeBuilder.shapeless(block, itemOut)
                 .requires(itemIn)
                 .unlockedBy(getHasName(itemIn), has(itemIn))
-                .save(recipeConsumer, getSave(itemIn.asItem().toString().toLowerCase() + "_button"));
+                .save(recipeConsumer, getSave(getItemName(itemIn) + "_button"));
     }
 
     protected static void myPlateBuilder(ItemLike itemOut, ItemLike itemIn, RecipeOutput  recipeConsumer) {
@@ -263,7 +263,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('#', itemIn)
                 .pattern("##")
                 .unlockedBy(getHasName(itemIn), has(itemIn))
-                .save(recipeConsumer, getSave(itemIn.asItem().toString().toLowerCase() + "_pressure_plate"));
+                .save(recipeConsumer, getSave(getItemName(itemIn) + "_pressure_plate"));
     }
 
 }
