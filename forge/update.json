@@ -1,6 +1,7 @@
 {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/antiblocksrechiseled",
     "1.21": {
+      "0.10.2": "Added Tags to Stairs, Slabs, Buttons and Pressure Plates",
       "0.10.1": "Port to 1.21"
     },
     "1.20.6": {
@@ -45,8 +46,8 @@
       "0.0.0": "Backport of 0.1.0"
     },
     "promos": {
-      "1.21-latest": "0.10.1",
-      "1.21-recommended": "0.10.1",
+      "1.21-latest": "0.10.2",
+      "1.21-recommended": "0.10.2",
       "1.20.6-latest": "0.9.2",
       "1.20.6-recommended": "0.9.2",
       "1.20.4-latest": "0.7.2",
