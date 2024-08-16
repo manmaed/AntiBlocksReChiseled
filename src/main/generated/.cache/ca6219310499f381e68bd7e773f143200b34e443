@@ -1,0 +1,7 @@
+// 1.21	2024-08-16T00:02:50.5661579	AntiBlocksReChiseled/Tags for minecraft:block
+e8a51ccff6897210007da67c225cacf32ce2af40 data\minecraft\tags\block\needs_iron_tool.json
+51100bb256af613505c9d2a0caaae978dbf50452 data\minecraft\tags\block\pressure_plates.json
+776e37935e00306758e40c7f1052089ff3243f50 data\minecraft\tags\block\slabs.json
+35508908209834b62fe88bb6dea0018ef6fa2ded data\minecraft\tags\block\stairs.json
+0298961f202469594d99d6749585a3df5e6c9654 data\minecraft\tags\block\buttons.json
+e8a51ccff6897210007da67c225cacf32ce2af40 data\minecraft\tags\block\mineable\pickaxe.json

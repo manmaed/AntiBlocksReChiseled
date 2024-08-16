@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_anitblock": {
+    "has_bright_white": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_anitblock"
+      "has_bright_white"
     ]
   ],
   "rewards": {
