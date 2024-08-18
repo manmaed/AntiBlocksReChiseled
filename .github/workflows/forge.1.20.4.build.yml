@@ -30,6 +30,7 @@ jobs:
       - name: Build & release to curseforge
         env:
           CURSE_DEPLOY: ${{ secrets.CURSE_DEPLOY }}
+          MODRINTH_DEPLOY: ${{ secrets.MODRINTH_DEPLOY }}
         run: |
           chmod +x ./gradlew
           ./gradlew build publishMods --stacktrace --no-daemon

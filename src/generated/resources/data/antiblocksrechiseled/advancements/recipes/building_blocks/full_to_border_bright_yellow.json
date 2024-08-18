@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_bright_yellow",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_bright_yellow"
     ]
   ],
   "rewards": {
     "recipes": [
       "antiblocksrechiseled:full_to_border_bright_yellow"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }
