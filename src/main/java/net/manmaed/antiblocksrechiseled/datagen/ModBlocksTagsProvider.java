@@ -3,6 +3,7 @@ package net.manmaed.antiblocksrechiseled.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.manmaed.antiblocksrechiseled.blocks.*;
+import net.manmaed.antiblocksrechiseled.tag.ABRCTags;
 import net.minecraft.block.Block;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
@@ -14,17 +15,7 @@ public class ModBlocksTagsProvider extends FabricTagProvider.BlockTagProvider {
         super(output, registriesFuture);
     }
 
-    public static final Block[] BIGHT_BLOCKS = {
-            //Bright Colors
-            ABRCBrightColors.BRIGHT_WHITE,
-            ABRCBrightColors.BRIGHT_ORANGE,
-            ABRCBrightColors.BRIGHT_MAGENTA,
-            ABRCBrightColors.BRIGHT_YELLOW,
-            ABRCBrightColors.BRIGHT_CYAN,
-            ABRCBrightColors.BRIGHT_BLUE,
-            ABRCBrightColors.BRIGHT_GREEN,
-            ABRCBrightColors.BRIGHT_RED,
-            ABRCBrightColors.BRIGHT_BLACK,
+    public static final Block[] BRIGHT_BLOCKS_WITH_BORDER = {
             ABRCBrightColors.BRIGHT_WHITE_BORDER,
             ABRCBrightColors.BRIGHT_ORANGE_BORDER,
             ABRCBrightColors.BRIGHT_MAGENTA_BORDER,
@@ -35,23 +26,20 @@ public class ModBlocksTagsProvider extends FabricTagProvider.BlockTagProvider {
             ABRCBrightColors.BRIGHT_RED_BORDER,
             ABRCBrightColors.BRIGHT_BLACK_BORDER
     };
-    public static final Block[] WOOL_BLOCKS = {
+    public static final Block[] BRIGHT_BLOCKS_WITHOUT_BORDER = {
+            //Bright Colors
+            ABRCBrightColors.BRIGHT_WHITE,
+            ABRCBrightColors.BRIGHT_ORANGE,
+            ABRCBrightColors.BRIGHT_MAGENTA,
+            ABRCBrightColors.BRIGHT_YELLOW,
+            ABRCBrightColors.BRIGHT_CYAN,
+            ABRCBrightColors.BRIGHT_BLUE,
+            ABRCBrightColors.BRIGHT_GREEN,
+            ABRCBrightColors.BRIGHT_RED,
+            ABRCBrightColors.BRIGHT_BLACK
+    };
+    public static final Block[] WOOL_BLOCKS_WITH_BORDER = {
             //Wool Colors
-            ABRCWoolColors.WOOL_WHITE,
-            ABRCWoolColors.WOOL_ORANGE,
-            ABRCWoolColors.WOOL_MAGENTA,
-            ABRCWoolColors.WOOL_LIGHT_BLUE,
-            ABRCWoolColors.WOOL_YELLOW,
-            ABRCWoolColors.WOOL_LIME,
-            ABRCWoolColors.WOOL_PINK,
-            ABRCWoolColors.WOOL_GRAY,
-            ABRCWoolColors.WOOL_LIGHT_GRAY,
-            ABRCWoolColors.WOOL_CYAN,
-            ABRCWoolColors.WOOL_PURPLE,
-            ABRCWoolColors.WOOL_BLUE,
-            ABRCWoolColors.WOOL_BROWN,
-            ABRCWoolColors.WOOL_GREEN,
-            ABRCWoolColors.WOOL_RED,
             ABRCWoolColors.WOOL_WHITE_BORDER,
             ABRCWoolColors.WOOL_ORANGE_BORDER,
             ABRCWoolColors.WOOL_MAGENTA_BORDER,
@@ -67,6 +55,25 @@ public class ModBlocksTagsProvider extends FabricTagProvider.BlockTagProvider {
             ABRCWoolColors.WOOL_BROWN_BORDER,
             ABRCWoolColors.WOOL_GREEN_BORDER,
             ABRCWoolColors.WOOL_RED_BORDER
+    };
+
+    public static final Block[] WOOL_BLOCKS_WITHOUT_BORDER = {
+            //Wool Colors
+            ABRCWoolColors.WOOL_WHITE,
+            ABRCWoolColors.WOOL_ORANGE,
+            ABRCWoolColors.WOOL_MAGENTA,
+            ABRCWoolColors.WOOL_LIGHT_BLUE,
+            ABRCWoolColors.WOOL_YELLOW,
+            ABRCWoolColors.WOOL_LIME,
+            ABRCWoolColors.WOOL_PINK,
+            ABRCWoolColors.WOOL_GRAY,
+            ABRCWoolColors.WOOL_LIGHT_GRAY,
+            ABRCWoolColors.WOOL_CYAN,
+            ABRCWoolColors.WOOL_PURPLE,
+            ABRCWoolColors.WOOL_BLUE,
+            ABRCWoolColors.WOOL_BROWN,
+            ABRCWoolColors.WOOL_GREEN,
+            ABRCWoolColors.WOOL_RED
     };
 
     public static final Block[] SLABS = {
@@ -179,11 +186,15 @@ public class ModBlocksTagsProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE).add(BIGHT_BLOCKS).add(WOOL_BLOCKS).add(SLABS).add(STAIRS).add(BUTTONS).add(PRESSURE_PLATES);
-        getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL).add(BIGHT_BLOCKS).add(WOOL_BLOCKS).add(SLABS).add(STAIRS).add(BUTTONS).add(PRESSURE_PLATES);
+        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE).add(BRIGHT_BLOCKS_WITH_BORDER).add(BRIGHT_BLOCKS_WITHOUT_BORDER).add(WOOL_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER).add(SLABS).add(STAIRS).add(BUTTONS).add(PRESSURE_PLATES);
+        getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL).add(BRIGHT_BLOCKS_WITH_BORDER).add(BRIGHT_BLOCKS_WITHOUT_BORDER).add(WOOL_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER).add(SLABS).add(STAIRS).add(BUTTONS).add(PRESSURE_PLATES);
         getOrCreateTagBuilder(BlockTags.BUTTONS).add(BUTTONS);
         getOrCreateTagBuilder(BlockTags.STAIRS).add(STAIRS);
         getOrCreateTagBuilder(BlockTags.SLABS).add(SLABS);
         getOrCreateTagBuilder(BlockTags.PRESSURE_PLATES).add(PRESSURE_PLATES);
+        getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_WITHOUT_BORDERS).add(BRIGHT_BLOCKS_WITHOUT_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER);
+        getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_WITH_BORDERS).add(BRIGHT_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITH_BORDER);
+        getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_WOOL_COLORS).add(WOOL_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER);
+        getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_BRIGHT_COLORS).add(BRIGHT_BLOCKS_WITH_BORDER).add(BRIGHT_BLOCKS_WITH_BORDER);
     }
 }
