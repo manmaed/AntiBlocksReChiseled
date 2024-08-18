@@ -1,3 +1,11 @@
-// 1.20	2023-06-09T14:49:54.1724795	Tags for minecraft:block mod id antiblocksrechiseled
-e8a51ccff6897210007da67c225cacf32ce2af40 data/minecraft/tags/blocks/mineable/pickaxe.json
-e8a51ccff6897210007da67c225cacf32ce2af40 data/minecraft/tags/blocks/needs_iron_tool.json
+// 1.20	2024-08-18T22:32:02.789308	Tags for minecraft:block mod id antiblocksrechiseled
+0e28f3b1d50e042f07a3b712c88bc2caab68968e data/antiblocksrechiseled/tags/blocks/antiblock_bright_colors.json
+daa3875b6c723ed549d5b536e1f96a948c0e8476 data/antiblocksrechiseled/tags/blocks/antiblock_without_borders.json
+a9bb53db5ca978058be3cdd8293b688fb437d902 data/antiblocksrechiseled/tags/blocks/antiblock_with_borders.json
+84491f0873be093b737fd9267dd0ed606ed4ab51 data/antiblocksrechiseled/tags/blocks/antiblock_wool_colors.json
+0298961f202469594d99d6749585a3df5e6c9654 data/minecraft/tags/blocks/buttons.json
+23f195bdbfc5ed4974c279bb937e7fc08975c3bd data/minecraft/tags/blocks/mineable/pickaxe.json
+23f195bdbfc5ed4974c279bb937e7fc08975c3bd data/minecraft/tags/blocks/needs_iron_tool.json
+51100bb256af613505c9d2a0caaae978dbf50452 data/minecraft/tags/blocks/pressure_plates.json
+776e37935e00306758e40c7f1052089ff3243f50 data/minecraft/tags/blocks/slabs.json
+35508908209834b62fe88bb6dea0018ef6fa2ded data/minecraft/tags/blocks/stairs.json
