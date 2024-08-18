@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_wool_lime",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_wool_lime"
     ]
   ],
   "rewards": {
