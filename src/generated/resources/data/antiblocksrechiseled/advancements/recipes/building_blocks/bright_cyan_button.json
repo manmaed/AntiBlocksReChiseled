@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_bright_cyan",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_bright_cyan"
     ]
   ],
   "rewards": {
     "recipes": [
       "antiblocksrechiseled:bright_cyan_button"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

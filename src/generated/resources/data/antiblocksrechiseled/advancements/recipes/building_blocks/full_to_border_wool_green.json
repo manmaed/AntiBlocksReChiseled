@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_wool_green",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_wool_green"
     ]
   ],
   "rewards": {
     "recipes": [
       "antiblocksrechiseled:full_to_border_wool_green"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_bright_orange",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_bright_orange"
     ]
   ],
   "rewards": {
     "recipes": [
       "antiblocksrechiseled:bright_orange_slabs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

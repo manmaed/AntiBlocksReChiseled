@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_bright_magenta",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_bright_magenta"
     ]
   ],
   "rewards": {
     "recipes": [
       "antiblocksrechiseled:bright_magenta_slabs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

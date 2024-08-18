@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_wool_light_blue",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_wool_light_blue"
     ]
   ],
   "rewards": {
     "recipes": [
       "antiblocksrechiseled:wool_light_blue_stairs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }
