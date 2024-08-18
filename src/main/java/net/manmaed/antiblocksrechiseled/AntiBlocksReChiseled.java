@@ -1,11 +1,14 @@
 package net.manmaed.antiblocksrechiseled;
 
+import cpw.mods.modlauncher.Environment;
+import cpw.mods.modlauncher.api.IEnvironment;
 import net.manmaed.antiblocksrechiseled.blocks.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -36,7 +39,6 @@ public class AntiBlocksReChiseled {
                 }
             })
             .build());
-
     public AntiBlocksReChiseled(IEventBus event) {
         ABRCWoolColors.BLOCKS.register(event);
         ABRCBrightColors.BLOCKS.register(event);
