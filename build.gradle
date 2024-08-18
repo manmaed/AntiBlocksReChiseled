@@ -120,42 +120,30 @@ publishing {
 }
 
 publishMods {
-    dryRun = providers.environmentVariable("CURSE_DEPLOY").getOrNull() == null
+    dryRun = (providers.environmentVariable("CURSE_DEPLOY").getOrNull() || providers.environmentVariable("MODRINTH_DEPLOY").getOrNull()) == null
     file = jar.archiveFile
     modLoaders.add("forge")
     type = BETA
     changelog = "changeme"
-    displayName = "${mod_name} v${version} - Forge - ${minecraft_version}"
+    displayName = "${mod_name} v${project.version} - Forge - ${minecraft_version}"
     curseforge {
         accessToken = providers.environmentVariable("CURSE_DEPLOY")
         projectId = project.curseforge_id
         minecraftVersions.add("Java 17")
         minecraftVersions.add("${minecraft_version}")
         optional {
-            slug = 'ctm'
+            slug = 'fusion-connected-textures'
+        }
+    }
+    modrinth {
+        accessToken = providers.environmentVariable("MODRINTH_DEPLOY")
+        projectId  = project.modrinth_id
+        minecraftVersions.add("${minecraft_version}")
+        optional {
+            slug = 'fusion-connected-textures'
         }
     }
 }
-/*if (ENV.CURSE_DEPLOY) {
-    curseforge {
-        apiKey = ENV.CURSE_DEPLOY
-        project {
-            id = project.curseforge_id
-            releaseType = "${curseforge_releasetype}"
-            addGameVersion "Forge"
-            addGameVersion "Java 17"
-            addGameVersion "${minecraft_version}"
-            mainArtifact(jar) {
-                displayName = "${mod_name} v${version} - Forge - ${minecraft_version}"
-                relations {
-                    optionalDependency 'ctm'
-                }
-            }
-            changelog = "changeme"
-
-        }
-    }
-}*/
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation

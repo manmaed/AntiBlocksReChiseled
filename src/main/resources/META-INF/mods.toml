@@ -13,6 +13,6 @@ description='''Readds The AnitBlocks From Chsiel'''
 [[dependencies.antiblocksrechiseled]]
 modId="forge"
 mandatory=true
-versionRange="[47.0.3,)"
+versionRange="[47.3.0,)"
 ordering="NONE"
 side="BOTH"
