@@ -109,7 +109,7 @@ publishMods {
     curseforge {
         accessToken = providers.environmentVariable("CURSE_DEPLOY")
         projectId = project.curseforge_id
-        minecraftVersions.add("Java 17")
+        minecraftVersions.add("Java 21")
         minecraftVersions.add("${minecraft_version}")
         optional {
             slug = 'fusion-connected-textures'
