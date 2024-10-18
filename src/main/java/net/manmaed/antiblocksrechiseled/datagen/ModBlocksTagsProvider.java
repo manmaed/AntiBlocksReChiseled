@@ -192,6 +192,10 @@ public class ModBlocksTagsProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.STAIRS).add(STAIRS);
         getOrCreateTagBuilder(BlockTags.SLABS).add(SLABS);
         getOrCreateTagBuilder(BlockTags.PRESSURE_PLATES).add(PRESSURE_PLATES);
+        getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_BUTTONS).add(BUTTONS);
+        getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_STAIRS).add(STAIRS);
+        getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_SLABS).add(SLABS);
+        getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_PRESSURE_PLATES).add(PRESSURE_PLATES);
         getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_WITHOUT_BORDERS).add(BRIGHT_BLOCKS_WITHOUT_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER);
         getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_WITH_BORDERS).add(BRIGHT_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITH_BORDER);
         getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_WOOL_COLORS).add(WOOL_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER);
