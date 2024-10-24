@@ -1,24 +1,11 @@
 package net.manmaed.antiblocksrechiseled.datagen;
 
-import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
-import net.manmaed.antiblocksrechiseled.blocks.*;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.*;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Blocks;
-
-import java.util.concurrent.CompletableFuture;
-
-public class ModRecipeProvider extends RecipeProvider {
+public class ModRecipeProvider {} /*extends RecipeProvider {
 
     public static RecipeCategory block = RecipeCategory.BUILDING_BLOCKS;
 
-    public ModRecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookup) {
-        super(output, lookup);
+    public ModRecipeProvider(HolderLookup.Provider registries, RecipeOutput output) {
+        super(registries, output);
     }
 
     public static ResourceLocation getSave(String string) {
@@ -26,9 +13,10 @@ public class ModRecipeProvider extends RecipeProvider {
     }
 
     @Override
-    protected void buildRecipes(RecipeOutput consumer) {
+    protected void buildRecipes() {
+        String consumer = "hello";
         //Bright White Builder
-        ShapedRecipeBuilder.shaped(block ,ABRCBrightColors.BRIGHT_WHITE.get(), 4)
+        ShapedRecipeBuilder.shaped(block , ABRCBrightColors.BRIGHT_WHITE.get(), 4)
                 .define('s', Ingredient.of(Blocks.STONE.asItem()))
                 .define('d', Ingredient.of(Items.WHITE_DYE))
                 .define('g', Ingredient.of(Items.GLOWSTONE_DUST))
@@ -257,11 +245,28 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(recipeConsumer, getSave(getItemName(itemIn) + "_button"));
     }
 
-    protected static void myPlateBuilder(ItemLike itemOut, ItemLike itemIn, RecipeOutput  recipeConsumer) {
+    protected static void myPlateBuilder(ItemLike itemOut, ItemLike itemIn, RecipeOutput recipeConsumer) {
         ShapedRecipeBuilder.shaped(block, itemOut)
                 .define('#', itemIn)
                 .pattern("##")
                 .unlockedBy(getHasName(itemIn), has(itemIn))
                 .save(recipeConsumer, getSave(getItemName(itemIn) + "_pressure_plate"));
     }
-}
+
+    public static class Runner extends RecipeProvider.Runner {
+
+        public Runner(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookup) {
+            super(packOutput, lookup);
+        }
+
+        @Override
+        protected RecipeProvider createRecipeProvider(HolderLookup.Provider registries, RecipeOutput output) {
+            return new VanillaRecipeProvider(registries, output);
+        }
+
+        @Override
+        public String getName() {
+            return "AntiBlocksReChiseled Recipes";
+        }
+    }
+}*/

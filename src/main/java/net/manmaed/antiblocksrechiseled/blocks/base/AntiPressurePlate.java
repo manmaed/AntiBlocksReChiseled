@@ -1,6 +1,10 @@
 package net.manmaed.antiblocksrechiseled.blocks.base;
 
+import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -24,10 +28,10 @@ public class AntiPressurePlate extends PressurePlateBlock {
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
     private final AntiPressurePlate.Sensitivity sensitivity;
 
-    public AntiPressurePlate() {
+    public AntiPressurePlate(String name) {
         super(BlockSetType.STONE, Properties.of().mapColor(MapColor.STONE).forceSolidOn().instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().noCollission().strength(0.5F).pushReaction(PushReaction.DESTROY).lightLevel((light) -> {
             return 15;
-        }));
+        }).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(AntiBlocksReChiseled.MOD_ID, name))));
         this.registerDefaultState(this.stateDefinition.any().setValue(POWERED, Boolean.valueOf(false)));
         this.sensitivity = Sensitivity.PLAYERS;
     }

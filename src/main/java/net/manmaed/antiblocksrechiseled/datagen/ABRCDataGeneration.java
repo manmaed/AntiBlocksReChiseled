@@ -28,6 +28,6 @@ public class ABRCDataGeneration {
         generator.addProvider(true, new ModItemsTagProvider(packOutput, lookupProvider, blocksTagsProvider.contentsGetter(), fileHelper));
         generator.addProvider(true, new ModLangProvider(packOutput));
         generator.addProvider(true, new ModLootTablesProvider(packOutput, lookupProvider));
-        generator.addProvider(true, new ModRecipeProvider(packOutput, lookupProvider));
+        //generator.addProvider(true, new ModRecipeProvider.Runner(packOutput, lookupProvider));
     }
 }
