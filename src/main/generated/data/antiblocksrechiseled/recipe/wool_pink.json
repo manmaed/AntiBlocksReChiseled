@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "d": {
-      "item": "minecraft:pink_dye"
-    },
-    "g": {
-      "item": "minecraft:glowstone_dust"
-    },
-    "w": {
-      "item": "minecraft:pink_wool"
-    }
+    "d": "minecraft:pink_dye",
+    "g": "minecraft:glowstone_dust",
+    "w": "minecraft:pink_wool"
   },
   "pattern": [
     "wdw",

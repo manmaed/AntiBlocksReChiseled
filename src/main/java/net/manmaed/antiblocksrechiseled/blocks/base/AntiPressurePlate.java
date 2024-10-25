@@ -1,14 +1,18 @@
 package net.manmaed.antiblocksrechiseled.blocks.base;
 
+import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -17,7 +21,7 @@ public class AntiPressurePlate extends PressurePlateBlock {
 
     public static final BooleanProperty POWERED = Properties.POWERED;
     private final AntiPressurePlate.ActivationRule activationRule;
-    public AntiPressurePlate() {
+    public AntiPressurePlate(String name) {
         super(BlockSetType.STONE ,Settings.create()
                 .mapColor(MapColor.STONE_GRAY)
                 .solid()
@@ -26,7 +30,8 @@ public class AntiPressurePlate extends PressurePlateBlock {
                 .noCollision()
                 .strength(0.5F)
                 .pistonBehavior(PistonBehavior.DESTROY)
-                .luminance(light -> 15));
+                .luminance(light -> 15)
+                .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(AntiBlocksReChiseled.MOD_ID, name))));
         this.setDefaultState((BlockState) ((BlockState) this.stateManager.getDefaultState()).with(POWERED, false));
         this.activationRule = ActivationRule.PLAYERS;
         ;

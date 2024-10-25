@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "antiblocksrechiseled:bright_red"
-    }
+    "#": "antiblocksrechiseled:bright_red"
   },
   "pattern": [
     "#  ",

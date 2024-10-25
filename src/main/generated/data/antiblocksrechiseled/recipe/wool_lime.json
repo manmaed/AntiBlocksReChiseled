@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "d": {
-      "item": "minecraft:lime_dye"
-    },
-    "g": {
-      "item": "minecraft:glowstone_dust"
-    },
-    "w": {
-      "item": "minecraft:lime_wool"
-    }
+    "d": "minecraft:lime_dye",
+    "g": "minecraft:glowstone_dust",
+    "w": "minecraft:lime_wool"
   },
   "pattern": [
     "wdw",

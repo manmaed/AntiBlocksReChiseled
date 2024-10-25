@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "d": {
-      "item": "minecraft:brown_dye"
-    },
-    "g": {
-      "item": "minecraft:glowstone_dust"
-    },
-    "w": {
-      "item": "minecraft:brown_wool"
-    }
+    "d": "minecraft:brown_dye",
+    "g": "minecraft:glowstone_dust",
+    "w": "minecraft:brown_wool"
   },
   "pattern": [
     "wdw",

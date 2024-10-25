@@ -1,37 +1,41 @@
 package net.manmaed.antiblocksrechiseled.datagen;
 
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
 import net.manmaed.antiblocksrechiseled.blocks.*;
 import net.minecraft.block.Blocks;
+import net.minecraft.data.DataOutput;
 import net.minecraft.data.server.recipe.RecipeExporter;
-import net.minecraft.data.server.recipe.RecipeProvider;
-import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
-import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.RecipeGenerator;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ModRecipeProvider extends FabricRecipeProvider {
-    public ModRecipeProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
-        super(output, registriesFuture);
+public class ModRecipeProvider extends RecipeGenerator {
+    public static RecipeCategory BUILDING_BLOCKS = RecipeCategory.BUILDING_BLOCKS;
+
+    protected final RecipeExporter output;
+
+    protected ModRecipeProvider(RegistryWrapper.WrapperLookup registries, RecipeExporter exporter) {
+        super(registries, exporter);
+        this.output = exporter;
     }
 
-    public static Identifier getSave(String string) {
-        return Identifier.of(AntiBlocksReChiseled.MOD_ID, string);
+
+    public static RegistryKey getSave(String name) {
+        return RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(AntiBlocksReChiseled.MOD_ID, name));
     }
 
-    public static RecipeCategory block = RecipeCategory.BUILDING_BLOCKS;
     @Override
-    public void generate(RecipeExporter exporter) {
+    public void generate() {
         //Bright White Builder
-        ShapedRecipeJsonBuilder.create(block ,ABRCBrightColors.BRIGHT_WHITE, 4)
+        this.createShaped(BUILDING_BLOCKS ,ABRCBrightColors.BRIGHT_WHITE, 4)
                 .input('s', Ingredient.ofItems(Blocks.STONE.asItem()))
                 .input('d', Ingredient.ofItems(Items.WHITE_DYE))
                 .input('g', Ingredient.ofItems(Items.GLOWSTONE_DUST))
@@ -199,8 +203,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_WOOL_RED.asItem(), ABRCWoolColors.WOOL_RED.asItem(), exporter);
     }
 
-    protected static void woolBuilder(Item itemOut, Item wool, Item dye, RecipeExporter recipeConsumer) {
-        ShapedRecipeJsonBuilder.create(block, itemOut, 4)
+    protected void woolBuilder(Item itemOut, Item wool, Item dye, RecipeExporter recipeConsumer) {
+        this.createShaped(BUILDING_BLOCKS, itemOut, 4)
                 .input('w', wool).input('d', dye).input('g', Items.GLOWSTONE_DUST)
                 .pattern("wdw")
                 .pattern("wgw")
@@ -208,24 +212,24 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Blocks.WHITE_WOOL), conditionsFromItem(Blocks.WHITE_WOOL)).offerTo(recipeConsumer);
     }
 
-    protected static void whiteToColorBuilder(Item itemOut, Item dye, RecipeExporter recipeConsumer) {
-        ShapelessRecipeJsonBuilder.create(block,itemOut, 4)
+    protected void whiteToColorBuilder(Item itemOut, Item dye, RecipeExporter recipeConsumer) {
+        this.createShapeless(BUILDING_BLOCKS,itemOut, 4)
                 .input(dye)
                 .input(ABRCBrightColors.BRIGHT_WHITE)
                 .criterion(hasItem(ABRCBrightColors.BRIGHT_WHITE), conditionsFromItem(ABRCBrightColors.BRIGHT_WHITE))
                 .offerTo(recipeConsumer);
     }
 
-    protected static void fullToBorderedBuilder(Item itemOut, Item colorBlock, Boolean invertDye, RecipeExporter recipeConsumer) {
+    protected void fullToBorderedBuilder(Item itemOut, Item colorBlock, Boolean invertDye, RecipeExporter recipeConsumer) {
         if (!invertDye) {
-            ShapedRecipeJsonBuilder.create(block, itemOut, 2)
+            this.createShaped(BUILDING_BLOCKS, itemOut, 2)
                     .input('#', colorBlock).input('d', Items.BLACK_DYE)
                     .pattern("ddd")
                     .pattern("d#d")
                     .pattern("ddd")
                     .criterion(hasItem(colorBlock.asItem()), conditionsFromItem(colorBlock.asItem()))
                     .offerTo(recipeConsumer, getSave("full_to_border_" + getItemPath(colorBlock)));
-        } else ShapedRecipeJsonBuilder.create(block, itemOut, 2)
+        } else this.createShaped(BUILDING_BLOCKS, itemOut, 2)
                 .input('#', colorBlock).input('d', Items.WHITE_DYE)
                 .pattern("ddd")
                 .pattern("d#d")
@@ -234,8 +238,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(recipeConsumer, getSave("full_to_border_" + getItemPath(colorBlock)));
     }
 
-    protected static void myStairBuilder(Item itemOut, Item itemIn, RecipeExporter recipeConsumer) {
-        ShapedRecipeJsonBuilder.create(block, itemOut, 4)
+    protected void myStairBuilder(Item itemOut, Item itemIn, RecipeExporter recipeConsumer) {
+        this.createShaped(BUILDING_BLOCKS, itemOut, 4)
                 .input('#', itemIn)
                 .pattern("#  ")
                 .pattern("## ")
@@ -244,26 +248,43 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(recipeConsumer, getSave(getItemPath(itemIn) + "_stairs"));
     }
 
-    protected static void mySlabBuilder(Item itemOut, Item itemIn, RecipeExporter recipeConsumer) {
-        ShapedRecipeJsonBuilder.create(block, itemOut, 6)
+    protected void mySlabBuilder(Item itemOut, Item itemIn, RecipeExporter recipeConsumer) {
+        this.createShaped(BUILDING_BLOCKS, itemOut, 6)
                 .input('#', itemIn)
                 .pattern("###")
                 .criterion(hasItem(itemIn), conditionsFromItem(itemIn))
                 .offerTo(recipeConsumer, getSave(getItemPath(itemIn) + "_slabs"));
     }
 
-    protected static void myButtonBuilder(Item itemOut, Item itemIn, RecipeExporter recipeConsumer) {
-        ShapelessRecipeJsonBuilder.create(block, itemOut)
+    protected void myButtonBuilder(Item itemOut, Item itemIn, RecipeExporter recipeConsumer) {
+        this.createShapeless(BUILDING_BLOCKS, itemOut)
                 .input(itemIn)
                 .criterion(hasItem(itemIn), conditionsFromItem(itemIn))
                 .offerTo(recipeConsumer, getSave(getItemPath(itemIn) + "_button"));
     }
 
-    protected static void myPlateBuilder(Item itemOut, Item itemIn, RecipeExporter recipeConsumer) {
-        ShapedRecipeJsonBuilder.create(block, itemOut)
+    protected void myPlateBuilder(Item itemOut, Item itemIn, RecipeExporter recipeConsumer) {
+        this.createShaped(BUILDING_BLOCKS, itemOut)
                 .input('#', itemIn)
                 .pattern("##")
                 .criterion(hasItem(itemIn), conditionsFromItem(itemIn))
                 .offerTo(recipeConsumer, getSave(getItemPath(itemIn) + "_pressure_plate"));
+    }
+
+    public static class Runner extends RecipeGenerator.RecipeProvider {
+
+        protected Runner(DataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+            super(output, registriesFuture);
+        }
+
+        @Override
+        protected RecipeGenerator getRecipeGenerator(RegistryWrapper.WrapperLookup registries, RecipeExporter exporter) {
+            return new ModRecipeProvider(registries, exporter);
+        }
+
+        @Override
+        public String getName() {
+            return "AntiBlocksReChiseled Recipes";
+        }
     }
 }

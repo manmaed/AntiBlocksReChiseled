@@ -2,7 +2,6 @@ package net.manmaed.antiblocksrechiseled.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 
 public class ABRCDataGeneration implements DataGeneratorEntrypoint {
     @Override
@@ -18,7 +17,7 @@ public class ABRCDataGeneration implements DataGeneratorEntrypoint {
         generator.addProvider(ModItemsTagsProvider::new);*/
         generator.addProvider(ModLangProvider::new);
         generator.addProvider(ModLootTablesProvider::new);
-        generator.addProvider(ModRecipeProvider::new);
+        generator.addProvider(ModRecipeProvider.Runner::new);
 
     }
 }

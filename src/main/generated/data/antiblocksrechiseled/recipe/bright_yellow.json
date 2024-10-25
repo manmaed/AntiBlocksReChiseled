@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    {
-      "item": "minecraft:yellow_dye"
-    },
-    {
-      "item": "antiblocksrechiseled:bright_white"
-    }
+    "minecraft:yellow_dye",
+    "antiblocksrechiseled:bright_white"
   ],
   "result": {
     "count": 4,

@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "d": {
-      "item": "minecraft:magenta_dye"
-    },
-    "g": {
-      "item": "minecraft:glowstone_dust"
-    },
-    "w": {
-      "item": "minecraft:magenta_wool"
-    }
+    "d": "minecraft:magenta_dye",
+    "g": "minecraft:glowstone_dust",
+    "w": "minecraft:magenta_wool"
   },
   "pattern": [
     "wdw",

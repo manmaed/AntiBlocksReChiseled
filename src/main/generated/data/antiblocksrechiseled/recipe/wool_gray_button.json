@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    {
-      "item": "antiblocksrechiseled:wool_gray"
-    }
+    "antiblocksrechiseled:wool_gray"
   ],
   "result": {
     "count": 1,
