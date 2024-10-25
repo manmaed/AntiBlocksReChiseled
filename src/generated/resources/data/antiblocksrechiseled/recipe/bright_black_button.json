@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    {
-      "item": "antiblocksrechiseled:bright_black"
-    }
+    "antiblocksrechiseled:bright_black"
   ],
   "result": {
     "count": 1,

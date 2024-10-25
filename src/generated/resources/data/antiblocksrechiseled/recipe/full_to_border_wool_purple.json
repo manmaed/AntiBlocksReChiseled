@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "antiblocksrechiseled:wool_purple"
-    },
-    "d": {
-      "item": "minecraft:black_dye"
-    }
+    "#": "antiblocksrechiseled:wool_purple",
+    "d": "minecraft:black_dye"
   },
   "pattern": [
     "ddd",

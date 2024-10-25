@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    {
-      "item": "antiblocksrechiseled:wool_pink"
-    }
+    "antiblocksrechiseled:wool_pink"
   ],
   "result": {
     "count": 1,

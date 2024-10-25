@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    {
-      "item": "antiblocksrechiseled:wool_magenta"
-    }
+    "antiblocksrechiseled:wool_magenta"
   ],
   "result": {
     "count": 1,

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "antiblocksrechiseled:wool_yellow"
-    }
+    "#": "antiblocksrechiseled:wool_yellow"
   },
   "pattern": [
     "##"

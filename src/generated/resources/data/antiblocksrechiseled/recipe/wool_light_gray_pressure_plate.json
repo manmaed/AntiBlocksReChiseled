@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "antiblocksrechiseled:wool_light_gray"
-    }
+    "#": "antiblocksrechiseled:wool_light_gray"
   },
   "pattern": [
     "##"
