@@ -1,0 +1,17 @@
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: Job for toggling label
+    steps:
+      - name: Toggle label
+        uses: manmaed/awaiting-reply-action@main
+        with:
+          awaiting-label: "Awaiting Reply :hourglass:"
+          replied-label: "Replied :tada:"
+          ignore-labels: "Fixed: Dev :hammer_and_wrench:,Fixed: Release :heavy_check_mark:"
+          remove-labels: "Stale :skull:"
+          ignore-string: "!skip"
