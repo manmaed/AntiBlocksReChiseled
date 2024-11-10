@@ -1,5 +1,8 @@
 {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/antiblocksrechiseled",
+    "1.21.3": {
+      "0.11.1": "Port to 1.21.3"
+    },
     "1.21.1": {
       "0.10.4": "More Tags",
       "0.10.3": "Added Custom Tags",
@@ -34,6 +37,8 @@
       "0.4.1": "Port to 1.20.1"
     },
     "promos": {
+      "1.21.3-latest": "0.11.1",
+      "1.21.3-recommended": "0.11.1",
       "1.21.1-latest": "0.10.4",
       "1.21.1-recommended": "0.10.4",
       "1.21-latest": "0.10.4",
