@@ -18,7 +18,7 @@ public class AntiBlocksReChiseled {
 
     public static final String MOD_ID = "antiblocksrechiseled";
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
-    private static final Logger LOGGER = LogManager.getLogger();
+    //private static final Logger LOGGER = LogManager.getLogger();
     public static final RegistryObject<CreativeModeTab> ABRC_TAB = CREATIVE_MODE_TABS.register(MOD_ID, () -> CreativeModeTab.builder()
             .icon(() -> new ItemStack(ABRCBrightColors.BRIGHT_WHITE_BORDER.get()))
             .title(Component.translatable("itemGroup." + MOD_ID ))
