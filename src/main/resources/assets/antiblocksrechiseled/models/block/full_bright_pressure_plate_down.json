@@ -1,19 +1,20 @@
 {
+  "parent": "minecraft:block/pressure_plate_down",
   "ambientocclusion": false,
   "textures": {
-    "particle": "#color"
+    "particle": "#all"
   },
   "elements": [
     {   "from": [ 1, 0, 1 ],
       "to": [ 15, 0.5, 15 ],
       "shade": false,
       "faces": {
-        "down":  { "uv": [ 1,    1, 15, 15 ], "texture": "#color", "cullface": "down" },
-        "up":    { "uv": [ 1,    1, 15, 15 ], "texture": "#color" },
-        "north": { "uv": [ 1, 15, 15, 15.5 ], "texture": "#color" },
-        "south": { "uv": [ 1, 15, 15, 15.5 ], "texture": "#color" },
-        "west":  { "uv": [ 1, 15, 15, 15.5 ], "texture": "#color" },
-        "east":  { "uv": [ 1, 15, 15, 15.5 ], "texture": "#color" }
+        "down":  { "uv": [ 1,    1, 15, 15 ], "texture": "#all", "cullface": "down" },
+        "up":    { "uv": [ 1,    1, 15, 15 ], "texture": "#all" },
+        "north": { "uv": [ 1, 15, 15, 15.5 ], "texture": "#all" },
+        "south": { "uv": [ 1, 15, 15, 15.5 ], "texture": "#all" },
+        "west":  { "uv": [ 1, 15, 15, 15.5 ], "texture": "#all" },
+        "east":  { "uv": [ 1, 15, 15, 15.5 ], "texture": "#all" }
       }
     }
   ]

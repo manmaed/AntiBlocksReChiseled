@@ -39,8 +39,10 @@ runs {
         systemProperty 'forge.enabledGameTestNamespaces', project.archives_base_name
         programArgument '--nogui'
     }
-
-    data {
+    serverData {
+        programArguments.addAll '--mod', project.archives_base_name, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+    }
+    clientData {
         programArguments.addAll '--mod', project.archives_base_name, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
     }
 }

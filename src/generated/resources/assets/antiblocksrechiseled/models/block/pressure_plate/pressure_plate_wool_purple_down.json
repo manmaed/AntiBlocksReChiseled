@@ -1,6 +1,0 @@
-{
-  "parent": "antiblocksrechiseled:block/full_bright_pressure_plate_down",
-  "textures": {
-    "color": "antiblocksrechiseled:block/wool/purple"
-  }
-}

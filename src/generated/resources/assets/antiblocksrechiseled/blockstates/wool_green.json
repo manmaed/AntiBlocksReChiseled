@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "antiblocksrechiseled:block/wool/green"
+      "model": "antiblocksrechiseled:block/wool_green"
     }
   }
 }

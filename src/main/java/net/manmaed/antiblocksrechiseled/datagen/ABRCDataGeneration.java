@@ -13,21 +13,20 @@ import java.util.concurrent.CompletableFuture;
 
 @EventBusSubscriber(modid = AntiBlocksReChiseled.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class ABRCDataGeneration {
-
     @SubscribeEvent
-    public static void gatherData(GatherDataEvent event) {
+    public static void onGatherData(GatherDataEvent.Client event) {
         DataGenerator generator =  event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper fileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
         ModBlocksTagsProvider blocksTagsProvider = new ModBlocksTagsProvider(packOutput, lookupProvider, fileHelper);
-        generator.addProvider(true, new ModBlockStateProvider(packOutput, fileHelper));
+        /*generator.addProvider(true, new ModBlockStateProvider(packOutput, fileHelper));
         generator.addProvider(true, new ModBlockModelProvider(packOutput, fileHelper));
         generator.addProvider(true, new ModItemModelProvider(packOutput, fileHelper));
         generator.addProvider(true, blocksTagsProvider);
         generator.addProvider(true, new ModItemsTagProvider(packOutput, lookupProvider, blocksTagsProvider.contentsGetter(), fileHelper));
         generator.addProvider(true, new ModLangProvider(packOutput));
         generator.addProvider(true, new ModLootTablesProvider(packOutput, lookupProvider));
-        generator.addProvider(true, new ModRecipeProvider.Runner(packOutput, lookupProvider));
+        generator.addProvider(true, new ModRecipeProvider.Runner(packOutput, lookupProvider));*/
     }
 }

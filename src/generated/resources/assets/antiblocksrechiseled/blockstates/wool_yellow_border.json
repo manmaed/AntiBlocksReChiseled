@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "antiblocksrechiseled:block/wool/yellow_border"
+      "model": "antiblocksrechiseled:block/wool_yellow_border"
     }
   }
 }

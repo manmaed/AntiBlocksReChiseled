@@ -35,7 +35,7 @@ public class ModRecipeProvider /*{}*/ extends RecipeProvider {
     @Override
     protected void buildRecipes() {
         //Bright White Builder
-        this.shaped(BUILDING_BLOCKS , ABRCBrightColors.BRIGHT_WHITE.get(), 4)
+        /*this.shaped(BUILDING_BLOCKS , ABRCBrightColors.BRIGHT_WHITE.get(), 4)
                 .define('s', Ingredient.of(Blocks.STONE.asItem()))
                 .define('d', Ingredient.of(Items.WHITE_DYE))
                 .define('g', Ingredient.of(Items.GLOWSTONE_DUST))
@@ -127,31 +127,31 @@ public class ModRecipeProvider /*{}*/ extends RecipeProvider {
         mySlabBuilder(ABRCSlabs.SLAB_BLACK.get(), ABRCBrightColors.BRIGHT_BLACK.get(), output);
         //Stairs
         //-Wool
-        myStairBuilder(ABRCStairs.STAIR_WHITE_WOOL.get(), ABRCWoolColors.WOOL_WHITE.get(), output);
-        myStairBuilder(ABRCStairs.STAIR_ORANGE_WOOL.get(), ABRCWoolColors.WOOL_ORANGE.get(), output);
-        myStairBuilder(ABRCStairs.STAIR_MAGENTA_WOOL.get(), ABRCWoolColors.WOOL_MAGENTA.get(), output);
-        myStairBuilder(ABRCStairs.STAIR_LIGHT_BLUE_WOOL.get(), ABRCWoolColors.WOOL_LIGHT_BLUE.get(), output);
-        myStairBuilder(ABRCStairs.STAIR_YELLOW_WOOL.get(), ABRCWoolColors.WOOL_YELLOW.get(), output);
-        myStairBuilder(ABRCStairs.STAIR_LIME_WOOL.get(), ABRCWoolColors.WOOL_LIME.get(), output);
-        myStairBuilder(ABRCStairs.STAIR_PINK_WOOL.get(), ABRCWoolColors.WOOL_PINK.get(), output);
-        myStairBuilder(ABRCStairs.STAIR_GRAY_WOOL.get(), ABRCWoolColors.WOOL_GRAY.get(), output);
-        myStairBuilder(ABRCStairs.STAIR_LIGHT_GRAY_WOOL.get(), ABRCWoolColors.WOOL_LIGHT_GRAY.get(), output);
-        myStairBuilder(ABRCStairs.STAIR_CYAN_WOOL.get(), ABRCWoolColors.WOOL_CYAN.get(), output);
-        myStairBuilder(ABRCStairs.STAIR_PURPLE_WOOL.get(), ABRCWoolColors.WOOL_PURPLE.get(), output);
-        myStairBuilder(ABRCStairs.STAIR_BLUE_WOOL.get(), ABRCWoolColors.WOOL_BLUE.get(), output);
-        myStairBuilder(ABRCStairs.STAIR_BROWN_WOOL.get(), ABRCWoolColors.WOOL_BROWN.get(), output);
-        myStairBuilder(ABRCStairs.STAIR_GREEN_WOOL.get(), ABRCWoolColors.WOOL_GREEN.get(), output);
-        myStairBuilder(ABRCStairs.STAIR_RED_WOOL.get(), ABRCWoolColors.WOOL_RED.get(), output);
+        myStairBuilder(ABRCStairs.STAIR_WOOL_WHITE.get(), ABRCWoolColors.WOOL_WHITE.get(), output);
+        myStairBuilder(ABRCStairs.STAIR_WOOL_ORANGE.get(), ABRCWoolColors.WOOL_ORANGE.get(), output);
+        myStairBuilder(ABRCStairs.STAIR_WOOL_MAGENTA.get(), ABRCWoolColors.WOOL_MAGENTA.get(), output);
+        myStairBuilder(ABRCStairs.STAIR_WOOL_LIGHT_BLUE.get(), ABRCWoolColors.WOOL_LIGHT_BLUE.get(), output);
+        myStairBuilder(ABRCStairs.STAIR_WOOL_YELLOW.get(), ABRCWoolColors.WOOL_YELLOW.get(), output);
+        myStairBuilder(ABRCStairs.STAIR_WOOL_LIME.get(), ABRCWoolColors.WOOL_LIME.get(), output);
+        myStairBuilder(ABRCStairs.STAIR_WOOL_PINK.get(), ABRCWoolColors.WOOL_PINK.get(), output);
+        myStairBuilder(ABRCStairs.STAIR_WOOL_GRAY.get(), ABRCWoolColors.WOOL_GRAY.get(), output);
+        myStairBuilder(ABRCStairs.STAIR_WOOL_LIGHT_GRAY.get(), ABRCWoolColors.WOOL_LIGHT_GRAY.get(), output);
+        myStairBuilder(ABRCStairs.STAIR_WOOL_CYAN.get(), ABRCWoolColors.WOOL_CYAN.get(), output);
+        myStairBuilder(ABRCStairs.STAIR_WOOL_PURPLE.get(), ABRCWoolColors.WOOL_PURPLE.get(), output);
+        myStairBuilder(ABRCStairs.STAIR_WOOL_BLUE.get(), ABRCWoolColors.WOOL_BLUE.get(), output);
+        myStairBuilder(ABRCStairs.STAIR_WOOL_BROWN.get(), ABRCWoolColors.WOOL_BROWN.get(), output);
+        myStairBuilder(ABRCStairs.STAIR_WOOL_GREEN.get(), ABRCWoolColors.WOOL_GREEN.get(), output);
+        myStairBuilder(ABRCStairs.STAIR_WOOL_RED.get(), ABRCWoolColors.WOOL_RED.get(), output);
         //-Bright
-        myStairBuilder(ABRCStairs.STAIR_WHITE_BRIGHT.get(), ABRCBrightColors.BRIGHT_WHITE.get(), output);
-        myStairBuilder(ABRCStairs.STAIR_ORANGE_BRIGHT.get(), ABRCBrightColors.BRIGHT_ORANGE.get(), output);
-        myStairBuilder(ABRCStairs.STAIR_MAGENTA_BRIGHT.get(), ABRCBrightColors.BRIGHT_MAGENTA.get(), output);
-        myStairBuilder(ABRCStairs.STAIR_YELLOW_BRIGHT.get(), ABRCBrightColors.BRIGHT_YELLOW.get(), output);
-        myStairBuilder(ABRCStairs.STAIR_CYAN_BRIGHT.get(), ABRCBrightColors.BRIGHT_CYAN.get(), output);
-        myStairBuilder(ABRCStairs.STAIR_BLUE_BRIGHT.get(), ABRCBrightColors.BRIGHT_BLUE.get(), output);
-        myStairBuilder(ABRCStairs.STAIR_GREEN_BRIGHT.get(), ABRCBrightColors.BRIGHT_GREEN.get(), output);
-        myStairBuilder(ABRCStairs.STAIR_RED_BRIGHT.get(), ABRCBrightColors.BRIGHT_RED.get(), output);
-        myStairBuilder(ABRCStairs.STAIR_BLACK.get(), ABRCBrightColors.BRIGHT_BLACK.get(), output);
+        myStairBuilder(ABRCStairs.STAIR_BRIGHT_WHITE.get(), ABRCBrightColors.BRIGHT_WHITE.get(), output);
+        myStairBuilder(ABRCStairs.STAIR_BRIGHT_BLACK.get(), ABRCBrightColors.BRIGHT_ORANGE.get(), output);
+        myStairBuilder(ABRCStairs.STAIR_BRIGHT_ORANGE.get(), ABRCBrightColors.BRIGHT_MAGENTA.get(), output);
+        myStairBuilder(ABRCStairs.STAIR_BRIGHT_MAGENTA.get(), ABRCBrightColors.BRIGHT_YELLOW.get(), output);
+        myStairBuilder(ABRCStairs.STAIR_BRIGHT_YELLOW.get(), ABRCBrightColors.BRIGHT_CYAN.get(), output);
+        myStairBuilder(ABRCStairs.STAIR_BRIGHT_CYAN.get(), ABRCBrightColors.BRIGHT_BLUE.get(), output);
+        myStairBuilder(ABRCStairs.STAIR_BRIGHT_BLUE.get(), ABRCBrightColors.BRIGHT_GREEN.get(), output);
+        myStairBuilder(ABRCStairs.STAIR_BRIGHT_GREEN.get(), ABRCBrightColors.BRIGHT_RED.get(), output);
+        myStairBuilder(ABRCStairs.STAIR_BRIGHT_RED.get(), ABRCBrightColors.BRIGHT_BLACK.get(), output);
 
         myButtonBuilder(ABRCButtons.BUTTON_BRIGHT_WHITE.get(), ABRCBrightColors.BRIGHT_WHITE.get(), output);
         myButtonBuilder(ABRCButtons.BUTTON_BRIGHT_ORANGE.get(), ABRCBrightColors.BRIGHT_ORANGE.get(), output);
@@ -201,7 +201,7 @@ public class ModRecipeProvider /*{}*/ extends RecipeProvider {
         myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_WOOL_BLUE.get(), ABRCWoolColors.WOOL_BLUE.get(), output);
         myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_WOOL_BROWN.get(), ABRCWoolColors.WOOL_BROWN.get(), output);
         myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_WOOL_GREEN.get(), ABRCWoolColors.WOOL_GREEN.get(), output);
-        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_WOOL_RED.get(), ABRCWoolColors.WOOL_RED.get(), output);
+        myPlateBuilder(ABRCPressurePlates.PRESSURE_PLATE_WOOL_RED.get(), ABRCWoolColors.WOOL_RED.get(), output);*/
 
     }
 

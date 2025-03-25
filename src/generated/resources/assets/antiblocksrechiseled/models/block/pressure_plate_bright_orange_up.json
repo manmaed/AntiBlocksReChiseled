@@ -1,0 +1,6 @@
+{
+  "parent": "antiblocksrechiseled:block/full_bright_pressure_plate_up",
+  "textures": {
+    "all": "antiblocksrechiseled:block/bright_orange"
+  }
+}

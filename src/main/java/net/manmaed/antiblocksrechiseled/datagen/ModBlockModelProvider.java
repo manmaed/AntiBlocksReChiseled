@@ -18,7 +18,7 @@ public class ModBlockModelProvider extends BlockModelProvider {
 
     @Override
     protected void registerModels() {
-        makeBlock("bright", "white");
+        /*makeBlock("bright", "white");
         makeBlock("bright", "orange");
         makeBlock("bright", "magenta");
         makeBlock("bright", "yellow");
@@ -169,7 +169,7 @@ public class ModBlockModelProvider extends BlockModelProvider {
         makePressurePlate("pressure_plate_wool_blue", "wool/blue");
         makePressurePlate("pressure_plate_wool_brown", "wool/brown");
         makePressurePlate("pressure_plate_wool_green", "wool/green");
-        makePressurePlate("pressure_plate_wool_red", "wool/red");
+        makePressurePlate("pressure_plate_wool_red", "wool/red");*/
     }
 
     /*
