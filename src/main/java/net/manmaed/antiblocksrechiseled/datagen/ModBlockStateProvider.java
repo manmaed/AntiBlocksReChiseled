@@ -76,55 +76,55 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlock(ABRCWoolColors.WOOL_RED_BORDER.get(), getFile("wool/red_border"));
 
 
-        myslabBlock(ABRCSlabs.SLAB_WHITE_BRIGHT.get(), getFile("slab/slab_white_bright"), getFile("slab/slab_white_bright_top"), getFile("bright/white"));
-        myslabBlock(ABRCSlabs.SLAB_BLACK.get(), getFile("slab/slab_black"), getFile("slab/slab_black_top"), getFile("bright/black"));
-        myslabBlock(ABRCSlabs.SLAB_ORANGE_BRIGHT.get(), getFile("slab/slab_orange_bright"), getFile("slab/slab_orange_bright_top"), getFile("bright/orange"));
-        myslabBlock(ABRCSlabs.SLAB_MAGENTA_BRIGHT.get(), getFile("slab/slab_magenta_bright"), getFile("slab/slab_magenta_bright_top"), getFile("bright/magenta"));
-        myslabBlock(ABRCSlabs.SLAB_YELLOW_BRIGHT.get(), getFile("slab/slab_yellow_bright"), getFile("slab/slab_yellow_bright_top"), getFile("bright/yellow"));
-        myslabBlock(ABRCSlabs.SLAB_CYAN_BRIGHT.get(), getFile("slab/slab_cyan_bright"), getFile("slab/slab_cyan_bright_top"), getFile("bright/cyan"));
-        myslabBlock(ABRCSlabs.SLAB_BLUE_BRIGHT.get(), getFile("slab/slab_blue_bright"), getFile("slab/slab_blue_bright_top"), getFile("bright/blue"));
-        myslabBlock(ABRCSlabs.SLAB_GREEN_BRIGHT.get(), getFile("slab/slab_green_bright"), getFile("slab/slab_green_bright_top"), getFile("bright/green"));
-        myslabBlock(ABRCSlabs.SLAB_RED_BRIGHT.get(), getFile("slab/slab_red_bright"), getFile("slab/slab_red_bright_top"), getFile("bright/red"));
-        myslabBlock(ABRCSlabs.SLAB_WHITE_WOOL.get(), getFile("slab/slab_white_wool"), getFile("slab/slab_white_wool_top"), getFile("wool/white"));
-        myslabBlock(ABRCSlabs.SLAB_ORANGE_WOOL.get(), getFile("slab/slab_orange_wool"), getFile("slab/slab_orange_wool_top"), getFile("wool/orange"));
-        myslabBlock(ABRCSlabs.SLAB_MAGENTA_WOOL.get(), getFile("slab/slab_magenta_wool"), getFile("slab/slab_magenta_wool_top"), getFile("wool/magenta"));
-        myslabBlock(ABRCSlabs.SLAB_LIGHT_BLUE_WOOL.get(), getFile("slab/slab_light_blue_wool"), getFile("slab/slab_light_blue_wool_top"), getFile("wool/light_blue"));
-        myslabBlock(ABRCSlabs.SLAB_YELLOW_WOOL.get(), getFile("slab/slab_yellow_wool"), getFile("slab/slab_yellow_wool_top"), getFile("wool/yellow"));
-        myslabBlock(ABRCSlabs.SLAB_LIME_WOOL.get(), getFile("slab/slab_lime_wool"), getFile("slab/slab_lime_wool_top"), getFile("wool/lime"));
-        myslabBlock(ABRCSlabs.SLAB_PINK_WOOL.get(), getFile("slab/slab_pink_wool"), getFile("slab/slab_pink_wool_top"), getFile("wool/pink"));
-        myslabBlock(ABRCSlabs.SLAB_GRAY_WOOL.get(), getFile("slab/slab_gray_wool"), getFile("slab/slab_gray_wool_top"), getFile("wool/gray"));
-        myslabBlock(ABRCSlabs.SLAB_LIGHT_GRAY_WOOL.get(), getFile("slab/slab_light_gray_wool"), getFile("slab/slab_light_gray_wool_top"), getFile("wool/light_gray"));
-        myslabBlock(ABRCSlabs.SLAB_CYAN_WOOL.get(), getFile("slab/slab_cyan_wool"), getFile("slab/slab_cyan_wool_top"), getFile("wool/cyan"));
-        myslabBlock(ABRCSlabs.SLAB_PURPLE_WOOL.get(), getFile("slab/slab_purple_wool"), getFile("slab/slab_purple_wool_top"), getFile("wool/purple"));
-        myslabBlock(ABRCSlabs.SLAB_BLUE_WOOL.get(), getFile("slab/slab_blue_wool"), getFile("slab/slab_blue_wool_top"), getFile("wool/blue"));
-        myslabBlock(ABRCSlabs.SLAB_BROWN_WOOL.get(), getFile("slab/slab_brown_wool"), getFile("slab/slab_brown_wool_top"), getFile("wool/brown"));
-        myslabBlock(ABRCSlabs.SLAB_GREEN_WOOL.get(), getFile("slab/slab_green_wool"), getFile("slab/slab_green_wool_top"), getFile("wool/green"));
-        myslabBlock(ABRCSlabs.SLAB_RED_WOOL.get(), getFile("slab/slab_red_wool"), getFile("slab/slab_red_wool_top"), getFile("wool/red"));
+        myslabBlock(ABRCSlabs.SLAB_BRIGHT_WHITE.get(), "bright", "white");
+        myslabBlock(ABRCSlabs.SLAB_BRIGHT_BLACK.get(), "bright", "black");
+        myslabBlock(ABRCSlabs.SLAB_BRIGHT_ORANGE.get(), "bright", "orange");
+        myslabBlock(ABRCSlabs.SLAB_BRIGHT_MAGENTA.get(), "bright", "magenta");
+        myslabBlock(ABRCSlabs.SLAB_BRIGHT_YELLOW.get(), "bright", "yellow");
+        myslabBlock(ABRCSlabs.SLAB_BRIGHT_CYAN.get(), "bright", "cyan");
+        myslabBlock(ABRCSlabs.SLAB_BRIGHT_BLUE.get(), "bright", "blue");
+        myslabBlock(ABRCSlabs.SLAB_BRIGHT_GREEN.get(), "bright", "green");
+        myslabBlock(ABRCSlabs.SLAB_BRIGHT_RED.get(), "bright", "red");
+        myslabBlock(ABRCSlabs.SLAB_WOOL_WHITE.get(), "wool", "white");
+        myslabBlock(ABRCSlabs.SLAB_WOOL_ORANGE.get(), "wool", "orange");
+        myslabBlock(ABRCSlabs.SLAB_WOOL_MAGENTA.get(), "wool", "magenta");
+        myslabBlock(ABRCSlabs.SLAB_WOOL_LIGHT_BLUE.get(), "wool", "light_blue");
+        myslabBlock(ABRCSlabs.SLAB_WOOL_YELLOW.get(), "wool", "yellow");
+        myslabBlock(ABRCSlabs.SLAB_WOOL_LIME.get(), "wool", "lime");
+        myslabBlock(ABRCSlabs.SLAB_WOOL_PINK.get(), "wool", "pink");
+        myslabBlock(ABRCSlabs.SLAB_WOOL_GRAY.get(), "wool", "gray");
+        myslabBlock(ABRCSlabs.SLAB_WOOL_LIGHT_GRAY.get(), "wool", "light_gray");
+        myslabBlock(ABRCSlabs.SLAB_WOOL_CYAN.get(), "wool", "cyan");
+        myslabBlock(ABRCSlabs.SLAB_WOOL_PURPLE.get(), "wool", "purple");
+        myslabBlock(ABRCSlabs.SLAB_WOOL_BLUE.get(), "wool", "blue");
+        myslabBlock(ABRCSlabs.SLAB_WOOL_BROWN.get(), "wool", "brown");
+        myslabBlock(ABRCSlabs.SLAB_WOOL_GREEN.get(), "wool", "green");
+        myslabBlock(ABRCSlabs.SLAB_WOOL_RED.get(), "wool", "red");
 
-        mystairsBlock(ABRCStairs.STAIR_WHITE_BRIGHT.get(), "stair_white_bright");
-        mystairsBlock(ABRCStairs.STAIR_BLACK.get(), "stair_black");
-        mystairsBlock(ABRCStairs.STAIR_ORANGE_BRIGHT.get(), "stair_orange_bright");
-        mystairsBlock(ABRCStairs.STAIR_MAGENTA_BRIGHT.get(), "stair_magenta_bright");
-        mystairsBlock(ABRCStairs.STAIR_YELLOW_BRIGHT.get(), "stair_yellow_bright");
-        mystairsBlock(ABRCStairs.STAIR_CYAN_BRIGHT.get(), "stair_cyan_bright");
-        mystairsBlock(ABRCStairs.STAIR_BLUE_BRIGHT.get(), "stair_blue_bright");
-        mystairsBlock(ABRCStairs.STAIR_GREEN_BRIGHT.get(), "stair_green_bright");
-        mystairsBlock(ABRCStairs.STAIR_RED_BRIGHT.get(), "stair_red_bright");
-        mystairsBlock(ABRCStairs.STAIR_WHITE_WOOL.get(), "stair_white_wool");
-        mystairsBlock(ABRCStairs.STAIR_ORANGE_WOOL.get(), "stair_orange_wool");
-        mystairsBlock(ABRCStairs.STAIR_MAGENTA_WOOL.get(), "stair_magenta_wool");
-        mystairsBlock(ABRCStairs.STAIR_LIGHT_BLUE_WOOL.get(), "stair_light_blue_wool");
-        mystairsBlock(ABRCStairs.STAIR_YELLOW_WOOL.get(), "stair_yellow_wool");
-        mystairsBlock(ABRCStairs.STAIR_LIME_WOOL.get(), "stair_lime_wool");
-        mystairsBlock(ABRCStairs.STAIR_PINK_WOOL.get(), "stair_pink_wool");
-        mystairsBlock(ABRCStairs.STAIR_GRAY_WOOL.get(), "stair_gray_wool");
-        mystairsBlock(ABRCStairs.STAIR_LIGHT_GRAY_WOOL.get(), "stair_light_gray_wool");
-        mystairsBlock(ABRCStairs.STAIR_CYAN_WOOL.get(), "stair_cyan_wool");
-        mystairsBlock(ABRCStairs.STAIR_PURPLE_WOOL.get(), "stair_purple_wool");
-        mystairsBlock(ABRCStairs.STAIR_BLUE_WOOL.get(), "stair_blue_wool");
-        mystairsBlock(ABRCStairs.STAIR_BROWN_WOOL.get(), "stair_brown_wool");
-        mystairsBlock(ABRCStairs.STAIR_GREEN_WOOL.get(), "stair_green_wool");
-        mystairsBlock(ABRCStairs.STAIR_RED_WOOL.get(), "stair_red_wool");
+        mystairsBlock(ABRCStairs.STAIR_BRIGHT_WHITE.get(), "stair_bright_white");
+        mystairsBlock(ABRCStairs.STAIR_BRIGHT_BLACK.get(), "stair_bright_black");
+        mystairsBlock(ABRCStairs.STAIR_BRIGHT_ORANGE.get(), "stair_bright_orange");
+        mystairsBlock(ABRCStairs.STAIR_BRIGHT_MAGENTA.get(), "stair_bright_magenta");
+        mystairsBlock(ABRCStairs.STAIR_BRIGHT_YELLOW.get(), "stair_bright_yellow");
+        mystairsBlock(ABRCStairs.STAIR_BRIGHT_CYAN.get(), "stair_bright_cyan");
+        mystairsBlock(ABRCStairs.STAIR_BRIGHT_BLUE.get(), "stair_bright_blue");
+        mystairsBlock(ABRCStairs.STAIR_BRIGHT_GREEN.get(), "stair_bright_green");
+        mystairsBlock(ABRCStairs.STAIR_BRIGHT_RED.get(), "stair_bright_red");
+        mystairsBlock(ABRCStairs.STAIR_WOOL_WHITE.get(), "stair_wool_white");
+        mystairsBlock(ABRCStairs.STAIR_WOOL_ORANGE.get(), "stair_wool_orange");
+        mystairsBlock(ABRCStairs.STAIR_WOOL_MAGENTA.get(), "stair_wool_magenta");
+        mystairsBlock(ABRCStairs.STAIR_WOOL_LIGHT_BLUE.get(), "stair_wool_light_blue");
+        mystairsBlock(ABRCStairs.STAIR_WOOL_YELLOW.get(), "stair_wool_yellow");
+        mystairsBlock(ABRCStairs.STAIR_WOOL_LIME.get(), "stair_wool_lime");
+        mystairsBlock(ABRCStairs.STAIR_WOOL_PINK.get(), "stair_wool_pink");
+        mystairsBlock(ABRCStairs.STAIR_WOOL_GRAY.get(), "stair_wool_gray");
+        mystairsBlock(ABRCStairs.STAIR_WOOL_LIGHT_GRAY.get(), "stair_wool_light_gray");
+        mystairsBlock(ABRCStairs.STAIR_WOOL_CYAN.get(), "stair_wool_cyan");
+        mystairsBlock(ABRCStairs.STAIR_WOOL_PURPLE.get(), "stair_wool_purple");
+        mystairsBlock(ABRCStairs.STAIR_WOOL_BLUE.get(), "stair_wool_blue");
+        mystairsBlock(ABRCStairs.STAIR_WOOL_BROWN.get(), "stair_wool_brown");
+        mystairsBlock(ABRCStairs.STAIR_WOOL_GREEN.get(), "stair_wool_green");
+        mystairsBlock(ABRCStairs.STAIR_WOOL_RED.get(), "stair_wool_red");
 
         myButtonBlock(ABRCButtons.BUTTON_BRIGHT_WHITE.get(), "button_bright_white");
         myButtonBlock(ABRCButtons.BUTTON_BRIGHT_ORANGE.get(), "button_bright_orange");
@@ -205,7 +205,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 }, StairBlock.WATERLOGGED);
     }
 
-    public void myslabBlock(Block block, ModelFile bottom, ModelFile top, ModelFile doubleslab) {
+    public void myslabBlock(Block block,String type, String color) {
+        //ModelFile bottom, ModelFile top, ModelFile doubleslab
+        String full = type + "_" + color;
+        ModelFile bottom = getFile("slab/slab_" + full);
+        ModelFile top = getFile("slab/slab_" + full + "_top");
+        ModelFile doubleslab = getFile(type + "/" + color);
         getVariantBuilder(block)
                 .partialState().with(SlabBlock.TYPE, SlabType.BOTTOM).addModels(new ConfiguredModel(bottom))
                 .partialState().with(SlabBlock.TYPE, SlabType.TOP).addModels(new ConfiguredModel(top))
