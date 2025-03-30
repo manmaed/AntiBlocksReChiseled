@@ -1,0 +1,6 @@
+{
+  "parent": "antiblocksrechiseled:block/full_bright_inner_stair",
+  "textures": {
+    "color": "antiblocksrechiseled:block/bright_red"
+  }
+}

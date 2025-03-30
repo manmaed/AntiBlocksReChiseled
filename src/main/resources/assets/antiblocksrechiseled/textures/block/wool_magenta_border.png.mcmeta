@@ -1,0 +1,10 @@
+{
+    "ctm":{
+        "ctm_version": 1,
+        "type":"CTM",
+         "layer":"CUTOUT",
+         "textures":[
+            "antiblocksrechiseled:block/wool_magenta_border-ctm"
+        ]
+    }
+}

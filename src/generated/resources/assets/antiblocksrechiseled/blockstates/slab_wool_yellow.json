@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "antiblocksrechiseled:block/slab/slab_wool_yellow"
+      "model": "antiblocksrechiseled:block/slab_wool_yellow"
     },
     "type=double": {
-      "model": "antiblocksrechiseled:block/wool/yellow"
+      "model": "antiblocksrechiseled:block/wool_yellow"
     },
     "type=top": {
-      "model": "antiblocksrechiseled:block/slab/slab_wool_yellow_top"
+      "model": "antiblocksrechiseled:block/slab_wool_yellow_top"
     }
   }
 }

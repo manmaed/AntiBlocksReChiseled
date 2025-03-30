@@ -24,56 +24,56 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         //Bright Colors
-        simpleBlock(ABRCBrightColors.BRIGHT_WHITE.get(), getFile("bright/white"));
-        simpleBlock(ABRCBrightColors.BRIGHT_ORANGE.get(), getFile("bright/orange"));
-        simpleBlock(ABRCBrightColors.BRIGHT_MAGENTA.get(), getFile("bright/magenta"));
-        simpleBlock(ABRCBrightColors.BRIGHT_YELLOW.get(), getFile("bright/yellow"));
-        simpleBlock(ABRCBrightColors.BRIGHT_CYAN.get(), getFile("bright/cyan"));
-        simpleBlock(ABRCBrightColors.BRIGHT_BLUE.get(), getFile("bright/blue"));
-        simpleBlock(ABRCBrightColors.BRIGHT_GREEN.get(), getFile("bright/green"));
-        simpleBlock(ABRCBrightColors.BRIGHT_RED.get(), getFile("bright/red"));
-        simpleBlock(ABRCBrightColors.BRIGHT_BLACK.get(), getFile("bright/black"));
-        simpleBlock(ABRCBrightColors.BRIGHT_WHITE_BORDER.get(), getFile("bright/white_border"));
-        simpleBlock(ABRCBrightColors.BRIGHT_ORANGE_BORDER.get(), getFile("bright/orange_border"));
-        simpleBlock(ABRCBrightColors.BRIGHT_MAGENTA_BORDER.get(), getFile("bright/magenta_border"));
-        simpleBlock(ABRCBrightColors.BRIGHT_YELLOW_BORDER.get(), getFile("bright/yellow_border"));
-        simpleBlock(ABRCBrightColors.BRIGHT_CYAN_BORDER.get(), getFile("bright/cyan_border"));
-        simpleBlock(ABRCBrightColors.BRIGHT_BLUE_BORDER.get(), getFile("bright/blue_border"));
-        simpleBlock(ABRCBrightColors.BRIGHT_GREEN_BORDER.get(), getFile("bright/green_border"));
-        simpleBlock(ABRCBrightColors.BRIGHT_RED_BORDER.get(), getFile("bright/red_border"));
-        simpleBlock(ABRCBrightColors.BRIGHT_BLACK_BORDER.get(), getFile("bright/black_border"));
+        myBlock(ABRCBrightColors.BRIGHT_WHITE.get(), "bright_white");
+        myBlock(ABRCBrightColors.BRIGHT_ORANGE.get(), "bright_orange");
+        myBlock(ABRCBrightColors.BRIGHT_MAGENTA.get(), "bright_magenta");
+        myBlock(ABRCBrightColors.BRIGHT_YELLOW.get(), "bright_yellow");
+        myBlock(ABRCBrightColors.BRIGHT_CYAN.get(), "bright_cyan");
+        myBlock(ABRCBrightColors.BRIGHT_BLUE.get(), "bright_blue");
+        myBlock(ABRCBrightColors.BRIGHT_GREEN.get(), "bright_green");
+        myBlock(ABRCBrightColors.BRIGHT_RED.get(), "bright_red");
+        myBlock(ABRCBrightColors.BRIGHT_BLACK.get(), "bright_black");
+        myBlock(ABRCBrightColors.BRIGHT_WHITE_BORDER.get(), "bright_white_border");
+        myBlock(ABRCBrightColors.BRIGHT_ORANGE_BORDER.get(), "bright_orange_border");
+        myBlock(ABRCBrightColors.BRIGHT_MAGENTA_BORDER.get(), "bright_magenta_border");
+        myBlock(ABRCBrightColors.BRIGHT_YELLOW_BORDER.get(), "bright_yellow_border");
+        myBlock(ABRCBrightColors.BRIGHT_CYAN_BORDER.get(), "bright_cyan_border");
+        myBlock(ABRCBrightColors.BRIGHT_BLUE_BORDER.get(), "bright_blue_border");
+        myBlock(ABRCBrightColors.BRIGHT_GREEN_BORDER.get(), "bright_green_border");
+        myBlock(ABRCBrightColors.BRIGHT_RED_BORDER.get(), "bright_red_border");
+        myBlock(ABRCBrightColors.BRIGHT_BLACK_BORDER.get(), "bright_black_border");
 
         //Wool Colors
-        simpleBlock(ABRCWoolColors.WOOL_WHITE.get(), getFile("wool/white"));
-        simpleBlock(ABRCWoolColors.WOOL_ORANGE.get(), getFile("wool/orange"));
-        simpleBlock(ABRCWoolColors.WOOL_MAGENTA.get(), getFile("wool/magenta"));
-        simpleBlock(ABRCWoolColors.WOOL_LIGHT_BLUE.get(), getFile("wool/light_blue"));
-        simpleBlock(ABRCWoolColors.WOOL_YELLOW.get(), getFile("wool/yellow"));
-        simpleBlock(ABRCWoolColors.WOOL_LIME.get(), getFile("wool/lime"));
-        simpleBlock(ABRCWoolColors.WOOL_PINK.get(), getFile("wool/pink"));
-        simpleBlock(ABRCWoolColors.WOOL_GRAY.get(), getFile("wool/gray"));
-        simpleBlock(ABRCWoolColors.WOOL_LIGHT_GRAY.get(), getFile("wool/light_gray"));
-        simpleBlock(ABRCWoolColors.WOOL_CYAN.get(), getFile("wool/cyan"));
-        simpleBlock(ABRCWoolColors.WOOL_PURPLE.get(), getFile("wool/purple"));
-        simpleBlock(ABRCWoolColors.WOOL_BLUE.get(), getFile("wool/blue"));
-        simpleBlock(ABRCWoolColors.WOOL_BROWN.get(), getFile("wool/brown"));
-        simpleBlock(ABRCWoolColors.WOOL_GREEN.get(), getFile("wool/green"));
-        simpleBlock(ABRCWoolColors.WOOL_RED.get(), getFile("wool/red"));
-        simpleBlock(ABRCWoolColors.WOOL_WHITE_BORDER.get(), getFile("wool/white_border"));
-        simpleBlock(ABRCWoolColors.WOOL_ORANGE_BORDER.get(), getFile("wool/orange_border"));
-        simpleBlock(ABRCWoolColors.WOOL_MAGENTA_BORDER.get(), getFile("wool/magenta_border"));
-        simpleBlock(ABRCWoolColors.WOOL_LIGHT_BLUE_BORDER.get(), getFile("wool/light_blue_border"));
-        simpleBlock(ABRCWoolColors.WOOL_YELLOW_BORDER.get(), getFile("wool/yellow_border"));
-        simpleBlock(ABRCWoolColors.WOOL_LIME_BORDER.get(), getFile("wool/lime_border"));
-        simpleBlock(ABRCWoolColors.WOOL_PINK_BORDER.get(), getFile("wool/pink_border"));
-        simpleBlock(ABRCWoolColors.WOOL_GRAY_BORDER.get(), getFile("wool/gray_border"));
-        simpleBlock(ABRCWoolColors.WOOL_LIGHT_GRAY_BORDER.get(), getFile("wool/light_gray_border"));
-        simpleBlock(ABRCWoolColors.WOOL_CYAN_BORDER.get(), getFile("wool/cyan_border"));
-        simpleBlock(ABRCWoolColors.WOOL_PURPLE_BORDER.get(), getFile("wool/purple_border"));
-        simpleBlock(ABRCWoolColors.WOOL_BLUE_BORDER.get(), getFile("wool/blue_border"));
-        simpleBlock(ABRCWoolColors.WOOL_BROWN_BORDER.get(), getFile("wool/brown_border"));
-        simpleBlock(ABRCWoolColors.WOOL_GREEN_BORDER.get(), getFile("wool/green_border"));
-        simpleBlock(ABRCWoolColors.WOOL_RED_BORDER.get(), getFile("wool/red_border"));
+        myBlock(ABRCWoolColors.WOOL_WHITE.get(), "wool_white");
+        myBlock(ABRCWoolColors.WOOL_ORANGE.get(), "wool_orange");
+        myBlock(ABRCWoolColors.WOOL_MAGENTA.get(), "wool_magenta");
+        myBlock(ABRCWoolColors.WOOL_LIGHT_BLUE.get(), "wool_light_blue");
+        myBlock(ABRCWoolColors.WOOL_YELLOW.get(), "wool_yellow");
+        myBlock(ABRCWoolColors.WOOL_LIME.get(), "wool_lime");
+        myBlock(ABRCWoolColors.WOOL_PINK.get(), "wool_pink");
+        myBlock(ABRCWoolColors.WOOL_GRAY.get(), "wool_gray");
+        myBlock(ABRCWoolColors.WOOL_LIGHT_GRAY.get(), "wool_light_gray");
+        myBlock(ABRCWoolColors.WOOL_CYAN.get(), "wool_cyan");
+        myBlock(ABRCWoolColors.WOOL_PURPLE.get(), "wool_purple");
+        myBlock(ABRCWoolColors.WOOL_BLUE.get(), "wool_blue");
+        myBlock(ABRCWoolColors.WOOL_BROWN.get(), "wool_brown");
+        myBlock(ABRCWoolColors.WOOL_GREEN.get(), "wool_green");
+        myBlock(ABRCWoolColors.WOOL_RED.get(), "wool_red");
+        myBlock(ABRCWoolColors.WOOL_WHITE_BORDER.get(), "wool_white_border");
+        myBlock(ABRCWoolColors.WOOL_ORANGE_BORDER.get(), "wool_orange_border");
+        myBlock(ABRCWoolColors.WOOL_MAGENTA_BORDER.get(), "wool_magenta_border");
+        myBlock(ABRCWoolColors.WOOL_LIGHT_BLUE_BORDER.get(), "wool_light_blue_border");
+        myBlock(ABRCWoolColors.WOOL_YELLOW_BORDER.get(), "wool_yellow_border");
+        myBlock(ABRCWoolColors.WOOL_LIME_BORDER.get(), "wool_lime_border");
+        myBlock(ABRCWoolColors.WOOL_PINK_BORDER.get(), "wool_pink_border");
+        myBlock(ABRCWoolColors.WOOL_GRAY_BORDER.get(), "wool_gray_border");
+        myBlock(ABRCWoolColors.WOOL_LIGHT_GRAY_BORDER.get(), "wool_light_gray_border");
+        myBlock(ABRCWoolColors.WOOL_CYAN_BORDER.get(), "wool_cyan_border");
+        myBlock(ABRCWoolColors.WOOL_PURPLE_BORDER.get(), "wool_purple_border");
+        myBlock(ABRCWoolColors.WOOL_BLUE_BORDER.get(), "wool_blue_border");
+        myBlock(ABRCWoolColors.WOOL_BROWN_BORDER.get(), "wool_brown_border");
+        myBlock(ABRCWoolColors.WOOL_GREEN_BORDER.get(), "wool_green_border");
+        myBlock(ABRCWoolColors.WOOL_RED_BORDER.get(), "wool_red_border");
 
 
         myslabBlock(ABRCSlabs.SLAB_BRIGHT_WHITE.get(), "bright", "white");
@@ -177,11 +177,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
         myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_WOOL_RED.get(), "pressure_plate_wool_red");
     }
 
+    public void myBlock(Block block, String name){
+        simpleBlock(block, getFile(name));
+    }
+
     public void mystairsBlock(Block block, String name) {
-        String model = "stair/" + name;
-        ModelFile stairs = getFile(model);
-        ModelFile stairsInner = getFile(model + "_inner");
-        ModelFile stairsOuter = getFile(model + "_outer");
+        ModelFile stairs = getFile(name);
+        ModelFile stairsInner = getFile(name + "_inner");
+        ModelFile stairsOuter = getFile(name + "_outer");
         getVariantBuilder(block)
                 .forAllStatesExcept(state -> {
                     Direction facing = state.getValue(StairBlock.FACING);
@@ -208,9 +211,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
     public void myslabBlock(Block block,String type, String color) {
         //ModelFile bottom, ModelFile top, ModelFile doubleslab
         String full = type + "_" + color;
-        ModelFile bottom = getFile("slab/slab_" + full);
-        ModelFile top = getFile("slab/slab_" + full + "_top");
-        ModelFile doubleslab = getFile(type + "/" + color);
+        ModelFile bottom = getFile("slab_" + full);
+        ModelFile top = getFile("slab_" + full + "_top");
+        ModelFile doubleslab = getFile(full);
         getVariantBuilder(block)
                 .partialState().with(SlabBlock.TYPE, SlabType.BOTTOM).addModels(new ConfiguredModel(bottom))
                 .partialState().with(SlabBlock.TYPE, SlabType.TOP).addModels(new ConfiguredModel(top))
@@ -218,9 +221,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     public void myButtonBlock(Block block, String name) {
-        String model = "button/" + name;
-        ModelFile button = getFile(model);
-        ModelFile buttonPressed = getFile(model + "_pressed");
+        ModelFile button = getFile(name);
+        ModelFile buttonPressed = getFile(name + "_pressed");
         getVariantBuilder(block).forAllStates(state -> {
             Direction facing = state.getValue(ButtonBlock.FACING);
             AttachFace face = state.getValue(ButtonBlock.FACE);
@@ -236,9 +238,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     public void myPressurePlateBlock(Block block, String name) {
-        String model = "pressure_plate/" + name;
-        ModelFile pressurePlate = getFile(model);
-        ModelFile pressurePlateDown = getFile(model + "_down");
+        ModelFile pressurePlate = getFile(name);
+        ModelFile pressurePlateDown = getFile(name + "_down");
         getVariantBuilder(block)
                 .partialState().with(PressurePlateBlock.POWERED, true).addModels(new ConfiguredModel(pressurePlateDown))
                 .partialState().with(PressurePlateBlock.POWERED, false).addModels(new ConfiguredModel(pressurePlate));

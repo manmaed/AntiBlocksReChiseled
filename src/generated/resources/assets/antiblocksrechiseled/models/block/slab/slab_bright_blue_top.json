@@ -1,6 +1,0 @@
-{
-  "parent": "antiblocksrechiseled:block/full_bright_slab_top",
-  "textures": {
-    "color": "antiblocksrechiseled:block/bright/blue"
-  }
-}

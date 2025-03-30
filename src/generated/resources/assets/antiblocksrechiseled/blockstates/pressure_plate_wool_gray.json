@@ -1,10 +1,10 @@
 {
   "variants": {
     "powered=false": {
-      "model": "antiblocksrechiseled:block/pressure_plate/pressure_plate_wool_gray"
+      "model": "antiblocksrechiseled:block/pressure_plate_wool_gray"
     },
     "powered=true": {
-      "model": "antiblocksrechiseled:block/pressure_plate/pressure_plate_wool_gray_down"
+      "model": "antiblocksrechiseled:block/pressure_plate_wool_gray_down"
     }
   }
 }
