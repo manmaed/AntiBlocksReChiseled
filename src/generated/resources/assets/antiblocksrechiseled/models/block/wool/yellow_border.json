@@ -1,6 +1,7 @@
 {
-  "parent": "antiblocksrechiseled:block/full_bright",
+  "parent": "antiblocksrechiseled:block/full_bright_border",
   "textures": {
-    "color": "antiblocksrechiseled:block/wool/yellow_border"
+    "border": "antiblocksrechiseled:block/black_border",
+    "color": "antiblocksrechiseled:block/wool/yellow"
   }
 }

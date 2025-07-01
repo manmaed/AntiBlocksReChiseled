@@ -182,7 +182,7 @@ public class ModBlockModelProvider extends BlockModelProvider {
     }
 
     private void makeBorderBlock(String type, String name, String borderColor) {
-        withExistingParent("block/" + type + "/" + name + "_broder", getLoc("full_bright_border"))
+        withExistingParent("block/" + type + "/" + name + "_border", getLoc("full_bright_border"))
                 .texture("color", getLoc(type + "/" + name)).texture("border", getLoc(borderColor + "_border"));
     }
 
