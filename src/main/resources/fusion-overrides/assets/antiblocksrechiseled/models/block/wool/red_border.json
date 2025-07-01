@@ -1,6 +1,6 @@
 {
   "type": "fusion:connecting",
-  "parent": "antiblocksrechiseled:block/full_bright",
+  "parent": "antiblocksrechiseled:block/full_bright_with_outline",
   "connections": {
     "type": "fusion:or",
     "predicates": [
@@ -11,6 +11,7 @@
   },
   "loader": "fusion:model",
   "textures": {
-    "color": "antiblocksrechiseled:block/wool/red_border"
+    "color": "antiblocksrechiseled:block/wool/red",
+    "outline": "antiblocksrechiseled:block/outline/black"
   }
 }

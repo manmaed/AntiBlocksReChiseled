@@ -1,0 +1,39 @@
+{
+	"parent": "block/cube",
+	"ambientocclusion": false,
+	"render_type": "cutout",
+	"texture_size": [128, 128],
+	"textures": {
+		"particle": "#color"
+	},
+	"elements": [
+		{
+			"name": "color",
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"shade": false,
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#color", "cullface": "north"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#color", "cullface": "east"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#color", "cullface": "south"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#color", "cullface": "west"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#color", "cullface": "up"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#color", "cullface": "down"}
+			}
+		},
+		{
+			"name": "border",
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"shade": false,
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#outline"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#outline"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#outline"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#outline"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#outline"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#outline"}
+			}
+		}
+	]
+}

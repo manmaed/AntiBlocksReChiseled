@@ -27,15 +27,15 @@ public class ModBlockModelProvider extends BlockModelProvider {
         makeBlock("bright", "green");
         makeBlock("bright", "red");
         makeBlock("bright", "black");
-        makeBorderBlock("bright", "white", "black");
-        makeBorderBlock("bright", "orange", "black");
-        makeBorderBlock("bright", "magenta", "black");
-        makeBorderBlock("bright", "yellow", "black");
-        makeBorderBlock("bright", "cyan", "black");
-        makeBorderBlock("bright", "blue", "black");
-        makeBorderBlock("bright", "green", "black");
-        makeBorderBlock("bright", "red", "black");
-        makeBorderBlock("bright", "black", "white");
+        makeBlockWithOutline("bright", "white", "black");
+        makeBlockWithOutline("bright", "orange", "black");
+        makeBlockWithOutline("bright", "magenta", "black");
+        makeBlockWithOutline("bright", "yellow", "black");
+        makeBlockWithOutline("bright", "cyan", "black");
+        makeBlockWithOutline("bright", "blue", "black");
+        makeBlockWithOutline("bright", "green", "black");
+        makeBlockWithOutline("bright", "red", "black");
+        makeBlockWithOutline("bright", "black", "white");
 
         makeBlock("wool", "white");
         makeBlock("wool", "orange");
@@ -52,21 +52,21 @@ public class ModBlockModelProvider extends BlockModelProvider {
         makeBlock("wool", "brown");
         makeBlock("wool", "green");
         makeBlock("wool", "red");
-        makeBorderBlock("wool", "white", "black");
-        makeBorderBlock("wool", "orange", "black");
-        makeBorderBlock("wool", "magenta", "black");
-        makeBorderBlock("wool", "light_blue", "black");
-        makeBorderBlock("wool", "yellow", "black");
-        makeBorderBlock("wool", "lime", "black");
-        makeBorderBlock("wool", "pink", "black");
-        makeBorderBlock("wool", "gray", "black");
-        makeBorderBlock("wool", "light_gray", "black");
-        makeBorderBlock("wool", "cyan", "black");
-        makeBorderBlock("wool", "purple", "black");
-        makeBorderBlock("wool", "blue", "black");
-        makeBorderBlock("wool", "brown", "black");
-        makeBorderBlock("wool", "green", "black");
-        makeBorderBlock("wool", "red", "black");
+        makeBlockWithOutline("wool", "white", "black");
+        makeBlockWithOutline("wool", "orange", "black");
+        makeBlockWithOutline("wool", "magenta", "black");
+        makeBlockWithOutline("wool", "light_blue", "black");
+        makeBlockWithOutline("wool", "yellow", "black");
+        makeBlockWithOutline("wool", "lime", "black");
+        makeBlockWithOutline("wool", "pink", "black");
+        makeBlockWithOutline("wool", "gray", "black");
+        makeBlockWithOutline("wool", "light_gray", "black");
+        makeBlockWithOutline("wool", "cyan", "black");
+        makeBlockWithOutline("wool", "purple", "black");
+        makeBlockWithOutline("wool", "blue", "black");
+        makeBlockWithOutline("wool", "brown", "black");
+        makeBlockWithOutline("wool", "green", "black");
+        makeBlockWithOutline("wool", "red", "black");
 
 
         makeSlabs("slab_white_bright", "bright/white");
@@ -181,9 +181,10 @@ public class ModBlockModelProvider extends BlockModelProvider {
         singleTexture("block/" + type + "/" + name, getLoc("full_bright"), "color", getLoc(type + "/" + name));
     }
 
-    private void makeBorderBlock(String type, String name, String borderColor) {
-        withExistingParent("block/" + type + "/" + name + "_border", getLoc("full_bright_border"))
-                .texture("color", getLoc(type + "/" + name)).texture("border", getLoc(borderColor + "_border"));
+    private void makeBlockWithOutline(String type, String baseColor, String outlineColor) {
+        withExistingParent("block/" + type + "/" + baseColor + "_border", getLoc("full_bright_with_outline"))
+                .texture("color", getLoc(type + "/" + baseColor))
+                .texture("outline", getLoc("outline/" + outlineColor));
     }
 
     private void makeSlabs(String name, String color) {
