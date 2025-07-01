@@ -27,15 +27,15 @@ public class ModBlockModelProvider extends BlockModelProvider {
         makeBlock("bright", "green");
         makeBlock("bright", "red");
         makeBlock("bright", "black");
-        makeBlock("bright", "white_border");
-        makeBlock("bright", "orange_border");
-        makeBlock("bright", "magenta_border");
-        makeBlock("bright", "yellow_border");
-        makeBlock("bright", "cyan_border");
-        makeBlock("bright", "blue_border");
-        makeBlock("bright", "green_border");
-        makeBlock("bright", "red_border");
-        makeBlock("bright", "black_border");
+        makeBorderBlock("bright", "white", "black");
+        makeBorderBlock("bright", "orange", "black");
+        makeBorderBlock("bright", "magenta", "black");
+        makeBorderBlock("bright", "yellow", "black");
+        makeBorderBlock("bright", "cyan", "black");
+        makeBorderBlock("bright", "blue", "black");
+        makeBorderBlock("bright", "green", "black");
+        makeBorderBlock("bright", "red", "black");
+        makeBorderBlock("bright", "black", "white");
 
         makeBlock("wool", "white");
         makeBlock("wool", "orange");
@@ -52,21 +52,21 @@ public class ModBlockModelProvider extends BlockModelProvider {
         makeBlock("wool", "brown");
         makeBlock("wool", "green");
         makeBlock("wool", "red");
-        makeBlock("wool", "white_border");
-        makeBlock("wool", "orange_border");
-        makeBlock("wool", "magenta_border");
-        makeBlock("wool", "light_blue_border");
-        makeBlock("wool", "yellow_border");
-        makeBlock("wool", "lime_border");
-        makeBlock("wool", "pink_border");
-        makeBlock("wool", "gray_border");
-        makeBlock("wool", "light_gray_border");
-        makeBlock("wool", "cyan_border");
-        makeBlock("wool", "purple_border");
-        makeBlock("wool", "blue_border");
-        makeBlock("wool", "brown_border");
-        makeBlock("wool", "green_border");
-        makeBlock("wool", "red_border");
+        makeBorderBlock("wool", "white", "black");
+        makeBorderBlock("wool", "orange", "black");
+        makeBorderBlock("wool", "magenta", "black");
+        makeBorderBlock("wool", "light_blue", "black");
+        makeBorderBlock("wool", "yellow", "black");
+        makeBorderBlock("wool", "lime", "black");
+        makeBorderBlock("wool", "pink", "black");
+        makeBorderBlock("wool", "gray", "black");
+        makeBorderBlock("wool", "light_gray", "black");
+        makeBorderBlock("wool", "cyan", "black");
+        makeBorderBlock("wool", "purple", "black");
+        makeBorderBlock("wool", "blue", "black");
+        makeBorderBlock("wool", "brown", "black");
+        makeBorderBlock("wool", "green", "black");
+        makeBorderBlock("wool", "red", "black");
 
 
         makeSlabs("slab_white_bright", "bright/white");
@@ -179,6 +179,11 @@ public class ModBlockModelProvider extends BlockModelProvider {
      */
     private void makeBlock(String type, String name) {
         singleTexture("block/" + type + "/" + name, getLoc("full_bright"), "color", getLoc(type + "/" + name));
+    }
+
+    private void makeBorderBlock(String type, String name, String borderColor) {
+        withExistingParent("block/" + type + "/" + name + "_broder", getLoc("full_bright_border"))
+                .texture("color", getLoc(type + "/" + name)).texture("border", getLoc(borderColor + "_border"));
     }
 
     private void makeSlabs(String name, String color) {
