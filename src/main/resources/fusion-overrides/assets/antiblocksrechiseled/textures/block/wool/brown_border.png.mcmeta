@@ -3,7 +3,7 @@
     "type": "connecting",
     "layout": "full",
     "render_type": "cutout",
-    "frame_width": 128,
-    "frame_height": 128
+    "frame_width": 64,
+    "frame_height": 64
   }
 }
