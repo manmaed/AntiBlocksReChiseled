@@ -32,6 +32,7 @@
       "0.5.1": "Port to Forge 1.20.2"
     },
     "1.20.1": {
+      "0.4.7": "Added Magyar HU Thanks to bayi",
       "0.4.6": "Fixes a NullPointerException",
       "0.4.4": "Added Tags to Stairs, Slabs, Buttons and Pressure Plates + Custom ones (No Longer Suppoted)",
       "0.4.3": "Added Support for Fusion Connected Texutres",
@@ -76,8 +77,8 @@
       "1.20.3-recommended": "0.6.3",
       "1.20.2-latest": "0.5.2",
       "1.20.2-recommended": "0.5.2",
-      "1.20.1-latest": "0.4.6",
-      "1.20.1-recommended": "0.4.6",
+      "1.20.1-latest": "0.4.7",
+      "1.20.1-recommended": "0.4.7",
       "1.20-latest": "0.3.2",
       "1.20-recommended": "0.3.2",
       "1.19.3-latest": "0.2.1",
