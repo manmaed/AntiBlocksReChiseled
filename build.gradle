@@ -91,9 +91,6 @@ publishMods {
         optional {
             slug = 'fusion-connected-textures'
         }
-        optional {
-            slug = 'ctm'
-        }
     }
     modrinth {
         accessToken = providers.environmentVariable("MODRINTH_DEPLOY")
