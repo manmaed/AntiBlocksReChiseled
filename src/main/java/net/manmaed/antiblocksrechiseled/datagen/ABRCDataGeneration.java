@@ -20,13 +20,13 @@ public class ABRCDataGeneration {
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper fileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+        ModLangProvider.addTranslations(generator);
         ModBlocksTagsProvider blocksTagsProvider = new ModBlocksTagsProvider(packOutput, lookupProvider, fileHelper);
         generator.addProvider(true, new ModBlockStateProvider(packOutput, fileHelper));
         generator.addProvider(true, new ModBlockModelProvider(packOutput, fileHelper));
         generator.addProvider(true, new ModItemModelProvider(packOutput, fileHelper));
         generator.addProvider(true, blocksTagsProvider);
         generator.addProvider(true, new ModItemsTagProvider(packOutput, lookupProvider, blocksTagsProvider.contentsGetter(), fileHelper));
-        generator.addProvider(true, new ModLangProvider(packOutput));
         generator.addProvider(true, new ModLootTablesProvider(packOutput, lookupProvider));
         generator.addProvider(true, new ModRecipeProvider(packOutput, lookupProvider));
     }
