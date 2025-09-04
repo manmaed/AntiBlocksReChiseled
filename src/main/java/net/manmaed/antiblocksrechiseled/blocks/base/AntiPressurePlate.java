@@ -44,29 +44,22 @@ public class AntiPressurePlate extends BasePressurePlateBlock {
 
     @Override
     protected int getSignalStrength(Level level, BlockPos blockPos) {
-        AABB aabb = TOUCH_AABB.move(blockPos);
-        List<? extends Entity> list;
+        Class<? extends Entity> list;
         switch (this.sensitivity) {
             case EVERYTHING:
-                list = level.getEntities((Entity) null, aabb);
+                list = Entity.class;
                 break;
             case MOBS:
-                list = level.getEntitiesOfClass(LivingEntity.class, aabb);
+                list = LivingEntity.class;
                 break;
             case PLAYERS:
-                list = level.getEntitiesOfClass(Player.class, aabb);
+                list = Player.class;
                 break;
             default:
                 return 0;
         }
-        if(!list.isEmpty()) {
-            for (Entity entity : list) {
-                if(!entity.isIgnoringBlockTriggers()) {
-                    return 15;
-                }
-            }
-        }
-        return 0;
+        Class oclass = list;
+        return getEntityCount(level, TOUCH_AABB.move(blockPos), oclass) > 0 ? 15 : 0;
     }
 
     @Override
@@ -74,9 +67,9 @@ public class AntiPressurePlate extends BasePressurePlateBlock {
         stateBuilder.add(POWERED);
     }
 
-    public static enum Sensitivity {
+    public enum Sensitivity {
         EVERYTHING,
         PLAYERS,
-        MOBS;
+        MOBS
     }
 }

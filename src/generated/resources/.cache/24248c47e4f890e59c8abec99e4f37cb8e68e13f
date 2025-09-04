@@ -1,5 +1,9 @@
-// 1.20.1	2024-08-18T23:00:40.430401	Tags for minecraft:block mod id antiblocksrechiseled
+// 1.20.1	2025-09-04T15:03:13.5021694	Tags for minecraft:block mod id antiblocksrechiseled
 0e28f3b1d50e042f07a3b712c88bc2caab68968e data/antiblocksrechiseled/tags/blocks/antiblock_bright_colors.json
+0298961f202469594d99d6749585a3df5e6c9654 data/antiblocksrechiseled/tags/blocks/antiblock_buttons.json
+51100bb256af613505c9d2a0caaae978dbf50452 data/antiblocksrechiseled/tags/blocks/antiblock_pressure_plates.json
+776e37935e00306758e40c7f1052089ff3243f50 data/antiblocksrechiseled/tags/blocks/antiblock_slabs.json
+35508908209834b62fe88bb6dea0018ef6fa2ded data/antiblocksrechiseled/tags/blocks/antiblock_stairs.json
 daa3875b6c723ed549d5b536e1f96a948c0e8476 data/antiblocksrechiseled/tags/blocks/antiblock_without_borders.json
 a9bb53db5ca978058be3cdd8293b688fb437d902 data/antiblocksrechiseled/tags/blocks/antiblock_with_borders.json
 84491f0873be093b737fd9267dd0ed606ed4ab51 data/antiblocksrechiseled/tags/blocks/antiblock_wool_colors.json

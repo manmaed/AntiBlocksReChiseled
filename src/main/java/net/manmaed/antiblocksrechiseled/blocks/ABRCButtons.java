@@ -5,14 +5,28 @@ import net.manmaed.antiblocksrechiseled.blocks.base.AntiButton;
 import net.manmaed.antiblocksrechiseled.items.AntiBlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ABRCButtons {
 
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, AntiBlocksReChiseled.MOD_ID);
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, AntiBlocksReChiseled.MOD_ID);
+    public static void init(IEventBus e) {
+        BLOCKS.register(e);
+        ITEMS.register(e);
+    }
+
+    public static DeferredRegister<Block> getBlocks() {
+        return BLOCKS;
+    }
+
+    public static DeferredRegister<Item> getItems() {
+        return ITEMS;
+    }
+
+    private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, AntiBlocksReChiseled.MOD_ID);
+    private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, AntiBlocksReChiseled.MOD_ID);
 
     public static final RegistryObject<Block> BUTTON_BRIGHT_WHITE = BLOCKS.register("button_bright_white", AntiButton::new);
     public static final RegistryObject<Block> BUTTON_BRIGHT_ORANGE = BLOCKS.register("button_bright_orange", AntiButton::new);
