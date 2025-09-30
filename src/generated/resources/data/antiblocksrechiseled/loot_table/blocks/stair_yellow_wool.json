@@ -11,10 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "antiblocksrechiseled:stair_wool_white"
+          "name": "antiblocksrechiseled:stair_wool_yellow"
         }
       ],
       "rolls": 1.0
     }
-  ]
+  ],
+  "random_sequence": "antiblocksrechiseled:blocks/stair_yellow_wool"
 }

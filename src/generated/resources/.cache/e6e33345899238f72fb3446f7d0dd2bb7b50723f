@@ -1,12 +1,12 @@
-// 1.21.4	2024-12-11T22:52:41.8989599	Tags for minecraft:item mod id antiblocksrechiseled
+// 1.21.9	2025-09-30T23:55:08.936739	Tags for minecraft:item mod id antiblocksrechiseled
 0e28f3b1d50e042f07a3b712c88bc2caab68968e data/antiblocksrechiseled/tags/item/antiblock_bright_colors.json
 0298961f202469594d99d6749585a3df5e6c9654 data/antiblocksrechiseled/tags/item/antiblock_buttons.json
 51100bb256af613505c9d2a0caaae978dbf50452 data/antiblocksrechiseled/tags/item/antiblock_pressure_plates.json
-776e37935e00306758e40c7f1052089ff3243f50 data/antiblocksrechiseled/tags/item/antiblock_slabs.json
-35508908209834b62fe88bb6dea0018ef6fa2ded data/antiblocksrechiseled/tags/item/antiblock_stairs.json
+ee239bd6cb3f9a920aa98f81fd5e87e237d48959 data/antiblocksrechiseled/tags/item/antiblock_slabs.json
+33070471ee118aacb27365b01215900c417203fe data/antiblocksrechiseled/tags/item/antiblock_stairs.json
 daa3875b6c723ed549d5b536e1f96a948c0e8476 data/antiblocksrechiseled/tags/item/antiblock_without_borders.json
 a9bb53db5ca978058be3cdd8293b688fb437d902 data/antiblocksrechiseled/tags/item/antiblock_with_borders.json
 84491f0873be093b737fd9267dd0ed606ed4ab51 data/antiblocksrechiseled/tags/item/antiblock_wool_colors.json
 0298961f202469594d99d6749585a3df5e6c9654 data/minecraft/tags/item/buttons.json
-776e37935e00306758e40c7f1052089ff3243f50 data/minecraft/tags/item/slabs.json
-35508908209834b62fe88bb6dea0018ef6fa2ded data/minecraft/tags/item/stairs.json
+ee239bd6cb3f9a920aa98f81fd5e87e237d48959 data/minecraft/tags/item/slabs.json
+33070471ee118aacb27365b01215900c417203fe data/minecraft/tags/item/stairs.json
