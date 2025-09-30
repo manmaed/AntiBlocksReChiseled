@@ -1,10 +1,12 @@
 plugins {
     id 'java-library'
-    id 'eclipse'
-    id 'idea'
     id 'maven-publish'
     id 'net.neoforged.gradle.userdev' version "${neo_gradle}"
-    id "me.modmuss50.mod-publish-plugin" version "0.4.5"
+    id "me.modmuss50.mod-publish-plugin" version "${modmuss_publish}"
+}
+
+tasks.named('wrapper', Wrapper).configure {
+    distributionType = Wrapper.DistributionType.BIN
 }
 
 def ENV = System.getenv()
@@ -12,7 +14,6 @@ version = "${ENV.GITHUB_RUN_NUMBER}" ? "${mod_version}.${ENV.GITHUB_RUN_NUMBER}"
 group = project.maven_group
 
 repositories {
-    mavenLocal()
     maven {
         url "https://cursemaven.com"
     }
@@ -32,30 +33,31 @@ runs {
     }
 
     client {
-        systemProperty 'forge.enabledGameTestNamespaces', project.archives_base_name
+        systemProperty 'neoforge.enabledGameTestNamespaces', project.archives_base_name
     }
 
     server {
-        systemProperty 'forge.enabledGameTestNamespaces', project.archives_base_name
-        programArgument '--nogui'
+        systemProperty 'neoforge.enabledGameTestNamespaces', project.archives_base_name
+        argument '--nogui'
     }
-    serverData {
-        programArguments.addAll '--mod', project.archives_base_name, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+
+    gameTestServer {
+        systemProperty 'neoforge.enabledGameTestNamespaces', project.archives_base_name
     }
+
     clientData {
-        programArguments.addAll '--mod', project.archives_base_name, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+        arguments.addAll '--mod', project.archives_base_name, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
     }
 }
 
-sourceSets.main.resources { 
-    srcDir 'src/generated/resources'
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+configurations {
+    runtimeClasspath.extendsFrom localRuntime
 }
 
 dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
-    if(use_ctm.equals("true")) {
-        runtimeOnly "curse.maven:ctm-${ctm_id}:${ctm_file_id}"
-    }
     if(use_xewhy.equals("true")) {
         runtimeOnly "curse.maven:xycraft-${xy_id}:${xy_file_id}"
     }
@@ -66,14 +68,16 @@ dependencies {
     //runtimeOnly "curse.maven:arc-419699:5553777"
     //runtimeOnly "curse.maven:tk-324888:5521502"
 }
+
 tasks.withType(ProcessResources).configureEach {
     var replaceProperties = [
+            neo_version: neo_version,
             version: version
     ]
     inputs.properties replaceProperties
 
     filesMatching(['META-INF/neoforge.mods.toml']) {
-        expand replaceProperties + [project: project]
+        expand replaceProperties
     }
 }
 
@@ -91,9 +95,6 @@ publishMods {
         minecraftVersions.add("${minecraft_version}")
         optional {
             slug = 'fusion-connected-textures'
-        }
-        optional {
-            slug = 'ctm'
         }
     }
     modrinth {
