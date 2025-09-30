@@ -5,19 +5,15 @@ import net.manmaed.antiblocksrechiseled.blocks.*;
 import net.manmaed.antiblocksrechiseled.tag.ABRCTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.tags.ItemTagsProvider;
-import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import org.jetbrains.annotations.Nullable;
+import net.neoforged.neoforge.common.data.ItemTagsProvider;
 
 import java.util.concurrent.CompletableFuture;
 
 public class ModItemsTagProvider extends ItemTagsProvider {
-    public ModItemsTagProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> completableFuture, CompletableFuture<TagsProvider.TagLookup<Block>> blockTagsProvider, @Nullable ExistingFileHelper existingFileHelper) {
-        super(packOutput, completableFuture, blockTagsProvider, AntiBlocksReChiseled.MOD_ID,existingFileHelper);
+    public ModItemsTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+        super(output, lookupProvider, AntiBlocksReChiseled.MOD_ID);
     }
 
     public static final Item[] BRIGHT_BLOCKS_WITH_BORDER = {
@@ -189,9 +185,10 @@ public class ModItemsTagProvider extends ItemTagsProvider {
             ABRCPressurePlates.PRESSURE_PLATE_WOOL_RED_ITEM.get()
     };
 
+
     @Override
     protected void addTags(HolderLookup.Provider context) {
-        /*tag(ItemTags.BUTTONS).add(BUTTONS);
+        tag(ItemTags.BUTTONS).add(BUTTONS);
         tag(ItemTags.STAIRS).add(STAIRS);
         tag(ItemTags.SLABS).add(SLABS);
         tag(ABRCTags.ANTIBLOCK_BUTTONS_ITEM).add(BUTTONS);
@@ -201,6 +198,6 @@ public class ModItemsTagProvider extends ItemTagsProvider {
         tag(ABRCTags.ANTIBLOCK_WITHOUT_BORDERS_ITEM).add(BRIGHT_BLOCKS_WITHOUT_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER);
         tag(ABRCTags.ANTIBLOCK_WITH_BORDERS_ITEM).add(BRIGHT_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITH_BORDER);
         tag(ABRCTags.ANTIBLOCK_WOOL_COLORS_ITEM).add(WOOL_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER);
-        tag(ABRCTags.ANTIBLOCK_BRIGHT_COLORS_ITEM).add(BRIGHT_BLOCKS_WITH_BORDER).add(BRIGHT_BLOCKS_WITH_BORDER);*/
+        tag(ABRCTags.ANTIBLOCK_BRIGHT_COLORS_ITEM).add(BRIGHT_BLOCKS_WITH_BORDER).add(BRIGHT_BLOCKS_WITH_BORDER);
     }
 }

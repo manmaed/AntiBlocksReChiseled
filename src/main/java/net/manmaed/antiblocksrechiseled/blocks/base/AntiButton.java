@@ -12,7 +12,7 @@ import net.minecraft.world.level.material.PushReaction;
 
 public class AntiButton extends ButtonBlock {
     public AntiButton(String name) {
-        super(BlockSetType.STONE, 20,Properties.of().noCollission().strength(3.0F).pushReaction(PushReaction.DESTROY).requiresCorrectToolForDrops().lightLevel((light) -> {
+        super(BlockSetType.STONE, 20,Properties.of().noCollision().strength(3.0F).pushReaction(PushReaction.DESTROY).requiresCorrectToolForDrops().lightLevel((light) -> {
             return 15;
         }).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(AntiBlocksReChiseled.MOD_ID, name))));
     }

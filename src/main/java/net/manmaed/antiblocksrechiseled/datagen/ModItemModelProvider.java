@@ -1,13 +1,8 @@
 package net.manmaed.antiblocksrechiseled.datagen;
 
 
-import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
-import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceLocation;
-import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
-
-public class ModItemModelProvider extends ItemModelProvider {
+//TODO: ReImp
+public class ModItemModelProvider {} /* extends ItemModelProvider {
     public ModItemModelProvider(PackOutput packOutput, ExistingFileHelper existingFileHelper) {
         super(packOutput, AntiBlocksReChiseled.MOD_ID, existingFileHelper);
     }
@@ -17,7 +12,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
     @Override
     protected void registerModels() {
-        /*makeBlock("bright", "white");
+        makeBlock("bright", "white");
         makeBlock("bright", "orange");
         makeBlock("bright", "magenta");
         makeBlock("bright", "yellow");
@@ -166,7 +161,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         makePlate("pressure_plate_wool_blue");
         makePlate("pressure_plate_wool_brown");
         makePlate("pressure_plate_wool_green");
-        makePlate("pressure_plate_wool_red");*/
+        makePlate("pressure_plate_wool_red");
 
     }
 
@@ -192,4 +187,4 @@ public class ModItemModelProvider extends ItemModelProvider {
     public void makeOthers(String type, String name) {
         withExistingParent(name, getLoc(type + "/" + name));
     }
-}
+}*/

@@ -1,21 +1,8 @@
 package net.manmaed.antiblocksrechiseled.datagen;
 
 
-import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
-import net.manmaed.antiblocksrechiseled.blocks.*;
-import net.minecraft.core.Direction;
-import net.minecraft.data.PackOutput;
-import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.properties.AttachFace;
-import net.minecraft.world.level.block.state.properties.Half;
-import net.minecraft.world.level.block.state.properties.SlabType;
-import net.minecraft.world.level.block.state.properties.StairsShape;
-import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
-import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
-import net.neoforged.neoforge.client.model.generators.ModelFile;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
-
-public class ModBlockStateProvider extends BlockStateProvider {
+//TODO: ReImp
+public class ModBlockStateProvider {} /* extends BlockStateProvider {
 
     public ModBlockStateProvider(PackOutput packOutput, ExistingFileHelper exFileHelper) {
         super(packOutput, AntiBlocksReChiseled.MOD_ID, exFileHelper);
@@ -24,7 +11,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         //Bright Colors
-        /*simpleBlock(ABRCBrightColors.BRIGHT_WHITE.get(), getFile("bright/white"));
+        simpleBlock(ABRCBrightColors.BRIGHT_WHITE.get(), getFile("bright/white"));
         simpleBlock(ABRCBrightColors.BRIGHT_ORANGE.get(), getFile("bright/orange"));
         simpleBlock(ABRCBrightColors.BRIGHT_MAGENTA.get(), getFile("bright/magenta"));
         simpleBlock(ABRCBrightColors.BRIGHT_YELLOW.get(), getFile("bright/yellow"));
@@ -174,7 +161,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_WOOL_BLUE.get(), "pressure_plate_wool_blue");
         myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_WOOL_BROWN.get(), "pressure_plate_wool_brown");
         myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_WOOL_GREEN.get(), "pressure_plate_wool_green");
-        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_WOOL_RED.get(), "pressure_plate_wool_red");*/
+        myPressurePlateBlock(ABRCPressurePlates.PRESSURE_PLATE_WOOL_RED.get(), "pressure_plate_wool_red");
     }
 
     public void mystairsBlock(Block block, String name) {
@@ -242,4 +229,4 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private ModelFile getFile(String name) {
         return models().getBuilder(AntiBlocksReChiseled.MOD_ID + ":block/" + name);
     }
-}
+}*/

@@ -5,13 +5,27 @@ import net.manmaed.antiblocksrechiseled.blocks.base.AntiPressurePlate;
 import net.manmaed.antiblocksrechiseled.items.AntiBlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 public class ABRCPressurePlates {
 
-    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(AntiBlocksReChiseled.MOD_ID);
-    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(AntiBlocksReChiseled.MOD_ID);
+    public static void init(IEventBus e) {
+        BLOCKS.register(e);
+        ITEMS.register(e);
+    }
+
+    public static DeferredRegister<Block> getBlocks() {
+        return BLOCKS;
+    }
+
+    public static DeferredRegister<Item> getItems() {
+        return ITEMS;
+    }
+
+    private static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(AntiBlocksReChiseled.MOD_ID);
+    private static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(AntiBlocksReChiseled.MOD_ID);
     public static final DeferredBlock<Block> PRESSURE_PLATE_BRIGHT_WHITE = BLOCKS.register("pressure_plate_bright_white", () -> new AntiPressurePlate("pressure_plate_bright_white"));
     public static final DeferredBlock<Block> PRESSURE_PLATE_BRIGHT_ORANGE = BLOCKS.register("pressure_plate_bright_orange", () -> new AntiPressurePlate("pressure_plate_bright_orange"));
     public static final DeferredBlock<Block> PRESSURE_PLATE_BRIGHT_MAGENTA = BLOCKS.register("pressure_plate_bright_magenta", () -> new AntiPressurePlate("pressure_plate_bright_magenta"));

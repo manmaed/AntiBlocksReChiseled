@@ -8,12 +8,14 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
 public class ModBlocksTagsProvider extends BlockTagsProvider {
+
+    public ModBlocksTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> completableFuture) {
+        super(packOutput, completableFuture, AntiBlocksReChiseled.MOD_ID);
+    }
 
     public static final Block[] BRIGHT_BLOCKS_WITH_BORDER = {
         ABRCBrightColors.BRIGHT_WHITE_BORDER.get(),
@@ -183,9 +185,6 @@ public class ModBlocksTagsProvider extends BlockTagsProvider {
             ABRCPressurePlates.PRESSURE_PLATE_WOOL_GREEN.get(),
             ABRCPressurePlates.PRESSURE_PLATE_WOOL_RED.get()
 };
-    public ModBlocksTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> completableFuture, @Nullable ExistingFileHelper existingFileHelper) {
-        super(packOutput, completableFuture, AntiBlocksReChiseled.MOD_ID, existingFileHelper);
-    }
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BRIGHT_BLOCKS_WITH_BORDER).add(BRIGHT_BLOCKS_WITHOUT_BORDER).add(WOOL_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER).add(SLABS).add(STAIRS).add(BUTTONS).add(PRESSURE_PLATES);

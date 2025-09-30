@@ -29,7 +29,7 @@ public class ModLootTablesProvider extends LootTableProvider {
 
         @Override
         protected void generate() {
-            /*dropSelf(ABRCBrightColors.BRIGHT_WHITE.get());
+            dropSelf(ABRCBrightColors.BRIGHT_WHITE.get());
             dropSelf(ABRCBrightColors.BRIGHT_ORANGE.get());
             dropSelf(ABRCBrightColors.BRIGHT_MAGENTA.get());
             dropSelf(ABRCBrightColors.BRIGHT_YELLOW.get());
@@ -172,18 +172,18 @@ public class ModLootTablesProvider extends LootTableProvider {
             dropSelf(ABRCPressurePlates.PRESSURE_PLATE_WOOL_BLUE.get());
             dropSelf(ABRCPressurePlates.PRESSURE_PLATE_WOOL_BROWN.get());
             dropSelf(ABRCPressurePlates.PRESSURE_PLATE_WOOL_GREEN.get());
-            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_WOOL_RED.get());*/
+            dropSelf(ABRCPressurePlates.PRESSURE_PLATE_WOOL_RED.get());
         }
 
         @Override
         protected Iterable<Block> getKnownBlocks() {
             List<Block> blocks = new ArrayList<>();
-            ABRCBrightColors.BLOCKS.getEntries().stream().map(DeferredHolder::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
-            ABRCWoolColors.BLOCKS.getEntries().stream().map(DeferredHolder::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
-            ABRCSlabs.BLOCKS.getEntries().stream().map(DeferredHolder::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
-            ABRCStairs.BLOCKS.getEntries().stream().map(DeferredHolder::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
-            ABRCButtons.BLOCKS.getEntries().stream().map(DeferredHolder::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
-            ABRCPressurePlates.BLOCKS.getEntries().stream().map(DeferredHolder::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
+            ABRCBrightColors.getBlocks().getEntries().stream().map(DeferredHolder::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
+            ABRCWoolColors.getBlocks().getEntries().stream().map(DeferredHolder::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
+            ABRCSlabs.getBlocks().getEntries().stream().map(DeferredHolder::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
+            ABRCStairs.getBlocks().getEntries().stream().map(DeferredHolder::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
+            ABRCButtons.getBlocks().getEntries().stream().map(DeferredHolder::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
+            ABRCPressurePlates.getBlocks().getEntries().stream().map(DeferredHolder::get).forEach((b) -> blocks.add(b.defaultBlockState().getBlock()));
             return blocks;
         }
     }
