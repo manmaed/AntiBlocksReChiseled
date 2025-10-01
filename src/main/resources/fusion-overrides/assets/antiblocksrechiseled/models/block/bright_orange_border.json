@@ -11,6 +11,6 @@
   },
   "loader": "fusion:model",
   "textures": {
-    "color": "antiblocksrechiseled:block/wool/blue_border"
+    "color": "antiblocksrechiseled:block/bright_orange_border"
   }
 }
