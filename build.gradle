@@ -17,6 +17,17 @@ repositories {
     maven {
         url "https://cursemaven.com"
     }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
 }
 
 base {
@@ -62,7 +73,8 @@ dependencies {
         runtimeOnly "curse.maven:xycraft-${xy_id}:${xy_file_id}"
     }
     if(use_fct.equals("true")) {
-        runtimeOnly "curse.maven:fct-${fct_id}:${fct_file_id}"
+        //runtimeOnly "curse.maven:fct-${fct_id}:${fct_file_id}"
+        implementation  "maven.modrinth:fusion-connected-textures:${fusion_version}-neoforge-mc${minecraft_version}"
     }
     //runtimeOnly "curse.maven:emi-580555:5619579"
     //runtimeOnly "curse.maven:arc-419699:5553777"
@@ -72,12 +84,19 @@ dependencies {
 tasks.withType(ProcessResources).configureEach {
     var replaceProperties = [
             neo_version: neo_version,
-            version: version
+            version: version,
+            fusion_version: fusion_version
+    ]
+    var replaceMCmeta = [
+            fusion_version: fusion_version
     ]
     inputs.properties replaceProperties
 
     filesMatching(['META-INF/neoforge.mods.toml']) {
         expand replaceProperties
+    }
+    filesMatching(['pack.mcmeta']) {
+        expand replaceMCmeta
     }
 }
 
@@ -86,7 +105,7 @@ publishMods {
     file = jar.archiveFile
     modLoaders.add("neoforge")
     type = BETA
-    changelog = "changeme"
+    changelog = file("changelog.md").text
     displayName = "${mod_name} v${project.version} - NeoForge - ${minecraft_version}"
     curseforge {
         accessToken = providers.environmentVariable("CURSE_DEPLOY")

@@ -14,3 +14,9 @@ required=true
 versionRange="[${neo_version},)"
 ordering="NONE"
 side="BOTH"
+[[dependencies.antiblocksrechiseled]]
+modId="fusion"
+type="optional"
+versionRange="[${fusion_version},)"
+ordering="NONE"
+side="CLIENT"
