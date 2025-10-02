@@ -1,7 +1,9 @@
 {
     "pack": {
-        "description": "antiblocksrechiseled resources",
-        "pack_format": 69.0
+        "pack_format": 55,
+        "description": {
+            "text": "antiblocksrechiseled resources"
+        }
     },
     "fusion": {
         "min_version": "${fusion_version}",
