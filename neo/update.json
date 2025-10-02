@@ -1,5 +1,8 @@
 {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/antiblocksrechiseled",
+    "1.21.9": {
+      "1219.1.1": "Port to 1.21.9"
+    },
     "1.21.3": {
       "0.11.2": "fixed slabs and sairs e.g. slab_green_wool -> slab_wool_green",
       "0.11.1": "Port to 1.21.3"
@@ -42,6 +45,8 @@
       "0.4.1": "Port to 1.20.1"
     },
     "promos": {
+      "1.21.9-latest": "1219.1.1",
+      "1.21.9-recommended": "1219.1.1",
       "1.21.3-latest": "0.11.2",
       "1.21.3-recommended": "0.11.2",
       "1.21.1-latest": "0.10.5",
