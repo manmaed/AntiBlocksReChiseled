@@ -4,8 +4,7 @@ plugins {
     id 'idea'
     id 'maven-publish'
     id 'net.neoforged.gradle.userdev' version "${neo_gradle}"
-    id "me.modmuss50.mod-publish-plugin" version "0.4.5"
-}
+    id "me.modmuss50.mod-publish-plugin" version "${modmuss_publish}"}
 
 def ENV = System.getenv()
 version = "${ENV.GITHUB_RUN_NUMBER}" ? "${mod_version}.${ENV.GITHUB_RUN_NUMBER}" : "${mod_version}.nobuildnumber"
@@ -51,15 +50,8 @@ sourceSets.main.resources {
 
 dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
-    if(use_ctm.equals("true")) {
-        runtimeOnly "curse.maven:ctm-${ctm_id}:${ctm_file_id}"
-    }
-    if(use_xewhy.equals("true")) {
-        runtimeOnly "curse.maven:xycraft-${xy_id}:${xy_file_id}"
-    }
-    if(use_fct.equals("true")) {
-        runtimeOnly "curse.maven:fct-${fct_id}:${fct_file_id}"
-    }
+
+    runtimeOnly "curse.maven:fct-${fct_id}:${fct_file_id}"
     runtimeOnly "curse.maven:emi-580555:5619579"
     runtimeOnly "curse.maven:arc-419699:5553777"
     runtimeOnly "curse.maven:tk-324888:5521502"
@@ -80,14 +72,14 @@ publishMods {
     file = jar.archiveFile
     modLoaders.add("neoforge")
     type = BETA
-    changelog = "changeme"
+    changelog = file("./changelog.md").text
     displayName = "${mod_name} v${project.version} - NeoForge - ${minecraft_version}"
     curseforge {
         accessToken = providers.environmentVariable("CURSE_DEPLOY")
         projectId = project.curseforge_id
-        minecraftVersions.add("Java 21")
+        javaVersions.add(JavaVersion.VERSION_21)
         minecraftVersions.add("${minecraft_version}")
-        minecraftVersions.add("1.21.1")
+        minecraftVersions.add("${minecraft_version}.1")
         optional {
             slug = 'fusion-connected-textures'
         }
@@ -96,6 +88,7 @@ publishMods {
         accessToken = providers.environmentVariable("MODRINTH_DEPLOY")
         projectId  = project.modrinth_id
         minecraftVersions.add("${minecraft_version}")
+        minecraftVersions.add("${minecraft_version}.1")
         optional {
             slug = 'fusion-connected-textures'
         }
