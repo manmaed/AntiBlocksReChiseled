@@ -2,10 +2,7 @@ package net.manmaed.antiblocksrechiseled.datagen;
 
 
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
-import net.manmaed.antiblocksrechiseled.datagen.lang.ABRCenpt;
-import net.manmaed.antiblocksrechiseled.datagen.lang.ABRCenud;
-import net.manmaed.antiblocksrechiseled.datagen.lang.ABRCenus;
-import net.manmaed.antiblocksrechiseled.datagen.lang.ABRClolus;
+import net.manmaed.antiblocksrechiseled.datagen.lang.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
@@ -24,5 +21,6 @@ public class ModLangProvider {
         generator.addProvider(true, new ABRCenpt(output));
         generator.addProvider(true, new ABRCenud(output));
         generator.addProvider(true, new ABRClolus(output));
+        generator.addProvider(true, new ABRCtlhaa(output));
     }
 }

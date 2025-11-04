@@ -1,4 +1,4 @@
-package net.manmaed.antiblocksrechiseled.datagen.lang;
+package net.manmaed.antiblocksrechiseled.datagen.lang.template;
 
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
 import net.manmaed.antiblocksrechiseled.blocks.*;
