@@ -2,7 +2,8 @@ package net.manmaed.antiblocksrechiseled.tag;
 
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -32,9 +33,9 @@ public class ABRCTags {
     public static final TagKey<Item> ANTIBLOCK_SLABS_ITEM = createItemTag("antiblock_slabs");
     public static final TagKey<Item> ANTIBLOCK_PRESSURE_PLATES_ITEM = createItemTag("antiblock_pressure_plates");
     private static TagKey<Block> createBlockTag(String name) {
-        return TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(AntiBlocksReChiseled.MOD_ID, name));
+        return TagKey.create(BuiltInRegistries.BLOCK.key(), Identifier.fromNamespaceAndPath(AntiBlocksReChiseled.MOD_ID, name));
     }
     private static TagKey<Item> createItemTag(String name) {
-        return TagKey.create(BuiltInRegistries.ITEM.key(), ResourceLocation.fromNamespaceAndPath(AntiBlocksReChiseled.MOD_ID, name));
+        return TagKey.create(BuiltInRegistries.ITEM.key(), Identifier.fromNamespaceAndPath(AntiBlocksReChiseled.MOD_ID, name));
     }
 }
