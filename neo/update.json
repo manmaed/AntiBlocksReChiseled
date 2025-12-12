@@ -1,5 +1,8 @@
 {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/antiblocksrechiseled",
+    "1.21.11": {
+      "12111.1.1": "Port to 1.21.11"
+    },
     "1.21.10": {
       "12110.1.1": "Port to 1.21.10"
     },
@@ -52,6 +55,8 @@
       "0.4.1": "Port to 1.20.1"
     },
     "promos": {
+      "1.21.11-latest": "12111.1.1",
+      "1.21.11-recommended": "12111.1.1",
       "1.21.10-latest": "12110.1.1",
       "1.21.10-recommended": "12110.1.1",
       "1.21.9-latest": "1219.1.1",
