@@ -10,7 +10,7 @@ tasks.named('wrapper', Wrapper).configure {
 }
 
 def ENV = System.getenv()
-version = "${ENV.GITHUB_RUN_NUMBER}" ? "${mod_version}.${ENV.GITHUB_RUN_NUMBER}" : "${mod_version}.nobuildnumber"
+version = "${ENV.GITHUB_RUN_NUMBER}" ? "${minecraft_version}.${mod_version}.${ENV.GITHUB_RUN_NUMBER}" : "${minecraft_version}.${mod_version}.nobuildnumber"
 group = project.maven_group
 
 repositories {
@@ -34,7 +34,7 @@ base {
     archivesName = project.archives_base_name + "-neo"
 }
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 
 runs {
     configureEach {
@@ -68,10 +68,7 @@ configurations {
 }
 
 dependencies {
-    implementation "net.neoforged:neoforge:${neo_version}"
-    if(use_xewhy.equals("true")) {
-        runtimeOnly "curse.maven:xycraft-${xy_id}:${xy_file_id}"
-    }
+    implementation "net.neoforged:neoforge:${minecraft_version}.${neo_version}"
     if(use_fct.equals("true")) {
         //runtimeOnly "curse.maven:fct-${fct_id}:${fct_file_id}"
         implementation "maven.modrinth:fusion-connected-textures:${fusion_version}-neoforge-mc${minecraft_version}"
@@ -110,7 +107,7 @@ publishMods {
     curseforge {
         accessToken = providers.environmentVariable("CURSE_DEPLOY")
         projectId = project.curseforge_id
-        javaVersions.add(JavaVersion.VERSION_21)
+        javaVersions.add(JavaVersion.VERSION_25)
         minecraftVersions.add("${minecraft_version}")
         optional {
             slug = 'fusion-connected-textures'

@@ -1,5 +1,6 @@
 # Changelog For NeoForge
 
-## [12111.1.1] - [1.21.11]
+## [26.1.1.1] - [26.1]
 ### Changed
-- Ported Minecraft 1.21.11
+- Ported Minecraft 26.1
+- Version Number is now MC.MAJOR.PATCH so
