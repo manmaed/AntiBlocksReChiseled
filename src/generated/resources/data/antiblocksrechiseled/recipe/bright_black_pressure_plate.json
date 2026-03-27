@@ -2,15 +2,12 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "antiblocksrechiseled:bright_black"
-    }
+    "#": "antiblocksrechiseled:bright_black"
   },
   "pattern": [
     "##"
   ],
   "result": {
-    "count": 1,
     "id": "antiblocksrechiseled:pressure_plate_bright_black"
   }
 }

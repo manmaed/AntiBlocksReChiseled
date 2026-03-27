@@ -1,46 +1,45 @@
 plugins {
-    id 'eclipse'
+    id 'java'
     id 'idea'
     id 'maven-publish'
-    id 'net.minecraftforge.gradle' version '[6.0.24,6.2)'
-    id "me.modmuss50.mod-publish-plugin" version "0.4.5"
+    id "me.modmuss50.mod-publish-plugin" version "1.1.0"
+    id 'net.minecraftforge.gradle' version '[7.0.3,8)'
 }
 
 def ENV = System.getenv()
-version = "${ENV.GITHUB_RUN_NUMBER}" ? "${mod_version}.${ENV.GITHUB_RUN_NUMBER}" : "${mod_version}.nobuildnumber"
+version = "${ENV.GITHUB_RUN_NUMBER}" ? "${minecraft_version}.${mod_version}.${ENV.GITHUB_RUN_NUMBER}" : "${minecraft_version}.${mod_version}.nobuildnumber"
 group = project.maven_group
 
 base {
     archivesName = project.archives_base_name + "-forge"
 }
 
-// Mojang ships Java 21 to end users in 1.20.5+, so your mod should target Java 21.
-java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+// Mojang ships Java 25 to end users in 26.1+, so your mod should target Java 25.
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 
-println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
     mappings channel: "${minecraft_mappings}", version: "${minecraft_version}"
-    reobf = false
-    copyIdeResources = true
+
     runs {
         configureEach {
-            workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
+            workingDir = layout.projectDirectory.dir('run')
+
+            systemProperty 'eventbus.api.strictRuntimeChecks', 'true'
+            systemProperty 'forge.enabledGameTestNamespaces', 'examplemod'
         }
 
-        client {
-            property 'forge.enabledGameTestNamespaces', archives_base_name
-        }
+        register('client')
 
-        server {
-            property 'forge.enabledGameTestNamespaces', archives_base_name
+        register('server') {
             args '--nogui'
         }
 
-        data {
-            workingDirectory project.file('run-data')
-            args '--mod', archives_base_name, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+        register('gameTestServer')
+
+        register('data') {
+            workingDir = layout.projectDirectory.dir('run-data')
+
+            args '--mod', project.archives_base_name, '--all', '--output', layout.projectDirectory.dir('src/generated/resources'), '--existing', layout.projectDirectory.dir('src/main/resources')
         }
     }
 }
@@ -50,15 +49,19 @@ sourceSets.main.resources {
 }
 
 repositories {
-    maven {
-        url "https://maven.curse.tools"
-    }
+    minecraft.mavenizer(it) // In Kotlin, it = this
+    maven fg.forgeMaven
+    maven fg.minecraftLibsMaven
+    mavenCentral()
+    maven { url = "https://api.modrinth.com/maven" }
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-    implementation('net.sf.jopt-simple:jopt-simple:5.0.4') { version { strictly '5.0.4' } }
-    //implementation fg.deobf("curse.maven:ctm-${ctm_id}:${ctm_file_id}")
+        implementation minecraft.dependency("net.minecraftforge:forge:${minecraft_version}-${forge_version}")
+    if(use_fct.equals("true")) {
+        //runtimeOnly "curse.maven:fct-${fct_id}:${fct_file_id}"
+        implementation "maven.modrinth:fusion-connected-textures:${fusion_version}-neoforge-mc${minecraft_version}"
+    }
 }
 
 jar {
@@ -90,12 +93,20 @@ publishing {
 
 tasks.named('processResources', ProcessResources).configure {
     var replaceProperties = [
-            version: version
+            forge_version: forge_version,
+            version: version,
+            fusion_version: fusion_version
+    ]
+    var replaceMCmeta = [
+            fusion_version: fusion_version
     ]
     inputs.properties replaceProperties
 
     filesMatching(['META-INF/mods.toml']) {
-        expand replaceProperties + [project: project]
+        expand replaceProperties
+    }
+    filesMatching(['pack.mcmeta']) {
+        expand replaceMCmeta
     }
 }
 
@@ -104,12 +115,12 @@ publishMods {
     file = jar.archiveFile
     modLoaders.add("forge")
     type = BETA
-    changelog = "changeme"
+    changelog = file("./changelog.md").text
     displayName = "${mod_name} v${project.version} - Forge - ${minecraft_version}"
     curseforge {
         accessToken = providers.environmentVariable("CURSE_DEPLOY")
         projectId = project.curseforge_id
-        minecraftVersions.add("Java 21")
+        javaVersions.add(JavaVersion.VERSION_25)
         minecraftVersions.add("${minecraft_version}")
         optional {
             slug = 'fusion-connected-textures'

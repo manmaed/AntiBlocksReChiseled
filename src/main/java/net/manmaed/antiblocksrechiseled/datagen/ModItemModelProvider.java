@@ -1,12 +1,7 @@
 package net.manmaed.antiblocksrechiseled.datagen;
 
-import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
-import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.client.model.generators.ItemModelProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
 
-public class ModItemModelProvider extends ItemModelProvider {
+public class ModItemModelProvider {} /*extends ItemModelProvider {
     public ModItemModelProvider(PackOutput packOutput, ExistingFileHelper existingFileHelper) {
         super(packOutput, AntiBlocksReChiseled.MOD_ID, existingFileHelper);
     }
@@ -191,4 +186,4 @@ public class ModItemModelProvider extends ItemModelProvider {
     public void makeOthers(String type, String name) {
         withExistingParent(name, getLoc(type + "/" + name));
     }
-}
+}*/

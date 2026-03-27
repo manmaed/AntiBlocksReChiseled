@@ -2,12 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    {
-      "item": "antiblocksrechiseled:wool_red"
-    }
+    "antiblocksrechiseled:wool_red"
   ],
   "result": {
-    "count": 1,
     "id": "antiblocksrechiseled:button_wool_red"
   }
 }

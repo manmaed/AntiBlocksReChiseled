@@ -2,15 +2,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "antiblocksrechiseled:bright_black"
-    }
+    "#": "antiblocksrechiseled:bright_black"
   },
   "pattern": [
     "###"
   ],
   "result": {
     "count": 6,
-    "id": "antiblocksrechiseled:slab_black"
+    "id": "antiblocksrechiseled:slab_bright_black"
   }
 }

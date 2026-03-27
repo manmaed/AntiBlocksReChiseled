@@ -2,15 +2,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "antiblocksrechiseled:bright_magenta"
-    }
+    "#": "antiblocksrechiseled:bright_magenta"
   },
   "pattern": [
     "###"
   ],
   "result": {
     "count": 6,
-    "id": "antiblocksrechiseled:slab_magenta_bright"
+    "id": "antiblocksrechiseled:slab_bright_magenta"
   }
 }

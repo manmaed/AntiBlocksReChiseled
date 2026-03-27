@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "antiblocksrechiseled:block/slab_bright_orange"
+    },
+    "type=double": {
+      "model": "antiblocksrechiseled:block/bright_orange"
+    },
+    "type=top": {
+      "model": "antiblocksrechiseled:block/slab_bright_orange_top"
+    }
+  }
+}

@@ -5,65 +5,82 @@ import net.manmaed.antiblocksrechiseled.blocks.base.AntiSlabBlock;
 import net.manmaed.antiblocksrechiseled.items.AntiBlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ABRCSlabs {
 
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, AntiBlocksReChiseled.MOD_ID);
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, AntiBlocksReChiseled.MOD_ID);
+    public static void init(BusGroup e) {
+        BLOCKS.register(e);
+        ITEMS.register(e);
+    }
+
+    public static DeferredRegister<Block> getBlocks() {
+        return BLOCKS;
+    }
+
+    public static DeferredRegister<Item> getItems() {
+        return ITEMS;
+    }
+
+    private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, AntiBlocksReChiseled.MOD_ID);
+    private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, AntiBlocksReChiseled.MOD_ID);
     /*
     * Block:     public static final RegistryObject<Block> BRIGHT_WHITE = BLOCKS.register("bright_white", AntiBlock::new);
     * BlockItem: public static final RegistryObject<Item> BRIGHT_WHITE_ITEM = ITEMS.register("bright_white", () -> new AntiBlockItem(BRIGHT_WHITE.get()));
      */
+    //RegistryObject
 
-    public static final RegistryObject<Block> SLAB_WHITE_BRIGHT = BLOCKS.register("slab_white_bright", AntiSlabBlock::new);
-    public static final RegistryObject<Block> SLAB_BLACK = BLOCKS.register("slab_black", AntiSlabBlock::new);
-    public static final RegistryObject<Block> SLAB_ORANGE_BRIGHT = BLOCKS.register("slab_orange_bright", AntiSlabBlock::new);
-    public static final RegistryObject<Block> SLAB_MAGENTA_BRIGHT = BLOCKS.register("slab_magenta_bright", AntiSlabBlock::new);
-    public static final RegistryObject<Block> SLAB_YELLOW_BRIGHT = BLOCKS.register("slab_yellow_bright", AntiSlabBlock::new);
-    public static final RegistryObject<Block> SLAB_CYAN_BRIGHT = BLOCKS.register("slab_cyan_bright", AntiSlabBlock::new);
-    public static final RegistryObject<Block> SLAB_BLUE_BRIGHT = BLOCKS.register("slab_blue_bright", AntiSlabBlock::new);
-    public static final RegistryObject<Block> SLAB_GREEN_BRIGHT = BLOCKS.register("slab_green_bright", AntiSlabBlock::new);
-    public static final RegistryObject<Block> SLAB_RED_BRIGHT = BLOCKS.register("slab_red_bright", AntiSlabBlock::new);
-    public static final RegistryObject<Block> SLAB_WHITE_WOOL = BLOCKS.register("slab_white_wool", AntiSlabBlock::new);
-    public static final RegistryObject<Block> SLAB_ORANGE_WOOL = BLOCKS.register("slab_orange_wool", AntiSlabBlock::new);
-    public static final RegistryObject<Block> SLAB_MAGENTA_WOOL = BLOCKS.register("slab_magenta_wool", AntiSlabBlock::new);
-    public static final RegistryObject<Block> SLAB_LIGHT_BLUE_WOOL = BLOCKS.register("slab_light_blue_wool", AntiSlabBlock::new);
-    public static final RegistryObject<Block> SLAB_YELLOW_WOOL = BLOCKS.register("slab_yellow_wool", AntiSlabBlock::new);
-    public static final RegistryObject<Block> SLAB_LIME_WOOL = BLOCKS.register("slab_lime_wool", AntiSlabBlock::new);
-    public static final RegistryObject<Block> SLAB_PINK_WOOL = BLOCKS.register("slab_pink_wool", AntiSlabBlock::new);
-    public static final RegistryObject<Block> SLAB_GRAY_WOOL = BLOCKS.register("slab_gray_wool", AntiSlabBlock::new);
-    public static final RegistryObject<Block> SLAB_LIGHT_GRAY_WOOL = BLOCKS.register("slab_light_gray_wool", AntiSlabBlock::new);
-    public static final RegistryObject<Block> SLAB_CYAN_WOOL = BLOCKS.register("slab_cyan_wool", AntiSlabBlock::new);
-    public static final RegistryObject<Block> SLAB_PURPLE_WOOL = BLOCKS.register("slab_purple_wool", AntiSlabBlock::new);
-    public static final RegistryObject<Block> SLAB_BLUE_WOOL = BLOCKS.register("slab_blue_wool", AntiSlabBlock::new);
-    public static final RegistryObject<Block> SLAB_BROWN_WOOL = BLOCKS.register("slab_brown_wool", AntiSlabBlock::new);
-    public static final RegistryObject<Block> SLAB_GREEN_WOOL = BLOCKS.register("slab_green_wool", AntiSlabBlock::new);
-    public static final RegistryObject<Block> SLAB_RED_WOOL = BLOCKS.register("slab_red_wool", AntiSlabBlock::new);
-    public static final RegistryObject<Item> SLAB_WHITE_BRIGHT_ITEM = ITEMS.register("slab_white_bright", () -> new AntiBlockItem(SLAB_WHITE_BRIGHT.get()));
-    public static final RegistryObject<Item> SLAB_BLACK_ITEM = ITEMS.register("slab_black", () -> new AntiBlockItem(SLAB_BLACK.get()));
-    public static final RegistryObject<Item> SLAB_ORANGE_BRIGHT_ITEM = ITEMS.register("slab_orange_bright", () -> new AntiBlockItem(SLAB_ORANGE_BRIGHT.get()));
-    public static final RegistryObject<Item> SLAB_MAGENTA_BRIGHT_ITEM = ITEMS.register("slab_magenta_bright", () -> new AntiBlockItem(SLAB_MAGENTA_BRIGHT.get()));
-    public static final RegistryObject<Item> SLAB_YELLOW_BRIGHT_ITEM = ITEMS.register("slab_yellow_bright", () -> new AntiBlockItem(SLAB_YELLOW_BRIGHT.get()));
-    public static final RegistryObject<Item> SLAB_CYAN_BRIGHT_ITEM = ITEMS.register("slab_cyan_bright", () -> new AntiBlockItem(SLAB_CYAN_BRIGHT.get()));
-    public static final RegistryObject<Item> SLAB_BLUE_BRIGHT_ITEM = ITEMS.register("slab_blue_bright", () -> new AntiBlockItem(SLAB_BLUE_BRIGHT.get()));
-    public static final RegistryObject<Item> SLAB_GREEN_BRIGHT_ITEM = ITEMS.register("slab_green_bright", () -> new AntiBlockItem(SLAB_GREEN_BRIGHT.get()));
-    public static final RegistryObject<Item> SLAB_RED_BRIGHT_ITEM = ITEMS.register("slab_red_bright", () -> new AntiBlockItem(SLAB_RED_BRIGHT.get()));
-    public static final RegistryObject<Item> SLAB_WHITE_WOOL_ITEM = ITEMS.register("slab_white_wool", () -> new AntiBlockItem(SLAB_WHITE_WOOL.get()));
-    public static final RegistryObject<Item> SLAB_ORANGE_WOOL_ITEM = ITEMS.register("slab_orange_wool", () -> new AntiBlockItem(SLAB_ORANGE_WOOL.get()));
-    public static final RegistryObject<Item> SLAB_MAGENTA_WOOL_ITEM = ITEMS.register("slab_magenta_wool", () -> new AntiBlockItem(SLAB_MAGENTA_WOOL.get()));
-    public static final RegistryObject<Item> SLAB_LIGHT_BLUE_WOOL_ITEM = ITEMS.register("slab_light_blue_wool", () -> new AntiBlockItem(SLAB_LIGHT_BLUE_WOOL.get()));
-    public static final RegistryObject<Item> SLAB_YELLOW_WOOL_ITEM = ITEMS.register("slab_yellow_wool", () -> new AntiBlockItem(SLAB_YELLOW_WOOL.get()));
-    public static final RegistryObject<Item> SLAB_LIME_WOOL_ITEM = ITEMS.register("slab_lime_wool", () -> new AntiBlockItem(SLAB_LIME_WOOL.get()));
-    public static final RegistryObject<Item> SLAB_PINK_WOOL_ITEM = ITEMS.register("slab_pink_wool", () -> new AntiBlockItem(SLAB_PINK_WOOL.get()));
-    public static final RegistryObject<Item> SLAB_GRAY_WOOL_ITEM = ITEMS.register("slab_gray_wool", () -> new AntiBlockItem(SLAB_GRAY_WOOL.get()));
-    public static final RegistryObject<Item> SLAB_LIGHT_GRAY_WOOL_ITEM = ITEMS.register("slab_light_gray_wool", () -> new AntiBlockItem(SLAB_LIGHT_GRAY_WOOL.get()));
-    public static final RegistryObject<Item> SLAB_CYAN_WOOL_ITEM = ITEMS.register("slab_cyan_wool", () -> new AntiBlockItem(SLAB_CYAN_WOOL.get()));
-    public static final RegistryObject<Item> SLAB_PURPLE_WOOL_ITEM = ITEMS.register("slab_purple_wool", () -> new AntiBlockItem(SLAB_PURPLE_WOOL.get()));
-    public static final RegistryObject<Item> SLAB_BLUE_WOOL_ITEM = ITEMS.register("slab_blue_wool", () -> new AntiBlockItem(SLAB_BLUE_WOOL.get()));
-    public static final RegistryObject<Item> SLAB_BROWN_WOOL_ITEM = ITEMS.register("slab_brown_wool", () -> new AntiBlockItem(SLAB_BROWN_WOOL.get()));
-    public static final RegistryObject<Item> SLAB_GREEN_WOOL_ITEM = ITEMS.register("slab_green_wool", () -> new AntiBlockItem(SLAB_GREEN_WOOL.get()));
-    public static final RegistryObject<Item> SLAB_RED_WOOL_ITEM = ITEMS.register("slab_red_wool", () -> new AntiBlockItem(SLAB_RED_WOOL.get()));
+
+    public static final RegistryObject<Block> SLAB_BRIGHT_WHITE = BLOCKS.register("slab_bright_white", () -> new AntiSlabBlock("slab_bright_white"));
+    public static final RegistryObject<Block> SLAB_BRIGHT_BLACK = BLOCKS.register("slab_bright_black", () -> new AntiSlabBlock("slab_bright_black"));
+    public static final RegistryObject<Block> SLAB_BRIGHT_ORANGE = BLOCKS.register("slab_bright_orange", () -> new AntiSlabBlock("slab_bright_orange"));
+    public static final RegistryObject<Block> SLAB_BRIGHT_MAGENTA = BLOCKS.register("slab_bright_magenta", () -> new AntiSlabBlock("slab_bright_magenta"));
+    public static final RegistryObject<Block> SLAB_BRIGHT_YELLOW = BLOCKS.register("slab_bright_yellow", () -> new AntiSlabBlock("slab_bright_yellow"));
+    public static final RegistryObject<Block> SLAB_BRIGHT_CYAN = BLOCKS.register("slab_bright_cyan", () -> new AntiSlabBlock("slab_bright_cyan"));
+    public static final RegistryObject<Block> SLAB_BRIGHT_BLUE = BLOCKS.register("slab_bright_blue", () -> new AntiSlabBlock("slab_bright_blue"));
+    public static final RegistryObject<Block> SLAB_BRIGHT_GREEN = BLOCKS.register("slab_bright_green", () -> new AntiSlabBlock("slab_bright_green"));
+    public static final RegistryObject<Block> SLAB_BRIGHT_RED = BLOCKS.register("slab_bright_red", () -> new AntiSlabBlock("slab_bright_red"));
+    public static final RegistryObject<Block> SLAB_WOOL_WHITE = BLOCKS.register("slab_wool_white", () -> new AntiSlabBlock("slab_wool_white"));
+    public static final RegistryObject<Block> SLAB_WOOL_ORANGE = BLOCKS.register("slab_wool_orange", () -> new AntiSlabBlock("slab_wool_orange"));
+    public static final RegistryObject<Block> SLAB_WOOL_MAGENTA = BLOCKS.register("slab_wool_magenta", () -> new AntiSlabBlock("slab_wool_magenta"));
+    public static final RegistryObject<Block> SLAB_WOOL_LIGHT_BLUE = BLOCKS.register("slab_wool_light_blue", () -> new AntiSlabBlock("slab_wool_light_blue"));
+    public static final RegistryObject<Block> SLAB_WOOL_YELLOW = BLOCKS.register("slab_wool_yellow", () -> new AntiSlabBlock("slab_wool_yellow"));
+    public static final RegistryObject<Block> SLAB_WOOL_LIME = BLOCKS.register("slab_wool_lime", () -> new AntiSlabBlock("slab_wool_lime"));
+    public static final RegistryObject<Block> SLAB_WOOL_PINK = BLOCKS.register("slab_wool_pink", () -> new AntiSlabBlock("slab_wool_pink"));
+    public static final RegistryObject<Block> SLAB_WOOL_GRAY = BLOCKS.register("slab_wool_gray", () -> new AntiSlabBlock("slab_wool_gray"));
+    public static final RegistryObject<Block> SLAB_WOOL_LIGHT_GRAY = BLOCKS.register("slab_wool_light_gray", () -> new AntiSlabBlock("slab_wool_light_gray"));
+    public static final RegistryObject<Block> SLAB_WOOL_CYAN = BLOCKS.register("slab_wool_cyan", () -> new AntiSlabBlock("slab_wool_cyan"));
+    public static final RegistryObject<Block> SLAB_WOOL_PURPLE = BLOCKS.register("slab_wool_purple", () -> new AntiSlabBlock("slab_wool_purple"));
+    public static final RegistryObject<Block> SLAB_WOOL_BLUE = BLOCKS.register("slab_wool_blue", () -> new AntiSlabBlock("slab_wool_blue"));
+    public static final RegistryObject<Block> SLAB_WOOL_BROWN = BLOCKS.register("slab_wool_brown", () -> new AntiSlabBlock("slab_wool_brown"));
+    public static final RegistryObject<Block> SLAB_WOOL_GREEN = BLOCKS.register("slab_wool_green", () -> new AntiSlabBlock("slab_wool_green"));
+    public static final RegistryObject<Block> SLAB_WOOL_RED = BLOCKS.register("slab_wool_red", () -> new AntiSlabBlock("slab_wool_red"));
+    public static final RegistryObject<Item> SLAB_BRIGHT_WHITE_ITEM = ITEMS.register("slab_bright_white", () -> new AntiBlockItem(SLAB_BRIGHT_WHITE.get(), "slab_bright_white"));
+    public static final RegistryObject<Item> SLAB_BRIGHT_BLACK_ITEM = ITEMS.register("slab_bright_black", () -> new AntiBlockItem(SLAB_BRIGHT_BLACK.get(), "slab_bright_black"));
+    public static final RegistryObject<Item> SLAB_BRIGHT_ORANGE_ITEM = ITEMS.register("slab_bright_orange", () -> new AntiBlockItem(SLAB_BRIGHT_ORANGE.get(), "slab_bright_orange"));
+    public static final RegistryObject<Item> SLAB_BRIGHT_MAGENTA_ITEM = ITEMS.register("slab_bright_magenta", () -> new AntiBlockItem(SLAB_BRIGHT_MAGENTA.get(), "slab_bright_magenta"));
+    public static final RegistryObject<Item> SLAB_BRIGHT_YELLOW_ITEM = ITEMS.register("slab_bright_yellow", () -> new AntiBlockItem(SLAB_BRIGHT_YELLOW.get(), "slab_bright_yellow"));
+    public static final RegistryObject<Item> SLAB_BRIGHT_CYAN_ITEM = ITEMS.register("slab_bright_cyan", () -> new AntiBlockItem(SLAB_BRIGHT_CYAN.get(), "slab_bright_cyan"));
+    public static final RegistryObject<Item> SLAB_BRIGHT_BLUE_ITEM = ITEMS.register("slab_bright_blue", () -> new AntiBlockItem(SLAB_BRIGHT_BLUE.get(), "slab_bright_blue"));
+    public static final RegistryObject<Item> SLAB_BRIGHT_GREEN_ITEM = ITEMS.register("slab_bright_green", () -> new AntiBlockItem(SLAB_BRIGHT_GREEN.get(), "slab_bright_green"));
+    public static final RegistryObject<Item> SLAB_BRIGHT_RED_ITEM = ITEMS.register("slab_bright_red", () -> new AntiBlockItem(SLAB_BRIGHT_RED.get(), "slab_bright_red"));
+    public static final RegistryObject<Item> SLAB_WOOL_WHITE_ITEM = ITEMS.register("slab_wool_white", () -> new AntiBlockItem(SLAB_WOOL_WHITE.get(), "slab_wool_white"));
+    public static final RegistryObject<Item> SLAB_WOOL_ORANGE_ITEM = ITEMS.register("slab_wool_orange", () -> new AntiBlockItem(SLAB_WOOL_ORANGE.get(), "slab_wool_orange"));
+    public static final RegistryObject<Item> SLAB_WOOL_MAGENTA_ITEM = ITEMS.register("slab_wool_magenta", () -> new AntiBlockItem(SLAB_WOOL_MAGENTA.get(), "slab_wool_magenta"));
+    public static final RegistryObject<Item> SLAB_WOOL_LIGHT_BLUE_ITEM = ITEMS.register("slab_wool_light_blue", () -> new AntiBlockItem(SLAB_WOOL_LIGHT_BLUE.get(), "slab_wool_light_blue"));
+    public static final RegistryObject<Item> SLAB_WOOL_YELLOW_ITEM = ITEMS.register("slab_wool_yellow", () -> new AntiBlockItem(SLAB_WOOL_YELLOW.get(), "slab_wool_yellow"));
+    public static final RegistryObject<Item> SLAB_WOOL_LIME_ITEM = ITEMS.register("slab_wool_lime", () -> new AntiBlockItem(SLAB_WOOL_LIME.get(), "slab_wool_lime"));
+    public static final RegistryObject<Item> SLAB_WOOL_PINK_ITEM = ITEMS.register("slab_wool_pink", () -> new AntiBlockItem(SLAB_WOOL_PINK.get(), "slab_wool_pink"));
+    public static final RegistryObject<Item> SLAB_WOOL_GRAY_ITEM = ITEMS.register("slab_wool_gray", () -> new AntiBlockItem(SLAB_WOOL_GRAY.get(), "slab_wool_gray"));
+    public static final RegistryObject<Item> SLAB_WOOL_LIGHT_GRAY_ITEM = ITEMS.register("slab_wool_light_gray", () -> new AntiBlockItem(SLAB_WOOL_LIGHT_GRAY.get(), "slab_wool_light_gray"));
+    public static final RegistryObject<Item> SLAB_WOOL_CYAN_ITEM = ITEMS.register("slab_wool_cyan", () -> new AntiBlockItem(SLAB_WOOL_CYAN.get(), "slab_wool_cyan"));
+    public static final RegistryObject<Item> SLAB_WOOL_PURPLE_ITEM = ITEMS.register("slab_wool_purple", () -> new AntiBlockItem(SLAB_WOOL_PURPLE.get(), "slab_wool_purple"));
+    public static final RegistryObject<Item> SLAB_WOOL_BLUE_ITEM = ITEMS.register("slab_wool_blue", () -> new AntiBlockItem(SLAB_WOOL_BLUE.get(), "slab_wool_blue"));
+    public static final RegistryObject<Item> SLAB_WOOL_BROWN_ITEM = ITEMS.register("slab_wool_brown", () -> new AntiBlockItem(SLAB_WOOL_BROWN.get(), "slab_wool_brown"));
+    public static final RegistryObject<Item> SLAB_WOOL_GREEN_ITEM = ITEMS.register("slab_wool_green", () -> new AntiBlockItem(SLAB_WOOL_GREEN.get(), "slab_wool_green"));
+    public static final RegistryObject<Item> SLAB_WOOL_RED_ITEM = ITEMS.register("slab_wool_red", () -> new AntiBlockItem(SLAB_WOOL_RED.get(), "slab_wool_red"));
+
 }

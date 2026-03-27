@@ -2,12 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    {
-      "item": "antiblocksrechiseled:bright_cyan"
-    }
+    "antiblocksrechiseled:bright_cyan"
   ],
   "result": {
-    "count": 1,
     "id": "antiblocksrechiseled:button_bright_cyan"
   }
 }

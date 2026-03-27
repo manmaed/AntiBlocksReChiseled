@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "antiblocksrechiseled:stair_yellow_bright"
+          "name": "antiblocksrechiseled:stair_bright_yellow"
         }
       ],
       "rolls": 1.0

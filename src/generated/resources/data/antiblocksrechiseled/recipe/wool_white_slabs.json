@@ -2,15 +2,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "antiblocksrechiseled:wool_white"
-    }
+    "#": "antiblocksrechiseled:wool_white"
   },
   "pattern": [
     "###"
   ],
   "result": {
     "count": 6,
-    "id": "antiblocksrechiseled:slab_white_wool"
+    "id": "antiblocksrechiseled:slab_wool_white"
   }
 }

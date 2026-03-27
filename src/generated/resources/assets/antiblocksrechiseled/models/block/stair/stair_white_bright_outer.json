@@ -1,6 +1,0 @@
-{
-  "parent": "antiblocksrechiseled:block/full_bright_outer_stair",
-  "textures": {
-    "color": "antiblocksrechiseled:block/bright/white"
-  }
-}

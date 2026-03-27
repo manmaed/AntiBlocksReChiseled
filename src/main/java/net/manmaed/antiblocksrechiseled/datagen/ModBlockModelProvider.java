@@ -1,13 +1,7 @@
 package net.manmaed.antiblocksrechiseled.datagen;
 
-import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.client.model.generators.BlockModelProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
-
-public class ModBlockModelProvider extends BlockModelProvider {
+//TODO: ReImp
+public class ModBlockModelProvider {} /*extends BlockModelProvider {
     public ModBlockModelProvider(PackOutput packOutput, ExistingFileHelper existingFileHelper) {
         super(packOutput, AntiBlocksReChiseled.MOD_ID, existingFileHelper);
     }
@@ -172,11 +166,11 @@ public class ModBlockModelProvider extends BlockModelProvider {
         makePressurePlate("pressure_plate_wool_red", "wool/red");
     }
 
-    /*
+    *//*
        private T singleTexture(String name, String parent, String textureKey, ResourceLocation texture) {
             return singleTexture(name, mcLoc(parent), textureKey, texture);
         }
-     */
+     *//*
     private void makeBlock(String type, String name) {
         singleTexture("block/" + type + "/" + name, getLoc("full_bright"), "color", getLoc(type + "/" + name));
     }
@@ -203,3 +197,4 @@ public class ModBlockModelProvider extends BlockModelProvider {
         singleTexture("block/pressure_plate/" + name + "_down", getLoc("full_bright_pressure_plate_down"), "color", getLoc(color));
     }
 }
+*/

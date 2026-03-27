@@ -1,0 +1,6 @@
+{
+  "parent": "antiblocksrechiseled:block/full_bright_button_inventory",
+  "textures": {
+    "all": "antiblocksrechiseled:block/wool_pink"
+  }
+}

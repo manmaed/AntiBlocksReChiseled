@@ -1,11 +1,12 @@
 {
     "pack": {
+        "pack_format": 55,
         "description": {
             "text": "antiblocksrechiseled resources"
-        },
-        "pack_format": 18
+        }
     },
     "fusion": {
+        "min_version": "${fusion_version}",
         "overrides_folder": "fusion-overrides"
     }
 }

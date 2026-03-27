@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "antiblocksrechiseled:wool_red"
-    }
+    "#": "antiblocksrechiseled:wool_red"
   },
   "pattern": [
     "#  ",
@@ -13,6 +11,6 @@
   ],
   "result": {
     "count": 4,
-    "id": "antiblocksrechiseled:stair_red_wool"
+    "id": "antiblocksrechiseled:stair_wool_red"
   }
 }
