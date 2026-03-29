@@ -1,18 +1,23 @@
 package net.manmaed.antiblocksrechiseled.datagen;
 
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.manmaed.antiblocksrechiseled.blocks.*;
 import net.manmaed.antiblocksrechiseled.tag.ABRCTags;
-import net.minecraft.block.Block;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
+import net.minecraft.data.tags.TagsProvider;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Block;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ModBlocksTagsProvider extends FabricTagProvider.BlockTagProvider {
-    public ModBlocksTagsProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
-        super(output, registriesFuture);
+public class ModBlocksTagsProvider extends FabricTagsProvider.BlockTagsProvider {
+
+    public ModBlocksTagsProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
+        super(output, registryLookupFuture);
     }
 
     public static final Block[] BRIGHT_BLOCKS_WITH_BORDER = {
@@ -78,57 +83,57 @@ public class ModBlocksTagsProvider extends FabricTagProvider.BlockTagProvider {
 
     public static final Block[] SLABS = {
             //Slabs
-            ABRCSlabs.SLAB_WHITE_BRIGHT,
-            ABRCSlabs.SLAB_BLACK,
-            ABRCSlabs.SLAB_ORANGE_BRIGHT,
-            ABRCSlabs.SLAB_MAGENTA_BRIGHT,
-            ABRCSlabs.SLAB_YELLOW_BRIGHT,
-            ABRCSlabs.SLAB_CYAN_BRIGHT,
-            ABRCSlabs.SLAB_BLUE_BRIGHT,
-            ABRCSlabs.SLAB_GREEN_BRIGHT,
-            ABRCSlabs.SLAB_RED_BRIGHT,
-            ABRCSlabs.SLAB_WHITE_WOOL,
-            ABRCSlabs.SLAB_ORANGE_WOOL,
-            ABRCSlabs.SLAB_MAGENTA_WOOL,
-            ABRCSlabs.SLAB_LIGHT_BLUE_WOOL,
-            ABRCSlabs.SLAB_YELLOW_WOOL,
-            ABRCSlabs.SLAB_LIME_WOOL,
-            ABRCSlabs.SLAB_PINK_WOOL,
-            ABRCSlabs.SLAB_GRAY_WOOL,
-            ABRCSlabs.SLAB_LIGHT_GRAY_WOOL,
-            ABRCSlabs.SLAB_CYAN_WOOL,
-            ABRCSlabs.SLAB_PURPLE_WOOL,
-            ABRCSlabs.SLAB_BLUE_WOOL,
-            ABRCSlabs.SLAB_BROWN_WOOL,
-            ABRCSlabs.SLAB_GREEN_WOOL,
-            ABRCSlabs.SLAB_RED_WOOL
+            ABRCSlabs.SLAB_BRIGHT_WHITE,
+            ABRCSlabs.SLAB_BRIGHT_BLACK,
+            ABRCSlabs.SLAB_BRIGHT_ORANGE,
+            ABRCSlabs.SLAB_BRIGHT_MAGENTA,
+            ABRCSlabs.SLAB_BRIGHT_YELLOW,
+            ABRCSlabs.SLAB_BRIGHT_CYAN,
+            ABRCSlabs.SLAB_BRIGHT_BLUE,
+            ABRCSlabs.SLAB_BRIGHT_GREEN,
+            ABRCSlabs.SLAB_BRIGHT_RED,
+            ABRCSlabs.SLAB_WOOL_WHITE,
+            ABRCSlabs.SLAB_WOOL_ORANGE,
+            ABRCSlabs.SLAB_WOOL_MAGENTA,
+            ABRCSlabs.SLAB_WOOL_LIGHT_BLUE,
+            ABRCSlabs.SLAB_WOOL_YELLOW,
+            ABRCSlabs.SLAB_WOOL_LIME,
+            ABRCSlabs.SLAB_WOOL_PINK,
+            ABRCSlabs.SLAB_WOOL_GRAY,
+            ABRCSlabs.SLAB_WOOL_LIGHT_GRAY,
+            ABRCSlabs.SLAB_WOOL_CYAN,
+            ABRCSlabs.SLAB_WOOL_PURPLE,
+            ABRCSlabs.SLAB_WOOL_BLUE,
+            ABRCSlabs.SLAB_WOOL_BROWN,
+            ABRCSlabs.SLAB_WOOL_GREEN,
+            ABRCSlabs.SLAB_WOOL_RED
     };
     public static final Block[] STAIRS = {
             //Stairs
-            ABRCStairs.STAIR_WHITE_BRIGHT,
-            ABRCStairs.STAIR_BLACK,
-            ABRCStairs.STAIR_ORANGE_BRIGHT,
-            ABRCStairs.STAIR_MAGENTA_BRIGHT,
-            ABRCStairs.STAIR_YELLOW_BRIGHT,
-            ABRCStairs.STAIR_CYAN_BRIGHT,
-            ABRCStairs.STAIR_BLUE_BRIGHT,
-            ABRCStairs.STAIR_GREEN_BRIGHT,
-            ABRCStairs.STAIR_RED_BRIGHT,
-            ABRCStairs.STAIR_WHITE_WOOL,
-            ABRCStairs.STAIR_ORANGE_WOOL,
-            ABRCStairs.STAIR_MAGENTA_WOOL,
-            ABRCStairs.STAIR_LIGHT_BLUE_WOOL,
-            ABRCStairs.STAIR_YELLOW_WOOL,
-            ABRCStairs.STAIR_LIME_WOOL,
-            ABRCStairs.STAIR_PINK_WOOL,
-            ABRCStairs.STAIR_GRAY_WOOL,
-            ABRCStairs.STAIR_LIGHT_GRAY_WOOL,
-            ABRCStairs.STAIR_CYAN_WOOL,
-            ABRCStairs.STAIR_PURPLE_WOOL,
-            ABRCStairs.STAIR_BLUE_WOOL,
-            ABRCStairs.STAIR_BROWN_WOOL,
-            ABRCStairs.STAIR_GREEN_WOOL,
-            ABRCStairs.STAIR_RED_WOOL
+            ABRCStairs.STAIR_BRIGHT_WHITE,
+            ABRCStairs.STAIR_BRIGHT_BLACK,
+            ABRCStairs.STAIR_BRIGHT_ORANGE,
+            ABRCStairs.STAIR_BRIGHT_MAGENTA,
+            ABRCStairs.STAIR_BRIGHT_YELLOW,
+            ABRCStairs.STAIR_BRIGHT_CYAN,
+            ABRCStairs.STAIR_BRIGHT_BLUE,
+            ABRCStairs.STAIR_BRIGHT_GREEN,
+            ABRCStairs.STAIR_BRIGHT_RED,
+            ABRCStairs.STAIR_WOOL_WHITE,
+            ABRCStairs.STAIR_WOOL_ORANGE,
+            ABRCStairs.STAIR_WOOL_MAGENTA,
+            ABRCStairs.STAIR_WOOL_LIGHT_BLUE,
+            ABRCStairs.STAIR_WOOL_YELLOW,
+            ABRCStairs.STAIR_WOOL_LIME,
+            ABRCStairs.STAIR_WOOL_PINK,
+            ABRCStairs.STAIR_WOOL_GRAY,
+            ABRCStairs.STAIR_WOOL_LIGHT_GRAY,
+            ABRCStairs.STAIR_WOOL_CYAN,
+            ABRCStairs.STAIR_WOOL_PURPLE,
+            ABRCStairs.STAIR_WOOL_BLUE,
+            ABRCStairs.STAIR_WOOL_BROWN,
+            ABRCStairs.STAIR_WOOL_GREEN,
+            ABRCStairs.STAIR_WOOL_RED
     };
     public static final Block[] BUTTONS = {
             ABRCButtons.BUTTON_BRIGHT_WHITE,
@@ -185,20 +190,20 @@ public class ModBlocksTagsProvider extends FabricTagProvider.BlockTagProvider {
     };
 
     @Override
-    protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE).add(BRIGHT_BLOCKS_WITH_BORDER).add(BRIGHT_BLOCKS_WITHOUT_BORDER).add(WOOL_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER).add(SLABS).add(STAIRS).add(BUTTONS).add(PRESSURE_PLATES);
-        getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL).add(BRIGHT_BLOCKS_WITH_BORDER).add(BRIGHT_BLOCKS_WITHOUT_BORDER).add(WOOL_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER).add(SLABS).add(STAIRS).add(BUTTONS).add(PRESSURE_PLATES);
-        getOrCreateTagBuilder(BlockTags.BUTTONS).add(BUTTONS);
-        getOrCreateTagBuilder(BlockTags.STAIRS).add(STAIRS);
-        getOrCreateTagBuilder(BlockTags.SLABS).add(SLABS);
-        getOrCreateTagBuilder(BlockTags.PRESSURE_PLATES).add(PRESSURE_PLATES);
-        getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_BUTTONS).add(BUTTONS);
-        getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_STAIRS).add(STAIRS);
-        getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_SLABS).add(SLABS);
-        getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_PRESSURE_PLATES).add(PRESSURE_PLATES);
-        getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_WITHOUT_BORDERS).add(BRIGHT_BLOCKS_WITHOUT_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER);
-        getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_WITH_BORDERS).add(BRIGHT_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITH_BORDER);
-        getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_WOOL_COLORS).add(WOOL_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER);
-        getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_BRIGHT_COLORS).add(BRIGHT_BLOCKS_WITH_BORDER).add(BRIGHT_BLOCKS_WITH_BORDER);
+    protected void addTags(HolderLookup.Provider registries) {
+        valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE).add(BRIGHT_BLOCKS_WITH_BORDER).add(BRIGHT_BLOCKS_WITHOUT_BORDER).add(WOOL_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER).add(SLABS).add(STAIRS).add(BUTTONS).add(PRESSURE_PLATES);
+        valueLookupBuilder(BlockTags.NEEDS_IRON_TOOL).add(BRIGHT_BLOCKS_WITH_BORDER).add(BRIGHT_BLOCKS_WITHOUT_BORDER).add(WOOL_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER).add(SLABS).add(STAIRS).add(BUTTONS).add(PRESSURE_PLATES);
+        valueLookupBuilder(BlockTags.BUTTONS).add(BUTTONS);
+        valueLookupBuilder(BlockTags.STAIRS).add(STAIRS);
+        valueLookupBuilder(BlockTags.SLABS).add(SLABS);
+        valueLookupBuilder(BlockTags.PRESSURE_PLATES).add(PRESSURE_PLATES);
+        valueLookupBuilder(ABRCTags.ANTIBLOCK_BUTTONS).add(BUTTONS);
+        valueLookupBuilder(ABRCTags.ANTIBLOCK_STAIRS).add(STAIRS);
+        valueLookupBuilder(ABRCTags.ANTIBLOCK_SLABS).add(SLABS);
+        valueLookupBuilder(ABRCTags.ANTIBLOCK_PRESSURE_PLATES).add(PRESSURE_PLATES);
+        valueLookupBuilder(ABRCTags.ANTIBLOCK_WITHOUT_BORDERS).add(BRIGHT_BLOCKS_WITHOUT_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER);
+        valueLookupBuilder(ABRCTags.ANTIBLOCK_WITH_BORDERS).add(BRIGHT_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITH_BORDER);
+        valueLookupBuilder(ABRCTags.ANTIBLOCK_WOOL_COLORS).add(WOOL_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER);
+        valueLookupBuilder(ABRCTags.ANTIBLOCK_BRIGHT_COLORS).add(BRIGHT_BLOCKS_WITH_BORDER).add(BRIGHT_BLOCKS_WITH_BORDER);
     }
 }

@@ -1,20 +1,21 @@
 package net.manmaed.antiblocksrechiseled.blocks.base;
 
-import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.MapColor;
-import net.minecraft.block.StairsBlock;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Identifier;
 
-public class AntiStairBlock extends StairsBlock {
-    public AntiStairBlock(BlockState baseBlockState, String name) {
-        super(baseBlockState, Settings.create()
-                .mapColor(MapColor.STONE_GRAY)
+import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.MapColor;
+
+public class AntiStairBlock extends StairBlock {
+    public AntiStairBlock(BlockState defaultState, String name) {
+        super(defaultState, Properties.of()
+                .mapColor(MapColor.STONE)
                 .strength(3.0F, 5.0F)
-                .requiresTool()
-                .luminance(light -> 15)
-                .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(AntiBlocksReChiseled.MOD_ID, name))));
+                .requiresCorrectToolForDrops()
+                .lightLevel(_ -> 15)
+                .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(AntiBlocksReChiseled.MOD_ID, name))));
     }
 }

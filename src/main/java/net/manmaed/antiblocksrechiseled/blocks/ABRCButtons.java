@@ -1,14 +1,17 @@
 package net.manmaed.antiblocksrechiseled.blocks;
 
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
 import net.manmaed.antiblocksrechiseled.blocks.base.AntiButton;
 import net.manmaed.antiblocksrechiseled.items.AntiBlockItem;
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
+import net.manmaed.antiblocksrechiseled.utils.ABRCUtils;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 public class ABRCButtons {
 
@@ -69,30 +72,30 @@ public class ABRCButtons {
     }
 
     public static void doBlockRegistery() {
-        Registry.register(Registries.BLOCK, getId("button_bright_white"), BUTTON_BRIGHT_WHITE);
-        Registry.register(Registries.BLOCK, getId("button_bright_orange"), BUTTON_BRIGHT_ORANGE);
-        Registry.register(Registries.BLOCK, getId("button_bright_magenta"), BUTTON_BRIGHT_MAGENTA);
-        Registry.register(Registries.BLOCK, getId("button_bright_yellow"), BUTTON_BRIGHT_YELLOW);
-        Registry.register(Registries.BLOCK, getId("button_bright_cyan"), BUTTON_BRIGHT_CYAN);
-        Registry.register(Registries.BLOCK, getId("button_bright_blue"), BUTTON_BRIGHT_BLUE);
-        Registry.register(Registries.BLOCK, getId("button_bright_green"), BUTTON_BRIGHT_GREEN);
-        Registry.register(Registries.BLOCK, getId("button_bright_red"), BUTTON_BRIGHT_RED);
-        Registry.register(Registries.BLOCK, getId("button_bright_black"), BUTTON_BRIGHT_BLACK);
-        Registry.register(Registries.BLOCK, getId("button_wool_white"), BUTTON_WOOL_WHITE);
-        Registry.register(Registries.BLOCK, getId("button_wool_orange"), BUTTON_WOOL_ORANGE);
-        Registry.register(Registries.BLOCK, getId("button_wool_magenta"), BUTTON_WOOL_MAGENTA);
-        Registry.register(Registries.BLOCK, getId("button_wool_light_blue"), BUTTON_WOOL_LIGHT_BLUE);
-        Registry.register(Registries.BLOCK, getId("button_wool_yellow"), BUTTON_WOOL_YELLOW);
-        Registry.register(Registries.BLOCK, getId("button_wool_lime"), BUTTON_WOOL_LIME);
-        Registry.register(Registries.BLOCK, getId("button_wool_pink"), BUTTON_WOOL_PINK);
-        Registry.register(Registries.BLOCK, getId("button_wool_gray"), BUTTON_WOOL_GRAY);
-        Registry.register(Registries.BLOCK, getId("button_wool_light_gray"), BUTTON_WOOL_LIGHT_GRAY);
-        Registry.register(Registries.BLOCK, getId("button_wool_cyan"), BUTTON_WOOL_CYAN);
-        Registry.register(Registries.BLOCK, getId("button_wool_purple"), BUTTON_WOOL_PURPLE);
-        Registry.register(Registries.BLOCK, getId("button_wool_blue"), BUTTON_WOOL_BLUE);
-        Registry.register(Registries.BLOCK, getId("button_wool_brown"), BUTTON_WOOL_BROWN);
-        Registry.register(Registries.BLOCK, getId("button_wool_green"), BUTTON_WOOL_GREEN);
-        Registry.register(Registries.BLOCK, getId("button_wool_red"), BUTTON_WOOL_RED);
+        registerBlock("button_bright_white", BUTTON_BRIGHT_WHITE);
+        registerBlock("button_bright_orange", BUTTON_BRIGHT_ORANGE);
+        registerBlock("button_bright_magenta", BUTTON_BRIGHT_MAGENTA);
+        registerBlock("button_bright_yellow", BUTTON_BRIGHT_YELLOW);
+        registerBlock("button_bright_cyan", BUTTON_BRIGHT_CYAN);
+        registerBlock("button_bright_blue", BUTTON_BRIGHT_BLUE);
+        registerBlock("button_bright_green", BUTTON_BRIGHT_GREEN);
+        registerBlock("button_bright_red", BUTTON_BRIGHT_RED);
+        registerBlock("button_bright_black", BUTTON_BRIGHT_BLACK);
+        registerBlock("button_wool_white", BUTTON_WOOL_WHITE);
+        registerBlock("button_wool_orange", BUTTON_WOOL_ORANGE);
+        registerBlock("button_wool_magenta", BUTTON_WOOL_MAGENTA);
+        registerBlock("button_wool_light_blue", BUTTON_WOOL_LIGHT_BLUE);
+        registerBlock("button_wool_yellow", BUTTON_WOOL_YELLOW);
+        registerBlock("button_wool_lime", BUTTON_WOOL_LIME);
+        registerBlock("button_wool_pink", BUTTON_WOOL_PINK);
+        registerBlock("button_wool_gray", BUTTON_WOOL_GRAY);
+        registerBlock("button_wool_light_gray", BUTTON_WOOL_LIGHT_GRAY);
+        registerBlock("button_wool_cyan", BUTTON_WOOL_CYAN);
+        registerBlock("button_wool_purple", BUTTON_WOOL_PURPLE);
+        registerBlock("button_wool_blue", BUTTON_WOOL_BLUE);
+        registerBlock("button_wool_brown", BUTTON_WOOL_BROWN);
+        registerBlock("button_wool_green", BUTTON_WOOL_GREEN);
+        registerBlock("button_wool_red", BUTTON_WOOL_RED);
     }
 
     public static void doBlockItemRegistery() {
@@ -122,12 +125,15 @@ public class ABRCButtons {
         registerItem("button_wool_red", BUTTON_WOOL_RED_ITEM);
     }
 
-    private static void registerItem(String name, Item item) {
-        Registry.register(Registries.ITEM, getId(name), item);
-        ItemGroupEvents.modifyEntriesEvent(AntiBlocksReChiseled.itemGroup).register(entries -> entries.add(item));
+    private static void registerItem(String name, net.minecraft.world.item.Item item) {
+        ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, ABRCUtils.ident(name));
+        Registry.register(BuiltInRegistries.ITEM, itemKey, item);
+        CreativeModeTabEvents.modifyOutputEvent(AntiBlocksReChiseled.CREATIVE_MODE_TABS)
+                .register((tab) -> tab.accept(item));
     }
 
-    private static Identifier getId(String name) {
-        return Identifier.of(AntiBlocksReChiseled.MOD_ID, name);
+    private static void registerBlock(String name, net.minecraft.world.level.block.Block block) {
+        ResourceKey<net.minecraft.world.level.block.Block> blockKey = ResourceKey.create(Registries.BLOCK, ABRCUtils.ident(name));
+        Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
     }
 }

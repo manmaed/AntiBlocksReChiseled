@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "antiblocksrechiseled:block/slab_wool_pink"
+    },
+    "type=double": {
+      "model": "antiblocksrechiseled:block/wool_pink"
+    },
+    "type=top": {
+      "model": "antiblocksrechiseled:block/slab_wool_pink_top"
+    }
+  }
+}

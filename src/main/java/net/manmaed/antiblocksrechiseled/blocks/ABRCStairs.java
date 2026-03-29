@@ -1,65 +1,68 @@
 package net.manmaed.antiblocksrechiseled.blocks;
 
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
 import net.manmaed.antiblocksrechiseled.blocks.base.AntiStairBlock;
 import net.manmaed.antiblocksrechiseled.items.AntiBlockItem;
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
+import net.manmaed.antiblocksrechiseled.utils.ABRCUtils;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 public class ABRCStairs {
-    public static final Block STAIR_WHITE_BRIGHT = new AntiStairBlock(ABRCBrightColors.BRIGHT_WHITE.getDefaultState(), "stair_white_bright");
-    public static final Block STAIR_BLACK = new AntiStairBlock(ABRCBrightColors.BRIGHT_BLACK.getDefaultState(), "stair_black");
-    public static final Block STAIR_ORANGE_BRIGHT = new AntiStairBlock(ABRCBrightColors.BRIGHT_ORANGE.getDefaultState(), "stair_orange_bright");
-    public static final Block STAIR_MAGENTA_BRIGHT = new AntiStairBlock(ABRCBrightColors.BRIGHT_MAGENTA.getDefaultState(), "stair_magenta_bright");
-    public static final Block STAIR_YELLOW_BRIGHT = new AntiStairBlock(ABRCBrightColors.BRIGHT_YELLOW.getDefaultState(), "stair_yellow_bright");
-    public static final Block STAIR_CYAN_BRIGHT = new AntiStairBlock(ABRCBrightColors.BRIGHT_CYAN.getDefaultState(), "stair_cyan_bright");
-    public static final Block STAIR_BLUE_BRIGHT = new AntiStairBlock(ABRCBrightColors.BRIGHT_BLUE.getDefaultState(), "stair_blue_bright");
-    public static final Block STAIR_GREEN_BRIGHT = new AntiStairBlock(ABRCBrightColors.BRIGHT_GREEN.getDefaultState(), "stair_green_bright");
-    public static final Block STAIR_RED_BRIGHT = new AntiStairBlock(ABRCBrightColors.BRIGHT_RED.getDefaultState(), "stair_red_bright");
-    public static final Block STAIR_WHITE_WOOL = new AntiStairBlock(ABRCWoolColors.WOOL_WHITE.getDefaultState(), "stair_white_wool");
-    public static final Block STAIR_ORANGE_WOOL = new AntiStairBlock(ABRCWoolColors.WOOL_ORANGE.getDefaultState(), "stair_orange_wool");
-    public static final Block STAIR_MAGENTA_WOOL = new AntiStairBlock(ABRCWoolColors.WOOL_MAGENTA.getDefaultState(), "stair_magenta_wool");
-    public static final Block STAIR_LIGHT_BLUE_WOOL = new AntiStairBlock(ABRCWoolColors.WOOL_LIGHT_BLUE.getDefaultState(), "stair_light_blue_wool");
-    public static final Block STAIR_YELLOW_WOOL = new AntiStairBlock(ABRCWoolColors.WOOL_YELLOW.getDefaultState(), "stair_yellow_wool");
-    public static final Block STAIR_LIME_WOOL = new AntiStairBlock(ABRCWoolColors.WOOL_LIME.getDefaultState(), "stair_lime_wool");
-    public static final Block STAIR_PINK_WOOL = new AntiStairBlock(ABRCWoolColors.WOOL_PINK.getDefaultState(), "stair_pink_wool");
-    public static final Block STAIR_GRAY_WOOL = new AntiStairBlock(ABRCWoolColors.WOOL_GRAY.getDefaultState(), "stair_gray_wool");
-    public static final Block STAIR_LIGHT_GRAY_WOOL = new AntiStairBlock(ABRCWoolColors.WOOL_LIGHT_GRAY.getDefaultState(), "stair_light_gray_wool");
-    public static final Block STAIR_CYAN_WOOL = new AntiStairBlock(ABRCWoolColors.WOOL_CYAN.getDefaultState(), "stair_cyan_wool");
-    public static final Block STAIR_PURPLE_WOOL = new AntiStairBlock(ABRCWoolColors.WOOL_PURPLE.getDefaultState(), "stair_purple_wool");
-    public static final Block STAIR_BLUE_WOOL = new AntiStairBlock(ABRCWoolColors.WOOL_BLUE.getDefaultState(), "stair_blue_wool");
-    public static final Block STAIR_BROWN_WOOL = new AntiStairBlock(ABRCWoolColors.WOOL_BROWN.getDefaultState(), "stair_brown_wool");
-    public static final Block STAIR_GREEN_WOOL = new AntiStairBlock(ABRCWoolColors.WOOL_GREEN.getDefaultState(), "stair_green_wool");
-    public static final Block STAIR_RED_WOOL = new AntiStairBlock(ABRCWoolColors.WOOL_RED.getDefaultState(), "stair_red_wool");
+    public static final Block STAIR_BRIGHT_WHITE = new AntiStairBlock(ABRCBrightColors.BRIGHT_WHITE.defaultBlockState(), "stair_bright_white");
+    public static final Block STAIR_BRIGHT_BLACK = new AntiStairBlock(ABRCBrightColors.BRIGHT_BLACK.defaultBlockState(), "stair_bright_black");
+    public static final Block STAIR_BRIGHT_ORANGE = new AntiStairBlock(ABRCBrightColors.BRIGHT_ORANGE.defaultBlockState(), "stair_bright_orange");
+    public static final Block STAIR_BRIGHT_MAGENTA = new AntiStairBlock(ABRCBrightColors.BRIGHT_MAGENTA.defaultBlockState(), "stair_bright_magenta");
+    public static final Block STAIR_BRIGHT_YELLOW = new AntiStairBlock(ABRCBrightColors.BRIGHT_YELLOW.defaultBlockState(), "stair_bright_yellow");
+    public static final Block STAIR_BRIGHT_CYAN = new AntiStairBlock(ABRCBrightColors.BRIGHT_CYAN.defaultBlockState(), "stair_bright_cyan");
+    public static final Block STAIR_BRIGHT_BLUE = new AntiStairBlock(ABRCBrightColors.BRIGHT_BLUE.defaultBlockState(), "stair_bright_blue");
+    public static final Block STAIR_BRIGHT_GREEN = new AntiStairBlock(ABRCBrightColors.BRIGHT_GREEN.defaultBlockState(), "stair_bright_green");
+    public static final Block STAIR_BRIGHT_RED = new AntiStairBlock(ABRCBrightColors.BRIGHT_RED.defaultBlockState(), "stair_bright_red");
+    public static final Block STAIR_WOOL_WHITE = new AntiStairBlock(ABRCWoolColors.WOOL_WHITE.defaultBlockState(), "stair_wool_white");
+    public static final Block STAIR_WOOL_ORANGE = new AntiStairBlock(ABRCWoolColors.WOOL_ORANGE.defaultBlockState(), "stair_wool_orange");
+    public static final Block STAIR_WOOL_MAGENTA = new AntiStairBlock(ABRCWoolColors.WOOL_MAGENTA.defaultBlockState(), "stair_wool_magenta");
+    public static final Block STAIR_WOOL_LIGHT_BLUE = new AntiStairBlock(ABRCWoolColors.WOOL_LIGHT_BLUE.defaultBlockState(), "stair_wool_light_blue");
+    public static final Block STAIR_WOOL_YELLOW = new AntiStairBlock(ABRCWoolColors.WOOL_YELLOW.defaultBlockState(), "stair_wool_yellow");
+    public static final Block STAIR_WOOL_LIME = new AntiStairBlock(ABRCWoolColors.WOOL_LIME.defaultBlockState(), "stair_wool_lime");
+    public static final Block STAIR_WOOL_PINK = new AntiStairBlock(ABRCWoolColors.WOOL_PINK.defaultBlockState(), "stair_wool_pink");
+    public static final Block STAIR_WOOL_GRAY = new AntiStairBlock(ABRCWoolColors.WOOL_GRAY.defaultBlockState(), "stair_wool_gray");
+    public static final Block STAIR_WOOL_LIGHT_GRAY = new AntiStairBlock(ABRCWoolColors.WOOL_LIGHT_GRAY.defaultBlockState(), "stair_wool_light_gray");
+    public static final Block STAIR_WOOL_CYAN = new AntiStairBlock(ABRCWoolColors.WOOL_CYAN.defaultBlockState(), "stair_wool_cyan");
+    public static final Block STAIR_WOOL_PURPLE = new AntiStairBlock(ABRCWoolColors.WOOL_PURPLE.defaultBlockState(), "stair_wool_purple");
+    public static final Block STAIR_WOOL_BLUE = new AntiStairBlock(ABRCWoolColors.WOOL_BLUE.defaultBlockState(), "stair_wool_blue");
+    public static final Block STAIR_WOOL_BROWN = new AntiStairBlock(ABRCWoolColors.WOOL_BROWN.defaultBlockState(), "stair_wool_brown");
+    public static final Block STAIR_WOOL_GREEN = new AntiStairBlock(ABRCWoolColors.WOOL_GREEN.defaultBlockState(), "stair_wool_green");
+    public static final Block STAIR_WOOL_RED = new AntiStairBlock(ABRCWoolColors.WOOL_RED.defaultBlockState(), "stair_wool_red");
     //Items
-    public static final Item STAIR_WHITE_BRIGHT_ITEM = new AntiBlockItem(STAIR_WHITE_BRIGHT, "stair_white_bright");
-    public static final Item STAIR_BLACK_ITEM = new AntiBlockItem(STAIR_BLACK, "stair_black");
-    public static final Item STAIR_ORANGE_BRIGHT_ITEM = new AntiBlockItem(STAIR_ORANGE_BRIGHT, "stair_orange_bright");
-    public static final Item STAIR_MAGENTA_BRIGHT_ITEM = new AntiBlockItem(STAIR_MAGENTA_BRIGHT, "stair_magenta_bright");
-    public static final Item STAIR_YELLOW_BRIGHT_ITEM = new AntiBlockItem(STAIR_YELLOW_BRIGHT, "stair_yellow_bright");
-    public static final Item STAIR_CYAN_BRIGHT_ITEM = new AntiBlockItem(STAIR_CYAN_BRIGHT, "stair_cyan_bright");
-    public static final Item STAIR_BLUE_BRIGHT_ITEM = new AntiBlockItem(STAIR_BLUE_BRIGHT, "stair_blue_bright");
-    public static final Item STAIR_GREEN_BRIGHT_ITEM = new AntiBlockItem(STAIR_GREEN_BRIGHT, "stair_green_bright");
-    public static final Item STAIR_RED_BRIGHT_ITEM = new AntiBlockItem(STAIR_RED_BRIGHT, "stair_red_bright");
-    public static final Item STAIR_WHITE_WOOL_ITEM = new AntiBlockItem(STAIR_WHITE_WOOL, "stair_white_wool");
-    public static final Item STAIR_ORANGE_WOOL_ITEM = new AntiBlockItem(STAIR_ORANGE_WOOL, "stair_orange_wool");
-    public static final Item STAIR_MAGENTA_WOOL_ITEM = new AntiBlockItem(STAIR_MAGENTA_WOOL, "stair_magenta_wool");
-    public static final Item STAIR_LIGHT_BLUE_WOOL_ITEM = new AntiBlockItem(STAIR_LIGHT_BLUE_WOOL, "stair_light_blue_wool");
-    public static final Item STAIR_YELLOW_WOOL_ITEM = new AntiBlockItem(STAIR_YELLOW_WOOL, "stair_yellow_wool");
-    public static final Item STAIR_LIME_WOOL_ITEM = new AntiBlockItem(STAIR_LIME_WOOL, "stair_lime_wool");
-    public static final Item STAIR_PINK_WOOL_ITEM = new AntiBlockItem(STAIR_PINK_WOOL, "stair_pink_wool");
-    public static final Item STAIR_GRAY_WOOL_ITEM = new AntiBlockItem(STAIR_GRAY_WOOL, "stair_gray_wool");
-    public static final Item STAIR_LIGHT_GRAY_WOOL_ITEM = new AntiBlockItem(STAIR_LIGHT_GRAY_WOOL, "stair_light_gray_wool");
-    public static final Item STAIR_CYAN_WOOL_ITEM = new AntiBlockItem(STAIR_CYAN_WOOL, "stair_cyan_wool");
-    public static final Item STAIR_PURPLE_WOOL_ITEM = new AntiBlockItem(STAIR_PURPLE_WOOL, "stair_purple_wool");
-    public static final Item STAIR_BLUE_WOOL_ITEM = new AntiBlockItem(STAIR_BLUE_WOOL, "stair_blue_wool");
-    public static final Item STAIR_BROWN_WOOL_ITEM = new AntiBlockItem(STAIR_BROWN_WOOL, "stair_brown_wool");
-    public static final Item STAIR_GREEN_WOOL_ITEM = new AntiBlockItem(STAIR_GREEN_WOOL, "stair_green_wool");
-    public static final Item STAIR_RED_WOOL_ITEM = new AntiBlockItem(STAIR_RED_WOOL, "stair_red_wool");
+    public static final Item STAIR_BRIGHT_WHITE_ITEM = new AntiBlockItem(STAIR_BRIGHT_WHITE, "stair_bright_white");
+    public static final Item STAIR_BRIGHT_BLACK_ITEM = new AntiBlockItem(STAIR_BRIGHT_BLACK, "stair_bright_black");
+    public static final Item STAIR_BRIGHT_ORANGE_ITEM = new AntiBlockItem(STAIR_BRIGHT_ORANGE, "stair_bright_orange");
+    public static final Item STAIR_BRIGHT_MAGENTA_ITEM = new AntiBlockItem(STAIR_BRIGHT_MAGENTA, "stair_bright_magenta");
+    public static final Item STAIR_BRIGHT_YELLOW_ITEM = new AntiBlockItem(STAIR_BRIGHT_YELLOW, "stair_bright_yellow");
+    public static final Item STAIR_BRIGHT_CYAN_ITEM = new AntiBlockItem(STAIR_BRIGHT_CYAN, "stair_bright_cyan");
+    public static final Item STAIR_BRIGHT_BLUE_ITEM = new AntiBlockItem(STAIR_BRIGHT_BLUE, "stair_bright_blue");
+    public static final Item STAIR_BRIGHT_GREEN_ITEM = new AntiBlockItem(STAIR_BRIGHT_GREEN, "stair_bright_green");
+    public static final Item STAIR_BRIGHT_RED_ITEM = new AntiBlockItem(STAIR_BRIGHT_RED, "stair_bright_red");
+    public static final Item STAIR_WOOL_WHITE_ITEM = new AntiBlockItem(STAIR_WOOL_WHITE, "stair_wool_white");
+    public static final Item STAIR_WOOL_ORANGE_ITEM = new AntiBlockItem(STAIR_WOOL_ORANGE, "stair_wool_orange");
+    public static final Item STAIR_WOOL_MAGENTA_ITEM = new AntiBlockItem(STAIR_WOOL_MAGENTA, "stair_wool_magenta");
+    public static final Item STAIR_WOOL_LIGHT_BLUE_ITEM = new AntiBlockItem(STAIR_WOOL_LIGHT_BLUE, "stair_wool_light_blue");
+    public static final Item STAIR_WOOL_YELLOW_ITEM = new AntiBlockItem(STAIR_WOOL_YELLOW, "stair_wool_yellow");
+    public static final Item STAIR_WOOL_LIME_ITEM = new AntiBlockItem(STAIR_WOOL_LIME, "stair_wool_lime");
+    public static final Item STAIR_WOOL_PINK_ITEM = new AntiBlockItem(STAIR_WOOL_PINK, "stair_wool_pink");
+    public static final Item STAIR_WOOL_GRAY_ITEM = new AntiBlockItem(STAIR_WOOL_GRAY, "stair_wool_gray");
+    public static final Item STAIR_WOOL_LIGHT_GRAY_ITEM = new AntiBlockItem(STAIR_WOOL_LIGHT_GRAY, "stair_wool_light_gray");
+    public static final Item STAIR_WOOL_CYAN_ITEM = new AntiBlockItem(STAIR_WOOL_CYAN, "stair_wool_cyan");
+    public static final Item STAIR_WOOL_PURPLE_ITEM = new AntiBlockItem(STAIR_WOOL_PURPLE, "stair_wool_purple");
+    public static final Item STAIR_WOOL_BLUE_ITEM = new AntiBlockItem(STAIR_WOOL_BLUE, "stair_wool_blue");
+    public static final Item STAIR_WOOL_BROWN_ITEM = new AntiBlockItem(STAIR_WOOL_BROWN, "stair_wool_brown");
+    public static final Item STAIR_WOOL_GREEN_ITEM = new AntiBlockItem(STAIR_WOOL_GREEN, "stair_wool_green");
+    public static final Item STAIR_WOOL_RED_ITEM = new AntiBlockItem(STAIR_WOOL_RED, "stair_wool_red");
 
     public static void doRegistery() {
         doBlockRegistery();
@@ -67,65 +70,68 @@ public class ABRCStairs {
     }
 
     private static void doBlockItemRegistery() {
-        Registry.register(Registries.BLOCK, getId("stair_white_bright"), STAIR_WHITE_BRIGHT);
-        Registry.register(Registries.BLOCK, getId("stair_black"), STAIR_BLACK);
-        Registry.register(Registries.BLOCK, getId("stair_orange_bright"), STAIR_ORANGE_BRIGHT);
-        Registry.register(Registries.BLOCK, getId("stair_magenta_bright"), STAIR_MAGENTA_BRIGHT);
-        Registry.register(Registries.BLOCK, getId("stair_yellow_bright"), STAIR_YELLOW_BRIGHT);
-        Registry.register(Registries.BLOCK, getId("stair_cyan_bright"), STAIR_CYAN_BRIGHT);
-        Registry.register(Registries.BLOCK, getId("stair_blue_bright"), STAIR_BLUE_BRIGHT);
-        Registry.register(Registries.BLOCK, getId("stair_green_bright"), STAIR_GREEN_BRIGHT);
-        Registry.register(Registries.BLOCK, getId("stair_red_bright"), STAIR_RED_BRIGHT);
-        Registry.register(Registries.BLOCK, getId("stair_white_wool"), STAIR_WHITE_WOOL);
-        Registry.register(Registries.BLOCK, getId("stair_orange_wool"), STAIR_ORANGE_WOOL);
-        Registry.register(Registries.BLOCK, getId("stair_magenta_wool"), STAIR_MAGENTA_WOOL);
-        Registry.register(Registries.BLOCK, getId("stair_light_blue_wool"), STAIR_LIGHT_BLUE_WOOL);
-        Registry.register(Registries.BLOCK, getId("stair_yellow_wool"), STAIR_YELLOW_WOOL);
-        Registry.register(Registries.BLOCK, getId("stair_lime_wool"), STAIR_LIME_WOOL);
-        Registry.register(Registries.BLOCK, getId("stair_pink_wool"), STAIR_PINK_WOOL);
-        Registry.register(Registries.BLOCK, getId("stair_gray_wool"), STAIR_GRAY_WOOL);
-        Registry.register(Registries.BLOCK, getId("stair_light_gray_wool"), STAIR_LIGHT_GRAY_WOOL);
-        Registry.register(Registries.BLOCK, getId("stair_cyan_wool"), STAIR_CYAN_WOOL);
-        Registry.register(Registries.BLOCK, getId("stair_purple_wool"), STAIR_PURPLE_WOOL);
-        Registry.register(Registries.BLOCK, getId("stair_blue_wool"), STAIR_BLUE_WOOL);
-        Registry.register(Registries.BLOCK, getId("stair_brown_wool"), STAIR_BROWN_WOOL);
-        Registry.register(Registries.BLOCK, getId("stair_green_wool"), STAIR_GREEN_WOOL);
-        Registry.register(Registries.BLOCK, getId("stair_red_wool"), STAIR_RED_WOOL);
+        registerBlock("stair_bright_white", STAIR_BRIGHT_WHITE);
+        registerBlock("stair_bright_black", STAIR_BRIGHT_BLACK);
+        registerBlock("stair_bright_orange", STAIR_BRIGHT_ORANGE);
+        registerBlock("stair_bright_magenta", STAIR_BRIGHT_MAGENTA);
+        registerBlock("stair_bright_yellow", STAIR_BRIGHT_YELLOW);
+        registerBlock("stair_bright_cyan", STAIR_BRIGHT_CYAN);
+        registerBlock("stair_bright_blue", STAIR_BRIGHT_BLUE);
+        registerBlock("stair_bright_green", STAIR_BRIGHT_GREEN);
+        registerBlock("stair_bright_red", STAIR_BRIGHT_RED);
+        registerBlock("stair_wool_white", STAIR_WOOL_WHITE);
+        registerBlock("stair_wool_orange", STAIR_WOOL_ORANGE);
+        registerBlock("stair_wool_magenta", STAIR_WOOL_MAGENTA);
+        registerBlock("stair_wool_light_blue", STAIR_WOOL_LIGHT_BLUE);
+        registerBlock("stair_wool_yellow", STAIR_WOOL_YELLOW);
+        registerBlock("stair_wool_lime", STAIR_WOOL_LIME);
+        registerBlock("stair_wool_pink", STAIR_WOOL_PINK);
+        registerBlock("stair_wool_gray", STAIR_WOOL_GRAY);
+        registerBlock("stair_wool_light_gray", STAIR_WOOL_LIGHT_GRAY);
+        registerBlock("stair_wool_cyan", STAIR_WOOL_CYAN);
+        registerBlock("stair_wool_purple", STAIR_WOOL_PURPLE);
+        registerBlock("stair_wool_blue", STAIR_WOOL_BLUE);
+        registerBlock("stair_wool_brown", STAIR_WOOL_BROWN);
+        registerBlock("stair_wool_green", STAIR_WOOL_GREEN);
+        registerBlock("stair_wool_red", STAIR_WOOL_RED);
     }
 
     private static void doBlockRegistery() {
-        registerItem("stair_white_bright", STAIR_WHITE_BRIGHT_ITEM);
-        registerItem("stair_black", STAIR_BLACK_ITEM);
-        registerItem("stair_orange_bright", STAIR_ORANGE_BRIGHT_ITEM);
-        registerItem("stair_magenta_bright", STAIR_MAGENTA_BRIGHT_ITEM);
-        registerItem("stair_yellow_bright", STAIR_YELLOW_BRIGHT_ITEM);
-        registerItem("stair_cyan_bright", STAIR_CYAN_BRIGHT_ITEM);
-        registerItem("stair_blue_bright", STAIR_BLUE_BRIGHT_ITEM);
-        registerItem("stair_green_bright", STAIR_GREEN_BRIGHT_ITEM);
-        registerItem("stair_red_bright", STAIR_RED_BRIGHT_ITEM);
-        registerItem("stair_white_wool", STAIR_WHITE_WOOL_ITEM);
-        registerItem("stair_orange_wool", STAIR_ORANGE_WOOL_ITEM);
-        registerItem("stair_magenta_wool", STAIR_MAGENTA_WOOL_ITEM);
-        registerItem("stair_light_blue_wool", STAIR_LIGHT_BLUE_WOOL_ITEM);
-        registerItem("stair_yellow_wool", STAIR_YELLOW_WOOL_ITEM);
-        registerItem("stair_lime_wool", STAIR_LIME_WOOL_ITEM);
-        registerItem("stair_pink_wool", STAIR_PINK_WOOL_ITEM);
-        registerItem("stair_gray_wool", STAIR_GRAY_WOOL_ITEM);
-        registerItem("stair_light_gray_wool", STAIR_LIGHT_GRAY_WOOL_ITEM);
-        registerItem("stair_cyan_wool", STAIR_CYAN_WOOL_ITEM);
-        registerItem("stair_purple_wool", STAIR_PURPLE_WOOL_ITEM);
-        registerItem("stair_blue_wool", STAIR_BLUE_WOOL_ITEM);
-        registerItem("stair_brown_wool", STAIR_BROWN_WOOL_ITEM);
-        registerItem("stair_green_wool", STAIR_GREEN_WOOL_ITEM);
-        registerItem("stair_red_wool", STAIR_RED_WOOL_ITEM);
+        registerItem("stair_bright_white", STAIR_BRIGHT_WHITE_ITEM);
+        registerItem("stair_bright_black", STAIR_BRIGHT_BLACK_ITEM);
+        registerItem("stair_bright_orange", STAIR_BRIGHT_ORANGE_ITEM);
+        registerItem("stair_bright_magenta", STAIR_BRIGHT_MAGENTA_ITEM);
+        registerItem("stair_bright_yellow", STAIR_BRIGHT_YELLOW_ITEM);
+        registerItem("stair_bright_cyan", STAIR_BRIGHT_CYAN_ITEM);
+        registerItem("stair_bright_blue", STAIR_BRIGHT_BLUE_ITEM);
+        registerItem("stair_bright_green", STAIR_BRIGHT_GREEN_ITEM);
+        registerItem("stair_bright_red", STAIR_BRIGHT_RED_ITEM);
+        registerItem("stair_wool_white", STAIR_WOOL_WHITE_ITEM);
+        registerItem("stair_wool_orange", STAIR_WOOL_ORANGE_ITEM);
+        registerItem("stair_wool_magenta", STAIR_WOOL_MAGENTA_ITEM);
+        registerItem("stair_wool_light_blue", STAIR_WOOL_LIGHT_BLUE_ITEM);
+        registerItem("stair_wool_yellow", STAIR_WOOL_YELLOW_ITEM);
+        registerItem("stair_wool_lime", STAIR_WOOL_LIME_ITEM);
+        registerItem("stair_wool_pink", STAIR_WOOL_PINK_ITEM);
+        registerItem("stair_wool_gray", STAIR_WOOL_GRAY_ITEM);
+        registerItem("stair_wool_light_gray", STAIR_WOOL_LIGHT_GRAY_ITEM);
+        registerItem("stair_wool_cyan", STAIR_WOOL_CYAN_ITEM);
+        registerItem("stair_wool_purple", STAIR_WOOL_PURPLE_ITEM);
+        registerItem("stair_wool_blue", STAIR_WOOL_BLUE_ITEM);
+        registerItem("stair_wool_brown", STAIR_WOOL_BROWN_ITEM);
+        registerItem("stair_wool_green", STAIR_WOOL_GREEN_ITEM);
+        registerItem("stair_wool_red", STAIR_WOOL_RED_ITEM);
     }
 
     private static void registerItem(String name, Item item) {
-        Registry.register(Registries.ITEM, getId(name), item);
-        ItemGroupEvents.modifyEntriesEvent(AntiBlocksReChiseled.itemGroup).register(entries -> entries.add(item));
+        ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, ABRCUtils.ident(name));
+        Registry.register(BuiltInRegistries.ITEM, itemKey, item);
+        CreativeModeTabEvents.modifyOutputEvent(AntiBlocksReChiseled.CREATIVE_MODE_TABS)
+                .register((tab) -> tab.accept(item));
     }
 
-    private static Identifier getId(String name) {
-        return Identifier.of(AntiBlocksReChiseled.MOD_ID, name);
+    private static void registerBlock(String name, Block block) {
+        ResourceKey<Block> blockKey = ResourceKey.create(Registries.BLOCK, ABRCUtils.ident(name));
+        Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
     }
 }

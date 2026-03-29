@@ -1,0 +1,6 @@
+{
+  "parent": "antiblocksrechiseled:block/full_bright",
+  "textures": {
+    "all": "antiblocksrechiseled:block/wool_green"
+  }
+}

@@ -1,20 +1,36 @@
 package net.manmaed.antiblocksrechiseled.blocks;
 
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
 import net.manmaed.antiblocksrechiseled.blocks.base.AntiBlock;
 import net.manmaed.antiblocksrechiseled.items.AntiBlockItem;
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
-
+import net.manmaed.antiblocksrechiseled.utils.ABRCUtils;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.entity.monster.Phantom;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 public class ABRCBrightColors {
 
+    public static void initialize() {}
+
+    public static Block register(String name, Block item) {
+        // Create the item key.
+        ResourceKey<Block> itemKey = ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(AntiBlocksReChiseled.MOD_ID, name));
+
+        // Register the item.
+        Registry.register(BuiltInRegistries.BLOCK, itemKey, item);
+        return item;
+    }
+
     //Pure
-    public static final Block BRIGHT_WHITE = new AntiBlock("bright_white");//"bright_white";
+    public static final Block BRIGHT_WHITE = new AntiBlock("bright_white");/*new AntiBlock("bright_white");*///"bright_white";
     public static final Block BRIGHT_ORANGE = new AntiBlock("bright_orange"); //"bright_orange", AntiBlock::new);
     public static final Block BRIGHT_MAGENTA = new AntiBlock("bright_magenta"); //"bright_magenta", AntiBlock::new);
     public static final Block BRIGHT_YELLOW = new AntiBlock("bright_yellow"); //"bright_yellow", AntiBlock::new);
@@ -22,7 +38,7 @@ public class ABRCBrightColors {
     public static final Block BRIGHT_BLUE = new AntiBlock("bright_blue"); //"bright_blue", AntiBlock::new);
     public static final Block BRIGHT_GREEN = new AntiBlock("bright_green"); //"bright_green", AntiBlock::new);
     public static final Block BRIGHT_RED = new AntiBlock("bright_red"); //"bright_red", AntiBlock::new);
-    public static final Block BRIGHT_BLACK = new AntiBlock("bright_black"); //"bright_black", AntiBlock::new);
+    public static final Block BRIGHT_BLACK = new AntiBlock("bright_black");
 
     //Borders
 
@@ -65,24 +81,24 @@ public class ABRCBrightColors {
         doBlockItemRegistery();
     }
     private static void doBlockRegistery() {
-        Registry.register(Registries.BLOCK, getId("bright_white"), BRIGHT_WHITE);
-        Registry.register(Registries.BLOCK, getId("bright_orange"), BRIGHT_ORANGE);
-        Registry.register(Registries.BLOCK, getId("bright_magenta"), BRIGHT_MAGENTA);
-        Registry.register(Registries.BLOCK, getId("bright_yellow"), BRIGHT_YELLOW);
-        Registry.register(Registries.BLOCK, getId("bright_cyan"), BRIGHT_CYAN);
-        Registry.register(Registries.BLOCK, getId("bright_blue"), BRIGHT_BLUE);
-        Registry.register(Registries.BLOCK, getId("bright_green"), BRIGHT_GREEN);
-        Registry.register(Registries.BLOCK, getId("bright_red"), BRIGHT_RED);
-        Registry.register(Registries.BLOCK, getId("bright_black"), BRIGHT_BLACK);
-        Registry.register(Registries.BLOCK, getId("bright_white_border"), BRIGHT_WHITE_BORDER);
-        Registry.register(Registries.BLOCK, getId("bright_orange_border"), BRIGHT_ORANGE_BORDER);
-        Registry.register(Registries.BLOCK, getId("bright_magenta_border"), BRIGHT_MAGENTA_BORDER);
-        Registry.register(Registries.BLOCK, getId("bright_yellow_border"), BRIGHT_YELLOW_BORDER);
-        Registry.register(Registries.BLOCK, getId("bright_cyan_border"), BRIGHT_CYAN_BORDER);
-        Registry.register(Registries.BLOCK, getId("bright_blue_border"), BRIGHT_BLUE_BORDER);
-        Registry.register(Registries.BLOCK, getId("bright_green_border"), BRIGHT_GREEN_BORDER);
-        Registry.register(Registries.BLOCK, getId("bright_red_border"), BRIGHT_RED_BORDER);
-        Registry.register(Registries.BLOCK, getId("bright_black_border"), BRIGHT_BLACK_BORDER);
+        registerBlock("bright_white", BRIGHT_WHITE);
+        registerBlock("bright_orange", BRIGHT_ORANGE);
+        registerBlock("bright_magenta", BRIGHT_MAGENTA);
+        registerBlock("bright_yellow", BRIGHT_YELLOW);
+        registerBlock("bright_cyan", BRIGHT_CYAN);
+        registerBlock("bright_blue", BRIGHT_BLUE);
+        registerBlock("bright_green", BRIGHT_GREEN);
+        registerBlock("bright_red", BRIGHT_RED);
+        registerBlock("bright_black", BRIGHT_BLACK);
+        registerBlock("bright_white_border", BRIGHT_WHITE_BORDER);
+        registerBlock("bright_orange_border", BRIGHT_ORANGE_BORDER);
+        registerBlock("bright_magenta_border", BRIGHT_MAGENTA_BORDER);
+        registerBlock("bright_yellow_border", BRIGHT_YELLOW_BORDER);
+        registerBlock("bright_cyan_border", BRIGHT_CYAN_BORDER);
+        registerBlock("bright_blue_border", BRIGHT_BLUE_BORDER);
+        registerBlock("bright_green_border", BRIGHT_GREEN_BORDER);
+        registerBlock("bright_red_border", BRIGHT_RED_BORDER);
+        registerBlock("bright_black_border", BRIGHT_BLACK_BORDER);
     }
 
     private static void doBlockItemRegistery() {
@@ -108,11 +124,16 @@ public class ABRCBrightColors {
 
     }
 
+
     private static void registerItem(String name, Item item) {
-        Registry.register(Registries.ITEM, getId(name), item);
-        ItemGroupEvents.modifyEntriesEvent(AntiBlocksReChiseled.itemGroup).register(entries -> entries.add(item));
+        ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, ABRCUtils.ident(name));
+        Registry.register(BuiltInRegistries.ITEM, itemKey, item);
+        CreativeModeTabEvents.modifyOutputEvent(AntiBlocksReChiseled.CREATIVE_MODE_TABS)
+                .register((tab) -> tab.accept(item));
     }
-    private static Identifier getId(String name) {
-        return Identifier.of(AntiBlocksReChiseled.MOD_ID, name);
+
+    private static void registerBlock(String name, Block block) {
+        ResourceKey<Block> blockKey = ResourceKey.create(Registries.BLOCK, ABRCUtils.ident(name));
+        Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
     }
 }

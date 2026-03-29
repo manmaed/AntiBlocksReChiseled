@@ -1,83 +1,88 @@
 package net.manmaed.antiblocksrechiseled.blocks.base;
 
+
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
-import net.minecraft.block.*;
-import net.minecraft.block.enums.NoteBlockInstrument;
-import net.minecraft.block.piston.PistonBehavior;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.Properties;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.PressurePlateBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.phys.AABB;
+
+import java.util.List;
 
 public class AntiPressurePlate extends PressurePlateBlock {
 
 
-    public static final BooleanProperty POWERED = Properties.POWERED;
-    private final AntiPressurePlate.ActivationRule activationRule;
+    public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
+    private final AntiPressurePlate.Sensitivity sensitivity;
     public AntiPressurePlate(String name) {
-        super(BlockSetType.STONE ,Settings.create()
-                .mapColor(MapColor.STONE_GRAY)
-                .solid()
-                .instrument(NoteBlockInstrument.BASEDRUM)
-                .requiresTool()
-                .noCollision()
-                .strength(0.5F)
-                .pistonBehavior(PistonBehavior.DESTROY)
-                .luminance(light -> 15)
-                .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(AntiBlocksReChiseled.MOD_ID, name))));
-        this.setDefaultState((BlockState) ((BlockState) this.stateManager.getDefaultState()).with(POWERED, false));
-        this.activationRule = ActivationRule.PLAYERS;
-        ;
+        super(BlockSetType.STONE, Properties.of().mapColor(MapColor.STONE).forceSolidOn().instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().noCollision().strength(0.5F).pushReaction(PushReaction.DESTROY).lightLevel((light) -> {
+            return 15;
+        }).setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(AntiBlocksReChiseled.MOD_ID, name))));
+        this.registerDefaultState(this.stateDefinition.any().setValue(POWERED, Boolean.valueOf(false)));
+        this.sensitivity = Sensitivity.PLAYERS;
     }
 
     @Override
-    protected int getRedstoneOutput(BlockState state) {
-        return state.get(POWERED) ? 15 : 0;
+    protected int getSignalForState(BlockState blockState) {
+        return blockState.getValue(POWERED) ? 15 : 0;
     }
 
     @Override
-    protected BlockState setRedstoneOutput(BlockState state, int rsOut) {
-        return (BlockState)state.with(POWERED, rsOut > 0) ;
+    protected BlockState setSignalForState(BlockState blockState, int power) {
+        return blockState.setValue(POWERED, Boolean.valueOf(power > 0));
     }
 
 
     @Override
-    protected int getRedstoneOutput(World world, BlockPos pos) {
-        Class var10000;
-        switch (this.activationRule) {
+    protected int getSignalStrength(Level level, BlockPos blockPos) {
+        AABB aabb = TOUCH_AABB.move(blockPos);
+        List<? extends Entity> list;
+        switch (this.sensitivity) {
             case EVERYTHING:
-                var10000 = Entity.class;
+                list = level.getEntities((Entity) null, aabb);
                 break;
             case MOBS:
-                var10000 = LivingEntity.class;
+                list = level.getEntitiesOfClass(LivingEntity.class, aabb);
                 break;
             case PLAYERS:
-                var10000 = PlayerEntity.class;
+                list = level.getEntitiesOfClass(Player.class, aabb);
                 break;
             default:
-                throw new IncompatibleClassChangeError();
+                return 0;
         }
-
-        Class class_ = var10000;
-        return getEntityCount(world, BOX.offset(pos), class_) > 0 ? 15 : 0;
+        if(!list.isEmpty()) {
+            for (Entity entity : list) {
+                if(!entity.isIgnoringBlockTriggers()) {
+                    return 15;
+                }
+            }
+        }
+        return 0;
     }
 
     @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(POWERED);
     }
 
-    public static enum ActivationRule {
+    public static enum Sensitivity  {
         EVERYTHING,
         MOBS,
         PLAYERS;
-        private ActivationRule() {}
     }
 }

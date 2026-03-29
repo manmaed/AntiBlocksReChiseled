@@ -1,13 +1,11 @@
 plugins {
-    id 'fabric-loom' version '1.8-SNAPSHOT'
+    id 'net.fabricmc.fabric-loom' version "${loom_version}"
     id 'maven-publish'
-    id "me.modmuss50.mod-publish-plugin" version "0.4.5"
+    id "me.modmuss50.mod-publish-plugin" version "${modmuss_publish}"
 }
 
 def ENV = System.getenv()
-version = "${ENV.GITHUB_RUN_NUMBER}" ? "${mod_version}.${ENV.GITHUB_RUN_NUMBER}" : "${mod_version}.nobuildnumber"
-group = project.maven_group
-
+version = "${ENV.GITHUB_RUN_NUMBER}" ? "${minecraft_version}.${mod_version}.${ENV.GITHUB_RUN_NUMBER}" : "${minecraft_version}.${mod_version}.nobuildnumber"
 base {
     archivesName = project.archives_base_name + "-fabric"
 }
@@ -24,6 +22,17 @@ repositories {
             includeGroup "curse.maven"
         }
     }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
 }
 
 loom {
@@ -35,56 +44,47 @@ loom {
             sourceSet sourceSets.client
         }
     }
-    runs {
-        // This adds a new gradle task that runs the datagen API: "gradlew runDatagen"
-        datagen {
-            inherit server
-            name "Data Generation"
-            vmArg "-Dfabric-api.datagen"
-            vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
-            vmArg "-Dfabric-api.datagen.modid=antiblocksrechiseled"
 
-            runDir "build/datagen"
-        }
+}
+
+fabricApi {
+    configureDataGeneration {
+        client = true
     }
 }
 
 dependencies {
-    // To change the versions see the gradle.properties file
-    minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings "net.fabricmc:yarn:${project.minecraft_version}+${project.yarn_mappings}:v2"
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+   // To change the versions see the gradle.properties file
+	minecraft "com.mojang:minecraft:${minecraft_version}"
+	
+	implementation "net.fabricmc:fabric-loader:${loader_version}"
 
-    // Fabric API. This is technically optional, but you probably want it anyway.
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}+${project.minecraft_version}"
-
-    //modImplementation "curse.maven:ctm_refabricated-${project.ctm_fabric_pid}:${project.ctm_fabric_fid}"
-    //modImplementation "curse.maven:modmenu-${project.modmenu_pid}:${project.modmenu_fid}"
-
-    // Uncomment the following line to enable the deprecated Fabric API modules.
-    // These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
-
-    // modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
-}
-sourceSets {
-    main {
-        resources {
-            srcDirs += [
-                    'src/main/generated'
-            ]
-        }
+	// Fabric API. This is technically optional, but you probably want it anyway.
+	implementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}+${minecraft_version}"
+	
+   if(use_fct.equals("true")) {
+        //runtimeOnly "curse.maven:fct-${fct_id}:${fct_file_id}"
+        modImplementation "maven.modrinth:fusion-connected-textures:${fusion_version}-neoforge-mc${minecraft_version}"
     }
 }
+
 processResources {
-    inputs.property "version", project.version
+    var replaceProperties = [
+            version: version,
+            loader_version: loader_version,
+            minecraft_version: minecraft_version
+    ]
+
+    inputs.properties replaceProperties
+
 
     filesMatching("fabric.mod.json") {
-        expand "version": project.version
+        expand replaceProperties
     }
 }
 
 tasks.withType(JavaCompile).configureEach {
-    it.options.release = 21
+    it.options.release = 25
 }
 
 java {
@@ -92,21 +92,24 @@ java {
     // if it is present.
     // If you remove this line, sources will not be generated.
     //withSourcesJar()
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
 
 }
 
 jar {
+    inputs.property "archivesName", project.base.archivesName
+
     from("LICENSE") {
-        rename { "${it}_${project.archivesBaseName}" }
+        rename { "${it}_${inputs.properties.archivesName}"}
     }
 }
 
 // configure the maven publication
 publishing {
     publications {
-        mavenJava(MavenPublication) {
+        create("mavenJava", MavenPublication) {
+            artifactId = project.archives_base_name
             from components.java
         }
     }
@@ -122,15 +125,15 @@ publishing {
 
 publishMods {
     dryRun = (providers.environmentVariable("CURSE_DEPLOY").getOrNull() || providers.environmentVariable("MODRINTH_DEPLOY").getOrNull()) == null
-    file = remapJar.archiveFile
+    file = jar.archiveFile
     modLoaders.add("fabric")
     type = BETA
-    changelog = "changeme"
+    changelog = file("./changelog.md").text
     displayName = "${mod_name} v${project.version} - Fabric - ${minecraft_version}"
     curseforge {
         accessToken = providers.environmentVariable("CURSE_DEPLOY")
         projectId = project.curseforge_id
-        minecraftVersions.add("Java 21")
+        javaVersions.add(JavaVersion.VERSION_25)
         minecraftVersions.add("${minecraft_version}")
         requires {
             slug = 'fabric-api'

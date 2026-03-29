@@ -1,20 +1,22 @@
 package net.manmaed.antiblocksrechiseled.blocks.base;
 
+
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
-import net.minecraft.block.MapColor;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.block.enums.NoteBlockInstrument;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.material.MapColor;
 
 public class AntiSlabBlock extends SlabBlock {
     public AntiSlabBlock(String name) {
-        super(Settings.create()
-                .mapColor(MapColor.STONE_GRAY)
+        super(Properties.of()
+                .mapColor(MapColor.STONE)
                 .instrument(NoteBlockInstrument.BASEDRUM)
-                .requiresTool()
+                .requiresCorrectToolForDrops()
                 .strength(2.0F, 6.0F)
-                .luminance(light -> 15).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(AntiBlocksReChiseled.MOD_ID, name))));
+                .lightLevel(_ -> 15)
+                .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(AntiBlocksReChiseled.MOD_ID, name))));
     }
 }

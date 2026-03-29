@@ -1,14 +1,16 @@
 package net.manmaed.antiblocksrechiseled.blocks;
 
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
 import net.manmaed.antiblocksrechiseled.blocks.base.AntiBlock;
 import net.manmaed.antiblocksrechiseled.items.AntiBlockItem;
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
+import net.manmaed.antiblocksrechiseled.utils.ABRCUtils;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 public class ABRCWoolColors {
 
@@ -85,36 +87,36 @@ public class ABRCWoolColors {
         doBlockItemRegistery();
     }
     private static void doBlockRegistery() {
-        Registry.register(Registries.BLOCK, getId("wool_white"), WOOL_WHITE);
-        Registry.register(Registries.BLOCK, getId("wool_orange"), WOOL_ORANGE);
-        Registry.register(Registries.BLOCK, getId("wool_magenta"), WOOL_MAGENTA);
-        Registry.register(Registries.BLOCK, getId("wool_light_blue"), WOOL_LIGHT_BLUE);
-        Registry.register(Registries.BLOCK, getId("wool_yellow"), WOOL_YELLOW);
-        Registry.register(Registries.BLOCK, getId("wool_lime"), WOOL_LIME);
-        Registry.register(Registries.BLOCK, getId("wool_pink"), WOOL_PINK);
-        Registry.register(Registries.BLOCK, getId("wool_gray"), WOOL_GRAY);
-        Registry.register(Registries.BLOCK, getId("wool_light_gray"), WOOL_LIGHT_GRAY);
-        Registry.register(Registries.BLOCK, getId("wool_cyan"), WOOL_CYAN);
-        Registry.register(Registries.BLOCK, getId("wool_purple"), WOOL_PURPLE);
-        Registry.register(Registries.BLOCK, getId("wool_blue"), WOOL_BLUE);
-        Registry.register(Registries.BLOCK, getId("wool_brown"), WOOL_BROWN);
-        Registry.register(Registries.BLOCK, getId("wool_green"), WOOL_GREEN);
-        Registry.register(Registries.BLOCK, getId("wool_red"), WOOL_RED);
-        Registry.register(Registries.BLOCK, getId("wool_white_border"), WOOL_WHITE_BORDER);
-        Registry.register(Registries.BLOCK, getId("wool_orange_border"), WOOL_ORANGE_BORDER);
-        Registry.register(Registries.BLOCK, getId("wool_magenta_border"), WOOL_MAGENTA_BORDER);
-        Registry.register(Registries.BLOCK, getId("wool_light_blue_border"), WOOL_LIGHT_BLUE_BORDER);
-        Registry.register(Registries.BLOCK, getId("wool_yellow_border"), WOOL_YELLOW_BORDER);
-        Registry.register(Registries.BLOCK, getId("wool_lime_border"), WOOL_LIME_BORDER);
-        Registry.register(Registries.BLOCK, getId("wool_pink_border"), WOOL_PINK_BORDER);
-        Registry.register(Registries.BLOCK, getId("wool_gray_border"), WOOL_GRAY_BORDER);
-        Registry.register(Registries.BLOCK, getId("wool_light_gray_border"), WOOL_LIGHT_GRAY_BORDER);
-        Registry.register(Registries.BLOCK, getId("wool_cyan_border"), WOOL_CYAN_BORDER);
-        Registry.register(Registries.BLOCK, getId("wool_purple_border"), WOOL_PURPLE_BORDER);
-        Registry.register(Registries.BLOCK, getId("wool_blue_border"), WOOL_BLUE_BORDER);
-        Registry.register(Registries.BLOCK, getId("wool_brown_border"), WOOL_BROWN_BORDER);
-        Registry.register(Registries.BLOCK, getId("wool_green_border"), WOOL_GREEN_BORDER);
-        Registry.register(Registries.BLOCK, getId("wool_red_border"), WOOL_RED_BORDER);
+        registerBlock("wool_white", WOOL_WHITE);
+        registerBlock("wool_orange", WOOL_ORANGE);
+        registerBlock("wool_magenta", WOOL_MAGENTA);
+        registerBlock("wool_light_blue", WOOL_LIGHT_BLUE);
+        registerBlock("wool_yellow", WOOL_YELLOW);
+        registerBlock("wool_lime", WOOL_LIME);
+        registerBlock("wool_pink", WOOL_PINK);
+        registerBlock("wool_gray", WOOL_GRAY);
+        registerBlock("wool_light_gray", WOOL_LIGHT_GRAY);
+        registerBlock("wool_cyan", WOOL_CYAN);
+        registerBlock("wool_purple", WOOL_PURPLE);
+        registerBlock("wool_blue", WOOL_BLUE);
+        registerBlock("wool_brown", WOOL_BROWN);
+        registerBlock("wool_green", WOOL_GREEN);
+        registerBlock("wool_red", WOOL_RED);
+        registerBlock("wool_white_border", WOOL_WHITE_BORDER);
+        registerBlock("wool_orange_border", WOOL_ORANGE_BORDER);
+        registerBlock("wool_magenta_border", WOOL_MAGENTA_BORDER);
+        registerBlock("wool_light_blue_border", WOOL_LIGHT_BLUE_BORDER);
+        registerBlock("wool_yellow_border", WOOL_YELLOW_BORDER);
+        registerBlock("wool_lime_border", WOOL_LIME_BORDER);
+        registerBlock("wool_pink_border", WOOL_PINK_BORDER);
+        registerBlock("wool_gray_border", WOOL_GRAY_BORDER);
+        registerBlock("wool_light_gray_border", WOOL_LIGHT_GRAY_BORDER);
+        registerBlock("wool_cyan_border", WOOL_CYAN_BORDER);
+        registerBlock("wool_purple_border", WOOL_PURPLE_BORDER);
+        registerBlock("wool_blue_border", WOOL_BLUE_BORDER);
+        registerBlock("wool_brown_border", WOOL_BROWN_BORDER);
+        registerBlock("wool_green_border", WOOL_GREEN_BORDER);
+        registerBlock("wool_red_border", WOOL_RED_BORDER);
     }
 
     private static void doBlockItemRegistery() {
@@ -151,11 +153,14 @@ public class ABRCWoolColors {
     }
 
     private static void registerItem(String name, Item item) {
-        Registry.register(Registries.ITEM, getId(name), item);
-        ItemGroupEvents.modifyEntriesEvent(AntiBlocksReChiseled.itemGroup).register(entries -> entries.add(item));
+        ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, ABRCUtils.ident(name));
+        Registry.register(BuiltInRegistries.ITEM, itemKey, item);
+        CreativeModeTabEvents.modifyOutputEvent(AntiBlocksReChiseled.CREATIVE_MODE_TABS)
+                .register((tab) -> tab.accept(item));
     }
 
-    private static Identifier getId(String name) {
-        return Identifier.of(AntiBlocksReChiseled.MOD_ID, name);
+    private static void registerBlock(String name, Block block) {
+        ResourceKey<Block> blockKey = ResourceKey.create(Registries.BLOCK, ABRCUtils.ident(name));
+        Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
     }
 }

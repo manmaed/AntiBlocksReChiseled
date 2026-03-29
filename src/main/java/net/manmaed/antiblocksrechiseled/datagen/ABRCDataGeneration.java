@@ -7,17 +7,15 @@ public class ABRCDataGeneration implements DataGeneratorEntrypoint {
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         FabricDataGenerator.Pack generator = fabricDataGenerator.createPack();
-        //generator.addProvider(ModModelProvider::new);
         generator.addProvider(((output, registriesFuture) -> {
             ModBlocksTagsProvider blocksTagsProvider = new ModBlocksTagsProvider(output, registriesFuture);
             generator.addProvider((out, future) -> new ModItemsTagsProvider(out, future, blocksTagsProvider));
             return blocksTagsProvider;
         }));
-        /*generator.addProvider(ModBlocksTagsProvider::new);
-        generator.addProvider(ModItemsTagsProvider::new);*/
-        generator.addProvider(ModLangProvider::new);
+        ModLangProvider.addTranslations(generator);
         generator.addProvider(ModLootTablesProvider::new);
-        generator.addProvider(ModRecipeProvider.Runner::new);
+        generator.addProvider(ModRecipeProvider::new);
+        //generator.addProvider(ModModelProvider::new);
 
     }
 }

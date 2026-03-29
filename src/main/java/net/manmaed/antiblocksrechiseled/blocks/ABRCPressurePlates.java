@@ -1,14 +1,17 @@
 package net.manmaed.antiblocksrechiseled.blocks;
 
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
 import net.manmaed.antiblocksrechiseled.blocks.base.AntiPressurePlate;
 import net.manmaed.antiblocksrechiseled.items.AntiBlockItem;
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
+import net.manmaed.antiblocksrechiseled.utils.ABRCUtils;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 public class ABRCPressurePlates {
 
@@ -70,30 +73,30 @@ public class ABRCPressurePlates {
     }
 
     private static void doBlockItemRegistery() {
-        Registry.register(Registries.BLOCK, getId("pressure_plate_bright_white"), PRESSURE_PLATE_BRIGHT_WHITE);
-        Registry.register(Registries.BLOCK, getId("pressure_plate_bright_orange"), PRESSURE_PLATE_BRIGHT_ORANGE);
-        Registry.register(Registries.BLOCK, getId("pressure_plate_bright_magenta"), PRESSURE_PLATE_BRIGHT_MAGENTA);
-        Registry.register(Registries.BLOCK, getId("pressure_plate_bright_yellow"), PRESSURE_PLATE_BRIGHT_YELLOW);
-        Registry.register(Registries.BLOCK, getId("pressure_plate_bright_cyan"), PRESSURE_PLATE_BRIGHT_CYAN);
-        Registry.register(Registries.BLOCK, getId("pressure_plate_bright_blue"), PRESSURE_PLATE_BRIGHT_BLUE);
-        Registry.register(Registries.BLOCK, getId("pressure_plate_bright_green"), PRESSURE_PLATE_BRIGHT_GREEN);
-        Registry.register(Registries.BLOCK, getId("pressure_plate_bright_red"), PRESSURE_PLATE_BRIGHT_RED);
-        Registry.register(Registries.BLOCK, getId("pressure_plate_bright_black"), PRESSURE_PLATE_BRIGHT_BLACK);
-        Registry.register(Registries.BLOCK, getId("pressure_plate_wool_white"), PRESSURE_PLATE_WOOL_WHITE);
-        Registry.register(Registries.BLOCK, getId("pressure_plate_wool_orange"), PRESSURE_PLATE_WOOL_ORANGE);
-        Registry.register(Registries.BLOCK, getId("pressure_plate_wool_magenta"), PRESSURE_PLATE_WOOL_MAGENTA);
-        Registry.register(Registries.BLOCK, getId("pressure_plate_wool_light_blue"), PRESSURE_PLATE_WOOL_LIGHT_BLUE);
-        Registry.register(Registries.BLOCK, getId("pressure_plate_wool_yellow"), PRESSURE_PLATE_WOOL_YELLOW);
-        Registry.register(Registries.BLOCK, getId("pressure_plate_wool_lime"), PRESSURE_PLATE_WOOL_LIME);
-        Registry.register(Registries.BLOCK, getId("pressure_plate_wool_pink"), PRESSURE_PLATE_WOOL_PINK);
-        Registry.register(Registries.BLOCK, getId("pressure_plate_wool_gray"), PRESSURE_PLATE_WOOL_GRAY);
-        Registry.register(Registries.BLOCK, getId("pressure_plate_wool_light_gray"), PRESSURE_PLATE_WOOL_LIGHT_GRAY);
-        Registry.register(Registries.BLOCK, getId("pressure_plate_wool_cyan"), PRESSURE_PLATE_WOOL_CYAN);
-        Registry.register(Registries.BLOCK, getId("pressure_plate_wool_purple"), PRESSURE_PLATE_WOOL_PURPLE);
-        Registry.register(Registries.BLOCK, getId("pressure_plate_wool_blue"), PRESSURE_PLATE_WOOL_BLUE);
-        Registry.register(Registries.BLOCK, getId("pressure_plate_wool_brown"), PRESSURE_PLATE_WOOL_BROWN);
-        Registry.register(Registries.BLOCK, getId("pressure_plate_wool_green"), PRESSURE_PLATE_WOOL_GREEN);
-        Registry.register(Registries.BLOCK, getId("pressure_plate_wool_red"), PRESSURE_PLATE_WOOL_RED);
+        registerBlock("pressure_plate_bright_white", PRESSURE_PLATE_BRIGHT_WHITE);
+        registerBlock("pressure_plate_bright_orange", PRESSURE_PLATE_BRIGHT_ORANGE);
+        registerBlock("pressure_plate_bright_magenta", PRESSURE_PLATE_BRIGHT_MAGENTA);
+        registerBlock("pressure_plate_bright_yellow", PRESSURE_PLATE_BRIGHT_YELLOW);
+        registerBlock("pressure_plate_bright_cyan", PRESSURE_PLATE_BRIGHT_CYAN);
+        registerBlock("pressure_plate_bright_blue", PRESSURE_PLATE_BRIGHT_BLUE);
+        registerBlock("pressure_plate_bright_green", PRESSURE_PLATE_BRIGHT_GREEN);
+        registerBlock("pressure_plate_bright_red", PRESSURE_PLATE_BRIGHT_RED);
+        registerBlock("pressure_plate_bright_black", PRESSURE_PLATE_BRIGHT_BLACK);
+        registerBlock("pressure_plate_wool_white", PRESSURE_PLATE_WOOL_WHITE);
+        registerBlock("pressure_plate_wool_orange", PRESSURE_PLATE_WOOL_ORANGE);
+        registerBlock("pressure_plate_wool_magenta", PRESSURE_PLATE_WOOL_MAGENTA);
+        registerBlock("pressure_plate_wool_light_blue", PRESSURE_PLATE_WOOL_LIGHT_BLUE);
+        registerBlock("pressure_plate_wool_yellow", PRESSURE_PLATE_WOOL_YELLOW);
+        registerBlock("pressure_plate_wool_lime", PRESSURE_PLATE_WOOL_LIME);
+        registerBlock("pressure_plate_wool_pink", PRESSURE_PLATE_WOOL_PINK);
+        registerBlock("pressure_plate_wool_gray", PRESSURE_PLATE_WOOL_GRAY);
+        registerBlock("pressure_plate_wool_light_gray", PRESSURE_PLATE_WOOL_LIGHT_GRAY);
+        registerBlock("pressure_plate_wool_cyan", PRESSURE_PLATE_WOOL_CYAN);
+        registerBlock("pressure_plate_wool_purple", PRESSURE_PLATE_WOOL_PURPLE);
+        registerBlock("pressure_plate_wool_blue", PRESSURE_PLATE_WOOL_BLUE);
+        registerBlock("pressure_plate_wool_brown", PRESSURE_PLATE_WOOL_BROWN);
+        registerBlock("pressure_plate_wool_green", PRESSURE_PLATE_WOOL_GREEN);
+        registerBlock("pressure_plate_wool_red", PRESSURE_PLATE_WOOL_RED);
     }
 
     private static void doBlockRegistery() {
@@ -123,12 +126,15 @@ public class ABRCPressurePlates {
         registerItem("pressure_plate_wool_red", PRESSURE_PLATE_WOOL_RED_ITEM);
     }
 
-    private static void registerItem(String name, Item item) {
-        Registry.register(Registries.ITEM, getId(name), item);
-        ItemGroupEvents.modifyEntriesEvent(AntiBlocksReChiseled.itemGroup).register(entries -> entries.add(item));
+    private static void registerItem(String name, net.minecraft.world.item.Item item) {
+        ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, ABRCUtils.ident(name));
+        Registry.register(BuiltInRegistries.ITEM, itemKey, item);
+        CreativeModeTabEvents.modifyOutputEvent(AntiBlocksReChiseled.CREATIVE_MODE_TABS)
+                .register((tab) -> tab.accept(item));
     }
 
-    private static Identifier getId(String name) {
-        return Identifier.of(AntiBlocksReChiseled.MOD_ID, name);
+    private static void registerBlock(String name, net.minecraft.world.level.block.Block block) {
+        ResourceKey<net.minecraft.world.level.block.Block> blockKey = ResourceKey.create(Registries.BLOCK, ABRCUtils.ident(name));
+        Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
     }
 }

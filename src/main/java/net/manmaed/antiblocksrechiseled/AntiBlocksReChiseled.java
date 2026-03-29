@@ -1,36 +1,36 @@
 package net.manmaed.antiblocksrechiseled;
 
+
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.manmaed.antiblocksrechiseled.blocks.*;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
+import net.manmaed.antiblocksrechiseled.utils.ABRCUtils;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class AntiBlocksReChiseled implements ModInitializer {
 
     public static final String MOD_ID = "antiblocksrechiseled";
 
 
-    public static final RegistryKey<ItemGroup> itemGroup = RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier.of(MOD_ID, "item_group"));
-
+    public static final ResourceKey<CreativeModeTab> CREATIVE_MODE_TABS = ResourceKey.create(BuiltInRegistries.CREATIVE_MODE_TAB.key(), ABRCUtils.ident("creative_tab"));
+    public static final CreativeModeTab ABRC_TAB = FabricCreativeModeTab.builder()
+            .icon(() -> new ItemStack(ABRCBrightColors.BRIGHT_WHITE_BORDER))
+            .title(Component.translatable("itemGroup." + MOD_ID))
+            .build();
 
     @Override
     public void onInitialize() {
-        Registry.register(Registries.ITEM_GROUP, itemGroup, FabricItemGroup.builder()
-                .icon(() -> new ItemStack(ABRCBrightColors.BRIGHT_WHITE_BORDER.asItem()))
-                .displayName(Text.translatable("itemGroup." + MOD_ID))
-                .build());
-        ABRCWoolColors.doRegistery();
-        ABRCBrightColors.doRegistery();
-        ABRCSlabs.doRegistery();
-        ABRCStairs.doRegistery();
-        ABRCButtons.doRegistery();
-        ABRCPressurePlates.doRegistery();
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, CREATIVE_MODE_TABS, ABRC_TAB);
+        ABRCBlocksAndItems.init();
     }
 }

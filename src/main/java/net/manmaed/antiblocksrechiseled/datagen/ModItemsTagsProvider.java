@@ -1,23 +1,21 @@
 package net.manmaed.antiblocksrechiseled.datagen;
 
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.manmaed.antiblocksrechiseled.blocks.*;
 import net.manmaed.antiblocksrechiseled.tag.ABRCTags;
-import net.minecraft.block.Block;
-import net.minecraft.data.server.tag.ItemTagProvider;
-import net.minecraft.item.Item;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.registry.tag.ItemTags;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
+import org.jspecify.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ModItemsTagsProvider extends FabricTagProvider.ItemTagProvider {
+public class ModItemsTagsProvider extends FabricTagsProvider.ItemTagsProvider {
 
-    public ModItemsTagsProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> completableFuture, @Nullable BlockTagProvider blockTagProvider) {
-        super(output, completableFuture, blockTagProvider);
+    public ModItemsTagsProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture, @Nullable BlockTagsProvider blockTagsProvider) {
+        super(output, registryLookupFuture, blockTagsProvider);
     }
 
     public static final Item[] BRIGHT_BLOCKS_WITH_BORDER = {
@@ -83,57 +81,57 @@ public class ModItemsTagsProvider extends FabricTagProvider.ItemTagProvider {
 
     public static final Item[] SLABS = {
             //Slabs
-            ABRCSlabs.SLAB_WHITE_BRIGHT_ITEM,
-            ABRCSlabs.SLAB_BLACK_ITEM,
-            ABRCSlabs.SLAB_ORANGE_BRIGHT_ITEM,
-            ABRCSlabs.SLAB_MAGENTA_BRIGHT_ITEM,
-            ABRCSlabs.SLAB_YELLOW_BRIGHT_ITEM,
-            ABRCSlabs.SLAB_CYAN_BRIGHT_ITEM,
-            ABRCSlabs.SLAB_BLUE_BRIGHT_ITEM,
-            ABRCSlabs.SLAB_GREEN_BRIGHT_ITEM,
-            ABRCSlabs.SLAB_RED_BRIGHT_ITEM,
-            ABRCSlabs.SLAB_WHITE_WOOL_ITEM,
-            ABRCSlabs.SLAB_ORANGE_WOOL_ITEM,
-            ABRCSlabs.SLAB_MAGENTA_WOOL_ITEM,
-            ABRCSlabs.SLAB_LIGHT_BLUE_WOOL_ITEM,
-            ABRCSlabs.SLAB_YELLOW_WOOL_ITEM,
-            ABRCSlabs.SLAB_LIME_WOOL_ITEM,
-            ABRCSlabs.SLAB_PINK_WOOL_ITEM,
-            ABRCSlabs.SLAB_GRAY_WOOL_ITEM,
-            ABRCSlabs.SLAB_LIGHT_GRAY_WOOL_ITEM,
-            ABRCSlabs.SLAB_CYAN_WOOL_ITEM,
-            ABRCSlabs.SLAB_PURPLE_WOOL_ITEM,
-            ABRCSlabs.SLAB_BLUE_WOOL_ITEM,
-            ABRCSlabs.SLAB_BROWN_WOOL_ITEM,
-            ABRCSlabs.SLAB_GREEN_WOOL_ITEM,
-            ABRCSlabs.SLAB_RED_WOOL_ITEM
+            ABRCSlabs.SLAB_BRIGHT_WHITE_ITEM,
+            ABRCSlabs.SLAB_BRIGHT_BLACK_ITEM,
+            ABRCSlabs.SLAB_BRIGHT_ORANGE_ITEM,
+            ABRCSlabs.SLAB_BRIGHT_MAGENTA_ITEM,
+            ABRCSlabs.SLAB_BRIGHT_YELLOW_ITEM,
+            ABRCSlabs.SLAB_BRIGHT_CYAN_ITEM,
+            ABRCSlabs.SLAB_BRIGHT_BLUE_ITEM,
+            ABRCSlabs.SLAB_BRIGHT_GREEN_ITEM,
+            ABRCSlabs.SLAB_BRIGHT_RED_ITEM,
+            ABRCSlabs.SLAB_WOOL_WHITE_ITEM,
+            ABRCSlabs.SLAB_WOOL_ORANGE_ITEM,
+            ABRCSlabs.SLAB_WOOL_MAGENTA_ITEM,
+            ABRCSlabs.SLAB_WOOL_LIGHT_BLUE_ITEM,
+            ABRCSlabs.SLAB_WOOL_YELLOW_ITEM,
+            ABRCSlabs.SLAB_WOOL_LIME_ITEM,
+            ABRCSlabs.SLAB_WOOL_PINK_ITEM,
+            ABRCSlabs.SLAB_WOOL_GRAY_ITEM,
+            ABRCSlabs.SLAB_WOOL_LIGHT_GRAY_ITEM,
+            ABRCSlabs.SLAB_WOOL_CYAN_ITEM,
+            ABRCSlabs.SLAB_WOOL_PURPLE_ITEM,
+            ABRCSlabs.SLAB_WOOL_BLUE_ITEM,
+            ABRCSlabs.SLAB_WOOL_BROWN_ITEM,
+            ABRCSlabs.SLAB_WOOL_GREEN_ITEM,
+            ABRCSlabs.SLAB_WOOL_RED_ITEM
     };
     public static final Item[] STAIRS = {
             //Stairs
-            ABRCStairs.STAIR_WHITE_BRIGHT_ITEM,
-            ABRCStairs.STAIR_BLACK_ITEM,
-            ABRCStairs.STAIR_ORANGE_BRIGHT_ITEM,
-            ABRCStairs.STAIR_MAGENTA_BRIGHT_ITEM,
-            ABRCStairs.STAIR_YELLOW_BRIGHT_ITEM,
-            ABRCStairs.STAIR_CYAN_BRIGHT_ITEM,
-            ABRCStairs.STAIR_BLUE_BRIGHT_ITEM,
-            ABRCStairs.STAIR_GREEN_BRIGHT_ITEM,
-            ABRCStairs.STAIR_RED_BRIGHT_ITEM,
-            ABRCStairs.STAIR_WHITE_WOOL_ITEM,
-            ABRCStairs.STAIR_ORANGE_WOOL_ITEM,
-            ABRCStairs.STAIR_MAGENTA_WOOL_ITEM,
-            ABRCStairs.STAIR_LIGHT_BLUE_WOOL_ITEM,
-            ABRCStairs.STAIR_YELLOW_WOOL_ITEM,
-            ABRCStairs.STAIR_LIME_WOOL_ITEM,
-            ABRCStairs.STAIR_PINK_WOOL_ITEM,
-            ABRCStairs.STAIR_GRAY_WOOL_ITEM,
-            ABRCStairs.STAIR_LIGHT_GRAY_WOOL_ITEM,
-            ABRCStairs.STAIR_CYAN_WOOL_ITEM,
-            ABRCStairs.STAIR_PURPLE_WOOL_ITEM,
-            ABRCStairs.STAIR_BLUE_WOOL_ITEM,
-            ABRCStairs.STAIR_BROWN_WOOL_ITEM,
-            ABRCStairs.STAIR_GREEN_WOOL_ITEM,
-            ABRCStairs.STAIR_RED_WOOL_ITEM
+            ABRCStairs.STAIR_BRIGHT_WHITE_ITEM,
+            ABRCStairs.STAIR_BRIGHT_BLACK_ITEM,
+            ABRCStairs.STAIR_BRIGHT_ORANGE_ITEM,
+            ABRCStairs.STAIR_BRIGHT_MAGENTA_ITEM,
+            ABRCStairs.STAIR_BRIGHT_YELLOW_ITEM,
+            ABRCStairs.STAIR_BRIGHT_CYAN_ITEM,
+            ABRCStairs.STAIR_BRIGHT_BLUE_ITEM,
+            ABRCStairs.STAIR_BRIGHT_GREEN_ITEM,
+            ABRCStairs.STAIR_BRIGHT_RED_ITEM,
+            ABRCStairs.STAIR_WOOL_WHITE_ITEM,
+            ABRCStairs.STAIR_WOOL_ORANGE_ITEM,
+            ABRCStairs.STAIR_WOOL_MAGENTA_ITEM,
+            ABRCStairs.STAIR_WOOL_LIGHT_BLUE_ITEM,
+            ABRCStairs.STAIR_WOOL_YELLOW_ITEM,
+            ABRCStairs.STAIR_WOOL_LIME_ITEM,
+            ABRCStairs.STAIR_WOOL_PINK_ITEM,
+            ABRCStairs.STAIR_WOOL_GRAY_ITEM,
+            ABRCStairs.STAIR_WOOL_LIGHT_GRAY_ITEM,
+            ABRCStairs.STAIR_WOOL_CYAN_ITEM,
+            ABRCStairs.STAIR_WOOL_PURPLE_ITEM,
+            ABRCStairs.STAIR_WOOL_BLUE_ITEM,
+            ABRCStairs.STAIR_WOOL_BROWN_ITEM,
+            ABRCStairs.STAIR_WOOL_GREEN_ITEM,
+            ABRCStairs.STAIR_WOOL_RED_ITEM
     };
     public static final Item[] BUTTONS = {
             ABRCButtons.BUTTON_BRIGHT_WHITE_ITEM,
@@ -190,18 +188,18 @@ public class ModItemsTagsProvider extends FabricTagProvider.ItemTagProvider {
     };
 
     @Override
-    protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(ItemTags.BUTTONS).add(BUTTONS);
-        getOrCreateTagBuilder(ItemTags.STAIRS).add(STAIRS);
-        getOrCreateTagBuilder(ItemTags.SLABS).add(SLABS);
-        getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_BUTTONS_ITEM).add(BUTTONS);
-        getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_STAIRS_ITEM).add(STAIRS);
-        getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_SLABS_ITEM).add(SLABS);
-        getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_PRESSURE_PLATES_ITEM).add(PRESSURE_PLATES);
-        getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_WITHOUT_BORDERS_ITEM).add(BRIGHT_BLOCKS_WITHOUT_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER);
-        getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_WITH_BORDERS_ITEM).add(BRIGHT_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITH_BORDER);
-        getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_WOOL_COLORS_ITEM).add(WOOL_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER);
-        getOrCreateTagBuilder(ABRCTags.ANTIBLOCK_BRIGHT_COLORS_ITEM).add(BRIGHT_BLOCKS_WITH_BORDER).add(BRIGHT_BLOCKS_WITH_BORDER);
+    protected void addTags(HolderLookup.Provider registries) {
+        valueLookupBuilder(ItemTags.BUTTONS).add(BUTTONS);
+        valueLookupBuilder(ItemTags.STAIRS).add(STAIRS);
+        valueLookupBuilder(ItemTags.SLABS).add(SLABS);
+        valueLookupBuilder(ABRCTags.ANTIBLOCK_BUTTONS_ITEM).add(BUTTONS);
+        valueLookupBuilder(ABRCTags.ANTIBLOCK_STAIRS_ITEM).add(STAIRS);
+        valueLookupBuilder(ABRCTags.ANTIBLOCK_SLABS_ITEM).add(SLABS);
+        valueLookupBuilder(ABRCTags.ANTIBLOCK_PRESSURE_PLATES_ITEM).add(PRESSURE_PLATES);
+        valueLookupBuilder(ABRCTags.ANTIBLOCK_WITHOUT_BORDERS_ITEM).add(BRIGHT_BLOCKS_WITHOUT_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER);
+        valueLookupBuilder(ABRCTags.ANTIBLOCK_WITH_BORDERS_ITEM).add(BRIGHT_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITH_BORDER);
+        valueLookupBuilder(ABRCTags.ANTIBLOCK_WOOL_COLORS_ITEM).add(WOOL_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER);
+        valueLookupBuilder(ABRCTags.ANTIBLOCK_BRIGHT_COLORS_ITEM).add(BRIGHT_BLOCKS_WITH_BORDER).add(BRIGHT_BLOCKS_WITH_BORDER);
 
     }
 }
