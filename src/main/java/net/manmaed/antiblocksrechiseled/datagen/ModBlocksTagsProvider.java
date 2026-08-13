@@ -20,190 +20,190 @@ public class ModBlocksTagsProvider extends FabricTagsProvider.BlockTagsProvider 
         super(output, registryLookupFuture);
     }
 
-    public static final Block[] BRIGHT_BLOCKS_WITH_BORDER = {
-            ABRCBrightColors.BRIGHT_WHITE_BORDER,
-            ABRCBrightColors.BRIGHT_ORANGE_BORDER,
-            ABRCBrightColors.BRIGHT_MAGENTA_BORDER,
-            ABRCBrightColors.BRIGHT_YELLOW_BORDER,
-            ABRCBrightColors.BRIGHT_CYAN_BORDER,
-            ABRCBrightColors.BRIGHT_BLUE_BORDER,
-            ABRCBrightColors.BRIGHT_GREEN_BORDER,
-            ABRCBrightColors.BRIGHT_RED_BORDER,
-            ABRCBrightColors.BRIGHT_BLACK_BORDER
+    public static final ResourceKey[] BRIGHT_BLOCKS_WITH_BORDER = {
+            ABRCBrightColors.BRIGHT_WHITE_BORDER.properties().blockId(),
+            ABRCBrightColors.BRIGHT_ORANGE_BORDER.properties().blockId(),
+            ABRCBrightColors.BRIGHT_MAGENTA_BORDER.properties().blockId(),
+            ABRCBrightColors.BRIGHT_YELLOW_BORDER.properties().blockId(),
+            ABRCBrightColors.BRIGHT_CYAN_BORDER.properties().blockId(),
+            ABRCBrightColors.BRIGHT_BLUE_BORDER.properties().blockId(),
+            ABRCBrightColors.BRIGHT_GREEN_BORDER.properties().blockId(),
+            ABRCBrightColors.BRIGHT_RED_BORDER.properties().blockId(),
+            ABRCBrightColors.BRIGHT_BLACK_BORDER.properties().blockId()
     };
-    public static final Block[] BRIGHT_BLOCKS_WITHOUT_BORDER = {
+    public static final ResourceKey[] BRIGHT_BLOCKS_WITHOUT_BORDER = {
             //Bright Colors
-            ABRCBrightColors.BRIGHT_WHITE,
-            ABRCBrightColors.BRIGHT_ORANGE,
-            ABRCBrightColors.BRIGHT_MAGENTA,
-            ABRCBrightColors.BRIGHT_YELLOW,
-            ABRCBrightColors.BRIGHT_CYAN,
-            ABRCBrightColors.BRIGHT_BLUE,
-            ABRCBrightColors.BRIGHT_GREEN,
-            ABRCBrightColors.BRIGHT_RED,
-            ABRCBrightColors.BRIGHT_BLACK
+            ABRCBrightColors.BRIGHT_WHITE.properties().blockId(),
+            ABRCBrightColors.BRIGHT_ORANGE.properties().blockId(),
+            ABRCBrightColors.BRIGHT_MAGENTA.properties().blockId(),
+            ABRCBrightColors.BRIGHT_YELLOW.properties().blockId(),
+            ABRCBrightColors.BRIGHT_CYAN.properties().blockId(),
+            ABRCBrightColors.BRIGHT_BLUE.properties().blockId(),
+            ABRCBrightColors.BRIGHT_GREEN.properties().blockId(),
+            ABRCBrightColors.BRIGHT_RED.properties().blockId(),
+            ABRCBrightColors.BRIGHT_BLACK.properties().blockId()
     };
-    public static final Block[] WOOL_BLOCKS_WITH_BORDER = {
+    public static final ResourceKey[] WOOL_BLOCKS_WITH_BORDER = {
             //Wool Colors
-            ABRCWoolColors.WOOL_WHITE_BORDER,
-            ABRCWoolColors.WOOL_ORANGE_BORDER,
-            ABRCWoolColors.WOOL_MAGENTA_BORDER,
-            ABRCWoolColors.WOOL_LIGHT_BLUE_BORDER,
-            ABRCWoolColors.WOOL_YELLOW_BORDER,
-            ABRCWoolColors.WOOL_LIME_BORDER,
-            ABRCWoolColors.WOOL_PINK_BORDER,
-            ABRCWoolColors.WOOL_GRAY_BORDER,
-            ABRCWoolColors.WOOL_LIGHT_GRAY_BORDER,
-            ABRCWoolColors.WOOL_CYAN_BORDER,
-            ABRCWoolColors.WOOL_PURPLE_BORDER,
-            ABRCWoolColors.WOOL_BLUE_BORDER,
-            ABRCWoolColors.WOOL_BROWN_BORDER,
-            ABRCWoolColors.WOOL_GREEN_BORDER,
-            ABRCWoolColors.WOOL_RED_BORDER
+            ABRCWoolColors.WOOL_WHITE_BORDER.properties().blockId(),
+            ABRCWoolColors.WOOL_ORANGE_BORDER.properties().blockId(),
+            ABRCWoolColors.WOOL_MAGENTA_BORDER.properties().blockId(),
+            ABRCWoolColors.WOOL_LIGHT_BLUE_BORDER.properties().blockId(),
+            ABRCWoolColors.WOOL_YELLOW_BORDER.properties().blockId(),
+            ABRCWoolColors.WOOL_LIME_BORDER.properties().blockId(),
+            ABRCWoolColors.WOOL_PINK_BORDER.properties().blockId(),
+            ABRCWoolColors.WOOL_GRAY_BORDER.properties().blockId(),
+            ABRCWoolColors.WOOL_LIGHT_GRAY_BORDER.properties().blockId(),
+            ABRCWoolColors.WOOL_CYAN_BORDER.properties().blockId(),
+            ABRCWoolColors.WOOL_PURPLE_BORDER.properties().blockId(),
+            ABRCWoolColors.WOOL_BLUE_BORDER.properties().blockId(),
+            ABRCWoolColors.WOOL_BROWN_BORDER.properties().blockId(),
+            ABRCWoolColors.WOOL_GREEN_BORDER.properties().blockId(),
+            ABRCWoolColors.WOOL_RED_BORDER.properties().blockId()
     };
 
-    public static final Block[] WOOL_BLOCKS_WITHOUT_BORDER = {
+    public static final ResourceKey[] WOOL_BLOCKS_WITHOUT_BORDER = {
             //Wool Colors
-            ABRCWoolColors.WOOL_WHITE,
-            ABRCWoolColors.WOOL_ORANGE,
-            ABRCWoolColors.WOOL_MAGENTA,
-            ABRCWoolColors.WOOL_LIGHT_BLUE,
-            ABRCWoolColors.WOOL_YELLOW,
-            ABRCWoolColors.WOOL_LIME,
-            ABRCWoolColors.WOOL_PINK,
-            ABRCWoolColors.WOOL_GRAY,
-            ABRCWoolColors.WOOL_LIGHT_GRAY,
-            ABRCWoolColors.WOOL_CYAN,
-            ABRCWoolColors.WOOL_PURPLE,
-            ABRCWoolColors.WOOL_BLUE,
-            ABRCWoolColors.WOOL_BROWN,
-            ABRCWoolColors.WOOL_GREEN,
-            ABRCWoolColors.WOOL_RED
+            ABRCWoolColors.WOOL_WHITE.properties().blockId(),
+            ABRCWoolColors.WOOL_ORANGE.properties().blockId(),
+            ABRCWoolColors.WOOL_MAGENTA.properties().blockId(),
+            ABRCWoolColors.WOOL_LIGHT_BLUE.properties().blockId(),
+            ABRCWoolColors.WOOL_YELLOW.properties().blockId(),
+            ABRCWoolColors.WOOL_LIME.properties().blockId(),
+            ABRCWoolColors.WOOL_PINK.properties().blockId(),
+            ABRCWoolColors.WOOL_GRAY.properties().blockId(),
+            ABRCWoolColors.WOOL_LIGHT_GRAY.properties().blockId(),
+            ABRCWoolColors.WOOL_CYAN.properties().blockId(),
+            ABRCWoolColors.WOOL_PURPLE.properties().blockId(),
+            ABRCWoolColors.WOOL_BLUE.properties().blockId(),
+            ABRCWoolColors.WOOL_BROWN.properties().blockId(),
+            ABRCWoolColors.WOOL_GREEN.properties().blockId(),
+            ABRCWoolColors.WOOL_RED.properties().blockId()
     };
 
-    public static final Block[] SLABS = {
+    public static final ResourceKey[] SLABS = {
             //Slabs
-            ABRCSlabs.SLAB_BRIGHT_WHITE,
-            ABRCSlabs.SLAB_BRIGHT_BLACK,
-            ABRCSlabs.SLAB_BRIGHT_ORANGE,
-            ABRCSlabs.SLAB_BRIGHT_MAGENTA,
-            ABRCSlabs.SLAB_BRIGHT_YELLOW,
-            ABRCSlabs.SLAB_BRIGHT_CYAN,
-            ABRCSlabs.SLAB_BRIGHT_BLUE,
-            ABRCSlabs.SLAB_BRIGHT_GREEN,
-            ABRCSlabs.SLAB_BRIGHT_RED,
-            ABRCSlabs.SLAB_WOOL_WHITE,
-            ABRCSlabs.SLAB_WOOL_ORANGE,
-            ABRCSlabs.SLAB_WOOL_MAGENTA,
-            ABRCSlabs.SLAB_WOOL_LIGHT_BLUE,
-            ABRCSlabs.SLAB_WOOL_YELLOW,
-            ABRCSlabs.SLAB_WOOL_LIME,
-            ABRCSlabs.SLAB_WOOL_PINK,
-            ABRCSlabs.SLAB_WOOL_GRAY,
-            ABRCSlabs.SLAB_WOOL_LIGHT_GRAY,
-            ABRCSlabs.SLAB_WOOL_CYAN,
-            ABRCSlabs.SLAB_WOOL_PURPLE,
-            ABRCSlabs.SLAB_WOOL_BLUE,
-            ABRCSlabs.SLAB_WOOL_BROWN,
-            ABRCSlabs.SLAB_WOOL_GREEN,
-            ABRCSlabs.SLAB_WOOL_RED
+            ABRCSlabs.SLAB_BRIGHT_WHITE.properties().blockId(),
+            ABRCSlabs.SLAB_BRIGHT_BLACK.properties().blockId(),
+            ABRCSlabs.SLAB_BRIGHT_ORANGE.properties().blockId(),
+            ABRCSlabs.SLAB_BRIGHT_MAGENTA.properties().blockId(),
+            ABRCSlabs.SLAB_BRIGHT_YELLOW.properties().blockId(),
+            ABRCSlabs.SLAB_BRIGHT_CYAN.properties().blockId(),
+            ABRCSlabs.SLAB_BRIGHT_BLUE.properties().blockId(),
+            ABRCSlabs.SLAB_BRIGHT_GREEN.properties().blockId(),
+            ABRCSlabs.SLAB_BRIGHT_RED.properties().blockId(),
+            ABRCSlabs.SLAB_WOOL_WHITE.properties().blockId(),
+            ABRCSlabs.SLAB_WOOL_ORANGE.properties().blockId(),
+            ABRCSlabs.SLAB_WOOL_MAGENTA.properties().blockId(),
+            ABRCSlabs.SLAB_WOOL_LIGHT_BLUE.properties().blockId(),
+            ABRCSlabs.SLAB_WOOL_YELLOW.properties().blockId(),
+            ABRCSlabs.SLAB_WOOL_LIME.properties().blockId(),
+            ABRCSlabs.SLAB_WOOL_PINK.properties().blockId(),
+            ABRCSlabs.SLAB_WOOL_GRAY.properties().blockId(),
+            ABRCSlabs.SLAB_WOOL_LIGHT_GRAY.properties().blockId(),
+            ABRCSlabs.SLAB_WOOL_CYAN.properties().blockId(),
+            ABRCSlabs.SLAB_WOOL_PURPLE.properties().blockId(),
+            ABRCSlabs.SLAB_WOOL_BLUE.properties().blockId(),
+            ABRCSlabs.SLAB_WOOL_BROWN.properties().blockId(),
+            ABRCSlabs.SLAB_WOOL_GREEN.properties().blockId(),
+            ABRCSlabs.SLAB_WOOL_RED.properties().blockId()
     };
-    public static final Block[] STAIRS = {
+    public static final ResourceKey[] STAIRS = {
             //Stairs
-            ABRCStairs.STAIR_BRIGHT_WHITE,
-            ABRCStairs.STAIR_BRIGHT_BLACK,
-            ABRCStairs.STAIR_BRIGHT_ORANGE,
-            ABRCStairs.STAIR_BRIGHT_MAGENTA,
-            ABRCStairs.STAIR_BRIGHT_YELLOW,
-            ABRCStairs.STAIR_BRIGHT_CYAN,
-            ABRCStairs.STAIR_BRIGHT_BLUE,
-            ABRCStairs.STAIR_BRIGHT_GREEN,
-            ABRCStairs.STAIR_BRIGHT_RED,
-            ABRCStairs.STAIR_WOOL_WHITE,
-            ABRCStairs.STAIR_WOOL_ORANGE,
-            ABRCStairs.STAIR_WOOL_MAGENTA,
-            ABRCStairs.STAIR_WOOL_LIGHT_BLUE,
-            ABRCStairs.STAIR_WOOL_YELLOW,
-            ABRCStairs.STAIR_WOOL_LIME,
-            ABRCStairs.STAIR_WOOL_PINK,
-            ABRCStairs.STAIR_WOOL_GRAY,
-            ABRCStairs.STAIR_WOOL_LIGHT_GRAY,
-            ABRCStairs.STAIR_WOOL_CYAN,
-            ABRCStairs.STAIR_WOOL_PURPLE,
-            ABRCStairs.STAIR_WOOL_BLUE,
-            ABRCStairs.STAIR_WOOL_BROWN,
-            ABRCStairs.STAIR_WOOL_GREEN,
-            ABRCStairs.STAIR_WOOL_RED
+            ABRCStairs.STAIR_BRIGHT_WHITE.properties().blockId(),
+            ABRCStairs.STAIR_BRIGHT_BLACK.properties().blockId(),
+            ABRCStairs.STAIR_BRIGHT_ORANGE.properties().blockId(),
+            ABRCStairs.STAIR_BRIGHT_MAGENTA.properties().blockId(),
+            ABRCStairs.STAIR_BRIGHT_YELLOW.properties().blockId(),
+            ABRCStairs.STAIR_BRIGHT_CYAN.properties().blockId(),
+            ABRCStairs.STAIR_BRIGHT_BLUE.properties().blockId(),
+            ABRCStairs.STAIR_BRIGHT_GREEN.properties().blockId(),
+            ABRCStairs.STAIR_BRIGHT_RED.properties().blockId(),
+            ABRCStairs.STAIR_WOOL_WHITE.properties().blockId(),
+            ABRCStairs.STAIR_WOOL_ORANGE.properties().blockId(),
+            ABRCStairs.STAIR_WOOL_MAGENTA.properties().blockId(),
+            ABRCStairs.STAIR_WOOL_LIGHT_BLUE.properties().blockId(),
+            ABRCStairs.STAIR_WOOL_YELLOW.properties().blockId(),
+            ABRCStairs.STAIR_WOOL_LIME.properties().blockId(),
+            ABRCStairs.STAIR_WOOL_PINK.properties().blockId(),
+            ABRCStairs.STAIR_WOOL_GRAY.properties().blockId(),
+            ABRCStairs.STAIR_WOOL_LIGHT_GRAY.properties().blockId(),
+            ABRCStairs.STAIR_WOOL_CYAN.properties().blockId(),
+            ABRCStairs.STAIR_WOOL_PURPLE.properties().blockId(),
+            ABRCStairs.STAIR_WOOL_BLUE.properties().blockId(),
+            ABRCStairs.STAIR_WOOL_BROWN.properties().blockId(),
+            ABRCStairs.STAIR_WOOL_GREEN.properties().blockId(),
+            ABRCStairs.STAIR_WOOL_RED.properties().blockId()
     };
-    public static final Block[] BUTTONS = {
-            ABRCButtons.BUTTON_BRIGHT_WHITE,
-            ABRCButtons.BUTTON_BRIGHT_ORANGE,
-            ABRCButtons.BUTTON_BRIGHT_MAGENTA,
-            ABRCButtons.BUTTON_BRIGHT_YELLOW,
-            ABRCButtons.BUTTON_BRIGHT_CYAN,
-            ABRCButtons.BUTTON_BRIGHT_BLUE,
-            ABRCButtons.BUTTON_BRIGHT_GREEN,
-            ABRCButtons.BUTTON_BRIGHT_RED,
-            ABRCButtons.BUTTON_BRIGHT_BLACK,
-            ABRCButtons.BUTTON_WOOL_WHITE,
-            ABRCButtons.BUTTON_WOOL_ORANGE,
-            ABRCButtons.BUTTON_WOOL_MAGENTA,
-            ABRCButtons.BUTTON_WOOL_LIGHT_BLUE,
-            ABRCButtons.BUTTON_WOOL_YELLOW,
-            ABRCButtons.BUTTON_WOOL_LIME,
-            ABRCButtons.BUTTON_WOOL_PINK,
-            ABRCButtons.BUTTON_WOOL_GRAY,
-            ABRCButtons.BUTTON_WOOL_LIGHT_GRAY,
-            ABRCButtons.BUTTON_WOOL_CYAN,
-            ABRCButtons.BUTTON_WOOL_PURPLE,
-            ABRCButtons.BUTTON_WOOL_BLUE,
-            ABRCButtons.BUTTON_WOOL_BROWN,
-            ABRCButtons.BUTTON_WOOL_GREEN,
-            ABRCButtons.BUTTON_WOOL_RED
+    public static final ResourceKey[] BUTTONS = {
+            ABRCButtons.BUTTON_BRIGHT_WHITE.properties().blockId(),
+            ABRCButtons.BUTTON_BRIGHT_ORANGE.properties().blockId(),
+            ABRCButtons.BUTTON_BRIGHT_MAGENTA.properties().blockId(),
+            ABRCButtons.BUTTON_BRIGHT_YELLOW.properties().blockId(),
+            ABRCButtons.BUTTON_BRIGHT_CYAN.properties().blockId(),
+            ABRCButtons.BUTTON_BRIGHT_BLUE.properties().blockId(),
+            ABRCButtons.BUTTON_BRIGHT_GREEN.properties().blockId(),
+            ABRCButtons.BUTTON_BRIGHT_RED.properties().blockId(),
+            ABRCButtons.BUTTON_BRIGHT_BLACK.properties().blockId(),
+            ABRCButtons.BUTTON_WOOL_WHITE.properties().blockId(),
+            ABRCButtons.BUTTON_WOOL_ORANGE.properties().blockId(),
+            ABRCButtons.BUTTON_WOOL_MAGENTA.properties().blockId(),
+            ABRCButtons.BUTTON_WOOL_LIGHT_BLUE.properties().blockId(),
+            ABRCButtons.BUTTON_WOOL_YELLOW.properties().blockId(),
+            ABRCButtons.BUTTON_WOOL_LIME.properties().blockId(),
+            ABRCButtons.BUTTON_WOOL_PINK.properties().blockId(),
+            ABRCButtons.BUTTON_WOOL_GRAY.properties().blockId(),
+            ABRCButtons.BUTTON_WOOL_LIGHT_GRAY.properties().blockId(),
+            ABRCButtons.BUTTON_WOOL_CYAN.properties().blockId(),
+            ABRCButtons.BUTTON_WOOL_PURPLE.properties().blockId(),
+            ABRCButtons.BUTTON_WOOL_BLUE.properties().blockId(),
+            ABRCButtons.BUTTON_WOOL_BROWN.properties().blockId(),
+            ABRCButtons.BUTTON_WOOL_GREEN.properties().blockId(),
+            ABRCButtons.BUTTON_WOOL_RED.properties().blockId()
     };
-    public static final Block[] PRESSURE_PLATES = {
+    public static final ResourceKey[] PRESSURE_PLATES = {
             //Pressure Plates
-            ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_WHITE,
-            ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_ORANGE,
-            ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_MAGENTA,
-            ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_YELLOW,
-            ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_CYAN,
-            ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_BLUE,
-            ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_GREEN,
-            ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_RED,
-            ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_BLACK,
-            ABRCPressurePlates.PRESSURE_PLATE_WOOL_WHITE,
-            ABRCPressurePlates.PRESSURE_PLATE_WOOL_ORANGE,
-            ABRCPressurePlates.PRESSURE_PLATE_WOOL_MAGENTA,
-            ABRCPressurePlates.PRESSURE_PLATE_WOOL_LIGHT_BLUE,
-            ABRCPressurePlates.PRESSURE_PLATE_WOOL_YELLOW,
-            ABRCPressurePlates.PRESSURE_PLATE_WOOL_LIME,
-            ABRCPressurePlates.PRESSURE_PLATE_WOOL_PINK,
-            ABRCPressurePlates.PRESSURE_PLATE_WOOL_GRAY,
-            ABRCPressurePlates.PRESSURE_PLATE_WOOL_LIGHT_GRAY,
-            ABRCPressurePlates.PRESSURE_PLATE_WOOL_CYAN,
-            ABRCPressurePlates.PRESSURE_PLATE_WOOL_PURPLE,
-            ABRCPressurePlates.PRESSURE_PLATE_WOOL_BLUE,
-            ABRCPressurePlates.PRESSURE_PLATE_WOOL_BROWN,
-            ABRCPressurePlates.PRESSURE_PLATE_WOOL_GREEN,
-            ABRCPressurePlates.PRESSURE_PLATE_WOOL_RED
+            ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_WHITE.properties().blockId(),
+            ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_ORANGE.properties().blockId(),
+            ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_MAGENTA.properties().blockId(),
+            ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_YELLOW.properties().blockId(),
+            ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_CYAN.properties().blockId(),
+            ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_BLUE.properties().blockId(),
+            ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_GREEN.properties().blockId(),
+            ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_RED.properties().blockId(),
+            ABRCPressurePlates.PRESSURE_PLATE_BRIGHT_BLACK.properties().blockId(),
+            ABRCPressurePlates.PRESSURE_PLATE_WOOL_WHITE.properties().blockId(),
+            ABRCPressurePlates.PRESSURE_PLATE_WOOL_ORANGE.properties().blockId(),
+            ABRCPressurePlates.PRESSURE_PLATE_WOOL_MAGENTA.properties().blockId(),
+            ABRCPressurePlates.PRESSURE_PLATE_WOOL_LIGHT_BLUE.properties().blockId(),
+            ABRCPressurePlates.PRESSURE_PLATE_WOOL_YELLOW.properties().blockId(),
+            ABRCPressurePlates.PRESSURE_PLATE_WOOL_LIME.properties().blockId(),
+            ABRCPressurePlates.PRESSURE_PLATE_WOOL_PINK.properties().blockId(),
+            ABRCPressurePlates.PRESSURE_PLATE_WOOL_GRAY.properties().blockId(),
+            ABRCPressurePlates.PRESSURE_PLATE_WOOL_LIGHT_GRAY.properties().blockId(),
+            ABRCPressurePlates.PRESSURE_PLATE_WOOL_CYAN.properties().blockId(),
+            ABRCPressurePlates.PRESSURE_PLATE_WOOL_PURPLE.properties().blockId(),
+            ABRCPressurePlates.PRESSURE_PLATE_WOOL_BLUE.properties().blockId(),
+            ABRCPressurePlates.PRESSURE_PLATE_WOOL_BROWN.properties().blockId(),
+            ABRCPressurePlates.PRESSURE_PLATE_WOOL_GREEN.properties().blockId(),
+            ABRCPressurePlates.PRESSURE_PLATE_WOOL_RED.properties().blockId()
     };
 
     @Override
     protected void addTags(HolderLookup.Provider registries) {
-        valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE).add(BRIGHT_BLOCKS_WITH_BORDER).add(BRIGHT_BLOCKS_WITHOUT_BORDER).add(WOOL_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER).add(SLABS).add(STAIRS).add(BUTTONS).add(PRESSURE_PLATES);
-        valueLookupBuilder(BlockTags.NEEDS_IRON_TOOL).add(BRIGHT_BLOCKS_WITH_BORDER).add(BRIGHT_BLOCKS_WITHOUT_BORDER).add(WOOL_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER).add(SLABS).add(STAIRS).add(BUTTONS).add(PRESSURE_PLATES);
-        valueLookupBuilder(BlockTags.BUTTONS).add(BUTTONS);
-        valueLookupBuilder(BlockTags.STAIRS).add(STAIRS);
-        valueLookupBuilder(BlockTags.SLABS).add(SLABS);
-        valueLookupBuilder(BlockTags.PRESSURE_PLATES).add(PRESSURE_PLATES);
-        valueLookupBuilder(ABRCTags.ANTIBLOCK_BUTTONS).add(BUTTONS);
-        valueLookupBuilder(ABRCTags.ANTIBLOCK_STAIRS).add(STAIRS);
-        valueLookupBuilder(ABRCTags.ANTIBLOCK_SLABS).add(SLABS);
-        valueLookupBuilder(ABRCTags.ANTIBLOCK_PRESSURE_PLATES).add(PRESSURE_PLATES);
-        valueLookupBuilder(ABRCTags.ANTIBLOCK_WITHOUT_BORDERS).add(BRIGHT_BLOCKS_WITHOUT_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER);
-        valueLookupBuilder(ABRCTags.ANTIBLOCK_WITH_BORDERS).add(BRIGHT_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITH_BORDER);
-        valueLookupBuilder(ABRCTags.ANTIBLOCK_WOOL_COLORS).add(WOOL_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER);
-        valueLookupBuilder(ABRCTags.ANTIBLOCK_BRIGHT_COLORS).add(BRIGHT_BLOCKS_WITH_BORDER).add(BRIGHT_BLOCKS_WITH_BORDER);
+        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BRIGHT_BLOCKS_WITH_BORDER).add(BRIGHT_BLOCKS_WITHOUT_BORDER).add(WOOL_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER).add(SLABS).add(STAIRS).add(BUTTONS).add(PRESSURE_PLATES);
+        tag(BlockTags.NEEDS_IRON_TOOL).add(BRIGHT_BLOCKS_WITH_BORDER).add(BRIGHT_BLOCKS_WITHOUT_BORDER).add(WOOL_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER).add(SLABS).add(STAIRS).add(BUTTONS).add(PRESSURE_PLATES);
+        tag(BlockTags.BUTTONS).add(BUTTONS);
+        tag(BlockTags.STAIRS).add(STAIRS);
+        tag(BlockTags.SLABS).add(SLABS);
+        tag(BlockTags.PRESSURE_PLATES).add(PRESSURE_PLATES);
+        tag(ABRCTags.ANTIBLOCK_BUTTONS).add(BUTTONS);
+        tag(ABRCTags.ANTIBLOCK_STAIRS).add(STAIRS);
+        tag(ABRCTags.ANTIBLOCK_SLABS).add(SLABS);
+        tag(ABRCTags.ANTIBLOCK_PRESSURE_PLATES).add(PRESSURE_PLATES);
+        tag(ABRCTags.ANTIBLOCK_WITHOUT_BORDERS).add(BRIGHT_BLOCKS_WITHOUT_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER);
+        tag(ABRCTags.ANTIBLOCK_WITH_BORDERS).add(BRIGHT_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITH_BORDER);
+        tag(ABRCTags.ANTIBLOCK_WOOL_COLORS).add(WOOL_BLOCKS_WITH_BORDER).add(WOOL_BLOCKS_WITHOUT_BORDER);
+        tag(ABRCTags.ANTIBLOCK_BRIGHT_COLORS).add(BRIGHT_BLOCKS_WITH_BORDER).add(BRIGHT_BLOCKS_WITH_BORDER);
     }
 }

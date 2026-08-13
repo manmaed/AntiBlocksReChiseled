@@ -61,27 +61,26 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	implementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}+${minecraft_version}"
-	
+    processResources {
+        var replaceProperties = [
+                version: version,
+                loader_version: loader_version,
+                minecraft_version: minecraft_version
+        ]
+
+        inputs.properties replaceProperties
+
+        filesMatching("fabric.mod.json") {
+            expand replaceProperties
+        }
+    }
    if(use_fct.equals("true")) {
         //runtimeOnly "curse.maven:fct-${fct_id}:${fct_file_id}"
         modImplementation "maven.modrinth:fusion-connected-textures:${fusion_version}-neoforge-mc${minecraft_version}"
     }
 }
 
-processResources {
-    var replaceProperties = [
-            version: version,
-            loader_version: loader_version,
-            minecraft_version: minecraft_version
-    ]
 
-    inputs.properties replaceProperties
-
-
-    filesMatching("fabric.mod.json") {
-        expand replaceProperties
-    }
-}
 
 tasks.withType(JavaCompile).configureEach {
     it.options.release = 25
@@ -135,6 +134,8 @@ publishMods {
         projectId = project.curseforge_id
         javaVersions.add(JavaVersion.VERSION_25)
         minecraftVersions.add("${minecraft_version}")
+        client = true
+        server = true
         requires {
             slug = 'fabric-api'
         }
@@ -146,6 +147,7 @@ publishMods {
         accessToken = providers.environmentVariable("MODRINTH_DEPLOY")
         projectId  = project.modrinth_id
         minecraftVersions.add("${minecraft_version}")
+        environment = CLIENT_AND_SERVER
         requires {
             slug = 'fabric-api'
         }
