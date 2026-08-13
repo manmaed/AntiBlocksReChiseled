@@ -6,7 +6,7 @@ version="${version}"
 displayName="AntiBlocksReChiseled"
 updateJSONURL="https://raw.githubusercontent.com/manmaed/AntiBlocksReChiseled/main/neo/update.json"
 authors="manmaed"
-logoFile="abrc.logo.png"
+iconFile="abrc.logo.png"
 description='''Readds The AnitBlocks From Chsiel'''
 [[dependencies.antiblocksrechiseled]]
 modId="neoforge"

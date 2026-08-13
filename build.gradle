@@ -13,6 +13,11 @@ def ENV = System.getenv()
 version = "${ENV.GITHUB_RUN_NUMBER}" ? "${minecraft_version}.${mod_version}.${ENV.GITHUB_RUN_NUMBER}" : "${minecraft_version}.${mod_version}.nobuildnumber"
 group = project.maven_group
 
+sourceSets.main.resources {
+    srcDir 'src/generated/resources'
+    exclude("src/generated/**/.cache")
+}
+
 repositories {
     maven {
         url "https://cursemaven.com"
@@ -40,6 +45,7 @@ runs {
     configureEach {
         systemProperty 'forge.logging.markers', 'REGISTRIES'
         systemProperty 'forge.logging.console.level', 'debug'
+        workingDirectory project.layout.projectDirectory.dir('run').dir(name)
         modSource project.sourceSets.main
     }
 
@@ -60,8 +66,6 @@ runs {
         arguments.addAll '--mod', project.archives_base_name, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
     }
 }
-
-sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 configurations {
     runtimeClasspath.extendsFrom localRuntime
