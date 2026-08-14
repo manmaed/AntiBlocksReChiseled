@@ -1,5 +1,11 @@
 {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/antiblocksrechiseled",
+     "26.2": {
+      "26.2.1.1": "Port to 26.2"
+    }, 
+    "26.1": {
+      "26.1.1.1": "Port to 26.1"
+    },
     "1.21.1": {
       "0.10.4": "More Tags",
       "0.10.3": "Added Custom Tags",
