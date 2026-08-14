@@ -1,4 +1,4 @@
-name: Build & Release For Minecraft 26.1 - Forge
+name: Build & Release For Minecraft 26.2 - Forge
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Setup JDK 25
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v5
         with:
           java-version: '25'
           distribution: 'temurin'
