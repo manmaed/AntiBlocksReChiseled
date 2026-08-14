@@ -2,8 +2,8 @@ plugins {
     id 'java'
     id 'idea'
     id 'maven-publish'
-    id "me.modmuss50.mod-publish-plugin" version "1.1.0"
-    id 'net.minecraftforge.gradle' version '[7.0.3,8)'
+    id "me.modmuss50.mod-publish-plugin" version "${modmuss_publish}"
+    id 'net.minecraftforge.gradle' version '[7.0.17,8)'
 }
 
 def ENV = System.getenv()
@@ -122,6 +122,8 @@ publishMods {
         projectId = project.curseforge_id
         javaVersions.add(JavaVersion.VERSION_25)
         minecraftVersions.add("${minecraft_version}")
+        client = true
+        server = true
         optional {
             slug = 'fusion-connected-textures'
         }
@@ -130,6 +132,7 @@ publishMods {
         accessToken = providers.environmentVariable("MODRINTH_DEPLOY")
         projectId  = project.modrinth_id
         minecraftVersions.add("${minecraft_version}")
+        environment = CLIENT_AND_SERVER
         optional {
             slug = 'fusion-connected-textures'
         }

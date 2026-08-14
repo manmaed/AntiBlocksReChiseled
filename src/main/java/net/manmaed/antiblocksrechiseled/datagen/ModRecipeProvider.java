@@ -35,21 +35,21 @@ public class ModRecipeProvider extends RecipeProvider {
         //Bright White Builder
         this.shaped(BUILDING_BLOCKS , ABRCBrightColors.BRIGHT_WHITE.get(), 4)
                 .define('s', Ingredient.of(Blocks.STONE.asItem()))
-                .define('d', Ingredient.of(Items.WHITE_DYE))
+                .define('d', Ingredient.of(Items.DYE.white()))
                 .define('g', Ingredient.of(Items.GLOWSTONE_DUST))
                 .pattern("sds")
                 .pattern("dgd")
                 .pattern("sds").unlockedBy("has_glowstone_dust", has(Items.GLOWSTONE_DUST)).save(output);
 
         //The Rest of Bright Colors
-        whiteToColorBuilder(ABRCBrightColors.BRIGHT_ORANGE.get(), Items.ORANGE_DYE, output);
-        whiteToColorBuilder(ABRCBrightColors.BRIGHT_MAGENTA.get(), Items.MAGENTA_DYE, output);
-        whiteToColorBuilder(ABRCBrightColors.BRIGHT_YELLOW.get(), Items.YELLOW_DYE, output);
-        whiteToColorBuilder(ABRCBrightColors.BRIGHT_CYAN.get(), Items.CYAN_DYE, output);
-        whiteToColorBuilder(ABRCBrightColors.BRIGHT_BLUE.get(), Items.BLUE_DYE, output);
-        whiteToColorBuilder(ABRCBrightColors.BRIGHT_GREEN.get(), Items.GREEN_DYE, output);
-        whiteToColorBuilder(ABRCBrightColors.BRIGHT_RED.get(), Items.RED_DYE, output);
-        whiteToColorBuilder(ABRCBrightColors.BRIGHT_BLACK.get(), Items.BLACK_DYE, output);
+        whiteToColorBuilder(ABRCBrightColors.BRIGHT_ORANGE.get(), Items.DYE.orange(), output);
+        whiteToColorBuilder(ABRCBrightColors.BRIGHT_MAGENTA.get(), Items.DYE.magenta(), output);
+        whiteToColorBuilder(ABRCBrightColors.BRIGHT_YELLOW.get(), Items.DYE.yellow(), output);
+        whiteToColorBuilder(ABRCBrightColors.BRIGHT_CYAN.get(), Items.DYE.cyan(), output);
+        whiteToColorBuilder(ABRCBrightColors.BRIGHT_BLUE.get(), Items.DYE.blue(), output);
+        whiteToColorBuilder(ABRCBrightColors.BRIGHT_GREEN.get(), Items.DYE.green(), output);
+        whiteToColorBuilder(ABRCBrightColors.BRIGHT_RED.get(), Items.DYE.red(), output);
+        whiteToColorBuilder(ABRCBrightColors.BRIGHT_BLACK.get(), Items.DYE.black(), output);
 
         //Bright With Borders
         fullToBorderedBuilder(ABRCBrightColors.BRIGHT_WHITE_BORDER.get(), ABRCBrightColors.BRIGHT_WHITE.get(), false, output);
@@ -63,21 +63,21 @@ public class ModRecipeProvider extends RecipeProvider {
         fullToBorderedBuilder(ABRCBrightColors.BRIGHT_BLACK_BORDER.get(), ABRCBrightColors.BRIGHT_BLACK.get(), true, output);
 
         //Wool Colors
-        woolBuilder(ABRCWoolColors.WOOL_WHITE.get(), Blocks.WHITE_WOOL, Items.WHITE_DYE, output);
-        woolBuilder(ABRCWoolColors.WOOL_ORANGE.get(), Blocks.ORANGE_WOOL, Items.ORANGE_DYE, output);
-        woolBuilder(ABRCWoolColors.WOOL_MAGENTA.get(), Blocks.MAGENTA_WOOL, Items.MAGENTA_DYE, output);
-        woolBuilder(ABRCWoolColors.WOOL_LIGHT_BLUE.get(), Blocks.LIGHT_BLUE_WOOL, Items.LIGHT_BLUE_DYE, output);
-        woolBuilder(ABRCWoolColors.WOOL_YELLOW.get(), Blocks.YELLOW_WOOL, Items.YELLOW_DYE, output);
-        woolBuilder(ABRCWoolColors.WOOL_LIME.get(), Blocks.LIME_WOOL, Items.LIME_DYE, output);
-        woolBuilder(ABRCWoolColors.WOOL_PINK.get(), Blocks.PINK_WOOL, Items.PINK_DYE, output);
-        woolBuilder(ABRCWoolColors.WOOL_GRAY.get(), Blocks.GRAY_WOOL, Items.GRAY_DYE, output);
-        woolBuilder(ABRCWoolColors.WOOL_LIGHT_GRAY.get(), Blocks.LIGHT_GRAY_WOOL, Items.LIGHT_GRAY_DYE, output);
-        woolBuilder(ABRCWoolColors.WOOL_CYAN.get(), Blocks.CYAN_WOOL, Items.CYAN_DYE, output);
-        woolBuilder(ABRCWoolColors.WOOL_PURPLE.get(), Blocks.PURPLE_WOOL, Items.PURPLE_DYE, output);
-        woolBuilder(ABRCWoolColors.WOOL_BLUE.get(), Blocks.BLUE_WOOL, Items.BLUE_DYE, output);
-        woolBuilder(ABRCWoolColors.WOOL_BROWN.get(), Blocks.BROWN_WOOL, Items.BROWN_DYE, output);
-        woolBuilder(ABRCWoolColors.WOOL_GREEN.get(), Blocks.GREEN_WOOL, Items.GREEN_DYE, output);
-        woolBuilder(ABRCWoolColors.WOOL_RED.get(), Blocks.RED_WOOL, Items.RED_DYE, output);
+        woolBuilder(ABRCWoolColors.WOOL_WHITE.get(), Blocks.WOOL.white(), Items.DYE.white(), output);
+        woolBuilder(ABRCWoolColors.WOOL_ORANGE.get(), Blocks.WOOL.orange(), Items.DYE.orange(), output);
+        woolBuilder(ABRCWoolColors.WOOL_MAGENTA.get(), Blocks.WOOL.magenta(), Items.DYE.magenta(), output);
+        woolBuilder(ABRCWoolColors.WOOL_LIGHT_BLUE.get(), Blocks.WOOL.lightBlue(), Items.DYE.lightBlue(), output);
+        woolBuilder(ABRCWoolColors.WOOL_YELLOW.get(), Blocks.WOOL.yellow(), Items.DYE.yellow(), output);
+        woolBuilder(ABRCWoolColors.WOOL_LIME.get(), Blocks.WOOL.lime(), Items.DYE.lime(), output);
+        woolBuilder(ABRCWoolColors.WOOL_PINK.get(), Blocks.WOOL.pink(), Items.DYE.pink(), output);
+        woolBuilder(ABRCWoolColors.WOOL_GRAY.get(), Blocks.WOOL.gray(), Items.DYE.gray(), output);
+        woolBuilder(ABRCWoolColors.WOOL_LIGHT_GRAY.get(), Blocks.WOOL.lightGray(), Items.DYE.lightGray(), output);
+        woolBuilder(ABRCWoolColors.WOOL_CYAN.get(), Blocks.WOOL.cyan(), Items.DYE.cyan(), output);
+        woolBuilder(ABRCWoolColors.WOOL_PURPLE.get(), Blocks.WOOL.purple(), Items.DYE.purple(), output);
+        woolBuilder(ABRCWoolColors.WOOL_BLUE.get(), Blocks.WOOL.blue(), Items.DYE.blue(), output);
+        woolBuilder(ABRCWoolColors.WOOL_BROWN.get(), Blocks.WOOL.brown(), Items.DYE.brown(), output);
+        woolBuilder(ABRCWoolColors.WOOL_GREEN.get(), Blocks.WOOL.green(), Items.DYE.green(), output);
+        woolBuilder(ABRCWoolColors.WOOL_RED.get(), Blocks.WOOL.red(), Items.DYE.red(), output);
 
         //Wool with Borders
         fullToBorderedBuilder(ABRCWoolColors.WOOL_WHITE_BORDER.get(), ABRCWoolColors.WOOL_WHITE.get(), false, output);
@@ -209,7 +209,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("wdw")
                 .pattern("wgw")
                 .pattern("wdw")
-                .unlockedBy("has_wool", has(Blocks.WHITE_WOOL)).save(recipeConsumer);
+                .unlockedBy("has_wool", has(Blocks.WOOL.white())).save(recipeConsumer);
     }
 
     protected void whiteToColorBuilder(ItemLike itemOut, ItemLike dye, RecipeOutput  recipeConsumer) {
@@ -222,14 +222,14 @@ public class ModRecipeProvider extends RecipeProvider {
     protected void fullToBorderedBuilder(ItemLike itemOut, ItemLike colorBlock, Boolean invertDye, RecipeOutput  recipeConsumer) {
         if (!invertDye) {
             this.shaped(BUILDING_BLOCKS, itemOut, 2)
-                    .define('#', colorBlock).define('d', Items.BLACK_DYE)
+                    .define('#', colorBlock).define('d', Items.DYE.black())
                     .pattern("ddd")
                     .pattern("d#d")
                     .pattern("ddd")
                     .unlockedBy(getHasName(colorBlock), has(colorBlock))
                     .save(recipeConsumer, getSave("full_to_border_" + getItemName(colorBlock)));
         } else this.shaped(BUILDING_BLOCKS, itemOut, 2)
-                .define('#', colorBlock).define('d', Items.WHITE_DYE)
+                .define('#', colorBlock).define('d', Items.DYE.white())
                 .pattern("ddd")
                 .pattern("d#d")
                 .pattern("ddd")
