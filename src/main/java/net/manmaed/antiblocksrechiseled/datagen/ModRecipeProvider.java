@@ -2,28 +2,44 @@ package net.manmaed.antiblocksrechiseled.datagen;
 
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
 import net.manmaed.antiblocksrechiseled.blocks.*;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.MultiRegistryBootstrap;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 
 public class ModRecipeProvider extends RecipeProvider {
 
     public static RecipeCategory BUILDING_BLOCKS = RecipeCategory.BUILDING_BLOCKS;
-    protected final RecipeOutput output;
 
-    public ModRecipeProvider(HolderLookup.Provider registries, RecipeOutput recipeOutput) {
-        super(registries, recipeOutput);
-        this.output = recipeOutput;
+    public static final MultiRegistryBootstrap BOOTSTRAP = new MultiRegistryBootstrap() {
+        @Override
+        public Set<ResourceKey<? extends Registry<?>>> requestedRegistries() {
+            return Set.of(Registries.RECIPE, Registries.ADVANCEMENT);
+        }
+
+        @Override
+        public void run(BootstrapGetter bootstrapGetter) {
+            new ModRecipeProvider(bootstrapGetter.get(Registries.RECIPE), bootstrapGetter.get(Registries.ADVANCEMENT)).buildRecipes();
+        }
+    };
+
+    protected ModRecipeProvider(BootstrapContext<Recipe<?>> recipeOutput, BootstrapContext<Advancement> advancementOutput) {
+        super(recipeOutput, advancementOutput);
     }
 
     public static ResourceKey getSave(String string) {
@@ -268,22 +284,5 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("##")
                 .unlockedBy(getHasName(itemIn), has(itemIn))
                 .save(recipeConsumer, getSave(getItemName(itemIn) + "_pressure_plate"));
-    }
-
-    public static class Runner extends RecipeProvider.Runner {
-
-        public Runner(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookup) {
-            super(packOutput, lookup);
-        }
-
-        @Override
-        protected RecipeProvider createRecipeProvider(HolderLookup.Provider registries, RecipeOutput output) {
-            return new ModRecipeProvider(registries, output);
-        }
-
-        @Override
-        public String getName() {
-            return "AntiBlocksReChiseled Recipes";
-        }
     }
 }

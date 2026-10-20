@@ -20,14 +20,18 @@ import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 public class ModLootTablesProvider extends LootTableProvider {
-    public ModLootTablesProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookup) {
-        super(packOutput, Set.of(), ImmutableList.of(new LootTableProvider.SubProviderEntry(ModBlockLoot::new, LootContextParamSets.BLOCK)), lookup);
+    public ModLootTablesProvider() {
+        super(Set.of(), ImmutableList.of(new LootTableProvider.SubProviderEntry(ModBlockLoot::new, LootContextParamSets.BLOCK)));
+    }
+
+    public static ModLootTablesProvider create() {
+        return new ModLootTablesProvider();
     }
 
     public static class ModBlockLoot extends BlockLootSubProvider {
 
-        protected ModBlockLoot(HolderLookup.Provider lookup) {
-            super(Set.of(), FeatureFlags.REGISTRY.allFlags(), lookup);
+        protected ModBlockLoot(Context context) {
+            super(Set.of(), FeatureFlags.REGISTRY.allFlags(), context);
         }
 
         @Override
