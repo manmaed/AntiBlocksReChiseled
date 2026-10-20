@@ -8,7 +8,7 @@
     {
       "from": [ 1, 0, 1 ],
       "to": [ 15, 1, 15 ],
-      "shade": false,
+      "shade_direction_override": "up",
       "faces": {
         "down":  { "uv": [ 1,  1, 15, 15 ], "texture": "#all", "cullface": "down" },
         "up":    { "uv": [ 1,  1, 15, 15 ], "texture": "#all" },
