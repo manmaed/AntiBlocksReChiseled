@@ -1,4 +1,4 @@
-name: Build & Release For Minecraft 26.2 - Forge
+name: Build & Release For Minecraft 26.3 - Forge
 
 on:
   push:
