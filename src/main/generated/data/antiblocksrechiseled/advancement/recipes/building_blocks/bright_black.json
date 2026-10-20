@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "antiblocksrechiseled:bright_black"
+        "recipes": "antiblocksrechiseled:bright_black"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

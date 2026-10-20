@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "antiblocksrechiseled:wool_red_slabs"
+        "recipes": "antiblocksrechiseled:wool_red_slabs"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

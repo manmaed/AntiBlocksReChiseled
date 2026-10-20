@@ -30,7 +30,7 @@ public class AntiPressurePlate extends PressurePlateBlock {
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
     private final AntiPressurePlate.Sensitivity sensitivity;
     public AntiPressurePlate(String name) {
-        super(BlockSetType.STONE, Properties.of().mapColor(MapColor.STONE).forceSolidOn().instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().noCollision().strength(0.5F).pushReaction(PushReaction.DESTROY).lightLevel((light) -> {
+        super(BlockSetType.STONE, Properties.of().mapColor(MapColor.STONE).forceSolidOn().instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().noCollision().strength(0.5F).pushReaction(PushReaction.POPPED).lightLevel((light) -> {
             return 15;
         }).setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(AntiBlocksReChiseled.MOD_ID, name))));
         this.registerDefaultState(this.stateDefinition.any().setValue(POWERED, Boolean.valueOf(false)));

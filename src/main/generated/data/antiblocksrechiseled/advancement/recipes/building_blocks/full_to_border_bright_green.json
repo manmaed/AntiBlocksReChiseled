@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "antiblocksrechiseled:full_to_border_bright_green"
+        "recipes": "antiblocksrechiseled:full_to_border_bright_green"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

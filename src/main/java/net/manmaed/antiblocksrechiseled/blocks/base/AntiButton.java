@@ -16,7 +16,7 @@ public class AntiButton extends ButtonBlock {
         super(BlockSetType.STONE,20, Properties.of()
                 .noCollision()
                 .strength(3.0F)
-                .pushReaction(PushReaction.DESTROY)
+                .pushReaction(PushReaction.POPPED)
                 .requiresCorrectToolForDrops()
                 .lightLevel(_ -> 15)
                 .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(AntiBlocksReChiseled.MOD_ID, name)))
