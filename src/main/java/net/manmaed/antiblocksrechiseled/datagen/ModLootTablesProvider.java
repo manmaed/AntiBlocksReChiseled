@@ -3,8 +3,6 @@ package net.manmaed.antiblocksrechiseled.datagen;
 
 import com.google.common.collect.ImmutableList;
 import net.manmaed.antiblocksrechiseled.blocks.*;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.flag.FeatureFlags;
@@ -15,16 +13,15 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.CompletableFuture;
 
 public class ModLootTablesProvider extends LootTableProvider {
-    public ModLootTablesProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookup) {
-        super(packOutput, Set.of(), ImmutableList.of(new LootTableProvider.SubProviderEntry(ModBlockLoot::new, LootContextParamSets.BLOCK)), lookup);
+    public ModLootTablesProvider() {
+        super(Set.of(), ImmutableList.of(new SubProviderEntry(ModBlockLoot::new, LootContextParamSets.BLOCK)));
     }
 
     public static class ModBlockLoot extends BlockLootSubProvider {
-        protected ModBlockLoot(HolderLookup.Provider lookup) {
-            super(Set.of(), FeatureFlags.REGISTRY.allFlags(), lookup);
+        protected ModBlockLoot(Context context) {
+            super(Set.of(), FeatureFlags.REGISTRY.allFlags(), context);
         }
 
         @Override

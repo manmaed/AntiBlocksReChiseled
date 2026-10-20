@@ -2,11 +2,15 @@ package net.manmaed.antiblocksrechiseled.datagen;
 
 import net.manmaed.antiblocksrechiseled.AntiBlocksReChiseled;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.RegistrySetBuilder;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.recipes.RecipeProvider;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import java.util.concurrent.CompletableFuture;
@@ -17,15 +21,13 @@ public class ABRCDataGeneration {
     public static void onGatherData(GatherDataEvent.Client event) {
         DataGenerator generator =  event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
-        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
-        //TODO: ReImplement Block Models/States and Item Models
-        //generator.addProvider(true, new ModBlockStateProvider(packOutput, fileHelper));
-        //generator.addProvider(true, new ModBlockModelProvider(packOutput, fileHelper));
-        //generator.addProvider(true, new ModItemModelProvider(packOutput, fileHelper));
+        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getReloadableLookupProvider();
         generator.addProvider(true, new ModBlocksTagsProvider(packOutput, lookupProvider));
         generator.addProvider(true, new ModItemsTagProvider(packOutput, lookupProvider));
         ModLangProvider.addTranslations(generator);
-        generator.addProvider(true, new ModLootTablesProvider(packOutput, lookupProvider));
-        generator.addProvider(true, new ModRecipeProvider.Runner(packOutput, lookupProvider));
+        event.createReloadableRegistryObjects(new RegistrySetBuilder()
+                .add(Registries.LOOT_TABLE, new ModLootTablesProvider())
+                .add(RecipeProvider.asBootstrap(ModRecipeProvider::new))
+        );
     }
 }
