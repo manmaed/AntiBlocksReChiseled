@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "antiblocksrechiseled:bright_magenta_stairs"
+        "recipes": "antiblocksrechiseled:bright_magenta_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

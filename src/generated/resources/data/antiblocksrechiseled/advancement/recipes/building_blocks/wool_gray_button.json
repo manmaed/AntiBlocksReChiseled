@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "antiblocksrechiseled:wool_gray_button"
+        "recipes": "antiblocksrechiseled:wool_gray_button"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

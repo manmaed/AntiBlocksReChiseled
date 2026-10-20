@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "antiblocksrechiseled:full_to_border_wool_magenta"
+        "recipes": "antiblocksrechiseled:full_to_border_wool_magenta"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

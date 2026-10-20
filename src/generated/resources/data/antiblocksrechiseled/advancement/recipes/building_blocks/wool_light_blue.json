@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "antiblocksrechiseled:wool_light_blue"
+        "recipes": "antiblocksrechiseled:wool_light_blue"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
